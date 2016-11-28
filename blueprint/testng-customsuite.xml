@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Customized Suite" parallel="false">
+    <parameter name="start-info" value="----Test Starts----"/>
+    <parameter name="open-info" value="&lt;----Method: %s is being tested!----&gt;"/>
+    <parameter name="close-info" value="&lt;----Method: %s has been tested!----&gt;"/>
+    <parameter name="finish-info" value="----Test Finished----"/>
+    <test verbose="1" name="Blueprint" annotations="JDK">
+        <groups>
+            <define name="single">
+                <include name="holder"/>
+            </define>
+            <define name="all">
+                <include name="fluent-mailer"/>
+                <include name="file-writer"/>
+                <include name="file-writer-eam"/>
+                <include name="holder"/>
+            </define>
+            <run>
+                <!--<include name="single"/>-->
+                <include name="all"/>
+            </run>
+        </groups>
+        <packages>
+            <package name="com.mit.lab.unit"/>
+        </packages>
+    </test>
+</suite>
