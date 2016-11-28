@@ -1,0 +1,141 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="edu.mit.lib.rest.repository.BookDao">
+
+    <resultMap id="bookMap" type="edu.mit.lib.rest.entities.Book">
+        <id column="id" property="id" javaType="java.lang.Long"/>
+        <result column="name" property="name" javaType="java.lang.String"/>
+        <result column="version" property="version" javaType="java.lang.String"/>
+        <result column="author" property="author" javaType="java.lang.String"/>
+        <result column="publisher" property="publisher" javaType="java.lang.String"/>
+        <result column="publishdate" property="publishdate" javaType="java.util.Date"/>
+        <result column="isbn" property="isbn" javaType="java.lang.String"/>
+        <result column="paperback" property="paperback" javaType="java.lang.Integer"/>
+        <result column="summary" property="summary" javaType="java.lang.String"/>
+    </resultMap>
+
+
+    <!-- ************** CREATE ************** -->
+    <insert id="createBook" parameterType="edu.mit.lib.rest.entities.Book" useGeneratedKeys="true">
+        INSERT
+        INTO books
+        SET
+        name = #{name},
+        version = #{version},
+        author = #{author},
+        isbn = #{isbn}
+        <if test="publisher != null">
+            ,publisher = #{publisher}
+        </if>
+        <if test="publishdate != null">
+            ,publishdate = #{publishdate}
+        </if>
+        <if test="paperback != null">
+            ,paperback = #{paperback}
+        </if>
+        <if test="summary != null">
+            ,summary = #{summary}
+        </if>
+    </insert>
+
+    <!-- ************** READ ************** -->
+    <select id="getBooks" resultMap="bookMap">
+        SELECT
+        id,
+        name,
+        version,
+        author,
+        publisher,
+        publishdate,
+        isbn,
+        paperback,
+        summary
+        FROM
+        books
+    </select>
+
+    <select id="getBooksOrderBy" resultMap="bookMap" parameterType="String">
+        SELECT
+            id,
+            name,
+            version,
+            author,
+            publisher,
+            publishdate,
+            isbn,
+            paperback,
+            summary
+        FROM
+            books
+        ORDER BY #{value}
+    </select>
+
+    <select id="getBookById" resultMap="bookMap" parameterType="Long">
+        SELECT
+            id,
+            name,
+            version,
+            author,
+            publisher,
+            publishdate,
+            isbn,
+            paperback,
+            summary
+        FROM
+            books
+        WHERE
+            id = #{value};
+    </select>
+
+    <select id="getBookByISBN" resultMap="bookMap" parameterType="String">
+        SELECT
+            id,
+            name,
+            version,
+            author,
+            publisher,
+            publishdate,
+            isbn,
+            paperback,
+            summary
+        FROM
+            books
+        WHERE
+            isbn = #{value};
+    </select>
+
+    <!-- ************** UPDATE ************** -->
+    <update id="updateBook" parameterType="edu.mit.lib.rest.entities.Book">
+        UPDATE
+        books
+        SET
+        id = #{id}
+        <if test="name != null">
+            , name = #{name}
+        </if>
+        <if test="version != null">
+            , version = #{version}
+        </if>
+        <if test="author != null">
+            , author = #{author}
+        </if>
+        <if test="isbn != null">
+            , isbn = #{isbn}
+        </if>
+        WHERE
+        id = #{id}
+    </update>
+
+    <!-- ************** DELETE ************** -->
+    <delete id="deleteBookById" parameterType="Long">
+        DELETE FROM books
+        WHERE id = #{value}
+    </delete>
+
+    <!-- DELETE all -->
+    <delete id="deleteBooks">
+        TRUNCATE TABLE books
+    </delete>
+
+</mapper>

@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: Book Service
+Implementation-Version: 1.0
+Built-By: Developer
+Specification-Title: Book Service
+Implementation-Vendor-Id: edu.mit.lib
+Created-By: IntelliJ IDEA
+Build-Jdk: 1.8.0_66
+Specification-Version: 1.0
+

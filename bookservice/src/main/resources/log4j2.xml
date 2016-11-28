@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration name="log4j2" status="warn" strict="true" monitorInterval="10">
+    <properties>
+        <Property name="environment.target">Dev</Property>
+        <property name="logging.dir">I:/Temp/Logs</property>
+        <property name="pattern.layout">%d{ISO8601} [%t] %-5level %logger{36} - %msg%n%throwable{full}</property>
+        <property name="file.name">${logging.dir}/${environment.target}/server.log</property>
+        <property name="rolling.log.name">${logging.dir}/${environment.target}/rolling-file.log</property>
+        <property name="file.name.pattern">${logging.dir}/${environment.target}/server-%d{yyyy-dd-MM}-%i.log.gz
+        </property>
+    </properties>
+    <appenders>
+        <file name="File" fileName="${file.name}">
+            <patternlayout>
+                <pattern>${pattern.layout}</pattern>
+            </patternlayout>
+        </file>
+        <console name="Console" target="SYSTEM_OUT">
+            <patternlayout pattern="${pattern.layout}"/>
+        </console>
+        <rollingfile name="RollingFile" fileName="${rolling.log.name}" filePattern="${file.name.pattern}"
+                     ignoreExceptions="false">
+            <patternlayout>
+                <Pattern>${pattern.layout}</Pattern>
+            </patternlayout>
+            <policies>
+                <timebasedtriggeringpolicy/>
+                <SizeBasedTriggeringPolicy size="50 MB"/>
+            </policies>
+            <defaultrolloverstrategy max="30"/>
+        </rollingfile>
+        <failover name="Failover" primary="RollingFile" retryInterval="60" ignoreExceptions="false">
+            <failovers>
+                <appenderref ref="Console"/>
+            </failovers>
+        </failover>
+        <async name="Async" blocking="true" bufferSize="128">
+            <appender-ref ref="File"/>
+        </async>
+    </appenders>
+    <loggers>
+        <logger name="Console" level="info" additivity="false">
+            <appenderref ref="Console"/>
+        </logger>
+        <root level="error">
+            <appenderref ref="Async"/>
+            <appenderref ref="Failover"/>
+        </root>
+    </loggers>
+</configuration>
