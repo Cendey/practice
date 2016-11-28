@@ -342,8 +342,7 @@ public class Resolver {
         return lstForeignKey;
     }
 
-    private static void pushForeignKeyInfo(
-        Connection connection, List<Keys> lstForeignKey, String tableName) {
+    private static void pushForeignKeyInfo(Connection connection, List<Keys> lstForeignKey, String tableName) {
         try (ResultSet foreignKeys = connection.getMetaData()
             .getExportedKeys(connection.getCatalog(), connection.getSchema(), tableName)) {
             handleRefKeys(lstForeignKey, foreignKeys);
@@ -376,8 +375,7 @@ public class Resolver {
         }
     }
 
-    private static void pushPrimaryKeyInfo(
-        Connection connection, List<Keys> lstPrimaryKey, String tableName) {
+    private static void pushPrimaryKeyInfo(Connection connection, List<Keys> lstPrimaryKey, String tableName) {
         try (ResultSet primaryKeys = connection.getMetaData()
             .getImportedKeys(connection.getCatalog(), connection.getSchema(), tableName)) {
             handleRefKeys(lstPrimaryKey, primaryKeys);
@@ -387,8 +385,7 @@ public class Resolver {
     }
 
     private static void pushTableSummaryInfo(
-        ResultSet tables, List<Tables> lstTable, Set<String> nameSet, Tables tableMeta)
-        throws SQLException {
+        ResultSet tables, List<Tables> lstTable, Set<String> nameSet, Tables tableMeta) throws SQLException {
 
         if (nameSet.contains(Scheme.TABLE_CAT)) {
             tableMeta.setTableCatalog(tables.getString(Scheme.TABLE_CAT));
