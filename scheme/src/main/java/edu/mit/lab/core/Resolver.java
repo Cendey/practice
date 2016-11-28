@@ -352,8 +352,7 @@ public class Resolver {
         }
     }
 
-    private static void handleRefKeys(List<Keys> lstForeignKey, ResultSet foreignKeys)
-        throws SQLException {
+    private static void handleRefKeys(List<Keys> lstForeignKey, ResultSet foreignKeys) throws SQLException {
         int counter = 0;
         Map<String, Integer> identifiers = new WeakHashMap<>();
         while (foreignKeys.next()) {
