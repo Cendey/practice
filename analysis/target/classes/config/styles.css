@@ -1,0 +1,67 @@
+.grid-pane {
+    -fx-alignment: baseline-center;
+    -fx-background-color: bisque;
+}
+
+.text {
+    -fx-font-style: oblique 50px "Microsoft YaHei";
+    -fx-alignment: top-left;
+    -fx-fill-width: true;
+}
+
+.table-view {
+    -fx-background-color: bisque;
+    -fx-alignment: baseline-center;
+    -fx-border-color: chocolate;
+    -fx-fill-width: true;
+}
+
+.table-row-cell:selected {
+    -fx-background-color: #2B2B2B;
+    -fx-text-background-color: #A9B7C6;
+}
+
+.button {
+    -fx-font-style: normal 12px "Microsoft YaHei";
+    -fx-fill-width: true;
+}
+
+.label {
+    -fx-font-style: normal 50px "Microsoft YaHei";
+    -fx-fill-width: true;
+}
+
+#info {
+    -fx-font-style: normal "Microsoft YaHei";
+    -fx-fill-width: true;
+}
+
+#clear {
+    -fx-alignment: baseline-left;
+    -fx-fill-width: true;
+}
+
+#start {
+    -fx-alignment: baseline-left;
+    -fx-fill-width: true;
+}
+
+#stop {
+    -fx-alignment: baseline-center;
+    -fx-fill-width: true;
+}
+
+#exit {
+    -fx-alignment: baseline-right;
+    -fx-fill-width: true;
+}
+
+#log {
+    -fx-alignment: bottom-left;
+    -fx-fill-width: true;
+}
+
+#control {
+    -fx-alignment: bottom-right;
+    -fx-fill-width: true;
+}

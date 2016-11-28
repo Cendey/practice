@@ -1,0 +1,4 @@
+Manifest-Version: 1.0
+Bundle-Developers: Deng Chao
+Main-Class: edu.lab.mit.gui.Launcher
+

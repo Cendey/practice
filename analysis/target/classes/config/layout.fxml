@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.stage.Screen?>
+<GridPane fx:controller="edu.lab.mit.gui.Controller"
+          xmlns="http://javafx.com/javafx/8.0.40"
+          xmlns:fx="http://javafx.com/fxml"
+          prefHeight="800"
+          prefWidth="1200"
+          hgap="10"
+          vgap="10">
+    <fx:define>
+        <Screen fx:factory="getPrimary" fx:id="screen"/>
+    </fx:define>
+    <padding>
+        <Insets top="25" bottom="10" left="25" right="25"/>
+    </padding>
+
+    <!--General Information-->
+    <Label text="Error Filter Criterion"
+           GridPane.columnIndex="0"
+           GridPane.rowIndex="0" GridPane.columnSpan="15"/>
+
+    <Label text="Operator Identity:" GridPane.columnIndex="0" GridPane.rowIndex="1" GridPane.columnSpan="15"/>
+    <TextField fx:id="operatorID" GridPane.columnIndex="16" GridPane.rowIndex="1" GridPane.columnSpan="99" GridPane.hgrow="ALWAYS"/>
+
+    <Label text="Error Start Identity:" GridPane.columnIndex="0" GridPane.rowIndex="2" GridPane.columnSpan="15"/>
+    <TextField fx:id="errorStartID" GridPane.columnIndex="16" GridPane.rowIndex="2" GridPane.columnSpan="99" GridPane.hgrow="ALWAYS"/>
+
+    <Label text="Error End Identity:" GridPane.columnIndex="0" GridPane.rowIndex="3" GridPane.columnSpan="15"/>
+    <TextField fx:id="errorEndID" GridPane.columnIndex="16" GridPane.rowIndex="3" GridPane.columnSpan="99" GridPane.hgrow="ALWAYS"/>
+
+    <Label text="Source Error Log File:" GridPane.columnIndex="0" GridPane.rowIndex="4" GridPane.columnSpan="15"/>
+    <TextField fx:id="sourceErrorLog" GridPane.columnIndex="16" GridPane.rowIndex="4" GridPane.columnSpan="89" GridPane.hgrow="ALWAYS"/>
+    <Button fx:id="chooseSourceLogFile" GridPane.columnIndex="105" GridPane.rowIndex="4" GridPane.columnSpan="10"
+            text="Choose File" onAction="#chooseSourceLogFile"/>
+
+
+    <Label text="Target Error Log File:" GridPane.columnIndex="0" GridPane.rowIndex="5" GridPane.columnSpan="15"/>
+    <TextField fx:id="targetErrorLog" GridPane.columnIndex="16" GridPane.rowIndex="5" GridPane.columnSpan="89" GridPane.hgrow="ALWAYS"/>
+    <Button fx:id="chooseTargetLogFile" GridPane.columnIndex="105" GridPane.rowIndex="5" GridPane.columnSpan="10"
+            text="Choose File"
+            onAction="#chooseTargetLogFile"/>
+
+
+    <!--Error Log information-->
+    <TableView fx:id="uniqueErrorLogInfo" GridPane.columnIndex="0" editable="false"
+               GridPane.rowIndex="6" GridPane.columnSpan="115" GridPane.rowSpan="52" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS"/>
+
+    <HBox fx:id="log" spacing="10" GridPane.columnIndex="0" GridPane.rowIndex="58" GridPane.columnSpan="115" GridPane.hgrow="ALWAYS">
+        <Button fx:id="analyzeError" text="Analyse"  GridPane.columnIndex="0" onAction="#analyzeErrorLog"/>
+        <TextField fx:id="errorCounter" editable="false"  GridPane.columnIndex="31" GridPane.hgrow="ALWAYS"/>
+        <Button fx:id="previousItem" text="Previous" GridPane.columnIndex="90"/>
+        <TextField fx:id="currentItemIndex" editable="false" GridPane.columnIndex="101" GridPane.hgrow="ALWAYS"/>
+        <Button fx:id="nextItem" text="Next" GridPane.columnIndex="112"/>
+    </HBox>
+
+    <!--Actions for log error-->
+    <HBox fx:id="control" spacing="10" GridPane.columnIndex="94" GridPane.rowIndex="59" GridPane.columnSpan="21" GridPane.hgrow="ALWAYS">
+        <Button fx:id="ignore" text="Ignore" onAction="#ignoreError"/>
+        <Button fx:id="identified" text="Identified" onAction="#markIdentifiedErrorInfo"/>
+        <Button fx:id="exit" text="Exit" onAction="#exit"/>
+    </HBox>
+</GridPane>
