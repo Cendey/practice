@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="application">
+    <test name="resolver">
+        <classes>
+            <class name="edu.mit.lab.unit.TreeFactoryTest">
+                <methods>
+                    <include name="testBuildTree_onNotExpandableSeedBecause_StopBranch"/>
+                </methods>
+            </class> <!-- edu.mit.lab.unit.TreeFactoryTest -->
+        </classes>
+    </test> <!-- dbresolver -->
+</suite> <!-- Default Suite -->
