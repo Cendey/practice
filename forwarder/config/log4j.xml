@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/" debug="false">
+
+    <appender name="KEWILLFWD" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="File" value="${jmsforwarder.home.dir}/logs/jmsforwarder.log"/>
+        <param name="Append" value="true"/>
+        <param name="DatePattern" value="'.'yyyy-MM-dd"/>
+        <param name="Threshold" value="INFO"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d{yyyy-MM-dd HH:mm:ss} %-5p [%c{1}] %m%n"/>
+        </layout>
+    </appender>
+
+    <root>
+        <appender-ref ref="KEWILLFWD"/>
+    </root>
+</log4j:configuration>
