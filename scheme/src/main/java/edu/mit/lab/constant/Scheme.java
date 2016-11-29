@@ -69,6 +69,7 @@ public class Scheme {
     public static final String UI_ANTIALIAS = "ui.antialias";
     public static final String UI_STYLESHEET = "ui.stylesheet";
     public static final String UI_CLASS = "ui.class";
+    public static final String UI_VIEW_CLOSED = "ui.viewClosed";
     public static final String ROOT = "root";
     public static final String LEAF = "leaf";
     public static final String TIPS = "tips";
@@ -110,6 +111,9 @@ public class Scheme {
     public static final String IDENTIFIED = "identified";
     public static final String MARKED = "marked";
     public static final List<String> STATUS = Collections.unmodifiableList(Arrays.asList(IDENTIFIED, MARKED));
+
+    //Directory to store output data or files
     public static final String WORK_DIR =
-        System.getProperty(Scheme.USER_DIR) + System.getProperty(Scheme.FILE_SEPARATOR);
+        System.getProperty(Scheme.USER_DIR) + System.getProperty(Scheme.FILE_SEPARATOR) + "work" + System
+            .getProperty(Scheme.FILE_SEPARATOR);
 }

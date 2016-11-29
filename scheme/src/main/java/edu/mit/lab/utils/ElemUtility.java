@@ -48,6 +48,7 @@ public class ElemUtility {
             @Override
             public void viewClosed(String viewName) {
                 System.out.println(String.format("Graphs[%s] ara closed!", viewName));
+                graph.addAttribute(Scheme.UI_VIEW_CLOSED,true);
             }
 
             @Override

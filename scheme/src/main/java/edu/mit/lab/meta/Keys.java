@@ -172,16 +172,22 @@ public class Keys implements IRelevance<String, List<String>>, Comparator, Seria
         return pkTableName;
     }
 
+    /**
+     * Get field value from this
+     * @link https://github.com/ronmamo/reflections
+     * @param name property name
+     * @return this instance value of property name
+     */
     @Override
     @SuppressWarnings(value = {"unchecked"})
-    public List<String> property(String key) {
+    public List<String> property(String name) {
         List<String> attribute = new ArrayList<>();
         Set<Method> getter = ReflectionUtils
             .getAllMethods(getClass(), ReflectionUtils.withModifier(Modifier.PUBLIC),
                 ReflectionUtils.withPrefix("get"), ReflectionUtils.withParametersCount(0));
         getter.stream().filter(method -> {
             method.setAccessible(true);
-            return method.getName().toUpperCase().contains(StringUtils.upperCase(key));
+            return method.getName().toUpperCase().contains(StringUtils.upperCase(name));
         }).findAny().ifPresent(method -> {
             try {
                 Object value = method.invoke(this);

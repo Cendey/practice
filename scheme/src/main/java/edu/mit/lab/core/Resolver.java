@@ -124,7 +124,7 @@ public class Resolver {
         Graph overview = resolver.overview(lstFKRef);
         resolver.setRootNodeIds(ElemUtility.resolveDisconnectedGraph(overview));
 
-        ExecutorService executor = Executors.newFixedThreadPool(3);
+        ExecutorService executor = Executors.newFixedThreadPool(10);
         Future<Integer> status = executor.submit(resolver.genSQLScript(overview));
         Future<List<Graph>> graphs = executor.submit(resolver.graphs(overview));
 
@@ -132,28 +132,11 @@ public class Resolver {
             System.out
                 .println(status.get() == 0 ? "Success to generate SQL script!" : "Failed to generate SQL script!");
             graphs.get().forEach(
-                graph -> new Thread(() -> {
-                    graph.display();
-                    try {
-                        graph.write(new FileSinkDGS(), Scheme.WORK_DIR
-                            + GRAPH_FILE_NAME_PREFIX + graph.getId() + GRAPH_FILE_NAME_SUFFIX);
-                    } catch (IOException e) {
-                        System.err.println(e.getMessage());
-                    }
+                graph -> {
+                    executor.submit(resolver.persist(graph));
 
-                    Viewer viewer = new Viewer(graph, Viewer.ThreadingModel.GRAPH_IN_GUI_THREAD);
-                    ViewerPipe pipe = viewer.newViewerPipe();
-                    pipe.addViewerListener(ElemUtility.listener(graph));
-                    pipe.addSink(graph);
-                    while (true) {
-                        try {
-                            Thread.sleep(100);
-                            pipe.pump();
-                        } catch (InterruptedException e) {
-                            System.err.println(e.getMessage());
-                        }
-                    }
-                }).start()
+                    executor.submit(resolver.display(graph));
+                }
             );
             executor.shutdown();
         } catch (ExecutionException e) {
@@ -165,6 +148,41 @@ public class Resolver {
             .format(Scheme.TIME_DURATION_PROCESS, TimeUnit.MILLISECONDS.toMinutes(duration),
                 TimeUnit.MILLISECONDS.toSeconds(duration) - TimeUnit.MINUTES
                     .toSeconds(TimeUnit.MILLISECONDS.toMinutes(duration))));
+    }
+
+    private Callable<Integer> display(Graph graph) {
+        return () -> {
+            Viewer viewer = graph.display();
+            viewer.setCloseFramePolicy(Viewer.CloseFramePolicy.CLOSE_VIEWER);
+            ViewerPipe pipe = viewer.newViewerPipe();
+            pipe.addViewerListener(ElemUtility.listener(graph));
+            pipe.addSink(graph);
+            boolean loop = true;
+            while (loop) {
+                try {
+                    Thread.sleep(100);
+                    pipe.pump();
+                    if (graph.hasAttribute(Scheme.UI_VIEW_CLOSED)) {
+                        loop = false;
+                    }
+                } catch (InterruptedException e) {
+                    System.err.println(e.getMessage());
+                }
+            }
+            return 0;
+        };
+    }
+
+    private Callable<Integer> persist(Graph graph) {
+        return () -> {
+            try {
+                graph.write(new FileSinkDGS(), Scheme.WORK_DIR
+                    + GRAPH_FILE_NAME_PREFIX + graph.getId() + GRAPH_FILE_NAME_SUFFIX);
+            } catch (IOException e) {
+                System.err.println(e.getMessage());
+            }
+            return 1;
+        };
     }
 
     private void collect(List<Tables> lstTable) {
