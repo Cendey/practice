@@ -1,0 +1,56 @@
+DGS004
+null 0 0
+cg  "ui.quality":true
+cg  "ui.antialias":true
+cg  "ui.stylesheet":"url(css/polish.css)"
+cg  "ui.default.title":"CTRFHDR"
+an "nCTRFHDR"
+cn "nCTRFHDR"  "ui.class":"root"
+cn "nCTRFHDR"  "ui.label":"CTRFHDR"
+cn "nCTRFHDR"  "Component":11
+cn "nCTRFHDR"  "data.child":"[nCTRFCBNNO, nCTRFJOB, nCTRFRIGHTS]"
+cn "nCTRFHDR"  "action.marked":"identified"
+an "nCTRFCBNNO"
+cn "nCTRFCBNNO"  "data.parent":"[nCTRFHDR]"
+cn "nCTRFCBNNO"  "ui.class":"leaf"
+cn "nCTRFCBNNO"  "ui.label":"CTRFCBNNO"
+cn "nCTRFCBNNO"  "Component":11
+cn "nCTRFCBNNO"  "action.marked":"identified"
+an "nCTRFJOB"
+cn "nCTRFJOB"  "data.parent":"[nCTRFHDR]"
+cn "nCTRFJOB"  "ui.label":"CTRFJOB"
+cn "nCTRFJOB"  "Component":11
+cn "nCTRFJOB"  "data.child":"[nCTRFCHG]"
+cn "nCTRFJOB"  "action.marked":"identified"
+an "nCTRFRIGHTS"
+cn "nCTRFRIGHTS"  "data.parent":"[nCTRFHDR]"
+cn "nCTRFRIGHTS"  "ui.class":"leaf"
+cn "nCTRFRIGHTS"  "ui.label":"CTRFRIGHTS"
+cn "nCTRFRIGHTS"  "Component":11
+cn "nCTRFRIGHTS"  "action.marked":"identified"
+an "nCTRFCHG"
+cn "nCTRFCHG"  "data.parent":"[nCTRFJOB]"
+cn "nCTRFCHG"  "ui.label":"CTRFCHG"
+cn "nCTRFCHG"  "Component":11
+cn "nCTRFCHG"  "data.child":"[nCTRFBKP]"
+cn "nCTRFCHG"  "action.marked":"identified"
+an "nCTRFBKP"
+cn "nCTRFBKP"  "data.parent":"[nCTRFCHG]"
+cn "nCTRFBKP"  "ui.class":"leaf"
+cn "nCTRFBKP"  "ui.label":"CTRFBKP"
+cn "nCTRFBKP"  "Component":11
+cn "nCTRFBKP"  "action.marked":"identified"
+ae "eCTRFHDRCTRFCBNNO" "nCTRFCBNNO" > "nCTRFHDR"
+ce "eCTRFHDRCTRFCBNNO"  "ui.label":"[CTRFHDR_UNID |  CTRFNO_UNID]"
+ce "eCTRFHDRCTRFCBNNO"  "ui.class":"root"
+ae "eCTRFHDRCTRFJOB" "nCTRFJOB" > "nCTRFHDR"
+ce "eCTRFHDRCTRFJOB"  "ui.label":"[CTRFHDR_UNID]"
+ce "eCTRFHDRCTRFJOB"  "ui.class":"root"
+ae "eCTRFHDRCTRFRIGHTS" "nCTRFRIGHTS" > "nCTRFHDR"
+ce "eCTRFHDRCTRFRIGHTS"  "ui.label":"[CTRFHDRUNID]"
+ce "eCTRFHDRCTRFRIGHTS"  "ui.class":"root"
+ae "eCTRFJOBCTRFCHG" "nCTRFCHG" > "nCTRFJOB"
+ce "eCTRFJOBCTRFCHG"  "ui.label":"[CTRFJOB_UNID]"
+ae "eCTRFCHGCTRFBKP" "nCTRFBKP" > "nCTRFCHG"
+ce "eCTRFCHGCTRFBKP"  "ui.label":"[CTRFJOB_UNID |  CTRFCHG_SNO]"
+ce "eCTRFCHGCTRFBKP"  "ui.class":"leaf"

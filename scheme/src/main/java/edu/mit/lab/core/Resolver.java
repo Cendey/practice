@@ -15,7 +15,6 @@ import org.graphstream.graph.Graph;
 import org.graphstream.graph.GraphFactory;
 import org.graphstream.graph.Node;
 import org.graphstream.graph.implementations.SingleGraph;
-import org.graphstream.stream.file.FileSinkDGS;
 import org.graphstream.ui.view.Viewer;
 import org.graphstream.ui.view.ViewerPipe;
 
@@ -135,7 +134,7 @@ public class Resolver {
                 graph -> {
                     executor.submit(resolver.persist(graph));
 
-                    executor.submit(resolver.display(graph));
+                    resolver.display(graph);
                 }
             );
             executor.shutdown();
@@ -150,34 +149,30 @@ public class Resolver {
                     .toSeconds(TimeUnit.MILLISECONDS.toMinutes(duration))));
     }
 
-    private Callable<Integer> display(Graph graph) {
-        return () -> {
-            Viewer viewer = graph.display();
-            viewer.setCloseFramePolicy(Viewer.CloseFramePolicy.CLOSE_VIEWER);
-            ViewerPipe pipe = viewer.newViewerPipe();
-            pipe.addViewerListener(ElemUtility.listener(graph));
-            pipe.addSink(graph);
-            boolean loop = true;
-            while (loop) {
-                try {
-                    Thread.sleep(100);
-                    pipe.pump();
-                    if (graph.hasAttribute(Scheme.UI_VIEW_CLOSED)) {
-                        loop = false;
-                    }
-                } catch (InterruptedException e) {
-                    System.err.println(e.getMessage());
+    private void display(Graph graph) {
+        Viewer viewer = graph.display();
+        viewer.setCloseFramePolicy(Viewer.CloseFramePolicy.HIDE_ONLY);
+        ViewerPipe pipe = viewer.newViewerPipe();
+        pipe.addViewerListener(ElemUtility.listener(graph));
+        pipe.addSink(graph);
+        boolean loop = true;
+        while (loop) {
+            try {
+                Thread.sleep(100);
+                pipe.pump();
+                if (graph.hasAttribute(Scheme.UI_VIEW_CLOSED)) {
+                    loop = false;
                 }
+            } catch (InterruptedException e) {
+                System.err.println(e.getMessage());
             }
-            return 0;
-        };
+        }
     }
 
     private Callable<Integer> persist(Graph graph) {
         return () -> {
             try {
-                graph.write(new FileSinkDGS(), Scheme.WORK_DIR
-                    + GRAPH_FILE_NAME_PREFIX + graph.getId() + GRAPH_FILE_NAME_SUFFIX);
+                graph.write(Scheme.WORK_DIR + GRAPH_FILE_NAME_PREFIX + graph.getId() + GRAPH_FILE_NAME_SUFFIX);
             } catch (IOException e) {
                 System.err.println(e.getMessage());
             }
