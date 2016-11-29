@@ -1,11 +1,16 @@
 package edu.mit.lab.meta;
 
 import edu.mit.lab.constant.Scheme;
+import edu.mit.lab.infts.IRelevance;
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
 
+import java.beans.PropertyDescriptor;
 import java.io.Serializable;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Comparator;
 import java.util.List;
 
@@ -19,7 +24,7 @@ import java.util.List;
  * @version 1.0
  * @since 11/14/2016
  */
-public class Keys implements Comparator, Serializable {
+public class Keys implements IRelevance<String, List<String>>, Comparator, Serializable {
 
     private String pkTableName;
     private List<String> pkColumnName;
@@ -54,7 +59,7 @@ public class Keys implements Comparator, Serializable {
         this.fkTableName = fkTableName;
     }
 
-    public List<String> getFkColumnName() {
+    private List<String> getFkColumnName() {
         return fkColumnName;
     }
 
@@ -154,4 +159,33 @@ public class Keys implements Comparator, Serializable {
         }
     }
 
+    @Override
+    public String from() {
+        return fkTableName;
+    }
+
+    @Override
+    public String to() {
+        return pkTableName;
+    }
+
+    @Override
+    @SuppressWarnings(value = {"unchecked"})
+    public List<String> attribute(String key) {
+        List<String> attribute = new ArrayList<>();
+        try {
+            Method reader = getClass().getMethod("get" + StringUtils.upperCase(key.substring(0, 1)) + key.substring(1));
+            Object value = reader.invoke(this);
+            if (value != null) {
+                if (Collection.class.isAssignableFrom(value.getClass())) {
+                    attribute.addAll(Collection.class.cast(value));
+                } else {
+                    attribute.add(String.valueOf(value));
+                }
+            }
+        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
+            System.err.println(e.getMessage());
+        }
+        return attribute;
+    }
 }

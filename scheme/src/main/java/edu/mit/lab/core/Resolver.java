@@ -3,6 +3,7 @@ package edu.mit.lab.core;
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
 import edu.mit.lab.constant.Scheme;
+import edu.mit.lab.infts.IRelevance;
 import edu.mit.lab.meta.Keys;
 import edu.mit.lab.meta.Tables;
 import edu.mit.lab.utils.ElemUtility;
@@ -102,7 +103,7 @@ public class Resolver {
     public static void main(String[] args) throws InterruptedException {
         long start = System.currentTimeMillis();
         Resolver resolver = new Resolver();
-        List<Keys> lstFKRef = null;
+        List<IRelevance<String,List<String>>> lstFKRef = null;
         try (Connection connection = createConnection()) {
             DatabaseMetaData metaData = connection.getMetaData();
             resolver.processEntityType(metaData);
@@ -162,7 +163,7 @@ public class Resolver {
         return complement;
     }
 
-    private Graph overview(List<Keys> lstFKRef) {
+    private Graph overview(List<IRelevance<String,List<String>>> lstFKRef) {
         //Remember processed tables position which corresponding to position in the list of nodes
         Graph overview = new GraphFactory().newInstance(Scheme.DEPENDENCY, SingleGraph.class.getName());
         if (!CollectionUtils.isEmpty(lstFKRef)) {
@@ -210,10 +211,10 @@ public class Resolver {
         };
     }
 
-    private static void build(Graph graph, Keys item) {
-        String targetNodeId = Scheme.NODE_PREFIX + item.getPkTableName();
-        String sourceNodeId = Scheme.NODE_PREFIX + item.getFkTableName();
-        String linkEdgeId = Scheme.EDGE_PREFIX + item.getPkTableName() + item.getFkTableName();
+    private static void build(Graph graph, IRelevance<String,List<String>> item) {
+        String targetNodeId = Scheme.NODE_PREFIX + item.to();
+        String sourceNodeId = Scheme.NODE_PREFIX + item.from();
+        String linkEdgeId = Scheme.EDGE_PREFIX + item.to() + item.from();
         Node target, source;
         int status = present(graph, item);
         switch (status) {
@@ -280,9 +281,9 @@ public class Resolver {
         graphs.add(result);
     }
 
-    private static int present(Graph graph, Keys item) {
-        String targetId = Scheme.NODE_PREFIX + item.getPkTableName();
-        String sourceId = Scheme.NODE_PREFIX + item.getFkTableName();
+    private static int present(Graph graph, IRelevance<String,List<String>> item) {
+        String targetId = Scheme.NODE_PREFIX + item.to();
+        String sourceId = Scheme.NODE_PREFIX + item.from();
         int target = graph.getNode(targetId) != null ? Scheme.ONLY_TARGET_NODE_PRESENTS : 0;
         int source = graph.getNode(sourceId) != null ? Scheme.ONLY_SOURCE_NODE_PRESENTS : 0;
         return target | source;
@@ -323,8 +324,8 @@ public class Resolver {
     }
 
     @SuppressWarnings(value = {"unused"})
-    private static List<Keys> processPKRef(Connection connection, List<Tables> lstTable, Integer counter) {
-        final List<Keys> lstPrimaryKey = new ArrayList<>();
+    private static List<IRelevance<String,List<String>>> processPKRef(Connection connection, List<Tables> lstTable, Integer counter) {
+        final List<IRelevance<String,List<String>>> lstPrimaryKey = new ArrayList<>();
         lstTable.forEach(
             meta -> pushPrimaryKeyInfo(connection, lstPrimaryKey, meta.getTableName()));
         System.out.println(
@@ -333,8 +334,8 @@ public class Resolver {
         return lstPrimaryKey;
     }
 
-    private static List<Keys> processFKRef(final Connection connection, List<Tables> lstTable) {
-        final List<Keys> lstForeignKey = new ArrayList<>();
+    private static List<IRelevance<String,List<String>>> processFKRef(final Connection connection, List<Tables> lstTable) {
+        final List<IRelevance<String,List<String>>> lstForeignKey = new ArrayList<>();
         lstTable.forEach(table -> pushForeignKeyInfo(connection, lstForeignKey, table.getTableName()));
         System.out.println(
             "~~~~~~~~~~~~~~~~~~~~~~~#Tables foreign keys reference information list#~~~~~~~~~~~~~~~~~~~~~~~");
@@ -342,7 +343,7 @@ public class Resolver {
         return lstForeignKey;
     }
 
-    private static void pushForeignKeyInfo(Connection connection, List<Keys> lstForeignKey, String tableName) {
+    private static void pushForeignKeyInfo(Connection connection, List<IRelevance<String,List<String>>> lstForeignKey, String tableName) {
         try (ResultSet foreignKeys = connection.getMetaData()
             .getExportedKeys(connection.getCatalog(), connection.getSchema(), tableName)) {
             handleRefKeys(lstForeignKey, foreignKeys);
@@ -351,7 +352,7 @@ public class Resolver {
         }
     }
 
-    private static void handleRefKeys(List<Keys> lstForeignKey, ResultSet foreignKeys) throws SQLException {
+    private static void handleRefKeys(List<IRelevance<String,List<String>>> lstForeignKey, ResultSet foreignKeys) throws SQLException {
         int counter = 0;
         Map<String, Integer> identifiers = new WeakHashMap<>();
         while (foreignKeys.next()) {
@@ -370,12 +371,15 @@ public class Resolver {
                 identifiers.put(symbol, counter++);
                 lstForeignKey.add(foreignKeyInfo);
             } else {
-                lstForeignKey.get(lstForeignKey.size() - counter + specified).addFkColumnName(fkColumnName);
+                IRelevance<String,List<String>> reference = lstForeignKey.get(lstForeignKey.size() - counter + specified);
+                if(Keys.class.isAssignableFrom(reference.getClass())){
+                    Keys.class.cast(reference).addFkColumnName(fkColumnName);
+                }
             }
         }
     }
 
-    private static void pushPrimaryKeyInfo(Connection connection, List<Keys> lstPrimaryKey, String tableName) {
+    private static void pushPrimaryKeyInfo(Connection connection, List<IRelevance<String,List<String>>> lstPrimaryKey, String tableName) {
         try (ResultSet primaryKeys = connection.getMetaData()
             .getImportedKeys(connection.getCatalog(), connection.getSchema(), tableName)) {
             handleRefKeys(lstPrimaryKey, primaryKeys);

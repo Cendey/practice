@@ -3,6 +3,7 @@ package edu.mit.lab.utils;
 import edu.mit.lab.constant.Scheme;
 import edu.mit.lab.entry.Tree;
 import edu.mit.lab.entry.TreeNode;
+import edu.mit.lab.infts.IRelevance;
 import edu.mit.lab.meta.Keys;
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.collections4.MapUtils;
@@ -176,9 +177,9 @@ public class ElemUtility {
         return height;
     }
 
-    public static void addNodeInfo(Keys item, Node target, Node source) {
+    public static void addNodeInfo(IRelevance<String,List<String>> item, Node target, Node source) {
         if (!target.hasAttribute(Scheme.UI_LABEL)) {
-            target.addAttribute(Scheme.UI_LABEL, item.getPkTableName());
+            target.addAttribute(Scheme.UI_LABEL, item.to());
         }
         if (!target.hasAttribute(Scheme.DATA_CHILD)) {
             target.addAttribute(Scheme.DATA_CHILD, new ArrayList<String>());
@@ -186,7 +187,7 @@ public class ElemUtility {
         target.<List<String>>getAttribute(Scheme.DATA_CHILD).add(source.getId());
 
         if (!source.hasAttribute(Scheme.UI_LABEL)) {
-            source.addAttribute(Scheme.UI_LABEL, item.getFkTableName());
+            source.addAttribute(Scheme.UI_LABEL, item.from());
         }
         if (!source.hasAttribute(Scheme.DATA_PARENT)) {
             source.addAttribute(Scheme.DATA_PARENT, new ArrayList<String>());
@@ -194,8 +195,8 @@ public class ElemUtility {
         source.<List<String>>getAttribute(Scheme.DATA_PARENT).add(target.getId());
     }
 
-    public static void addEdgeInfo(Keys item, Edge edge) {
-        edge.addAttribute(Scheme.UI_LABEL, item.getFkColumnName().toString().replaceAll(",", "|"));
+    public static void addEdgeInfo(IRelevance<String,List<String>> item, Edge edge) {
+        edge.addAttribute(Scheme.UI_LABEL, item.attribute(Scheme.FK_COLUMN_NAME).toString().replaceAll(",", "|"));
     }
 
     private static void perform(Node root, Collection<String> tableIds, StringBuilder script) {
