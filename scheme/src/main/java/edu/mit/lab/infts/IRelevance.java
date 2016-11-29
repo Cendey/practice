@@ -16,5 +16,5 @@ public interface IRelevance<T, V> {
 
     T to();
 
-    V attribute(T key);
+    V property(T name);
 }

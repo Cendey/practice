@@ -5,7 +5,6 @@ import edu.mit.lab.infts.IRelevance;
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
 
-import java.beans.PropertyDescriptor;
 import java.io.Serializable;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -24,7 +23,7 @@ import java.util.List;
  * @version 1.0
  * @since 11/14/2016
  */
-public class Keys implements IRelevance<String, List<String>>, Comparator, Serializable {
+public class Keys implements IRelevance<String,List<String>>, Comparator, Serializable {
 
     private String pkTableName;
     private List<String> pkColumnName;
@@ -171,7 +170,7 @@ public class Keys implements IRelevance<String, List<String>>, Comparator, Seria
 
     @Override
     @SuppressWarnings(value = {"unchecked"})
-    public List<String> attribute(String key) {
+    public List<String> property(String key) {
         List<String> attribute = new ArrayList<>();
         try {
             Method reader = getClass().getMethod("get" + StringUtils.upperCase(key.substring(0, 1)) + key.substring(1));
