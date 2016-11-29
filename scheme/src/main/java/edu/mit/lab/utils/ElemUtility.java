@@ -196,8 +196,7 @@ public class ElemUtility {
     }
 
     public static void addEdgeInfo(IRelevance<String,List<String>> item, Edge edge) {
-        List<String> reference = item.property(Scheme.FK_COLUMN_NAME);
-        edge.addAttribute(Scheme.UI_LABEL, reference.toString().replaceAll(",", " | "));
+        edge.addAttribute(Scheme.UI_LABEL, item.property(Scheme.FK_COLUMN_NAME).toString().replaceAll(",", " | "));
     }
 
     private static void perform(Node root, Collection<String> tableIds, StringBuilder script) {
