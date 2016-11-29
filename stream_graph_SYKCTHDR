@@ -1,0 +1,42 @@
+DGS004
+null 0 0
+cg  "ui.quality":true
+cg  "ui.antialias":true
+cg  "ui.stylesheet":"url(css/polish.css)"
+cg  "ui.default.title":"SYKCTHDR"
+an "nSYKCTHDR"
+cn "nSYKCTHDR"  "ui.class":"root"
+cn "nSYKCTHDR"  "ui.label":"SYKCTHDR"
+cn "nSYKCTHDR"  "Component":65
+cn "nSYKCTHDR"  "data.child":"[nSYKCTCASE, nSYKCTSCEN]"
+an "nSYKCTCASE"
+cn "nSYKCTCASE"  "data.parent":"[nSYKCTHDR]"
+cn "nSYKCTCASE"  "ui.class":"leaf"
+cn "nSYKCTCASE"  "ui.label":"SYKCTCASE"
+cn "nSYKCTCASE"  "Component":65
+an "nSYKCTSCEN"
+cn "nSYKCTSCEN"  "data.parent":"[nSYKCTHDR]"
+cn "nSYKCTSCEN"  "ui.label":"SYKCTSCEN"
+cn "nSYKCTSCEN"  "Component":65
+cn "nSYKCTSCEN"  "data.child":"[nSYKCTLISTEN]"
+an "nSYKCTLISTEN"
+cn "nSYKCTLISTEN"  "data.parent":"[nSYKCTSCEN]"
+cn "nSYKCTLISTEN"  "ui.label":"SYKCTLISTEN"
+cn "nSYKCTLISTEN"  "Component":65
+cn "nSYKCTLISTEN"  "data.child":"[nSYKCTAPPLYCASE]"
+an "nSYKCTAPPLYCASE"
+cn "nSYKCTAPPLYCASE"  "data.parent":"[nSYKCTLISTEN]"
+cn "nSYKCTAPPLYCASE"  "ui.class":"leaf"
+cn "nSYKCTAPPLYCASE"  "ui.label":"SYKCTAPPLYCASE"
+cn "nSYKCTAPPLYCASE"  "Component":65
+ae "eSYKCTHDRSYKCTCASE" "nSYKCTCASE" > "nSYKCTHDR"
+ce "eSYKCTHDRSYKCTCASE"  "ui.label":"[SYKCTHDRUNID]"
+ce "eSYKCTHDRSYKCTCASE"  "ui.class":"root"
+ae "eSYKCTHDRSYKCTSCEN" "nSYKCTSCEN" > "nSYKCTHDR"
+ce "eSYKCTHDRSYKCTSCEN"  "ui.label":"[SYKCTHDRUNID]"
+ce "eSYKCTHDRSYKCTSCEN"  "ui.class":"root"
+ae "eSYKCTSCENSYKCTLISTEN" "nSYKCTLISTEN" > "nSYKCTSCEN"
+ce "eSYKCTSCENSYKCTLISTEN"  "ui.label":"[SYKCTHDRUNID |  SCENSNO]"
+ae "eSYKCTLISTENSYKCTAPPLYCASE" "nSYKCTAPPLYCASE" > "nSYKCTLISTEN"
+ce "eSYKCTLISTENSYKCTAPPLYCASE"  "ui.label":"[SYKCTHDRUNID |  SCENSNO |  LISTENSNO]"
+ce "eSYKCTLISTENSYKCTAPPLYCASE"  "ui.class":"leaf"

@@ -15,6 +15,9 @@ import org.graphstream.graph.Graph;
 import org.graphstream.graph.GraphFactory;
 import org.graphstream.graph.Node;
 import org.graphstream.graph.implementations.SingleGraph;
+import org.graphstream.stream.file.FileSinkDGS;
+import org.graphstream.ui.view.Viewer;
+import org.graphstream.ui.view.ViewerPipe;
 
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -56,6 +59,8 @@ public class Resolver {
 
     private static final int HEIGHT_THRESHOLD = 3;
     private static final String SCRIPT_FILE_NAME = "clear_data_script.sql";
+    private static final String GRAPH_FILE_NAME_PREFIX = "stream_graph_";
+    private static final String GRAPH_FILE_NAME_SUFFIX = ".dgs";
 
     private SortedSet<String> rootNodeIds;
 
@@ -103,7 +108,7 @@ public class Resolver {
     public static void main(String[] args) throws InterruptedException {
         long start = System.currentTimeMillis();
         Resolver resolver = new Resolver();
-        List<IRelevance<String,List<String>>> lstFKRef = null;
+        List<IRelevance<String, List<String>>> lstFKRef = null;
         try (Connection connection = createConnection()) {
             DatabaseMetaData metaData = connection.getMetaData();
             resolver.processEntityType(metaData);
@@ -127,10 +132,28 @@ public class Resolver {
             System.out
                 .println(status.get() == 0 ? "Success to generate SQL script!" : "Failed to generate SQL script!");
             graphs.get().forEach(
-                graph -> {
+                graph -> new Thread(() -> {
                     graph.display();
-                    ElemUtility.listener(graph);
-                }
+                    try {
+                        graph.write(new FileSinkDGS(), Scheme.WORK_DIR
+                            + GRAPH_FILE_NAME_PREFIX + graph.getId() + GRAPH_FILE_NAME_SUFFIX);
+                    } catch (IOException e) {
+                        System.err.println(e.getMessage());
+                    }
+
+                    Viewer viewer = new Viewer(graph, Viewer.ThreadingModel.GRAPH_IN_GUI_THREAD);
+                    ViewerPipe pipe = viewer.newViewerPipe();
+                    pipe.addViewerListener(ElemUtility.listener(graph));
+                    pipe.addSink(graph);
+                    while (true) {
+                        try {
+                            Thread.sleep(100);
+                            pipe.pump();
+                        } catch (InterruptedException e) {
+                            System.err.println(e.getMessage());
+                        }
+                    }
+                }).start()
             );
             executor.shutdown();
         } catch (ExecutionException e) {
@@ -163,7 +186,7 @@ public class Resolver {
         return complement;
     }
 
-    private Graph overview(List<IRelevance<String,List<String>>> lstFKRef) {
+    private Graph overview(List<IRelevance<String, List<String>>> lstFKRef) {
         //Remember processed tables position which corresponding to position in the list of nodes
         Graph overview = new GraphFactory().newInstance(Scheme.DEPENDENCY, SingleGraph.class.getName());
         if (!CollectionUtils.isEmpty(lstFKRef)) {
@@ -198,9 +221,7 @@ public class Resolver {
 
             script.append(Scheme.STD_SQL_COMMIT);
             try (OutputStreamWriter writer = new OutputStreamWriter(
-                new FileOutputStream(
-                    System.getProperty(Scheme.USER_DIR) + System.getProperty(Scheme.FILE_SEPARATOR) + SCRIPT_FILE_NAME,
-                    false),
+                new FileOutputStream(Scheme.WORK_DIR + SCRIPT_FILE_NAME, false),
                 Charset.forName(Scheme.UTF_8).newEncoder())) {
                 writer.write(script.toString());
                 writer.flush();
@@ -211,7 +232,7 @@ public class Resolver {
         };
     }
 
-    private static void build(Graph graph, IRelevance<String,List<String>> item) {
+    private static void build(Graph graph, IRelevance<String, List<String>> item) {
         String targetNodeId = Scheme.NODE_PREFIX + item.to();
         String sourceNodeId = Scheme.NODE_PREFIX + item.from();
         String linkEdgeId = Scheme.EDGE_PREFIX + item.to() + item.from();
@@ -281,7 +302,7 @@ public class Resolver {
         graphs.add(result);
     }
 
-    private static int present(Graph graph, IRelevance<String,List<String>> item) {
+    private static int present(Graph graph, IRelevance<String, List<String>> item) {
         String targetId = Scheme.NODE_PREFIX + item.to();
         String sourceId = Scheme.NODE_PREFIX + item.from();
         int target = graph.getNode(targetId) != null ? Scheme.ONLY_TARGET_NODE_PRESENTS : 0;
@@ -324,8 +345,9 @@ public class Resolver {
     }
 
     @SuppressWarnings(value = {"unused"})
-    private static List<IRelevance<String,List<String>>> processPKRef(Connection connection, List<Tables> lstTable, Integer counter) {
-        final List<IRelevance<String,List<String>>> lstPrimaryKey = new ArrayList<>();
+    private static List<IRelevance<String, List<String>>> processPKRef(
+        Connection connection, List<Tables> lstTable, Integer counter) {
+        final List<IRelevance<String, List<String>>> lstPrimaryKey = new ArrayList<>();
         lstTable.forEach(
             meta -> pushPrimaryKeyInfo(connection, lstPrimaryKey, meta.getTableName()));
         System.out.println(
@@ -334,8 +356,9 @@ public class Resolver {
         return lstPrimaryKey;
     }
 
-    private static List<IRelevance<String,List<String>>> processFKRef(final Connection connection, List<Tables> lstTable) {
-        final List<IRelevance<String,List<String>>> lstForeignKey = new ArrayList<>();
+    private static List<IRelevance<String, List<String>>> processFKRef(
+        final Connection connection, List<Tables> lstTable) {
+        final List<IRelevance<String, List<String>>> lstForeignKey = new ArrayList<>();
         lstTable.forEach(table -> pushForeignKeyInfo(connection, lstForeignKey, table.getTableName()));
         System.out.println(
             "~~~~~~~~~~~~~~~~~~~~~~~#Tables foreign keys reference information list#~~~~~~~~~~~~~~~~~~~~~~~");
@@ -343,7 +366,8 @@ public class Resolver {
         return lstForeignKey;
     }
 
-    private static void pushForeignKeyInfo(Connection connection, List<IRelevance<String,List<String>>> lstForeignKey, String tableName) {
+    private static void pushForeignKeyInfo(
+        Connection connection, List<IRelevance<String, List<String>>> lstForeignKey, String tableName) {
         try (ResultSet foreignKeys = connection.getMetaData()
             .getExportedKeys(connection.getCatalog(), connection.getSchema(), tableName)) {
             handleRefKeys(lstForeignKey, foreignKeys);
@@ -352,7 +376,8 @@ public class Resolver {
         }
     }
 
-    private static void handleRefKeys(List<IRelevance<String,List<String>>> lstForeignKey, ResultSet foreignKeys) throws SQLException {
+    private static void handleRefKeys(List<IRelevance<String, List<String>>> lstForeignKey, ResultSet foreignKeys)
+        throws SQLException {
         int counter = 0;
         Map<String, Integer> identifiers = new WeakHashMap<>();
         while (foreignKeys.next()) {
@@ -371,15 +396,17 @@ public class Resolver {
                 identifiers.put(symbol, counter++);
                 lstForeignKey.add(foreignKeyInfo);
             } else {
-                IRelevance<String,List<String>> reference = lstForeignKey.get(lstForeignKey.size() - counter + specified);
-                if(Keys.class.isAssignableFrom(reference.getClass())){
+                IRelevance<String, List<String>> reference =
+                    lstForeignKey.get(lstForeignKey.size() - counter + specified);
+                if (Keys.class.isAssignableFrom(reference.getClass())) {
                     Keys.class.cast(reference).addFkColumnName(fkColumnName);
                 }
             }
         }
     }
 
-    private static void pushPrimaryKeyInfo(Connection connection, List<IRelevance<String,List<String>>> lstPrimaryKey, String tableName) {
+    private static void pushPrimaryKeyInfo(
+        Connection connection, List<IRelevance<String, List<String>>> lstPrimaryKey, String tableName) {
         try (ResultSet primaryKeys = connection.getMetaData()
             .getImportedKeys(connection.getCatalog(), connection.getSchema(), tableName)) {
             handleRefKeys(lstPrimaryKey, primaryKeys);

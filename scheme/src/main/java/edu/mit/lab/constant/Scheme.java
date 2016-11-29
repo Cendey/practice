@@ -110,4 +110,6 @@ public class Scheme {
     public static final String IDENTIFIED = "identified";
     public static final String MARKED = "marked";
     public static final List<String> STATUS = Collections.unmodifiableList(Arrays.asList(IDENTIFIED, MARKED));
+    public static final String WORK_DIR =
+        System.getProperty(Scheme.USER_DIR) + System.getProperty(Scheme.FILE_SEPARATOR);
 }
