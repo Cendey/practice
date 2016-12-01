@@ -155,6 +155,7 @@ public class Resolver {
             Viewer viewer = graph.display();
             ViewerPipe pipe = viewer.newViewerPipe();
             pipe.addViewerListener(listener(graph));
+            //Refer to https://github.com/graphstream/gs-core/issues/209
             pipe.addAttributeSink(graph);
             boolean loop = true;
             while (loop) {

@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9fc2e707-20c6-402b-95b8-f28819b72193" name="Default" comment="delete generate stream graph files.">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/scheme/target/classes/edu/mit/lab/utils/ElemUtility$1.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scheme/target/classes/edu/mit/lab/core/Resolver.class" afterPath="$PROJECT_DIR$/scheme/target/classes/edu/mit/lab/core/Resolver.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scheme/target/classes/edu/mit/lab/utils/ElemUtility.class" afterPath="$PROJECT_DIR$/scheme/target/classes/edu/mit/lab/utils/ElemUtility.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/core/Resolver.java" afterPath="$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/core/Resolver.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/utils/ElemUtility.java" afterPath="$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/utils/ElemUtility.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/work/clear_data_script.sql" afterPath="$PROJECT_DIR$/work/clear_data_script.sql" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/work/stream_graph_CTRFHDR.dgs" afterPath="$PROJECT_DIR$/work/stream_graph_CTRFHDR.dgs" />
     </list>
     <ignored path="$PROJECT_DIR$/analysis/target/" />
     <ignored path="$PROJECT_DIR$/scheme/target/" />
@@ -41,8 +34,8 @@
       <file leaf-file-name="Resolver.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/core/Resolver.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="244">
-              <caret line="135" column="28" lean-forward="false" selection-start-line="135" selection-start-column="20" selection-end-line="135" selection-end-column="28" />
+            <state relative-caret-position="275">
+              <caret line="157" column="72" lean-forward="false" selection-start-line="157" selection-start-column="72" selection-end-line="157" selection-end-column="72" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -977,7 +970,7 @@
       <workItem from="1480402602348" duration="10599000" />
       <workItem from="1480470521401" duration="13844000" />
       <workItem from="1480552341216" duration="2072000" />
-      <workItem from="1480554549972" duration="6406000" />
+      <workItem from="1480554549972" duration="6678000" />
     </task>
     <task id="LOCAL-00001" summary="Revise pom artifact Id">
       <created>1480317832255</created>
@@ -1025,7 +1018,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="54056000" />
+    <option name="totallyTimeSpent" value="54328000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="54" y="-8" width="1634" height="1066" extended-state="6" />
@@ -1088,37 +1081,37 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/core/Resolver.java</url>
-          <line>171</line>
+          <line>172</line>
           <properties />
           <option name="timeStamp" value="17" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/core/Resolver.java</url>
-          <line>232</line>
+          <line>233</line>
           <properties />
           <option name="timeStamp" value="18" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/core/Resolver.java</url>
-          <line>467</line>
+          <line>468</line>
           <properties />
           <option name="timeStamp" value="25" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/core/Resolver.java</url>
-          <line>472</line>
+          <line>473</line>
           <properties />
           <option name="timeStamp" value="26" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/core/Resolver.java</url>
-          <line>482</line>
+          <line>483</line>
           <properties />
           <option name="timeStamp" value="27" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/core/Resolver.java</url>
-          <line>160</line>
+          <line>161</line>
           <properties />
           <option name="timeStamp" value="38" />
         </line-breakpoint>
@@ -1550,8 +1543,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/core/Resolver.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="244">
-          <caret line="135" column="28" lean-forward="false" selection-start-line="135" selection-start-column="20" selection-end-line="135" selection-end-column="28" />
+        <state relative-caret-position="275">
+          <caret line="157" column="72" lean-forward="false" selection-start-line="157" selection-start-column="72" selection-end-line="157" selection-end-column="72" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
