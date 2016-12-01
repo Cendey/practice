@@ -133,14 +133,14 @@ public class Resolver {
                 .println(status.get() == 0 ? "Success to generate SQL script!" : "Failed to generate SQL script!");
             graphs.get().forEach(
                 graph -> {
-                    executor.submit(resolver.persist(graph));
+                    executor.execute(resolver.persist(graph));
 
-                    resolver.display(graph);
+                    executor.execute(resolver.display(graph));
                 }
             );
-            executor.shutdown();
         } catch (ExecutionException e) {
             System.err.println(e.getMessage());
+            executor.shutdown();
         }
         long end = System.currentTimeMillis();
         long duration = end - start;
@@ -150,8 +150,8 @@ public class Resolver {
                     .toSeconds(TimeUnit.MILLISECONDS.toMinutes(duration))));
     }
 
-    private void display(final Graph graph) {
-        new Thread(() -> {
+    private Runnable display(final Graph graph) {
+        return () -> {
             Viewer viewer = graph.display();
             ViewerPipe pipe = viewer.newViewerPipe();
             pipe.addViewerListener(listener(graph));
@@ -164,17 +164,16 @@ public class Resolver {
                     loop = false;
                 }
             }
-        }).start();
+        };
     }
 
-    private Callable<Integer> persist(Graph graph) {
+    private Runnable persist(Graph graph) {
         return () -> {
             try {
                 graph.write(Scheme.WORK_DIR + GRAPH_FILE_NAME_PREFIX + graph.getId() + GRAPH_FILE_NAME_SUFFIX);
             } catch (IOException e) {
                 System.err.println(e.getMessage());
             }
-            return 1;
         };
     }
 
