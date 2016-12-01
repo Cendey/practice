@@ -13,7 +13,6 @@ import org.graphstream.graph.DepthFirstIterator;
 import org.graphstream.graph.Edge;
 import org.graphstream.graph.Graph;
 import org.graphstream.graph.Node;
-import org.graphstream.ui.view.ViewerListener;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -40,38 +39,8 @@ import java.util.regex.Pattern;
 public class ElemUtility {
 
     private static final String EXCLUDED_PATTERN =
-        "^(FM|CTRF|VTRF|VC|CC|SY|IFM|MSG|WORK(FLOW|_EFFORT)|STRUCTURE|WF)\\w+|\\w+(ACCESS|SET(UP|TING)|TEMPLATE)$";
+        "^(?:FM|[CV](?=TRF)|VC|CC|SY|IFM|MSG|WORK(?=(FLOW|_EFFORT))|STRUCTURE|WF)\\w+|\\w+(?:ACCESS|SET(?:UP|TING)|TEMPLATE)$";
     public static final Pattern INSTANCE = Pattern.compile(EXCLUDED_PATTERN);
-
-    public static ViewerListener listener(Graph graph) {
-        return new ViewerListener() {
-            @Override
-            public void viewClosed(String viewName) {
-                System.out.println(String.format("Graphs[%s] ara closed!", viewName));
-                graph.addAttribute(Scheme.UI_VIEW_CLOSED,true);
-            }
-
-            @Override
-            public void buttonPushed(String id) {
-                Node node = graph.getNode(id);
-                if (node != null) {
-                    for (Edge edge : node.getEachLeavingEdge()) {
-                        edge.addAttribute(Scheme.UI_CLASS, Scheme.TIPS);
-                    }
-                }
-            }
-
-            @Override
-            public void buttonReleased(String id) {
-                Node node = graph.getNode(id);
-                if (node != null) {
-                    for (Edge edge : node.getEachLeavingEdge()) {
-                        edge.removeAttribute(Scheme.UI_CLASS);
-                    }
-                }
-            }
-        };
-    }
 
     private static <T> void processNode(Graph graph, TreeNode<T> node) {
         String nodeId = Scheme.NODE_PREFIX + String.valueOf(node.data());

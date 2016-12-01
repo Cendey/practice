@@ -16,6 +16,7 @@ import org.graphstream.graph.GraphFactory;
 import org.graphstream.graph.Node;
 import org.graphstream.graph.implementations.SingleGraph;
 import org.graphstream.ui.view.Viewer;
+import org.graphstream.ui.view.ViewerListener;
 import org.graphstream.ui.view.ViewerPipe;
 
 import java.io.FileOutputStream;
@@ -149,24 +150,20 @@ public class Resolver {
                     .toSeconds(TimeUnit.MILLISECONDS.toMinutes(duration))));
     }
 
-    private void display(Graph graph) {
-        Viewer viewer = graph.display();
-        viewer.setCloseFramePolicy(Viewer.CloseFramePolicy.HIDE_ONLY);
-        ViewerPipe pipe = viewer.newViewerPipe();
-        pipe.addViewerListener(ElemUtility.listener(graph));
-        pipe.addSink(graph);
-        boolean loop = true;
-        while (loop) {
-            try {
-                Thread.sleep(100);
+    private void display(final Graph graph) {
+        new Thread(() -> {
+            Viewer viewer = graph.display();
+            ViewerPipe pipe = viewer.newViewerPipe();
+            pipe.addViewerListener(listener(graph));
+            pipe.addAttributeSink(graph);
+            boolean loop = true;
+            while (loop) {
                 pipe.pump();
                 if (graph.hasAttribute(Scheme.UI_VIEW_CLOSED)) {
                     loop = false;
                 }
-            } catch (InterruptedException e) {
-                System.err.println(e.getMessage());
             }
-        }
+        }).start();
     }
 
     private Callable<Integer> persist(Graph graph) {
@@ -464,4 +461,32 @@ public class Resolver {
         lstTable.add(tableMeta);
     }
 
+    private ViewerListener listener(Graph graph) {
+        return new ViewerListener() {
+            @Override
+            public void viewClosed(String viewName) {
+                System.out.println(String.format("Graphs[%s] ara closed!", graph.getId()));
+            }
+
+            @Override
+            public void buttonPushed(String id) {
+                Node node = graph.getNode(id);
+                if (node != null) {
+                    for (Edge edge : node.getEachLeavingEdge()) {
+                        edge.addAttribute(Scheme.UI_CLASS, Scheme.TIPS);
+                    }
+                }
+            }
+
+            @Override
+            public void buttonReleased(String id) {
+                Node node = graph.getNode(id);
+                if (node != null) {
+                    for (Edge edge : node.getEachLeavingEdge()) {
+                        edge.removeAttribute(Scheme.UI_CLASS);
+                    }
+                }
+            }
+        };
+    }
 }
