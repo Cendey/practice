@@ -52,10 +52,6 @@ edge.leaf {
     fill-color: #008000;
 }
 
-edge.tips {
-    text-mode: normal;
-}
-
 sprite {
     shape: circle;
     size: 3px;

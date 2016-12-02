@@ -6,7 +6,7 @@ import edu.mit.lab.constant.Scheme;
 import edu.mit.lab.infts.IRelevance;
 import edu.mit.lab.meta.Keys;
 import edu.mit.lab.meta.Tables;
-import edu.mit.lab.utils.ElemUtility;
+import edu.mit.lab.utils.Toolkit;
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.collections4.MapUtils;
 import org.apache.commons.lang3.StringUtils;
@@ -64,8 +64,8 @@ public class Resolver {
     private static final String GRAPH_FILE_NAME_SUFFIX = ".dgs";
     private static final int FIXED_ROW_COUNT = 50;
 
+    private int viewClosedCounter;
     private SortedSet<String> rootNodeIds;
-
     private List<String> tableIds;
     private StringBuilder script;
 
@@ -78,6 +78,7 @@ public class Resolver {
     }
 
     private void init() {
+        viewClosedCounter = 0;
         tableIds = new LinkedList<>();
         script = new StringBuilder(Scheme.PREVENT_EDITOR_ADD_BOM_HEADER);
     }
@@ -124,7 +125,7 @@ public class Resolver {
         }
 //        List<Tree<String>> trees = buildTableTree(lstFKRef);
         Graph overview = resolver.overview(lstFKRef);
-        resolver.setRootNodeIds(ElemUtility.resolveDisconnectedGraph(overview));
+        resolver.setRootNodeIds(Toolkit.resolveDisconnectedGraph(overview));
 
         ExecutorService executor = Executors.newFixedThreadPool(10);
         Future<Integer> status = executor.submit(resolver.genSQLScript(overview));
@@ -133,7 +134,9 @@ public class Resolver {
         try {
             System.out
                 .println(status.get() == 0 ? "Success to generate SQL script!" : "Failed to generate SQL script!");
-            graphs.get().forEach(
+            List<Graph> lstGraph = graphs.get();
+            resolver.viewClosedCounter = lstGraph.size();
+            lstGraph.forEach(
                 graph -> {
                     executor.execute(resolver.persist(graph));
 
@@ -156,7 +159,7 @@ public class Resolver {
     private Runnable display(final Graph graph) {
         return () -> {
             Viewer viewer = graph.display();
-            viewer.setCloseFramePolicy(Viewer.CloseFramePolicy.EXIT);
+            viewer.setCloseFramePolicy(Viewer.CloseFramePolicy.HIDE_ONLY);
             ViewerPipe pipe = viewer.newViewerPipe();
             pipe.addViewerListener(listener(graph));
             //Refer to https://github.com/graphstream/gs-core/issues/209
@@ -166,7 +169,9 @@ public class Resolver {
                 pipe.pump();
                 if (graph.hasAttribute(Scheme.UI_VIEW_CLOSED)) {
                     loop = false;
-                    viewer.close();
+                    if (viewClosedCounter == 0) {
+                        viewer.close();
+                    }
                 }
             }
         };
@@ -192,7 +197,7 @@ public class Resolver {
     private StringBuilder genAuditLogScript() {
         StringBuilder complement = new StringBuilder(Scheme.STD_SQL_COMMENTS_BOILERPLATE_FOR_AUDIT_LOG_TABLES);
         tableIds.forEach(item -> {
-            boolean exclusive = ElemUtility.INSTANCE.matcher(item).matches();
+            boolean exclusive = Toolkit.INSTANCE.matcher(item).matches();
             complement.append(String
                 .format(
                     (exclusive ? "--" : "") + Scheme.STD_SQL_DELETE_STATEMENT,
@@ -219,13 +224,13 @@ public class Resolver {
                     script.append(String.format(
                         Scheme.STD_SQL_COMMENTS_BOILERPLATE,
                         StringUtils.removeFirst(rootId.toLowerCase(), Scheme.NODE_PREFIX)));
-                    ElemUtility.postTraverse(graph, root, untouched, script);
+                    Toolkit.postTraverse(graph, root, untouched, script);
                 }
             );
 
             script.append(Scheme.STD_SQL_COMMENTS_BOILERPLATE_FOR_INDEPENDENT_TABLES);
             untouched.forEach(item -> {
-                boolean exclusive = ElemUtility.INSTANCE.matcher(item).matches();
+                boolean exclusive = Toolkit.INSTANCE.matcher(item).matches();
                 script.append(
                     String.format(
                         (exclusive ? "--" : "") + Scheme.STD_SQL_DELETE_STATEMENT,
@@ -270,9 +275,9 @@ public class Resolver {
                 target = graph.getNode(targetNodeId);
                 source = graph.getNode(sourceNodeId);
         }
-        ElemUtility.addNodeInfo(item, target, source);
+        Toolkit.addNodeInfo(item, target, source);
         Edge edge = graph.addEdge(linkEdgeId, sourceNodeId, targetNodeId, true);
-        ElemUtility.addEdgeInfo(item, edge);
+        Toolkit.addEdgeInfo(item, edge);
     }
 
     private Callable<List<Graph>> graphs(final Graph graph) {
@@ -280,7 +285,7 @@ public class Resolver {
         return () -> {
             rootNodeIds.forEach(rootId -> {
                 Node root = graph.getNode(rootId);
-                if (ElemUtility.height(root) >= HEIGHT_THRESHOLD) graph(graphs, root, rootId);
+                if (Toolkit.height(root) >= HEIGHT_THRESHOLD) graph(graphs, root, rootId);
             });
             return graphs;
         };
@@ -475,6 +480,7 @@ public class Resolver {
         return new ViewerListener() {
             @Override
             public void viewClosed(String viewName) {
+                --viewClosedCounter;
                 System.out.println(String.format("Graphs[%s] ara closed!", graph.getId()));
             }
 
@@ -483,7 +489,7 @@ public class Resolver {
                 Node node = graph.getNode(id);
                 if (node != null) {
                     for (Edge edge : node.getEachLeavingEdge()) {
-                        edge.addAttribute(Scheme.UI_CLASS, Scheme.TIPS);
+                        edge.setAttribute(Scheme.TEXT_MODE, Scheme.SHOW_TIPS);
                     }
                 }
             }
@@ -493,7 +499,7 @@ public class Resolver {
                 Node node = graph.getNode(id);
                 if (node != null) {
                     for (Edge edge : node.getEachLeavingEdge()) {
-                        edge.removeAttribute(Scheme.UI_CLASS);
+                        edge.setAttribute(Scheme.TEXT_MODE, Scheme.HIDE_TIPS);
                     }
                 }
             }

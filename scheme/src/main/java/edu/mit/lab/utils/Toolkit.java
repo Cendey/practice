@@ -28,7 +28,7 @@ import java.util.regex.Pattern;
 
 /**
  * <p>Title: MIT Lib Project</p>
- * <p>Description: edu.mit.lab.utils.ElemUtility</p>
+ * <p>Description: edu.mit.lab.utils.Toolkit</p>
  * <p>Copyright: Copyright (c) 2016</p>
  * <p>Company: MIT Lib Co., Ltd</p>
  *
@@ -36,7 +36,7 @@ import java.util.regex.Pattern;
  * @version 1.0
  * @since 11/23/2016
  */
-public class ElemUtility {
+public class Toolkit {
 
     private static final String EXCLUDED_PATTERN =
         "^(?:FM|[CV](?=TRF)|VC|CC|SY|IFM|MSG|WORK(?=(FLOW|_EFFORT))|STRUCTURE|WF)\\w+|\\w+(?:ACCESS|SET(?:UP|TING)|TEMPLATE)$";
