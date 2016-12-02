@@ -376,35 +376,15 @@ public class Resolver {
     }
 
     private List<IRelevance<String, List<String>>> pushForeignKeyInfo(Connection connection) {
-        List<IRelevance<String, List<String>>> lstForeignKey = null;
-        try (PreparedStatement preparedStatement =
-                 connection
-                     .prepareStatement(foreignKeyConstraintSQL().toString(), PreparedStatement.NO_GENERATED_KEYS)) {
-            int times = 0;
-            boolean hasNext = true;
-            do {
-                preparedStatement.setString(0, connection.getSchema());
-                preparedStatement.setInt(1, times * FIXED_ROW_COUNT);
-                preparedStatement.setInt(2, (times + 1) * FIXED_ROW_COUNT);
-                try (ResultSet foreignKeys = preparedStatement.executeQuery()) {
-                    hasNext = foreignKeys.isBeforeFirst();
-                    lstForeignKey = handleRefKeys(foreignKeys);
-                } catch (SQLException e) {
-                    System.err.println(e.getMessage());
-                }
-                ++times;
-            } while (hasNext);
-        } catch (SQLException e) {
-            System.err.println(e.getMessage());
-        }
+        List<IRelevance<String, List<String>>> lstForeignKey = new ArrayList<>();
+        processKeysInfo(connection, lstForeignKey, true);
         return lstForeignKey;
     }
 
-    private List<IRelevance<String, List<String>>> handleRefKeys(ResultSet foreignKeys)
+    private void handleRefKeys(
+        ResultSet foreignKeys, List<IRelevance<String, List<String>>> lstForeignKey, Map<String, Integer> identifiers)
         throws SQLException {
         int counter = 0;
-        Map<String, Integer> identifiers = new WeakHashMap<>();
-        List<IRelevance<String, List<String>>> lstForeignKey = new ArrayList<>();
         while (foreignKeys.next()) {
             String pkTableName = foreignKeys.getString(Scheme.PKTABLE_NAME);
             String fkTableName = foreignKeys.getString(Scheme.FKTABLE_NAME);
@@ -428,22 +408,37 @@ public class Resolver {
                 }
             }
         }
-        return lstForeignKey;
     }
 
     private List<IRelevance<String, List<String>>> pushPrimaryKeyInfo(Connection connection) {
-        List<IRelevance<String, List<String>>> lstPrimaryKey = null;
-        try (PreparedStatement preparedStatement = connection.prepareStatement(primaryKeyConstraintSQL().toString())) {
+        List<IRelevance<String, List<String>>> lstPrimaryKey = new ArrayList<>();
+        processKeysInfo(connection, lstPrimaryKey, false);
+        return lstPrimaryKey;
+    }
+
+    private void processKeysInfo(
+        Connection connection, List<IRelevance<String, List<String>>> lstPrimaryKey, boolean forExportKeys) {
+        try (PreparedStatement preparedStatement = connection.prepareStatement(
+            forExportKeys ? foreignKeyConstraintSQL().toString() : primaryKeyConstraintSQL().toString())) {
             preparedStatement.setString(0, connection.getSchema());
-            try (ResultSet primaryKeys = preparedStatement.executeQuery()) {
-                lstPrimaryKey = handleRefKeys(primaryKeys);
-            } catch (SQLException e) {
-                System.err.println(e.getMessage());
-            }
+            int times = 0;
+            boolean hasNext = true;
+            Map<String, Integer> identifiers = new WeakHashMap<>();
+            do {
+                preparedStatement.setString(0, connection.getSchema());
+                preparedStatement.setInt(1, times * FIXED_ROW_COUNT);
+                preparedStatement.setInt(2, (times + 1) * FIXED_ROW_COUNT);
+                try (ResultSet foreignKeys = preparedStatement.executeQuery()) {
+                    hasNext = foreignKeys.isBeforeFirst();
+                    handleRefKeys(foreignKeys, lstPrimaryKey, identifiers);
+                } catch (SQLException e) {
+                    System.err.println(e.getMessage());
+                }
+                ++times;
+            } while (hasNext);
         } catch (SQLException e) {
             System.err.println(e.getMessage());
         }
-        return lstPrimaryKey;
     }
 
     private static void pushTableSummaryInfo(

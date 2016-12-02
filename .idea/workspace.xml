@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="9fc2e707-20c6-402b-95b8-f28819b72193" name="Default" comment="Replace loop to query foreign keys by sql.">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/core/Resolver.java" afterPath="$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/core/Resolver.java" />
     </list>
     <ignored path="$PROJECT_DIR$/analysis/target/" />
     <ignored path="$PROJECT_DIR$/scheme/target/" />
@@ -31,11 +32,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Resolver.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Resolver.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/core/Resolver.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="181">
-              <caret line="402" column="51" lean-forward="false" selection-start-line="402" selection-start-column="51" selection-end-line="402" selection-end-column="51" />
+            <state relative-caret-position="1677">
+              <caret line="360" column="41" lean-forward="true" selection-start-line="360" selection-start-column="41" selection-end-line="360" selection-end-column="41" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#11684#11692#0" expanded="true" />
@@ -43,16 +44,6 @@
                 <element signature="e#12303#12311#0" expanded="true" />
                 <element signature="e#14466#14503#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="workspace.xml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -234,8 +225,9 @@
         <option value="$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/constant/Scheme.java" />
         <option value="$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/meta/Keys.java" />
         <option value="$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/utils/ElemUtility.java" />
-        <option value="$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/core/Resolver.java" />
         <option value="$PROJECT_DIR$/webcart/.idea/workspace.xml" />
+        <option value="$PROJECT_DIR$/.idea/workspace.xml" />
+        <option value="$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/core/Resolver.java" />
       </list>
     </option>
   </component>
@@ -1024,7 +1016,7 @@
       <workItem from="1480552341216" duration="2072000" />
       <workItem from="1480554549972" duration="9692000" />
       <workItem from="1480572424613" duration="9824000" />
-      <workItem from="1480639613837" duration="8654000" />
+      <workItem from="1480639613837" duration="9569000" />
     </task>
     <task id="LOCAL-00001" summary="Revise pom artifact Id">
       <created>1480317832255</created>
@@ -1082,11 +1074,18 @@
       <option name="project" value="LOCAL" />
       <updated>1480649820411</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Replace loop to query foreign keys by sql.">
+      <created>1480649943371</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1480649943371</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="75820000" />
+    <option name="totallyTimeSpent" value="76735000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1099,7 +1098,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="54" y="-8" width="1634" height="1066" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1119,12 +1118,12 @@
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3290461" sideWeight="0.4974587" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290461" sideWeight="0.4974587" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28653112" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="JProfiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290461" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3290461" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1172,19 +1171,19 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/core/Resolver.java</url>
-          <line>488</line>
+          <line>483</line>
           <properties />
           <option name="timeStamp" value="25" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/core/Resolver.java</url>
-          <line>493</line>
+          <line>488</line>
           <properties />
           <option name="timeStamp" value="26" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/core/Resolver.java</url>
-          <line>503</line>
+          <line>498</line>
           <properties />
           <option name="timeStamp" value="27" />
         </line-breakpoint>
@@ -1738,10 +1737,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/core/Resolver.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="181">
-          <caret line="402" column="51" lean-forward="false" selection-start-line="402" selection-start-column="51" selection-end-line="402" selection-end-column="51" />
+        <state relative-caret-position="1677">
+          <caret line="360" column="41" lean-forward="true" selection-start-line="360" selection-start-column="41" selection-end-line="360" selection-end-column="41" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#11684#11692#0" expanded="true" />
@@ -1749,14 +1756,6 @@
             <element signature="e#12303#12311#0" expanded="true" />
             <element signature="e#14466#14503#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
