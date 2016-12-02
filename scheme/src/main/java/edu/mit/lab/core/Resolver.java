@@ -400,9 +400,7 @@ public class Resolver {
                 identifiers.put(symbol, lstForeignKey.size() - 1);
             } else {
                 IRelevance<String, List<String>> reference = lstForeignKey.get(pos);
-                if (Keys.class.isAssignableFrom(reference.getClass())) {
-                    Keys.class.cast(reference).addFkColumnName(fkColumnName);
-                }
+                reference.set(fkColumnName);
             }
         }
     }

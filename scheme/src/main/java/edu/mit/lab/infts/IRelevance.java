@@ -16,5 +16,7 @@ public interface IRelevance<T, V> {
 
     T to();
 
-    V property(T name);
+    V get(T name);
+
+    void set(T item);
 }

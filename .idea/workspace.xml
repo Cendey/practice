@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9fc2e707-20c6-402b-95b8-f28819b72193" name="Default" comment="Replace loop to query foreign keys by sql.">
+    <list default="true" id="9fc2e707-20c6-402b-95b8-f28819b72193" name="Default" comment="Code optimized">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/core/Resolver.java" afterPath="$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/core/Resolver.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/infts/IRelevance.java" afterPath="$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/infts/IRelevance.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/meta/Keys.java" afterPath="$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/meta/Keys.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/utils/ElemUtility.java" afterPath="$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/utils/ElemUtility.java" />
     </list>
     <ignored path="$PROJECT_DIR$/analysis/target/" />
     <ignored path="$PROJECT_DIR$/scheme/target/" />
@@ -31,11 +35,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Resolver.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Resolver.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/core/Resolver.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
-              <caret line="430" column="42" lean-forward="true" selection-start-line="430" selection-start-column="42" selection-end-line="430" selection-end-column="42" />
+            <state relative-caret-position="370">
+              <caret line="402" column="27" lean-forward="false" selection-start-line="402" selection-start-column="27" selection-end-line="402" selection-end-column="27" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#6639#6640#0" expanded="true" />
@@ -45,26 +49,6 @@
                 <element signature="e#12366#12374#0" expanded="true" />
                 <element signature="e#14522#14559#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ArrayList.java" pinned="false" current-in-tab="false">
-        <entry file="jar://F:/Oracle/Java/x64/JDK/jdk1.8.0_66/src.zip!/java/util/ArrayList.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="199">
-              <caret line="456" column="19" lean-forward="false" selection-start-line="456" selection-start-column="19" selection-end-line="456" selection-end-column="19" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DatabaseMetaData.java" pinned="false" current-in-tab="false">
-        <entry file="jar://F:/Oracle/Java/x64/JDK/jdk1.8.0_66/src.zip!/java/sql/DatabaseMetaData.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="199">
-              <caret line="2081" column="14" lean-forward="false" selection-start-line="2081" selection-start-column="14" selection-end-line="2081" selection-end-column="14" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -79,120 +63,34 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="OracleDatabaseMetaData.class" pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/com/oracle/ojdbc7/12.1.0.2/ojdbc7-12.1.0.2.jar!/oracle/jdbc/OracleDatabaseMetaData.class">
+      <file leaf-file-name="IRelevance.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/infts/IRelevance.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17255">
-              <caret line="1041" column="14" lean-forward="false" selection-start-line="1041" selection-start-column="14" selection-end-line="1041" selection-end-column="14" />
-              <folding>
-                <marker date="1479086856649" expanded="true" signature="15477:16003" ph="SELECT\n -- all_objects" />
-                <marker date="1479086856649" expanded="true" signature="16031:16336" ph="SELECT\n -- all_procedures" />
-                <marker date="1479086856649" expanded="true" signature="16363:16478" ph="SELECT NULL\... all_arguments" />
-                <marker date="1479086856649" expanded="true" signature="16505:16850" ph="SELECT\n -- all_arguments" />
-                <marker date="1479086856649" expanded="true" signature="23455:25177" ph="SELECT arg.p... " />
-                <marker date="1479086856649" expanded="true" signature="28067:29760" ph="SELECT packa... " />
-                <marker date="1479086856649" expanded="true" signature="32571:32702" ph="SELECT NULL " />
-                <marker date="1479086856649" expanded="true" signature="34802:34938" ph="SELECT NULL " />
-                <marker date="1479086856649" expanded="true" signature="37037:37126" ph="SELECT usern... all_users" />
-                <marker date="1479086856649" expanded="true" signature="37404:37457" ph="select \'not... dual" />
-                <marker date="1479086856649" expanded="true" signature="37737:37777" ph="select \'TAB... dual" />
-                <marker date="1479086856649" expanded="true" signature="37737:37874" ph="select \'TAB... " />
-                <marker date="1479086856649" expanded="true" signature="37785:37824" ph="select \'VIE... dual" />
-                <marker date="1479086856649" expanded="true" signature="37832:37874" ph="select \'SYN... dual" />
-                <marker date="1479086856649" expanded="true" signature="38476:38839" ph="SELECT NULL all_col_privs" />
-                <marker date="1479086856649" expanded="true" signature="39307:39621" ph="SELECT NULL all_tab_privs" />
-                <marker date="1479086856649" expanded="true" signature="40065:40270" ph="SELECT 1 AS DUAL" />
-                <marker date="1479086856649" expanded="true" signature="40272:40847" ph="SELECT 2 AS all_tab_columns" />
-                <marker date="1479086856649" expanded="true" signature="41594:42123" ph="SELECT 0 AS all_trigger_cols" />
-                <marker date="1479086856649" expanded="true" signature="42507:42945" ph="SELECT NULL all_cons_columns" />
-                <marker date="1479086856649" expanded="true" signature="43578:44932" ph="SELECT NULL all_cons_columns" />
-                <marker date="1479086856649" expanded="true" signature="47440:47822" ph="select null all_tables" />
-                <marker date="1479086856649" expanded="true" signature="48068:48536" ph="select null all_indexes" />
-                <marker date="1479086856649" expanded="true" signature="55745:55856" ph="SELECT usern... all_users" />
-                <marker date="1479086856649" expanded="true" signature="56508:56597" ph="select NULL dual" />
-                <marker date="1479086856649" expanded="true" signature="56726:57058" ph="SELECT\n -- all_objects" />
-                <marker date="1479086856649" expanded="true" signature="57086:57446" ph="SELECT\n -- all_arguments" />
-                <marker date="1479086856649" expanded="true" signature="72778:72880" ph="select *\nfr... missingValue" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AbstractExecutorService.java" pinned="false" current-in-tab="false">
-        <entry file="jar://F:/Oracle/Java/x64/JDK/jdk1.8.0_66/src.zip!/java/util/concurrent/AbstractExecutorService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1649">
-              <caret line="132" column="40" lean-forward="false" selection-start-line="132" selection-start-column="40" selection-end-line="132" selection-end-column="40" />
-              <folding>
-                <element signature="e#0#10298#0" expanded="false" />
-                <element signature="e#4540#4551#0" expanded="false" />
-                <element signature="e#7616#7627#0" expanded="false" />
-                <element signature="e#8828#8839#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ForkJoinPool.java" pinned="false" current-in-tab="false">
-        <entry file="jar://F:/Oracle/Java/x64/JDK/jdk1.8.0_66/src.zip!/java/util/concurrent/ForkJoinPool.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="44387">
-              <caret line="2671" column="7" lean-forward="false" selection-start-line="2671" selection-start-column="7" selection-end-line="2671" selection-end-column="7" />
-              <folding>
-                <element signature="e#0#151621#0" expanded="false" />
-                <element signature="imports" expanded="false" />
-                <element signature="e#38366#38367#0" expanded="false" />
-                <element signature="e#38427#38428#0" expanded="false" />
-                <element signature="e#42950#42951#0" expanded="false" />
-                <element signature="e#43031#43032#0" expanded="false" />
-                <element signature="e#48634#48635#0" expanded="false" />
-                <element signature="e#48708#48709#0" expanded="false" />
-                <element signature="e#61768#61769#0" expanded="false" />
-                <element signature="e#61811#61812#0" expanded="false" />
-                <element signature="e#114596#114597#0" expanded="false" />
-                <element signature="e#114678#114679#0" expanded="false" />
-                <element signature="e#123470#123471#0" expanded="false" />
-                <element signature="e#123500#123501#0" expanded="false" />
-                <element signature="e#123784#123785#0" expanded="false" />
-                <element signature="e#123810#123811#0" expanded="false" />
-                <element signature="e#124289#124290#0" expanded="false" />
-                <element signature="e#124329#124330#0" expanded="false" />
-                <element signature="e#124699#124700#0" expanded="false" />
-                <element signature="e#124766#124767#0" expanded="false" />
-                <element signature="e#125017#125018#0" expanded="false" />
-                <element signature="e#125066#125067#0" expanded="false" />
-                <element signature="e#126673#126674#0" expanded="false" />
-                <element signature="e#126742#126743#0" expanded="false" />
-                <element signature="e#135457#135458#0" expanded="false" />
-                <element signature="e#135508#135509#0" expanded="false" />
-                <element signature="e#136491#136492#0" expanded="false" />
-                <element signature="e#136540#136541#0" expanded="false" />
-                <element signature="e#140105#140106#0" expanded="false" />
-                <element signature="e#140181#140182#0" expanded="false" />
-                <element signature="e#148035#148159#0" expanded="false" />
-                <element signature="e#148158#148159#0" expanded="false" />
-                <element signature="e#151324#151585#0" expanded="false" />
-                <element signature="e#151584#151585#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FutureTask.java" pinned="false" current-in-tab="false">
-        <entry file="jar://F:/Oracle/Java/x64/JDK/jdk1.8.0_66/src.zip!/java/util/concurrent/FutureTask.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="261">
-              <caret line="265" column="0" lean-forward="false" selection-start-line="265" selection-start-column="0" selection-end-line="265" selection-end-column="0" />
+            <state relative-caret-position="306">
+              <caret line="18" column="18" lean-forward="true" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Viewer.java" pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/org/graphstream/gs-core/1.3/gs-core-1.3-sources.jar!/org/graphstream/ui/view/Viewer.java">
+      <file leaf-file-name="Keys.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/meta/Keys.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="465" column="0" lean-forward="false" selection-start-line="465" selection-start-column="0" selection-end-line="465" selection-end-column="0" />
+            <state relative-caret-position="207">
+              <caret line="28" column="0" lean-forward="true" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+              <folding>
+                <element signature="e#7001#7002#0" expanded="true" />
+                <element signature="e#7038#7039#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ElemUtility.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/utils/ElemUtility.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="190">
+              <caret line="168" column="0" lean-forward="false" selection-start-line="168" selection-start-column="0" selection-end-line="168" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -245,15 +143,15 @@
       <list>
         <option value="$PROJECT_DIR$/analysis/pom.xml" />
         <option value="$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/infts/IRelation.java" />
-        <option value="$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/infts/IRelevance.java" />
         <option value="$PROJECT_DIR$/scheme/pom.xml" />
         <option value="$PROJECT_DIR$/scheme/src/main/resources/css/polish.css" />
         <option value="$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/constant/Scheme.java" />
-        <option value="$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/meta/Keys.java" />
         <option value="$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/utils/ElemUtility.java" />
         <option value="$PROJECT_DIR$/webcart/.idea/workspace.xml" />
         <option value="$PROJECT_DIR$/.idea/workspace.xml" />
         <option value="$PROJECT_DIR$/scheme/src/main/resources/hikari.properties" />
+        <option value="$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/infts/IRelevance.java" />
+        <option value="$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/meta/Keys.java" />
         <option value="$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/core/Resolver.java" />
       </list>
     </option>
@@ -1043,7 +941,7 @@
       <workItem from="1480552341216" duration="2072000" />
       <workItem from="1480554549972" duration="9692000" />
       <workItem from="1480572424613" duration="9824000" />
-      <workItem from="1480639613837" duration="22876000" />
+      <workItem from="1480639613837" duration="23393000" />
     </task>
     <task id="LOCAL-00001" summary="Revise pom artifact Id">
       <created>1480317832255</created>
@@ -1115,11 +1013,18 @@
       <option name="project" value="LOCAL" />
       <updated>1480656986394</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Code optimized">
+      <created>1480665811664</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1480665811664</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="90042000" />
+    <option name="totallyTimeSpent" value="90559000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1179,7 +1084,8 @@
     <MESSAGE value="Revised project descriptions." />
     <MESSAGE value="delete generate stream graph files." />
     <MESSAGE value="Replace loop to query foreign keys by sql." />
-    <option name="LAST_COMMIT_MESSAGE" value="Replace loop to query foreign keys by sql." />
+    <MESSAGE value="Code optimized" />
+    <option name="LAST_COMMIT_MESSAGE" value="Code optimized" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
@@ -1205,19 +1111,19 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/core/Resolver.java</url>
-          <line>480</line>
+          <line>477</line>
           <properties />
           <option name="timeStamp" value="25" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/core/Resolver.java</url>
-          <line>485</line>
+          <line>482</line>
           <properties />
           <option name="timeStamp" value="26" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/core/Resolver.java</url>
-          <line>495</line>
+          <line>492</line>
           <properties />
           <option name="timeStamp" value="27" />
         </line-breakpoint>
@@ -1235,13 +1141,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/core/Resolver.java</url>
-          <line>421</line>
+          <line>419</line>
           <properties />
           <option name="timeStamp" value="45" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/core/Resolver.java</url>
-          <line>426</line>
+          <line>423</line>
           <properties />
           <option name="timeStamp" value="46" />
         </line-breakpoint>
@@ -1269,13 +1175,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://F:/Oracle/Java/x64/JDK/jdk1.8.0_66/src.zip!/java/util/LinkedList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="218">
-          <caret line="673" column="41" lean-forward="false" selection-start-line="673" selection-start-column="41" selection-end-line="673" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/graphstream/gs-core/1.3/gs-core-1.3-sources.jar!/org/graphstream/ui/view/Camera.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -1644,22 +1543,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/infts/IRelevance.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="23" lean-forward="false" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/meta/Keys.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2686">
-          <caret line="191" column="17" lean-forward="false" selection-start-line="191" selection-start-column="17" selection-end-line="191" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://F:/Oracle/Java/x64/JDK/jdk1.8.0_66/src.zip!/java/util/concurrent/Executor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="418">
@@ -1868,8 +1751,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/core/Resolver.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="430" column="42" lean-forward="true" selection-start-line="430" selection-start-column="42" selection-end-line="430" selection-end-column="42" />
+        <state relative-caret-position="370">
+          <caret line="402" column="27" lean-forward="false" selection-start-line="402" selection-start-column="27" selection-end-line="402" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#6639#6640#0" expanded="true" />
@@ -1879,6 +1762,33 @@
             <element signature="e#12366#12374#0" expanded="true" />
             <element signature="e#14522#14559#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/infts/IRelevance.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="18" lean-forward="true" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/meta/Keys.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="28" column="0" lean-forward="true" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+          <folding>
+            <element signature="e#7001#7002#0" expanded="true" />
+            <element signature="e#7038#7039#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/utils/ElemUtility.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="168" column="0" lean-forward="false" selection-start-line="168" selection-start-column="0" selection-end-line="168" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

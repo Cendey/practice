@@ -175,12 +175,12 @@ public class Keys implements IRelevance<String, List<String>>, Comparator, Seria
     /**
      * Get field value from this
      * @link https://github.com/ronmamo/reflections
-     * @param name property name
-     * @return this instance value of property name
+     * @param name get name
+     * @return this instance value of get name
      */
     @Override
     @SuppressWarnings(value = {"unchecked"})
-    public List<String> property(String name) {
+    public List<String> get(String name) {
         List<String> attribute = new ArrayList<>();
         Set<Method> getter = ReflectionUtils
             .getAllMethods(getClass(), ReflectionUtils.withModifier(Modifier.PUBLIC),
@@ -201,5 +201,10 @@ public class Keys implements IRelevance<String, List<String>>, Comparator, Seria
             }
         });
         return attribute;
+    }
+
+    @Override
+    public void set(String item) {
+        addFkColumnName(item);
     }
 }
