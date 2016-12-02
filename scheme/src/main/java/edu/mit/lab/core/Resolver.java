@@ -387,25 +387,25 @@ public class Resolver {
     }
 
     private void handleRefKeys(
-        ResultSet foreignKeys, List<IRelevance<String, List<String>>> lstForeignKey, Map<String, Integer> identifiers)
+        ResultSet result, List<IRelevance<String, List<String>>> lstRefKeys, Map<String, Integer> mapIds)
         throws SQLException {
-        while (foreignKeys.next()) {
-            String pkTableName = foreignKeys.getString(Scheme.PKTABLE_NAME);
-            String fkTableName = foreignKeys.getString(Scheme.FKTABLE_NAME);
-            String fkColumnName = foreignKeys.getString(Scheme.FKCOLUMN_NAME);
+        while (result.next()) {
+            String pkTableName = result.getString(Scheme.PKTABLE_NAME);
+            String fkTableName = result.getString(Scheme.FKTABLE_NAME);
+            String fkColumnName = result.getString(Scheme.FKCOLUMN_NAME);
             String symbol = String.format("<%s>$<%s>", pkTableName, fkTableName);
-            Integer pos = MapUtils.getInteger(identifiers, symbol);
+            Integer pos = MapUtils.getInteger(mapIds, symbol);
             if (pos == null) {
                 Keys foreignKeyInfo = new Keys();
                 foreignKeyInfo.setPkTableName(pkTableName);
-                foreignKeyInfo.addPkColumnName(foreignKeys.getString(Scheme.PKCOLUMN_NAME));
+                foreignKeyInfo.addPkColumnName(result.getString(Scheme.PKCOLUMN_NAME));
                 foreignKeyInfo.setFkTableName(fkTableName);
                 foreignKeyInfo.addFkColumnName(fkColumnName);
-                foreignKeyInfo.setKeySequence(foreignKeys.getShort(Scheme.KEY_SEQ));
-                lstForeignKey.add(foreignKeyInfo);
-                identifiers.put(symbol, lstForeignKey.size() - 1);
+                foreignKeyInfo.setKeySequence(result.getShort(Scheme.KEY_SEQ));
+                lstRefKeys.add(foreignKeyInfo);
+                mapIds.put(symbol, lstRefKeys.size() - 1);
             } else {
-                IRelevance<String, List<String>> reference = lstForeignKey.get(pos);
+                IRelevance<String, List<String>> reference = lstRefKeys.get(pos);
                 reference.set(fkColumnName);
             }
         }
