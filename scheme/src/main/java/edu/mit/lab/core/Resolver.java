@@ -424,8 +424,7 @@ public class Resolver {
                 preparedStatement.setInt(3, (++times) * FIXED_ROW_COUNT);
                 try (ResultSet refKeyResult = preparedStatement.executeQuery()) {
                     refKeyResult.setFetchDirection(ResultSet.TYPE_FORWARD_ONLY);
-                    hasNext = refKeyResult.isBeforeFirst();
-                    if (hasNext) {
+                    if (hasNext = refKeyResult.isBeforeFirst()) {
                         handleRefKeys(refKeyResult, lstRefKeys, identifiers);
                     }
                 } catch (SQLException e) {
