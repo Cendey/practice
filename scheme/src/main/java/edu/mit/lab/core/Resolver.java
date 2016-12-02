@@ -421,7 +421,7 @@ public class Resolver {
             do {
                 preparedStatement.setString(1, connection.getSchema());
                 preparedStatement.setInt(2, times * FIXED_ROW_COUNT);
-                preparedStatement.setInt(3, (times + 1) * FIXED_ROW_COUNT);
+                preparedStatement.setInt(3, (++times) * FIXED_ROW_COUNT);
                 try (ResultSet refKeyResult = preparedStatement.executeQuery()) {
                     refKeyResult.setFetchDirection(ResultSet.TYPE_FORWARD_ONLY);
                     hasNext = refKeyResult.isBeforeFirst();
@@ -431,7 +431,6 @@ public class Resolver {
                 } catch (SQLException e) {
                     System.err.println(e.getMessage());
                 }
-                ++times;
             } while (hasNext);
         } catch (SQLException e) {
             System.err.println(e.getMessage());
