@@ -420,21 +420,22 @@ public class Resolver {
         Connection connection, List<IRelevance<String, List<String>>> lstPrimaryKey, boolean forExportKeys) {
         try (PreparedStatement preparedStatement = connection.prepareStatement(
             forExportKeys ? foreignKeyConstraintSQL().toString() : primaryKeyConstraintSQL().toString())) {
-            preparedStatement.setString(0, connection.getSchema());
             int times = 0;
             boolean hasNext = true;
             Map<String, Integer> identifiers = new WeakHashMap<>();
             do {
-                preparedStatement.setString(0, connection.getSchema());
-                preparedStatement.setInt(1, times * FIXED_ROW_COUNT);
-                preparedStatement.setInt(2, (times + 1) * FIXED_ROW_COUNT);
+                preparedStatement.setString(1, connection.getSchema());
+                preparedStatement.setInt(2, times * FIXED_ROW_COUNT);
+                preparedStatement.setInt(3, (++times) * FIXED_ROW_COUNT);
                 try (ResultSet foreignKeys = preparedStatement.executeQuery()) {
+                    foreignKeys.setFetchDirection(ResultSet.TYPE_FORWARD_ONLY);
                     hasNext = foreignKeys.isBeforeFirst();
-                    handleRefKeys(foreignKeys, lstPrimaryKey, identifiers);
+                    if (hasNext) {
+                        handleRefKeys(foreignKeys, lstPrimaryKey, identifiers);
+                    }
                 } catch (SQLException e) {
                     System.err.println(e.getMessage());
                 }
-                ++times;
             } while (hasNext);
         } catch (SQLException e) {
             System.err.println(e.getMessage());
@@ -528,7 +529,8 @@ public class Resolver {
             .append("                      7,")
             .append("                      'DEFERRED',")
             .append("                      6) deferrability,")
-            .append("               row_number() over(order by f.owner, f.table_name, fc.position) rownumber")
+            .append(
+                "               row_number() over(partition by f.table_name order by f.owner, f.table_name, fc.position) rownumber")
             .append("          from all_cons_columns pc,")
             .append("               all_constraints  p,")
             .append("               all_cons_columns fc,")
@@ -548,47 +550,51 @@ public class Resolver {
             .append("         order by fktable_schem, fktable_name, key_seq)")
             .append(" where rownumber > ?")
             .append("   and rownumber <= ?")
-            .append(" order by fktable_schem, fktable_name, key_seq;");
+            .append(" order by fktable_schem, fktable_name, key_seq");
     }
 
     private StringBuilder primaryKeyConstraintSQL() {
-
-        return new StringBuilder("select null as pktable_cat,")
-            .append("       p.owner as pktable_schem,")
-            .append("       p.table_name as pktable_name,")
-            .append("       pc.column_name as pkcolumn_name,")
-            .append("       null as fktable_cat,")
-            .append("       f.owner as fktable_schem,")
-            .append("       f.table_name as fktable_name,")
-            .append("       fc.column_name as fkcolumn_name,")
-            .append("       fc.position as key_seq,")
-            .append("       null as update_rule,")
-            .append("       decode(f.delete_rule, 'CASCADE', 0, 'SET NULL', 2, 1) as delete_rule,")
-            .append("       f.constraint_name as fk_name,")
-            .append("       p.constraint_name as pk_name,")
-            .append("       decode(f.deferrable,")
-            .append("              'DEFERRABLE',")
-            .append("              5,")
-            .append("              'NOT DEFERRABLE',")
-            .append("              7,")
-            .append("              'DEFERRED',")
-            .append("              6) deferrability")
-            .append("  from all_cons_columns pc,")
-            .append("       all_constraints  p,")
-            .append("       all_cons_columns fc,")
-            .append("       all_constraints  f")
-            .append(" where p.owner = ?")
-            .append("   and f.constraint_type = 'R'")
-            .append("   and p.owner = f.r_owner")
-            .append("   and p.constraint_name = f.r_constraint_name")
-            .append("   and p.constraint_type = 'P'")
-            .append("   and pc.owner = p.owner")
-            .append("   and pc.constraint_name = p.constraint_name")
-            .append("   and pc.table_name = p.table_name")
-            .append("   and fc.owner = f.owner")
-            .append("   and fc.constraint_name = f.constraint_name")
-            .append("   and fc.table_name = f.table_name")
-            .append("   and fc.position = pc.position")
-            .append(" order by fktable_schem, fktable_name, key_seq");
+        return new StringBuilder("select *")
+            .append("  from (select null as pktable_cat,")
+            .append("               p.owner as pktable_schem,")
+            .append("               p.table_name as pktable_name,")
+            .append("               pc.column_name as pkcolumn_name,")
+            .append("               null as fktable_cat,")
+            .append("               f.owner as fktable_schem,")
+            .append("               f.table_name as fktable_name,")
+            .append("               fc.column_name as fkcolumn_name,")
+            .append("               fc.position as key_seq,")
+            .append("               null as update_rule,")
+            .append("               decode(f.delete_rule, 'CASCADE', 0, 'SET NULL', 2, 1) as delete_rule,")
+            .append("               f.constraint_name as fk_name,")
+            .append("               p.constraint_name as pk_name,")
+            .append("               decode(f.deferrable,")
+            .append("                      'DEFERRABLE',")
+            .append("                      5,")
+            .append("                      'NOT DEFERRABLE',")
+            .append("                      7,")
+            .append("                      'DEFERRED',")
+            .append("                      6) deferrability,")
+            .append(
+                "               row_number() over(partition by p.table_name order by p.owner, p.table_name, fc.position) rownumber")
+            .append("          from all_cons_columns pc,")
+            .append("               all_constraints  p,")
+            .append("               all_cons_columns fc,")
+            .append("               all_constraints  f")
+            .append("         where f.owner = ?")
+            .append("           and f.constraint_type = 'R'")
+            .append("           and p.owner = f.r_owner")
+            .append("           and p.constraint_name = f.r_constraint_name")
+            .append("           and p.constraint_type = 'P'")
+            .append("           and pc.owner = p.owner")
+            .append("           and pc.constraint_name = p.constraint_name")
+            .append("           and pc.table_name = p.table_name")
+            .append("           and fc.owner = f.owner")
+            .append("           and fc.constraint_name = f.constraint_name")
+            .append("           and fc.table_name = f.table_name")
+            .append("           and fc.position = pc.position")
+            .append("         order by pktable_schem, pktable_name, key_seq)")
+            .append(" where rownumber >= ?")
+            .append("   and rownumber < ?");
     }
 }
