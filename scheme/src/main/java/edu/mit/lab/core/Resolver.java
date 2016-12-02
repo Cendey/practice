@@ -26,6 +26,7 @@ import java.net.URL;
 import java.nio.charset.Charset;
 import java.sql.Connection;
 import java.sql.DatabaseMetaData;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
@@ -61,6 +62,7 @@ public class Resolver {
     private static final String SCRIPT_FILE_NAME = "clear_data_script.sql";
     private static final String GRAPH_FILE_NAME_PREFIX = "stream_graph_";
     private static final String GRAPH_FILE_NAME_SUFFIX = ".dgs";
+    private static final int FIXED_ROW_COUNT = 50;
 
     private SortedSet<String> rootNodeIds;
 
@@ -116,7 +118,7 @@ public class Resolver {
             List<Tables> lstTable = resolver.processTable(connection, metaData);
             resolver.collect(lstTable);
 //            processPKRef(connection, lstTable);
-            lstFKRef = processFKRef(connection, lstTable);
+            lstFKRef = resolver.processFKRef(connection);
         } catch (SQLException e) {
             System.err.println(e.getMessage());
         }
@@ -357,41 +359,52 @@ public class Resolver {
     }
 
     @SuppressWarnings(value = {"unused"})
-    private static List<IRelevance<String, List<String>>> processPKRef(
-        Connection connection, List<Tables> lstTable, Integer counter) {
-        final List<IRelevance<String, List<String>>> lstPrimaryKey = new ArrayList<>();
-        lstTable.forEach(
-            meta -> pushPrimaryKeyInfo(connection, lstPrimaryKey, meta.getTableName()));
+    private List<IRelevance<String, List<String>>> processPKRef(final Connection connection) {
+        List<IRelevance<String, List<String>>> lstPrimaryKey = pushPrimaryKeyInfo(connection);
         System.out.println(
             "~~~~~~~~~~~~~~~~~~~~~~~#Tables primary keys reference information list#~~~~~~~~~~~~~~~~~~~~~~~");
         lstPrimaryKey.forEach(System.out::println);
         return lstPrimaryKey;
     }
 
-    private static List<IRelevance<String, List<String>>> processFKRef(
-        final Connection connection, List<Tables> lstTable) {
-        final List<IRelevance<String, List<String>>> lstForeignKey = new ArrayList<>();
-        lstTable.forEach(table -> pushForeignKeyInfo(connection, lstForeignKey, table.getTableName()));
+    private List<IRelevance<String, List<String>>> processFKRef(final Connection connection) {
+        List<IRelevance<String, List<String>>> lstForeignKey = pushForeignKeyInfo(connection);
         System.out.println(
             "~~~~~~~~~~~~~~~~~~~~~~~#Tables foreign keys reference information list#~~~~~~~~~~~~~~~~~~~~~~~");
         lstForeignKey.forEach(System.out::println);
         return lstForeignKey;
     }
 
-    private static void pushForeignKeyInfo(
-        Connection connection, List<IRelevance<String, List<String>>> lstForeignKey, String tableName) {
-        try (ResultSet foreignKeys = connection.getMetaData()
-            .getExportedKeys(connection.getCatalog(), connection.getSchema(), tableName)) {
-            handleRefKeys(lstForeignKey, foreignKeys);
+    private List<IRelevance<String, List<String>>> pushForeignKeyInfo(Connection connection) {
+        List<IRelevance<String, List<String>>> lstForeignKey = null;
+        try (PreparedStatement preparedStatement =
+                 connection
+                     .prepareStatement(foreignKeyConstraintSQL().toString(), PreparedStatement.NO_GENERATED_KEYS)) {
+            int times = 0;
+            boolean hasNext = true;
+            do {
+                preparedStatement.setString(0, connection.getSchema());
+                preparedStatement.setInt(1, times * FIXED_ROW_COUNT);
+                preparedStatement.setInt(2, (times + 1) * FIXED_ROW_COUNT);
+                try (ResultSet foreignKeys = preparedStatement.executeQuery()) {
+                    hasNext = foreignKeys.isBeforeFirst();
+                    lstForeignKey = handleRefKeys(foreignKeys);
+                } catch (SQLException e) {
+                    System.err.println(e.getMessage());
+                }
+                ++times;
+            } while (hasNext);
         } catch (SQLException e) {
             System.err.println(e.getMessage());
         }
+        return lstForeignKey;
     }
 
-    private static void handleRefKeys(List<IRelevance<String, List<String>>> lstForeignKey, ResultSet foreignKeys)
+    private List<IRelevance<String, List<String>>> handleRefKeys(ResultSet foreignKeys)
         throws SQLException {
         int counter = 0;
         Map<String, Integer> identifiers = new WeakHashMap<>();
+        List<IRelevance<String, List<String>>> lstForeignKey = new ArrayList<>();
         while (foreignKeys.next()) {
             String pkTableName = foreignKeys.getString(Scheme.PKTABLE_NAME);
             String fkTableName = foreignKeys.getString(Scheme.FKTABLE_NAME);
@@ -415,16 +428,22 @@ public class Resolver {
                 }
             }
         }
+        return lstForeignKey;
     }
 
-    private static void pushPrimaryKeyInfo(
-        Connection connection, List<IRelevance<String, List<String>>> lstPrimaryKey, String tableName) {
-        try (ResultSet primaryKeys = connection.getMetaData()
-            .getImportedKeys(connection.getCatalog(), connection.getSchema(), tableName)) {
-            handleRefKeys(lstPrimaryKey, primaryKeys);
+    private List<IRelevance<String, List<String>>> pushPrimaryKeyInfo(Connection connection) {
+        List<IRelevance<String, List<String>>> lstPrimaryKey = null;
+        try (PreparedStatement preparedStatement = connection.prepareStatement(primaryKeyConstraintSQL().toString())) {
+            preparedStatement.setString(0, connection.getSchema());
+            try (ResultSet primaryKeys = preparedStatement.executeQuery()) {
+                lstPrimaryKey = handleRefKeys(primaryKeys);
+            } catch (SQLException e) {
+                System.err.println(e.getMessage());
+            }
         } catch (SQLException e) {
             System.err.println(e.getMessage());
         }
+        return lstPrimaryKey;
     }
 
     private static void pushTableSummaryInfo(
@@ -490,5 +509,91 @@ public class Resolver {
                 }
             }
         };
+    }
+
+    private StringBuilder foreignKeyConstraintSQL() {
+        return new StringBuilder("select *")
+            .append("  from (select null as pktable_cat,")
+            .append("               p.owner as pktable_schem,")
+            .append("               p.table_name as pktable_name,")
+            .append("               pc.column_name as pkcolumn_name,")
+            .append("               null as fktable_cat,")
+            .append("               f.owner as fktable_schem,")
+            .append("               f.table_name as fktable_name,")
+            .append("               fc.column_name as fkcolumn_name,")
+            .append("               fc.position as key_seq,")
+            .append("               null as update_rule,")
+            .append("               decode(f.delete_rule, 'CASCADE', 0, 'SET NULL', 2, 1) as delete_rule,")
+            .append("               f.constraint_name as fk_name,")
+            .append("               p.constraint_name as pk_name,")
+            .append("               decode(f.deferrable,")
+            .append("                      'DEFERRABLE',")
+            .append("                      5,")
+            .append("                      'NOT DEFERRABLE',")
+            .append("                      7,")
+            .append("                      'DEFERRED',")
+            .append("                      6) deferrability,")
+            .append("               row_number() over(order by f.owner, f.table_name, fc.position) rownumber")
+            .append("          from all_cons_columns pc,")
+            .append("               all_constraints  p,")
+            .append("               all_cons_columns fc,")
+            .append("               all_constraints  f")
+            .append("         where p.owner = ?")
+            .append("           and f.constraint_type = 'R'")
+            .append("           and p.owner = f.r_owner")
+            .append("           and p.constraint_name = f.r_constraint_name")
+            .append("           and p.constraint_type = 'P'")
+            .append("           and pc.owner = p.owner")
+            .append("           and pc.constraint_name = p.constraint_name")
+            .append("           and pc.table_name = p.table_name")
+            .append("           and fc.owner = f.owner")
+            .append("           and fc.constraint_name = f.constraint_name")
+            .append("           and fc.table_name = f.table_name")
+            .append("           and fc.position = pc.position")
+            .append("         order by fktable_schem, fktable_name, key_seq)")
+            .append(" where rownumber > ?")
+            .append("   and rownumber <= ?")
+            .append(" order by fktable_schem, fktable_name, key_seq;");
+    }
+
+    private StringBuilder primaryKeyConstraintSQL() {
+
+        return new StringBuilder("select null as pktable_cat,")
+            .append("       p.owner as pktable_schem,")
+            .append("       p.table_name as pktable_name,")
+            .append("       pc.column_name as pkcolumn_name,")
+            .append("       null as fktable_cat,")
+            .append("       f.owner as fktable_schem,")
+            .append("       f.table_name as fktable_name,")
+            .append("       fc.column_name as fkcolumn_name,")
+            .append("       fc.position as key_seq,")
+            .append("       null as update_rule,")
+            .append("       decode(f.delete_rule, 'CASCADE', 0, 'SET NULL', 2, 1) as delete_rule,")
+            .append("       f.constraint_name as fk_name,")
+            .append("       p.constraint_name as pk_name,")
+            .append("       decode(f.deferrable,")
+            .append("              'DEFERRABLE',")
+            .append("              5,")
+            .append("              'NOT DEFERRABLE',")
+            .append("              7,")
+            .append("              'DEFERRED',")
+            .append("              6) deferrability")
+            .append("  from all_cons_columns pc,")
+            .append("       all_constraints  p,")
+            .append("       all_cons_columns fc,")
+            .append("       all_constraints  f")
+            .append(" where p.owner = ?")
+            .append("   and f.constraint_type = 'R'")
+            .append("   and p.owner = f.r_owner")
+            .append("   and p.constraint_name = f.r_constraint_name")
+            .append("   and p.constraint_type = 'P'")
+            .append("   and pc.owner = p.owner")
+            .append("   and pc.constraint_name = p.constraint_name")
+            .append("   and pc.table_name = p.table_name")
+            .append("   and fc.owner = f.owner")
+            .append("   and fc.constraint_name = f.constraint_name")
+            .append("   and fc.table_name = f.table_name")
+            .append("   and fc.position = pc.position")
+            .append(" order by fktable_schem, fktable_name, key_seq");
     }
 }
