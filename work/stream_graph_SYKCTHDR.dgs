@@ -1,6 +1,5 @@
 DGS004
 null 0 0
-cg  "ui.viewClosed":true
 cg  "ui.quality":true
 cg  "ui.antialias":true
 cg  "ui.stylesheet":"url(css/polish.css)"
@@ -8,32 +7,32 @@ cg  "ui.default.title":"SYKCTHDR"
 an "nSYKCTHDR"
 cn "nSYKCTHDR"  "ui.class":"root"
 cn "nSYKCTHDR"  "ui.label":"SYKCTHDR"
-cn "nSYKCTHDR"  "Component":65
+cn "nSYKCTHDR"  "Component":66
 cn "nSYKCTHDR"  "data.child":"[nSYKCTCASE, nSYKCTSCEN]"
 cn "nSYKCTHDR"  "action.marked":"identified"
 an "nSYKCTCASE"
 cn "nSYKCTCASE"  "data.parent":"[nSYKCTHDR]"
 cn "nSYKCTCASE"  "ui.class":"leaf"
 cn "nSYKCTCASE"  "ui.label":"SYKCTCASE"
-cn "nSYKCTCASE"  "Component":65
+cn "nSYKCTCASE"  "Component":66
 cn "nSYKCTCASE"  "action.marked":"identified"
 an "nSYKCTSCEN"
 cn "nSYKCTSCEN"  "data.parent":"[nSYKCTHDR]"
 cn "nSYKCTSCEN"  "ui.label":"SYKCTSCEN"
-cn "nSYKCTSCEN"  "Component":65
+cn "nSYKCTSCEN"  "Component":66
 cn "nSYKCTSCEN"  "data.child":"[nSYKCTLISTEN]"
 cn "nSYKCTSCEN"  "action.marked":"identified"
 an "nSYKCTLISTEN"
 cn "nSYKCTLISTEN"  "data.parent":"[nSYKCTSCEN]"
 cn "nSYKCTLISTEN"  "ui.label":"SYKCTLISTEN"
-cn "nSYKCTLISTEN"  "Component":65
+cn "nSYKCTLISTEN"  "Component":66
 cn "nSYKCTLISTEN"  "data.child":"[nSYKCTAPPLYCASE]"
 cn "nSYKCTLISTEN"  "action.marked":"identified"
 an "nSYKCTAPPLYCASE"
 cn "nSYKCTAPPLYCASE"  "data.parent":"[nSYKCTLISTEN]"
 cn "nSYKCTAPPLYCASE"  "ui.class":"leaf"
 cn "nSYKCTAPPLYCASE"  "ui.label":"SYKCTAPPLYCASE"
-cn "nSYKCTAPPLYCASE"  "Component":65
+cn "nSYKCTAPPLYCASE"  "Component":66
 cn "nSYKCTAPPLYCASE"  "action.marked":"identified"
 ae "eSYKCTHDRSYKCTCASE" "nSYKCTCASE" > "nSYKCTHDR"
 ce "eSYKCTHDRSYKCTCASE"  "ui.label":"[SYKCTHDRUNID]"

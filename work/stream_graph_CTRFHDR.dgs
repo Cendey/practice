@@ -1,6 +1,5 @@
 DGS004
 null 0 0
-cg  "ui.viewClosed":true
 cg  "ui.quality":true
 cg  "ui.antialias":true
 cg  "ui.stylesheet":"url(css/polish.css)"
