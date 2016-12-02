@@ -140,6 +140,7 @@ public class Resolver {
             );
         } catch (ExecutionException e) {
             System.err.println(e.getMessage());
+        } finally {
             executor.shutdown();
         }
         long end = System.currentTimeMillis();
@@ -162,6 +163,7 @@ public class Resolver {
                 pipe.pump();
                 if (graph.hasAttribute(Scheme.UI_VIEW_CLOSED)) {
                     loop = false;
+                    viewer.close();
                 }
             }
         };
