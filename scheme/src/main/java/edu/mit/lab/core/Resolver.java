@@ -526,7 +526,7 @@ public class Resolver {
             "                      7," +
             "                      'DEFERRED'," +
             "                      6) deferrability," +
-            "               row_number() over(partition by f.table_name order by f.owner, f.table_name, fc.position) rownumber"
+            "               row_number() over(order by f.owner, f.table_name, fc.position) rownumber"
             +
             "          from all_cons_columns pc," +
             "               all_constraints  p," +
@@ -572,7 +572,7 @@ public class Resolver {
             "                      7," +
             "                      'DEFERRED'," +
             "                      6) deferrability," +
-            "               row_number() over(partition by p.table_name order by p.owner, p.table_name, fc.position) rownumber"
+            "               row_number() over(order by p.owner, p.table_name, fc.position) rownumber"
             +
             "          from all_cons_columns pc," +
             "               all_constraints  p," +
