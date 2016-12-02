@@ -156,6 +156,7 @@ public class Resolver {
     private Runnable display(final Graph graph) {
         return () -> {
             Viewer viewer = graph.display();
+            viewer.setCloseFramePolicy(Viewer.CloseFramePolicy.EXIT);
             ViewerPipe pipe = viewer.newViewerPipe();
             pipe.addViewerListener(listener(graph));
             //Refer to https://github.com/graphstream/gs-core/issues/209
@@ -246,7 +247,7 @@ public class Resolver {
         };
     }
 
-    private static void build(Graph graph, IRelevance<String, List<String>> item) {
+    private void build(Graph graph, IRelevance<String, List<String>> item) {
         String targetNodeId = Scheme.NODE_PREFIX + item.to();
         String sourceNodeId = Scheme.NODE_PREFIX + item.from();
         String linkEdgeId = Scheme.EDGE_PREFIX + item.to() + item.from();
@@ -316,7 +317,7 @@ public class Resolver {
         graphs.add(result);
     }
 
-    private static int present(Graph graph, IRelevance<String, List<String>> item) {
+    private int present(Graph graph, IRelevance<String, List<String>> item) {
         String targetId = Scheme.NODE_PREFIX + item.to();
         String sourceId = Scheme.NODE_PREFIX + item.from();
         int target = graph.getNode(targetId) != null ? Scheme.ONLY_TARGET_NODE_PRESENTS : 0;
@@ -376,33 +377,29 @@ public class Resolver {
     }
 
     private List<IRelevance<String, List<String>>> pushForeignKeyInfo(Connection connection) {
-        List<IRelevance<String, List<String>>> lstForeignKey = new ArrayList<>();
-        processKeysInfo(connection, lstForeignKey, true);
-        return lstForeignKey;
+        return processKeysInfo(connection, true);
     }
 
     private void handleRefKeys(
         ResultSet foreignKeys, List<IRelevance<String, List<String>>> lstForeignKey, Map<String, Integer> identifiers)
         throws SQLException {
-        int counter = 0;
         while (foreignKeys.next()) {
             String pkTableName = foreignKeys.getString(Scheme.PKTABLE_NAME);
             String fkTableName = foreignKeys.getString(Scheme.FKTABLE_NAME);
             String fkColumnName = foreignKeys.getString(Scheme.FKCOLUMN_NAME);
-            String symbol = "<%" + pkTableName + "%>$<%" + fkTableName + "%>";
-            Integer specified = MapUtils.getInteger(identifiers, symbol);
-            if (specified == null) {
+            String symbol = String.format("<%s>$<%s>", pkTableName, fkTableName);
+            Integer pos = MapUtils.getInteger(identifiers, symbol);
+            if (pos == null) {
                 Keys foreignKeyInfo = new Keys();
                 foreignKeyInfo.setPkTableName(pkTableName);
                 foreignKeyInfo.addPkColumnName(foreignKeys.getString(Scheme.PKCOLUMN_NAME));
                 foreignKeyInfo.setFkTableName(fkTableName);
                 foreignKeyInfo.addFkColumnName(fkColumnName);
                 foreignKeyInfo.setKeySequence(foreignKeys.getShort(Scheme.KEY_SEQ));
-                identifiers.put(symbol, counter++);
                 lstForeignKey.add(foreignKeyInfo);
+                identifiers.put(symbol, lstForeignKey.size() - 1);
             } else {
-                IRelevance<String, List<String>> reference =
-                    lstForeignKey.get(lstForeignKey.size() - counter + specified);
+                IRelevance<String, List<String>> reference = lstForeignKey.get(pos);
                 if (Keys.class.isAssignableFrom(reference.getClass())) {
                     Keys.class.cast(reference).addFkColumnName(fkColumnName);
                 }
@@ -411,35 +408,35 @@ public class Resolver {
     }
 
     private List<IRelevance<String, List<String>>> pushPrimaryKeyInfo(Connection connection) {
-        List<IRelevance<String, List<String>>> lstPrimaryKey = new ArrayList<>();
-        processKeysInfo(connection, lstPrimaryKey, false);
-        return lstPrimaryKey;
+        return processKeysInfo(connection, false);
     }
 
-    private void processKeysInfo(
-        Connection connection, List<IRelevance<String, List<String>>> lstPrimaryKey, boolean forExportKeys) {
+    private List<IRelevance<String, List<String>>> processKeysInfo(Connection connection, boolean forExportKeys) {
+        List<IRelevance<String, List<String>>> lstRefKeys = new ArrayList<>();
         try (PreparedStatement preparedStatement = connection.prepareStatement(
-            forExportKeys ? foreignKeyConstraintSQL().toString() : primaryKeyConstraintSQL().toString())) {
+            forExportKeys ? foreignKeyConstraintSQL() : primaryKeyConstraintSQL())) {
             int times = 0;
             boolean hasNext = true;
             Map<String, Integer> identifiers = new WeakHashMap<>();
             do {
                 preparedStatement.setString(1, connection.getSchema());
                 preparedStatement.setInt(2, times * FIXED_ROW_COUNT);
-                preparedStatement.setInt(3, (++times) * FIXED_ROW_COUNT);
-                try (ResultSet foreignKeys = preparedStatement.executeQuery()) {
-                    foreignKeys.setFetchDirection(ResultSet.TYPE_FORWARD_ONLY);
-                    hasNext = foreignKeys.isBeforeFirst();
+                preparedStatement.setInt(3, (times + 1) * FIXED_ROW_COUNT);
+                try (ResultSet refKeyResult = preparedStatement.executeQuery()) {
+                    refKeyResult.setFetchDirection(ResultSet.TYPE_FORWARD_ONLY);
+                    hasNext = refKeyResult.isBeforeFirst();
                     if (hasNext) {
-                        handleRefKeys(foreignKeys, lstPrimaryKey, identifiers);
+                        handleRefKeys(refKeyResult, lstRefKeys, identifiers);
                     }
                 } catch (SQLException e) {
                     System.err.println(e.getMessage());
                 }
+                ++times;
             } while (hasNext);
         } catch (SQLException e) {
             System.err.println(e.getMessage());
         }
+        return lstRefKeys;
     }
 
     private static void pushTableSummaryInfo(
@@ -507,94 +504,94 @@ public class Resolver {
         };
     }
 
-    private StringBuilder foreignKeyConstraintSQL() {
-        return new StringBuilder("select *")
-            .append("  from (select null as pktable_cat,")
-            .append("               p.owner as pktable_schem,")
-            .append("               p.table_name as pktable_name,")
-            .append("               pc.column_name as pkcolumn_name,")
-            .append("               null as fktable_cat,")
-            .append("               f.owner as fktable_schem,")
-            .append("               f.table_name as fktable_name,")
-            .append("               fc.column_name as fkcolumn_name,")
-            .append("               fc.position as key_seq,")
-            .append("               null as update_rule,")
-            .append("               decode(f.delete_rule, 'CASCADE', 0, 'SET NULL', 2, 1) as delete_rule,")
-            .append("               f.constraint_name as fk_name,")
-            .append("               p.constraint_name as pk_name,")
-            .append("               decode(f.deferrable,")
-            .append("                      'DEFERRABLE',")
-            .append("                      5,")
-            .append("                      'NOT DEFERRABLE',")
-            .append("                      7,")
-            .append("                      'DEFERRED',")
-            .append("                      6) deferrability,")
-            .append(
-                "               row_number() over(partition by f.table_name order by f.owner, f.table_name, fc.position) rownumber")
-            .append("          from all_cons_columns pc,")
-            .append("               all_constraints  p,")
-            .append("               all_cons_columns fc,")
-            .append("               all_constraints  f")
-            .append("         where p.owner = ?")
-            .append("           and f.constraint_type = 'R'")
-            .append("           and p.owner = f.r_owner")
-            .append("           and p.constraint_name = f.r_constraint_name")
-            .append("           and p.constraint_type = 'P'")
-            .append("           and pc.owner = p.owner")
-            .append("           and pc.constraint_name = p.constraint_name")
-            .append("           and pc.table_name = p.table_name")
-            .append("           and fc.owner = f.owner")
-            .append("           and fc.constraint_name = f.constraint_name")
-            .append("           and fc.table_name = f.table_name")
-            .append("           and fc.position = pc.position")
-            .append("         order by fktable_schem, fktable_name, key_seq)")
-            .append(" where rownumber > ?")
-            .append("   and rownumber <= ?")
-            .append(" order by fktable_schem, fktable_name, key_seq");
+    private String foreignKeyConstraintSQL() {
+        return "select *" +
+            "  from (select null as pktable_cat," +
+            "               p.owner as pktable_schem," +
+            "               p.table_name as pktable_name," +
+            "               pc.column_name as pkcolumn_name," +
+            "               null as fktable_cat," +
+            "               f.owner as fktable_schem," +
+            "               f.table_name as fktable_name," +
+            "               fc.column_name as fkcolumn_name," +
+            "               fc.position as key_seq," +
+            "               null as update_rule," +
+            "               decode(f.delete_rule, 'CASCADE', 0, 'SET NULL', 2, 1) as delete_rule," +
+            "               f.constraint_name as fk_name," +
+            "               p.constraint_name as pk_name," +
+            "               decode(f.deferrable," +
+            "                      'DEFERRABLE'," +
+            "                      5," +
+            "                      'NOT DEFERRABLE'," +
+            "                      7," +
+            "                      'DEFERRED'," +
+            "                      6) deferrability," +
+            "               row_number() over(partition by f.table_name order by f.owner, f.table_name, fc.position) rownumber"
+            +
+            "          from all_cons_columns pc," +
+            "               all_constraints  p," +
+            "               all_cons_columns fc," +
+            "               all_constraints  f" +
+            "         where p.owner = ?" +
+            "           and f.constraint_type = 'R'" +
+            "           and p.owner = f.r_owner" +
+            "           and p.constraint_name = f.r_constraint_name" +
+            "           and p.constraint_type = 'P'" +
+            "           and pc.owner = p.owner" +
+            "           and pc.constraint_name = p.constraint_name" +
+            "           and pc.table_name = p.table_name" +
+            "           and fc.owner = f.owner" +
+            "           and fc.constraint_name = f.constraint_name" +
+            "           and fc.table_name = f.table_name" +
+            "           and fc.position = pc.position" +
+            "         order by fktable_schem, fktable_name, key_seq)" +
+            " where rownumber > ?" +
+            "   and rownumber <= ?" +
+            " order by fktable_schem, fktable_name, key_seq";
     }
 
-    private StringBuilder primaryKeyConstraintSQL() {
-        return new StringBuilder("select *")
-            .append("  from (select null as pktable_cat,")
-            .append("               p.owner as pktable_schem,")
-            .append("               p.table_name as pktable_name,")
-            .append("               pc.column_name as pkcolumn_name,")
-            .append("               null as fktable_cat,")
-            .append("               f.owner as fktable_schem,")
-            .append("               f.table_name as fktable_name,")
-            .append("               fc.column_name as fkcolumn_name,")
-            .append("               fc.position as key_seq,")
-            .append("               null as update_rule,")
-            .append("               decode(f.delete_rule, 'CASCADE', 0, 'SET NULL', 2, 1) as delete_rule,")
-            .append("               f.constraint_name as fk_name,")
-            .append("               p.constraint_name as pk_name,")
-            .append("               decode(f.deferrable,")
-            .append("                      'DEFERRABLE',")
-            .append("                      5,")
-            .append("                      'NOT DEFERRABLE',")
-            .append("                      7,")
-            .append("                      'DEFERRED',")
-            .append("                      6) deferrability,")
-            .append(
-                "               row_number() over(partition by p.table_name order by p.owner, p.table_name, fc.position) rownumber")
-            .append("          from all_cons_columns pc,")
-            .append("               all_constraints  p,")
-            .append("               all_cons_columns fc,")
-            .append("               all_constraints  f")
-            .append("         where f.owner = ?")
-            .append("           and f.constraint_type = 'R'")
-            .append("           and p.owner = f.r_owner")
-            .append("           and p.constraint_name = f.r_constraint_name")
-            .append("           and p.constraint_type = 'P'")
-            .append("           and pc.owner = p.owner")
-            .append("           and pc.constraint_name = p.constraint_name")
-            .append("           and pc.table_name = p.table_name")
-            .append("           and fc.owner = f.owner")
-            .append("           and fc.constraint_name = f.constraint_name")
-            .append("           and fc.table_name = f.table_name")
-            .append("           and fc.position = pc.position")
-            .append("         order by pktable_schem, pktable_name, key_seq)")
-            .append(" where rownumber >= ?")
-            .append("   and rownumber < ?");
+    private String primaryKeyConstraintSQL() {
+        return "select *" +
+            "  from (select null as pktable_cat," +
+            "               p.owner as pktable_schem," +
+            "               p.table_name as pktable_name," +
+            "               pc.column_name as pkcolumn_name," +
+            "               null as fktable_cat," +
+            "               f.owner as fktable_schem," +
+            "               f.table_name as fktable_name," +
+            "               fc.column_name as fkcolumn_name," +
+            "               fc.position as key_seq," +
+            "               null as update_rule," +
+            "               decode(f.delete_rule, 'CASCADE', 0, 'SET NULL', 2, 1) as delete_rule," +
+            "               f.constraint_name as fk_name," +
+            "               p.constraint_name as pk_name," +
+            "               decode(f.deferrable," +
+            "                      'DEFERRABLE'," +
+            "                      5," +
+            "                      'NOT DEFERRABLE'," +
+            "                      7," +
+            "                      'DEFERRED'," +
+            "                      6) deferrability," +
+            "               row_number() over(partition by p.table_name order by p.owner, p.table_name, fc.position) rownumber"
+            +
+            "          from all_cons_columns pc," +
+            "               all_constraints  p," +
+            "               all_cons_columns fc," +
+            "               all_constraints  f" +
+            "         where f.owner = ?" +
+            "           and f.constraint_type = 'R'" +
+            "           and p.owner = f.r_owner" +
+            "           and p.constraint_name = f.r_constraint_name" +
+            "           and p.constraint_type = 'P'" +
+            "           and pc.owner = p.owner" +
+            "           and pc.constraint_name = p.constraint_name" +
+            "           and pc.table_name = p.table_name" +
+            "           and fc.owner = f.owner" +
+            "           and fc.constraint_name = f.constraint_name" +
+            "           and fc.table_name = f.table_name" +
+            "           and fc.position = pc.position" +
+            "         order by pktable_schem, pktable_name, key_seq)" +
+            " where rownumber >= ?" +
+            "   and rownumber < ?";
     }
 }
