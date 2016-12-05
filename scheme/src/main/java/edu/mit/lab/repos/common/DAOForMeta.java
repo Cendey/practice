@@ -14,11 +14,9 @@ import edu.mit.lab.infts.idao.IDAOForMeta;
  */
 public abstract class DAOForMeta implements IDAOForMeta {
 
-    public String fkConstraint() {
-        return null;
-    }
+    public abstract String exportedKeys();
 
-    public String pkConstraint() {
-        return null;
-    }
+    public abstract String importedKeys();
+
+    public abstract String primaryKeys();
 }

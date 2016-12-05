@@ -12,7 +12,9 @@ package edu.mit.lab.infts.idao;
  */
 public interface IDAOForMeta {
 
-    String fkConstraint();
+    String exportedKeys();
 
-    String pkConstraint();
+    String importedKeys();
+
+    String primaryKeys();
 }

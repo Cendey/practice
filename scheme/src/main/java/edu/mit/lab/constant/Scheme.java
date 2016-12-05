@@ -24,6 +24,8 @@ public class Scheme {
     public static final String TABLE_CAT = "TABLE_CAT";
     public static final String TABLE_SCHEM = "TABLE_SCHEM";
     public static final String _TABLE_NAME = "TABLE_NAME";
+    public static final String COLUMN_NAME = "COLUMN_NAME";
+    public static final String PK_NAME = "PK_NAME";
     public static final String _TABLE_TYPE = "TABLE_TYPE";
     public static final String REMARKS = "REMARKS";
     public static final String TYPE_CAT = "TYPE_CAT";

@@ -12,7 +12,7 @@ package edu.mit.lab.repos.mysql;
  */
 public class DAOForMeta extends edu.mit.lab.repos.common.DAOForMeta {
 
-    public String fkConstraint() {
+    public String exportedKeys() {
         return "select *\n" +
             "  from (select kcu.referenced_table_schema pktable_cat,\n" +
             "               null pktable_schem,\n" +
@@ -57,5 +57,15 @@ public class DAOForMeta extends edu.mit.lab.repos.common.DAOForMeta {
             "         where (kcu.referenced_table_schema = ?)\n" +
             "         order by fktable_cat, fktable_schem, fktable_name, key_seq) as refernce\n" +
             " limit ?, ?\n";
+    }
+
+    @Override
+    public String importedKeys() {
+        return null;
+    }
+
+    @Override
+    public String primaryKeys() {
+        return null;
     }
 }

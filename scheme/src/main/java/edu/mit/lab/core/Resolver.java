@@ -122,7 +122,7 @@ public class Resolver {
 
             List<Tables> lstTable = resolver.processTable(connection, metaData);
             resolver.collect(lstTable);
-            resolver.processPKRef(connection);
+//            resolver.processPKRef(connection);
             lstFKRef = resolver.processFKRef(connection);
         } catch (SQLException e) {
             System.err.println(e.getMessage());
@@ -159,6 +159,59 @@ public class Resolver {
                 TimeUnit.MILLISECONDS.toSeconds(duration) - TimeUnit.MINUTES
                     .toSeconds(TimeUnit.MILLISECONDS.toMinutes(duration))));
     }
+
+    @SuppressWarnings(value = {"unused"})
+    private void retrieve(Connection connection, List<Tables> lstTables) {
+        lstTables.forEach(table -> {
+            try (ResultSet exportedKeys = connection.getMetaData()
+                .getExportedKeys(connection.getCatalog(), connection.getSchema(), table.getTableName())) {
+                processForeignKeys(exportedKeys);
+            } catch (SQLException e) {
+                System.err.println(e.getMessage());
+            }
+
+            try (ResultSet importedKeys = connection.getMetaData()
+                .getImportedKeys(connection.getCatalog(), connection.getSchema(), table.getTableName())) {
+                processForeignKeys(importedKeys);
+            } catch (SQLException e) {
+                System.err.println(e.getMessage());
+            }
+
+            try (ResultSet primaryKeys = connection.getMetaData()
+                .getPrimaryKeys(connection.getCatalog(), connection.getSchema(), table.getTableName())) {
+                processPrimaryKeys(primaryKeys);
+            } catch (SQLException e) {
+                System.err.println(e.getMessage());
+            }
+        });
+    }
+
+    private void processPrimaryKeys(ResultSet primaryKeys) throws SQLException {
+        while (primaryKeys.next()) {
+            String catalog = primaryKeys.getString(Scheme.TABLE_CAT);
+            String schema = primaryKeys.getString(Scheme.TABLE_SCHEM);
+            String name = primaryKeys.getString(Scheme._TABLE_NAME);
+            String column = primaryKeys.getString(Scheme.PK_NAME);
+            int sequence = primaryKeys.getShort(Scheme.KEY_SEQ);
+            System.out.println(String
+                .format("Catalog:%s & schema:%s & table:%s & column:%s & key sequence:%d", catalog, schema,
+                    name, column, sequence));
+        }
+    }
+
+    private void processForeignKeys(ResultSet importedKeys) throws SQLException {
+        while (importedKeys.next()) {
+            String pkTableName = importedKeys.getString(Scheme.PKTABLE_NAME);
+            String fkTableName = importedKeys.getString(Scheme.FKTABLE_NAME);
+            String fkColumnName = importedKeys.getString(Scheme.FKCOLUMN_NAME);
+            String pkColumn = importedKeys.getString(Scheme.PKCOLUMN_NAME);
+            int sequence = importedKeys.getShort(Scheme.KEY_SEQ);
+            System.out.println(String.format(
+                "Primary table:%s & primary column:%s; foreign table:%s & foreign column:%s; key sequence:%d ",
+                pkTableName, pkColumn, fkTableName, fkColumnName, sequence));
+        }
+    }
+
 
     private Runnable display(final Graph graph) {
         return () -> {
@@ -366,6 +419,7 @@ public class Resolver {
         return lstTable;
     }
 
+    @SuppressWarnings(value = {"unused"})
     private List<IRelevance<String, List<String>>> processPKRef(final Connection connection) {
         List<IRelevance<String, List<String>>> lstPrimaryKey = pushPrimaryKeyInfo(connection);
         System.out.println(
@@ -422,7 +476,7 @@ public class Resolver {
             String productName = connection.getMetaData().getDatabaseProductName();
             IDAOForMeta daoMeta = factory.createDBScheme(productName);
             try (PreparedStatement preparedStatement = connection.prepareStatement(
-                forExportKeys ? daoMeta.fkConstraint() : daoMeta.pkConstraint())) {
+                forExportKeys ? daoMeta.exportedKeys() : daoMeta.importedKeys())) {
                 int times = 0;
                 boolean hasNext = true;
                 Map<String, Integer> identifiers = new WeakHashMap<>();
@@ -431,7 +485,7 @@ public class Resolver {
                     int start, end;
                     switch (productName) {
                         case Scheme.DB_TYPE_ORACLE:
-                            start = times * FIXED_ROW_COUNT;
+                            start = times * FIXED_ROW_COUNT + 1;
                             end = (++times) * FIXED_ROW_COUNT;
                             break;
                         case Scheme.DB_TYPE_MYSQL:
