@@ -122,7 +122,7 @@ public class Resolver {
 
             List<Tables> lstTable = resolver.processTable(connection, metaData);
             resolver.collect(lstTable);
-//            processPKRef(connection, lstTable);
+            resolver.processPKRef(connection);
             lstFKRef = resolver.processFKRef(connection);
         } catch (SQLException e) {
             System.err.println(e.getMessage());
@@ -366,7 +366,6 @@ public class Resolver {
         return lstTable;
     }
 
-    @SuppressWarnings(value = {"unused"})
     private List<IRelevance<String, List<String>>> processPKRef(final Connection connection) {
         List<IRelevance<String, List<String>>> lstPrimaryKey = pushPrimaryKeyInfo(connection);
         System.out.println(
