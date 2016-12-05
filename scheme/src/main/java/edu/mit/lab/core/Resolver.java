@@ -453,7 +453,7 @@ public class Resolver {
                         System.err.println(e.getMessage());
                     }
                 } while (hasNext);
-            } catch (SQLException e) {
+            } catch (SQLException | TypeException e) {
                 System.err.println(e.getMessage());
             }
         } catch (SQLException | TypeException e) {
