@@ -160,7 +160,6 @@ public class Resolver {
     private Runnable display(final Graph graph) {
         return () -> {
             Viewer viewer = graph.display();
-            viewer.setCloseFramePolicy(Viewer.CloseFramePolicy.HIDE_ONLY);
             ViewerPipe pipe = viewer.newViewerPipe();
             pipe.addViewerListener(listener(graph));
             //Refer to https://github.com/graphstream/gs-core/issues/209
@@ -168,11 +167,10 @@ public class Resolver {
             boolean loop = true;
             while (loop) {
                 pipe.pump();
-                if (graph.hasAttribute(Scheme.UI_VIEW_CLOSED)) {
-                    loop = false;
-                    if (viewClosedCounter == 0) {
-                        viewer.close();
-                    }
+                loop = !graph.hasAttribute(Scheme.UI_VIEW_CLOSED);
+                if (viewClosedCounter == 0) {
+                    viewer.setCloseFramePolicy(Viewer.CloseFramePolicy.HIDE_ONLY);
+                    viewer.close();
                 }
             }
         };
