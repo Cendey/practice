@@ -3,6 +3,7 @@ package edu.mit.lab.core;
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
 import edu.mit.lab.constant.Scheme;
+import edu.mit.lab.exception.TypeException;
 import edu.mit.lab.infts.IRelevance;
 import edu.mit.lab.infts.idao.IDAOForMeta;
 import edu.mit.lab.meta.Keys;
@@ -439,8 +440,7 @@ public class Resolver {
                             end = FIXED_ROW_COUNT;
                             break;
                         default:
-                            start = 0;
-                            end = 0;
+                            throw new TypeException(productName);
                     }
                     preparedStatement.setInt(2, start);
                     preparedStatement.setInt(3, end);
@@ -456,7 +456,7 @@ public class Resolver {
             } catch (SQLException e) {
                 System.err.println(e.getMessage());
             }
-        } catch (SQLException e) {
+        } catch (SQLException | TypeException e) {
             System.err.println(e.getMessage());
         }
         return lstRefKeys;
