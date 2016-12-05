@@ -44,6 +44,10 @@ import java.util.SortedSet;
 import java.util.TreeSet;
 import java.util.WeakHashMap;
 import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -111,44 +115,44 @@ public class Resolver {
     public static void main(String[] args) throws InterruptedException {
         long start = System.currentTimeMillis();
         Resolver resolver = new Resolver();
-//        List<IRelevance<String, List<String>>> lstFKRef = null;
+        List<IRelevance<String, List<String>>> lstFKRef = null;
         try (Connection connection = createConnection()) {
             DatabaseMetaData metaData = connection.getMetaData();
             resolver.processEntityType(metaData);
 
             List<Tables> lstTable = resolver.processTable(connection, metaData);
-            resolver.retrieve(connection, lstTable);
-//            resolver.collect(lstTable);
-//            resolver.processPKRef(connection);
-//            lstFKRef = resolver.processFKRef(connection);
+//            resolver.retrieve(connection, lstTable);
+            resolver.collect(lstTable);
+            resolver.processPKRef(connection);
+            lstFKRef = resolver.processFKRef(connection);
         } catch (SQLException e) {
             System.err.println(e.getMessage());
         }
 //        List<Tree<String>> trees = buildTableTree(lstFKRef);
-//        Graph overview = resolver.overview(lstFKRef);
-//        resolver.setRootNodeIds(Toolkit.resolveDisconnectedGraph(overview));
-//
-//        ExecutorService executor = Executors.newFixedThreadPool(10);
-//        Future<Integer> status = executor.submit(resolver.genSQLScript(overview));
-//        Future<List<Graph>> graphs = executor.submit(resolver.graphs(overview));
-//
-//        try {
-//            System.out
-//                .println(status.get() == 0 ? "Success to generate SQL script!" : "Failed to generate SQL script!");
-//            List<Graph> lstGraph = graphs.get();
-//            resolver.viewClosedCounter = lstGraph.size();
-//            lstGraph.forEach(
-//                graph -> {
-//                    executor.execute(resolver.persist(graph));
-//
-//                    executor.execute(resolver.display(graph));
-//                }
-//            );
-//        } catch (ExecutionException e) {
-//            System.err.println(e.getMessage());
-//        } finally {
-//            executor.shutdown();
-//        }
+        Graph overview = resolver.overview(lstFKRef);
+        resolver.setRootNodeIds(Toolkit.resolveDisconnectedGraph(overview));
+
+        ExecutorService executor = Executors.newFixedThreadPool(10);
+        Future<Integer> status = executor.submit(resolver.genSQLScript(overview));
+        Future<List<Graph>> graphs = executor.submit(resolver.graphs(overview));
+
+        try {
+            System.out
+                .println(status.get() == 0 ? "Success to generate SQL script!" : "Failed to generate SQL script!");
+            List<Graph> lstGraph = graphs.get();
+            resolver.viewClosedCounter = lstGraph.size();
+            lstGraph.forEach(
+                graph -> {
+                    executor.execute(resolver.persist(graph));
+
+                    executor.execute(resolver.display(graph));
+                }
+            );
+        } catch (ExecutionException e) {
+            System.err.println(e.getMessage());
+        } finally {
+            executor.shutdown();
+        }
         long end = System.currentTimeMillis();
         long duration = end - start;
         System.out.println(String
