@@ -16,10 +16,6 @@ import edu.mit.lab.skeleton.factory.IDAOFactory;
  */
 public class DAOFactory extends IDAOFactory {
 
-    public static IDAOFactory getInstance() {
-        return instance = new DAOFactory();
-    }
-
     @Override
     public IDAOForDBScheme createDBScheme(String dbType) {
         IDAOForDBScheme instance;

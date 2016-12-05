@@ -7,398 +7,463 @@ cg  "ui.default.title":"SYDOC"
 an "nSYDOC"
 cn "nSYDOC"  "ui.class":"root"
 cn "nSYDOC"  "ui.label":"SYDOC"
-cn "nSYDOC"  "Component":31
+cn "nSYDOC"  "Component":32
 cn "nSYDOC"  "data.child":"[nFMPARTY, nSYDOCDTL]"
+cn "nSYDOC"  "action.marked":"identified"
 an "nFMPARTY"
 cn "nFMPARTY"  "data.parent":"[nSYDOC]"
 cn "nFMPARTY"  "ui.label":"FMPARTY"
-cn "nFMPARTY"  "Component":31
+cn "nFMPARTY"  "Component":32
 cn "nFMPARTY"  "data.child":"[nFMPARTYACC, nFMPARTYADDR, nFMPARTYATTN, nFMPARTYCONSTANT, nFMPARTYCONTRACT, nFMPARTYCONTRACT2, nFMPARTYCREDITTERM, nFMPARTYDOCRULE, nFMPARTYFLEXIINFO, nFMPARTYOTHINFO, nFMPARTYOTHINFOEXT, nFMPARTYPART, nFMPARTYPRSTL, nFMPARTYREL, nFMPARTYRIGHTS, nFMPARTYROLE, nFMPARTYSALES, nFMPARTYSERVICEPLAN, nSYOCUSTOMER]"
+cn "nFMPARTY"  "action.marked":"identified"
 an "nSYDOCDTL"
 cn "nSYDOCDTL"  "data.parent":"[nSYDOC]"
 cn "nSYDOCDTL"  "ui.class":"leaf"
 cn "nSYDOCDTL"  "ui.label":"SYDOCDTL"
-cn "nSYDOCDTL"  "Component":31
+cn "nSYDOCDTL"  "Component":32
+cn "nSYDOCDTL"  "action.marked":"identified"
 an "nFMPARTYACC"
 cn "nFMPARTYACC"  "data.parent":"[nFMPARTY]"
 cn "nFMPARTYACC"  "ui.class":"leaf"
 cn "nFMPARTYACC"  "ui.label":"FMPARTYACC"
-cn "nFMPARTYACC"  "Component":31
+cn "nFMPARTYACC"  "Component":32
+cn "nFMPARTYACC"  "action.marked":"identified"
 an "nFMPARTYADDR"
 cn "nFMPARTYADDR"  "data.parent":"[nFMPARTY]"
 cn "nFMPARTYADDR"  "ui.label":"FMPARTYADDR"
-cn "nFMPARTYADDR"  "Component":31
+cn "nFMPARTYADDR"  "Component":32
 cn "nFMPARTYADDR"  "data.child":"[nFMPARTYADDRZONE]"
+cn "nFMPARTYADDR"  "action.marked":"identified"
 an "nFMPARTYATTN"
 cn "nFMPARTYATTN"  "data.parent":"[nFMPARTY]"
 cn "nFMPARTYATTN"  "ui.class":"leaf"
 cn "nFMPARTYATTN"  "ui.label":"FMPARTYATTN"
-cn "nFMPARTYATTN"  "Component":31
+cn "nFMPARTYATTN"  "Component":32
+cn "nFMPARTYATTN"  "action.marked":"identified"
 an "nFMPARTYCONSTANT"
 cn "nFMPARTYCONSTANT"  "data.parent":"[nFMPARTY]"
 cn "nFMPARTYCONSTANT"  "ui.class":"leaf"
 cn "nFMPARTYCONSTANT"  "ui.label":"FMPARTYCONSTANT"
-cn "nFMPARTYCONSTANT"  "Component":31
+cn "nFMPARTYCONSTANT"  "Component":32
+cn "nFMPARTYCONSTANT"  "action.marked":"identified"
 an "nFMPARTYCONTRACT"
 cn "nFMPARTYCONTRACT"  "data.parent":"[nFMPARTY]"
 cn "nFMPARTYCONTRACT"  "ui.class":"leaf"
 cn "nFMPARTYCONTRACT"  "ui.label":"FMPARTYCONTRACT"
-cn "nFMPARTYCONTRACT"  "Component":31
+cn "nFMPARTYCONTRACT"  "Component":32
+cn "nFMPARTYCONTRACT"  "action.marked":"identified"
 an "nFMPARTYCONTRACT2"
 cn "nFMPARTYCONTRACT2"  "data.parent":"[nFMPARTY]"
 cn "nFMPARTYCONTRACT2"  "ui.class":"leaf"
 cn "nFMPARTYCONTRACT2"  "ui.label":"FMPARTYCONTRACT2"
-cn "nFMPARTYCONTRACT2"  "Component":31
+cn "nFMPARTYCONTRACT2"  "Component":32
+cn "nFMPARTYCONTRACT2"  "action.marked":"identified"
 an "nFMPARTYCREDITTERM"
 cn "nFMPARTYCREDITTERM"  "data.parent":"[nFMPARTY]"
 cn "nFMPARTYCREDITTERM"  "ui.class":"leaf"
 cn "nFMPARTYCREDITTERM"  "ui.label":"FMPARTYCREDITTERM"
-cn "nFMPARTYCREDITTERM"  "Component":31
+cn "nFMPARTYCREDITTERM"  "Component":32
+cn "nFMPARTYCREDITTERM"  "action.marked":"identified"
 an "nFMPARTYDOCRULE"
 cn "nFMPARTYDOCRULE"  "data.parent":"[nFMPARTY]"
 cn "nFMPARTYDOCRULE"  "ui.class":"leaf"
 cn "nFMPARTYDOCRULE"  "ui.label":"FMPARTYDOCRULE"
-cn "nFMPARTYDOCRULE"  "Component":31
+cn "nFMPARTYDOCRULE"  "Component":32
+cn "nFMPARTYDOCRULE"  "action.marked":"identified"
 an "nFMPARTYFLEXIINFO"
 cn "nFMPARTYFLEXIINFO"  "data.parent":"[nFMPARTY]"
 cn "nFMPARTYFLEXIINFO"  "ui.class":"leaf"
 cn "nFMPARTYFLEXIINFO"  "ui.label":"FMPARTYFLEXIINFO"
-cn "nFMPARTYFLEXIINFO"  "Component":31
+cn "nFMPARTYFLEXIINFO"  "Component":32
+cn "nFMPARTYFLEXIINFO"  "action.marked":"identified"
 an "nFMPARTYOTHINFO"
 cn "nFMPARTYOTHINFO"  "data.parent":"[nFMPARTY]"
 cn "nFMPARTYOTHINFO"  "ui.class":"leaf"
 cn "nFMPARTYOTHINFO"  "ui.label":"FMPARTYOTHINFO"
-cn "nFMPARTYOTHINFO"  "Component":31
+cn "nFMPARTYOTHINFO"  "Component":32
+cn "nFMPARTYOTHINFO"  "action.marked":"identified"
 an "nFMPARTYOTHINFOEXT"
 cn "nFMPARTYOTHINFOEXT"  "data.parent":"[nFMPARTY]"
 cn "nFMPARTYOTHINFOEXT"  "ui.class":"leaf"
 cn "nFMPARTYOTHINFOEXT"  "ui.label":"FMPARTYOTHINFOEXT"
-cn "nFMPARTYOTHINFOEXT"  "Component":31
+cn "nFMPARTYOTHINFOEXT"  "Component":32
+cn "nFMPARTYOTHINFOEXT"  "action.marked":"identified"
 an "nFMPARTYPART"
 cn "nFMPARTYPART"  "data.parent":"[nFMPARTY]"
 cn "nFMPARTYPART"  "ui.class":"leaf"
 cn "nFMPARTYPART"  "ui.label":"FMPARTYPART"
-cn "nFMPARTYPART"  "Component":31
+cn "nFMPARTYPART"  "Component":32
+cn "nFMPARTYPART"  "action.marked":"identified"
 an "nFMPARTYPRSTL"
 cn "nFMPARTYPRSTL"  "data.parent":"[nFMPARTY]"
 cn "nFMPARTYPRSTL"  "ui.class":"leaf"
 cn "nFMPARTYPRSTL"  "ui.label":"FMPARTYPRSTL"
-cn "nFMPARTYPRSTL"  "Component":31
+cn "nFMPARTYPRSTL"  "Component":32
+cn "nFMPARTYPRSTL"  "action.marked":"identified"
 an "nFMPARTYREL"
 cn "nFMPARTYREL"  "data.parent":"[nFMPARTY]"
 cn "nFMPARTYREL"  "ui.class":"leaf"
 cn "nFMPARTYREL"  "ui.label":"FMPARTYREL"
-cn "nFMPARTYREL"  "Component":31
+cn "nFMPARTYREL"  "Component":32
+cn "nFMPARTYREL"  "action.marked":"identified"
 an "nFMPARTYRIGHTS"
 cn "nFMPARTYRIGHTS"  "data.parent":"[nFMPARTY]"
 cn "nFMPARTYRIGHTS"  "ui.class":"leaf"
 cn "nFMPARTYRIGHTS"  "ui.label":"FMPARTYRIGHTS"
-cn "nFMPARTYRIGHTS"  "Component":31
+cn "nFMPARTYRIGHTS"  "Component":32
+cn "nFMPARTYRIGHTS"  "action.marked":"identified"
 an "nFMPARTYROLE"
 cn "nFMPARTYROLE"  "data.parent":"[nFMPARTY]"
 cn "nFMPARTYROLE"  "ui.class":"leaf"
 cn "nFMPARTYROLE"  "ui.label":"FMPARTYROLE"
-cn "nFMPARTYROLE"  "Component":31
+cn "nFMPARTYROLE"  "Component":32
+cn "nFMPARTYROLE"  "action.marked":"identified"
 an "nFMPARTYSALES"
 cn "nFMPARTYSALES"  "data.parent":"[nFMPARTY]"
 cn "nFMPARTYSALES"  "ui.class":"leaf"
 cn "nFMPARTYSALES"  "ui.label":"FMPARTYSALES"
-cn "nFMPARTYSALES"  "Component":31
+cn "nFMPARTYSALES"  "Component":32
+cn "nFMPARTYSALES"  "action.marked":"identified"
 an "nFMPARTYSERVICEPLAN"
 cn "nFMPARTYSERVICEPLAN"  "data.parent":"[nFMPARTY]"
 cn "nFMPARTYSERVICEPLAN"  "ui.class":"leaf"
 cn "nFMPARTYSERVICEPLAN"  "ui.label":"FMPARTYSERVICEPLAN"
-cn "nFMPARTYSERVICEPLAN"  "Component":31
+cn "nFMPARTYSERVICEPLAN"  "Component":32
+cn "nFMPARTYSERVICEPLAN"  "action.marked":"identified"
 an "nSYOCUSTOMER"
 cn "nSYOCUSTOMER"  "data.parent":"[nSYORGCHART, nFMPARTY]"
 cn "nSYOCUSTOMER"  "ui.class":"leaf"
 cn "nSYOCUSTOMER"  "ui.label":"SYOCUSTOMER"
-cn "nSYOCUSTOMER"  "Component":31
+cn "nSYOCUSTOMER"  "Component":32
+cn "nSYOCUSTOMER"  "action.marked":"identified"
 an "nFMPARTYADDRZONE"
 cn "nFMPARTYADDRZONE"  "data.parent":"[nFMPARTYADDR]"
 cn "nFMPARTYADDRZONE"  "ui.class":"leaf"
 cn "nFMPARTYADDRZONE"  "ui.label":"FMPARTYADDRZONE"
-cn "nFMPARTYADDRZONE"  "Component":31
+cn "nFMPARTYADDRZONE"  "Component":32
+cn "nFMPARTYADDRZONE"  "action.marked":"identified"
 an "nSYORGCHART"
 cn "nSYORGCHART"  "data.parent":"[nSYORGCHART]"
 cn "nSYORGCHART"  "ui.label":"SYORGCHART"
-cn "nSYORGCHART"  "Component":31
+cn "nSYORGCHART"  "Component":32
 cn "nSYORGCHART"  "data.child":"[nSYCOMPANY, nSYDEPARTMENT, nSYOACCESSAUTH, nSYOCONSTANT, nSYOCUSTOMER, nSYODATAAUTH, nSYOFORMPRINTER, nSYOMENURESTRICTION, nSYOMODULERESTRICTION, nSYOPARTYCTRL, nSYOPREFERENCE, nSYOPRIVILEGE, nSYORGCHART, nSYOTYPEOWNERAUTH, nSYOWORKFLOW, nSYUROLE, nSYUSER]"
 an "nSYCOMPANY"
 cn "nSYCOMPANY"  "data.parent":"[nSYORGCHART, nSYCOSTRUC]"
 cn "nSYCOMPANY"  "ui.class":"leaf"
 cn "nSYCOMPANY"  "ui.label":"SYCOMPANY"
-cn "nSYCOMPANY"  "Component":31
+cn "nSYCOMPANY"  "Component":32
+cn "nSYCOMPANY"  "action.marked":"identified"
 an "nSYDEPARTMENT"
 cn "nSYDEPARTMENT"  "data.parent":"[nSYORGCHART]"
 cn "nSYDEPARTMENT"  "ui.class":"leaf"
 cn "nSYDEPARTMENT"  "ui.label":"SYDEPARTMENT"
-cn "nSYDEPARTMENT"  "Component":31
+cn "nSYDEPARTMENT"  "Component":32
 an "nSYOACCESSAUTH"
 cn "nSYOACCESSAUTH"  "data.parent":"[nSYORGCHART]"
 cn "nSYOACCESSAUTH"  "ui.class":"leaf"
 cn "nSYOACCESSAUTH"  "ui.label":"SYOACCESSAUTH"
-cn "nSYOACCESSAUTH"  "Component":31
+cn "nSYOACCESSAUTH"  "Component":32
 an "nSYOCONSTANT"
 cn "nSYOCONSTANT"  "data.parent":"[nSYORGCHART]"
 cn "nSYOCONSTANT"  "ui.class":"leaf"
 cn "nSYOCONSTANT"  "ui.label":"SYOCONSTANT"
-cn "nSYOCONSTANT"  "Component":31
+cn "nSYOCONSTANT"  "Component":32
 an "nSYODATAAUTH"
 cn "nSYODATAAUTH"  "data.parent":"[nSYORGCHART]"
 cn "nSYODATAAUTH"  "ui.class":"leaf"
 cn "nSYODATAAUTH"  "ui.label":"SYODATAAUTH"
-cn "nSYODATAAUTH"  "Component":31
+cn "nSYODATAAUTH"  "Component":32
 an "nSYOFORMPRINTER"
 cn "nSYOFORMPRINTER"  "data.parent":"[nSYORGCHART]"
 cn "nSYOFORMPRINTER"  "ui.class":"leaf"
 cn "nSYOFORMPRINTER"  "ui.label":"SYOFORMPRINTER"
-cn "nSYOFORMPRINTER"  "Component":31
+cn "nSYOFORMPRINTER"  "Component":32
 an "nSYOMENURESTRICTION"
 cn "nSYOMENURESTRICTION"  "data.parent":"[nSYORGCHART]"
 cn "nSYOMENURESTRICTION"  "ui.class":"leaf"
 cn "nSYOMENURESTRICTION"  "ui.label":"SYOMENURESTRICTION"
-cn "nSYOMENURESTRICTION"  "Component":31
+cn "nSYOMENURESTRICTION"  "Component":32
 an "nSYOMODULERESTRICTION"
 cn "nSYOMODULERESTRICTION"  "data.parent":"[nSYORGCHART]"
 cn "nSYOMODULERESTRICTION"  "ui.class":"leaf"
 cn "nSYOMODULERESTRICTION"  "ui.label":"SYOMODULERESTRICTION"
-cn "nSYOMODULERESTRICTION"  "Component":31
+cn "nSYOMODULERESTRICTION"  "Component":32
 an "nSYOPARTYCTRL"
 cn "nSYOPARTYCTRL"  "data.parent":"[nSYORGCHART]"
 cn "nSYOPARTYCTRL"  "ui.class":"leaf"
 cn "nSYOPARTYCTRL"  "ui.label":"SYOPARTYCTRL"
-cn "nSYOPARTYCTRL"  "Component":31
+cn "nSYOPARTYCTRL"  "Component":32
 an "nSYOPREFERENCE"
 cn "nSYOPREFERENCE"  "data.parent":"[nSYORGCHART]"
 cn "nSYOPREFERENCE"  "ui.class":"leaf"
 cn "nSYOPREFERENCE"  "ui.label":"SYOPREFERENCE"
-cn "nSYOPREFERENCE"  "Component":31
+cn "nSYOPREFERENCE"  "Component":32
 an "nSYOPRIVILEGE"
 cn "nSYOPRIVILEGE"  "data.parent":"[nSYORGCHART]"
 cn "nSYOPRIVILEGE"  "ui.class":"leaf"
 cn "nSYOPRIVILEGE"  "ui.label":"SYOPRIVILEGE"
-cn "nSYOPRIVILEGE"  "Component":31
+cn "nSYOPRIVILEGE"  "Component":32
 an "nSYOTYPEOWNERAUTH"
 cn "nSYOTYPEOWNERAUTH"  "data.parent":"[nSYORGCHART]"
 cn "nSYOTYPEOWNERAUTH"  "ui.class":"leaf"
 cn "nSYOTYPEOWNERAUTH"  "ui.label":"SYOTYPEOWNERAUTH"
-cn "nSYOTYPEOWNERAUTH"  "Component":31
+cn "nSYOTYPEOWNERAUTH"  "Component":32
 an "nSYOWORKFLOW"
 cn "nSYOWORKFLOW"  "data.parent":"[nSYORGCHART]"
 cn "nSYOWORKFLOW"  "ui.class":"leaf"
 cn "nSYOWORKFLOW"  "ui.label":"SYOWORKFLOW"
-cn "nSYOWORKFLOW"  "Component":31
+cn "nSYOWORKFLOW"  "Component":32
 an "nSYUROLE"
 cn "nSYUROLE"  "data.parent":"[nSYORGCHART, nSYROLE]"
 cn "nSYUROLE"  "ui.class":"leaf"
 cn "nSYUROLE"  "ui.label":"SYUROLE"
-cn "nSYUROLE"  "Component":31
+cn "nSYUROLE"  "Component":32
+cn "nSYUROLE"  "action.marked":"identified"
 an "nSYUSER"
 cn "nSYUSER"  "data.parent":"[nSYORGCHART]"
 cn "nSYUSER"  "ui.class":"leaf"
 cn "nSYUSER"  "ui.label":"SYUSER"
-cn "nSYUSER"  "Component":31
+cn "nSYUSER"  "Component":32
 an "nSYCOSTRUC"
 cn "nSYCOSTRUC"  "ui.class":"root"
 cn "nSYCOSTRUC"  "ui.label":"SYCOSTRUC"
-cn "nSYCOSTRUC"  "Component":31
+cn "nSYCOSTRUC"  "Component":32
 cn "nSYCOSTRUC"  "data.child":"[nFMROUTE, nSYACCOUNTAGINGPERIOD, nSYCOCONDITIONHDR, nSYCODEPARTMENT, nSYCOFINPERIOD, nSYCOFORMID, nSYCOGRID, nSYCOINTFSETUPRULES, nSYCOLORCONDITION, nSYCOMPANY, nSYCOPREFERENCE, nSYCOPREFERENCEEXT, nSYCOPRINTER, nSYCOPRIVILEGE, nSYINTFCFG, nSYRULE, nVTRFHDR]"
+cn "nSYCOSTRUC"  "action.marked":"identified"
 an "nFMROUTE"
 cn "nFMROUTE"  "data.parent":"[nSYCOSTRUC]"
 cn "nFMROUTE"  "ui.label":"FMROUTE"
-cn "nFMROUTE"  "Component":31
+cn "nFMROUTE"  "Component":32
 cn "nFMROUTE"  "data.child":"[nFMROUTEDTL, nFMROUTERESTRICTION]"
+cn "nFMROUTE"  "action.marked":"identified"
 an "nSYACCOUNTAGINGPERIOD"
 cn "nSYACCOUNTAGINGPERIOD"  "data.parent":"[nSYCOSTRUC]"
 cn "nSYACCOUNTAGINGPERIOD"  "ui.class":"leaf"
 cn "nSYACCOUNTAGINGPERIOD"  "ui.label":"SYACCOUNTAGINGPERIOD"
-cn "nSYACCOUNTAGINGPERIOD"  "Component":31
+cn "nSYACCOUNTAGINGPERIOD"  "Component":32
+cn "nSYACCOUNTAGINGPERIOD"  "action.marked":"identified"
 an "nSYCOCONDITIONHDR"
 cn "nSYCOCONDITIONHDR"  "data.parent":"[nSYCOSTRUC]"
 cn "nSYCOCONDITIONHDR"  "ui.label":"SYCOCONDITIONHDR"
-cn "nSYCOCONDITIONHDR"  "Component":31
+cn "nSYCOCONDITIONHDR"  "Component":32
 cn "nSYCOCONDITIONHDR"  "data.child":"[nSYCOCONDITIONDTL]"
+cn "nSYCOCONDITIONHDR"  "action.marked":"identified"
 an "nSYCODEPARTMENT"
 cn "nSYCODEPARTMENT"  "data.parent":"[nSYCOSTRUC]"
 cn "nSYCODEPARTMENT"  "ui.class":"leaf"
 cn "nSYCODEPARTMENT"  "ui.label":"SYCODEPARTMENT"
-cn "nSYCODEPARTMENT"  "Component":31
+cn "nSYCODEPARTMENT"  "Component":32
+cn "nSYCODEPARTMENT"  "action.marked":"identified"
 an "nSYCOFINPERIOD"
 cn "nSYCOFINPERIOD"  "data.parent":"[nSYCOSTRUC]"
 cn "nSYCOFINPERIOD"  "ui.class":"leaf"
 cn "nSYCOFINPERIOD"  "ui.label":"SYCOFINPERIOD"
-cn "nSYCOFINPERIOD"  "Component":31
+cn "nSYCOFINPERIOD"  "Component":32
+cn "nSYCOFINPERIOD"  "action.marked":"identified"
 an "nSYCOFORMID"
 cn "nSYCOFORMID"  "data.parent":"[nSYCOSTRUC]"
 cn "nSYCOFORMID"  "ui.class":"leaf"
 cn "nSYCOFORMID"  "ui.label":"SYCOFORMID"
-cn "nSYCOFORMID"  "Component":31
+cn "nSYCOFORMID"  "Component":32
+cn "nSYCOFORMID"  "action.marked":"identified"
 an "nSYCOGRID"
 cn "nSYCOGRID"  "data.parent":"[nSYCOSTRUC]"
 cn "nSYCOGRID"  "ui.label":"SYCOGRID"
-cn "nSYCOGRID"  "Component":31
+cn "nSYCOGRID"  "Component":32
 cn "nSYCOGRID"  "data.child":"[nSYCOGRIDCOLOR]"
+cn "nSYCOGRID"  "action.marked":"identified"
 an "nSYCOINTFSETUPRULES"
 cn "nSYCOINTFSETUPRULES"  "data.parent":"[nSYCOSTRUC]"
 cn "nSYCOINTFSETUPRULES"  "ui.class":"leaf"
 cn "nSYCOINTFSETUPRULES"  "ui.label":"SYCOINTFSETUPRULES"
-cn "nSYCOINTFSETUPRULES"  "Component":31
+cn "nSYCOINTFSETUPRULES"  "Component":32
+cn "nSYCOINTFSETUPRULES"  "action.marked":"identified"
 an "nSYCOLORCONDITION"
 cn "nSYCOLORCONDITION"  "data.parent":"[nSYCOSTRUC]"
 cn "nSYCOLORCONDITION"  "ui.label":"SYCOLORCONDITION"
-cn "nSYCOLORCONDITION"  "Component":31
+cn "nSYCOLORCONDITION"  "Component":32
 cn "nSYCOLORCONDITION"  "data.child":"[nSYCOLORCONDITIONPARAM, nSYGRIDCOLORNODE]"
+cn "nSYCOLORCONDITION"  "action.marked":"identified"
 an "nSYCOPREFERENCE"
 cn "nSYCOPREFERENCE"  "data.parent":"[nSYCOSTRUC]"
 cn "nSYCOPREFERENCE"  "ui.class":"leaf"
 cn "nSYCOPREFERENCE"  "ui.label":"SYCOPREFERENCE"
-cn "nSYCOPREFERENCE"  "Component":31
+cn "nSYCOPREFERENCE"  "Component":32
+cn "nSYCOPREFERENCE"  "action.marked":"identified"
 an "nSYCOPREFERENCEEXT"
 cn "nSYCOPREFERENCEEXT"  "data.parent":"[nSYCOSTRUC]"
 cn "nSYCOPREFERENCEEXT"  "ui.class":"leaf"
 cn "nSYCOPREFERENCEEXT"  "ui.label":"SYCOPREFERENCEEXT"
-cn "nSYCOPREFERENCEEXT"  "Component":31
+cn "nSYCOPREFERENCEEXT"  "Component":32
+cn "nSYCOPREFERENCEEXT"  "action.marked":"identified"
 an "nSYCOPRINTER"
 cn "nSYCOPRINTER"  "data.parent":"[nSYCOSTRUC]"
 cn "nSYCOPRINTER"  "ui.class":"leaf"
 cn "nSYCOPRINTER"  "ui.label":"SYCOPRINTER"
-cn "nSYCOPRINTER"  "Component":31
+cn "nSYCOPRINTER"  "Component":32
+cn "nSYCOPRINTER"  "action.marked":"identified"
 an "nSYCOPRIVILEGE"
 cn "nSYCOPRIVILEGE"  "data.parent":"[nSYCOSTRUC]"
 cn "nSYCOPRIVILEGE"  "ui.class":"leaf"
 cn "nSYCOPRIVILEGE"  "ui.label":"SYCOPRIVILEGE"
-cn "nSYCOPRIVILEGE"  "Component":31
+cn "nSYCOPRIVILEGE"  "Component":32
+cn "nSYCOPRIVILEGE"  "action.marked":"identified"
 an "nSYINTFCFG"
 cn "nSYINTFCFG"  "data.parent":"[nSYCOSTRUC]"
 cn "nSYINTFCFG"  "ui.class":"leaf"
 cn "nSYINTFCFG"  "ui.label":"SYINTFCFG"
-cn "nSYINTFCFG"  "Component":31
+cn "nSYINTFCFG"  "Component":32
+cn "nSYINTFCFG"  "action.marked":"identified"
 an "nSYRULE"
 cn "nSYRULE"  "data.parent":"[nSYCOSTRUC]"
 cn "nSYRULE"  "ui.class":"leaf"
 cn "nSYRULE"  "ui.label":"SYRULE"
-cn "nSYRULE"  "Component":31
+cn "nSYRULE"  "Component":32
+cn "nSYRULE"  "action.marked":"identified"
 an "nVTRFHDR"
 cn "nVTRFHDR"  "data.parent":"[nSYCOSTRUC]"
 cn "nVTRFHDR"  "ui.label":"VTRFHDR"
-cn "nVTRFHDR"  "Component":31
+cn "nVTRFHDR"  "Component":32
 cn "nVTRFHDR"  "data.child":"[nVTRFCBNNO, nVTRFJOB, nVTRFRIGHTS]"
+cn "nVTRFHDR"  "action.marked":"identified"
 an "nSYROLE"
 cn "nSYROLE"  "ui.class":"root"
 cn "nSYROLE"  "ui.label":"SYROLE"
-cn "nSYROLE"  "Component":31
+cn "nSYROLE"  "Component":32
 cn "nSYROLE"  "data.child":"[nSYFORMROLE, nSYRMENURESTRICTION, nSYRMODULERESTRICTION, nSYRPREFERENCE, nSYRPRIVILEGE, nSYRWORKFLOW, nSYUROLE]"
+cn "nSYROLE"  "action.marked":"identified"
 an "nSYFORMROLE"
-cn "nSYFORMROLE"  "data.parent":"[nSYFORMSETUP, nSYROLE]"
+cn "nSYFORMROLE"  "data.parent":"[nSYROLE, nSYFORMSETUP]"
 cn "nSYFORMROLE"  "ui.class":"leaf"
 cn "nSYFORMROLE"  "ui.label":"SYFORMROLE"
-cn "nSYFORMROLE"  "Component":31
+cn "nSYFORMROLE"  "Component":32
+cn "nSYFORMROLE"  "action.marked":"identified"
 an "nSYRMENURESTRICTION"
-cn "nSYRMENURESTRICTION"  "data.parent":"[nSYROLE, nSYMENU]"
+cn "nSYRMENURESTRICTION"  "data.parent":"[nSYMENU, nSYROLE]"
 cn "nSYRMENURESTRICTION"  "ui.class":"leaf"
 cn "nSYRMENURESTRICTION"  "ui.label":"SYRMENURESTRICTION"
-cn "nSYRMENURESTRICTION"  "Component":31
+cn "nSYRMENURESTRICTION"  "Component":32
+cn "nSYRMENURESTRICTION"  "action.marked":"identified"
 an "nSYRMODULERESTRICTION"
 cn "nSYRMODULERESTRICTION"  "data.parent":"[nSYROLE]"
 cn "nSYRMODULERESTRICTION"  "ui.class":"leaf"
 cn "nSYRMODULERESTRICTION"  "ui.label":"SYRMODULERESTRICTION"
-cn "nSYRMODULERESTRICTION"  "Component":31
+cn "nSYRMODULERESTRICTION"  "Component":32
+cn "nSYRMODULERESTRICTION"  "action.marked":"identified"
 an "nSYRPREFERENCE"
 cn "nSYRPREFERENCE"  "data.parent":"[nSYROLE]"
 cn "nSYRPREFERENCE"  "ui.class":"leaf"
 cn "nSYRPREFERENCE"  "ui.label":"SYRPREFERENCE"
-cn "nSYRPREFERENCE"  "Component":31
+cn "nSYRPREFERENCE"  "Component":32
+cn "nSYRPREFERENCE"  "action.marked":"identified"
 an "nSYRPRIVILEGE"
 cn "nSYRPRIVILEGE"  "data.parent":"[nSYROLE]"
 cn "nSYRPRIVILEGE"  "ui.class":"leaf"
 cn "nSYRPRIVILEGE"  "ui.label":"SYRPRIVILEGE"
-cn "nSYRPRIVILEGE"  "Component":31
+cn "nSYRPRIVILEGE"  "Component":32
+cn "nSYRPRIVILEGE"  "action.marked":"identified"
 an "nSYRWORKFLOW"
 cn "nSYRWORKFLOW"  "data.parent":"[nSYROLE]"
 cn "nSYRWORKFLOW"  "ui.class":"leaf"
 cn "nSYRWORKFLOW"  "ui.label":"SYRWORKFLOW"
-cn "nSYRWORKFLOW"  "Component":31
+cn "nSYRWORKFLOW"  "Component":32
+cn "nSYRWORKFLOW"  "action.marked":"identified"
 an "nFMROUTEDTL"
 cn "nFMROUTEDTL"  "data.parent":"[nFMROUTE]"
 cn "nFMROUTEDTL"  "ui.class":"leaf"
 cn "nFMROUTEDTL"  "ui.label":"FMROUTEDTL"
-cn "nFMROUTEDTL"  "Component":31
+cn "nFMROUTEDTL"  "Component":32
+cn "nFMROUTEDTL"  "action.marked":"identified"
 an "nFMROUTERESTRICTION"
 cn "nFMROUTERESTRICTION"  "data.parent":"[nFMROUTE]"
 cn "nFMROUTERESTRICTION"  "ui.class":"leaf"
 cn "nFMROUTERESTRICTION"  "ui.label":"FMROUTERESTRICTION"
-cn "nFMROUTERESTRICTION"  "Component":31
+cn "nFMROUTERESTRICTION"  "Component":32
+cn "nFMROUTERESTRICTION"  "action.marked":"identified"
 an "nSYCOCONDITIONDTL"
 cn "nSYCOCONDITIONDTL"  "data.parent":"[nSYCOCONDITIONHDR]"
 cn "nSYCOCONDITIONDTL"  "ui.class":"leaf"
 cn "nSYCOCONDITIONDTL"  "ui.label":"SYCOCONDITIONDTL"
-cn "nSYCOCONDITIONDTL"  "Component":31
+cn "nSYCOCONDITIONDTL"  "Component":32
+cn "nSYCOCONDITIONDTL"  "action.marked":"identified"
 an "nSYCOGRIDCOLOR"
 cn "nSYCOGRIDCOLOR"  "data.parent":"[nSYCOGRID]"
 cn "nSYCOGRIDCOLOR"  "ui.class":"leaf"
 cn "nSYCOGRIDCOLOR"  "ui.label":"SYCOGRIDCOLOR"
-cn "nSYCOGRIDCOLOR"  "Component":31
+cn "nSYCOGRIDCOLOR"  "Component":32
+cn "nSYCOGRIDCOLOR"  "action.marked":"identified"
 an "nSYCOLORCONDITIONPARAM"
 cn "nSYCOLORCONDITIONPARAM"  "data.parent":"[nSYCOLORCONDITION]"
 cn "nSYCOLORCONDITIONPARAM"  "ui.class":"leaf"
 cn "nSYCOLORCONDITIONPARAM"  "ui.label":"SYCOLORCONDITIONPARAM"
-cn "nSYCOLORCONDITIONPARAM"  "Component":31
+cn "nSYCOLORCONDITIONPARAM"  "Component":32
+cn "nSYCOLORCONDITIONPARAM"  "action.marked":"identified"
 an "nSYGRIDCOLORNODE"
 cn "nSYGRIDCOLORNODE"  "data.parent":"[nSYCOLORCONDITION]"
 cn "nSYGRIDCOLORNODE"  "ui.class":"leaf"
 cn "nSYGRIDCOLORNODE"  "ui.label":"SYGRIDCOLORNODE"
-cn "nSYGRIDCOLORNODE"  "Component":31
+cn "nSYGRIDCOLORNODE"  "Component":32
+cn "nSYGRIDCOLORNODE"  "action.marked":"identified"
 an "nVTRFCBNNO"
 cn "nVTRFCBNNO"  "data.parent":"[nVTRFHDR]"
 cn "nVTRFCBNNO"  "ui.class":"leaf"
 cn "nVTRFCBNNO"  "ui.label":"VTRFCBNNO"
-cn "nVTRFCBNNO"  "Component":31
+cn "nVTRFCBNNO"  "Component":32
+cn "nVTRFCBNNO"  "action.marked":"identified"
 an "nVTRFJOB"
 cn "nVTRFJOB"  "data.parent":"[nVTRFHDR]"
 cn "nVTRFJOB"  "ui.class":"leaf"
 cn "nVTRFJOB"  "ui.label":"VTRFJOB"
-cn "nVTRFJOB"  "Component":31
+cn "nVTRFJOB"  "Component":32
+cn "nVTRFJOB"  "action.marked":"identified"
 an "nVTRFRIGHTS"
 cn "nVTRFRIGHTS"  "data.parent":"[nVTRFHDR]"
 cn "nVTRFRIGHTS"  "ui.class":"leaf"
 cn "nVTRFRIGHTS"  "ui.label":"VTRFRIGHTS"
-cn "nVTRFRIGHTS"  "Component":31
+cn "nVTRFRIGHTS"  "Component":32
+cn "nVTRFRIGHTS"  "action.marked":"identified"
 an "nSYFORMSETUP"
 cn "nSYFORMSETUP"  "ui.class":"root"
 cn "nSYFORMSETUP"  "ui.label":"SYFORMSETUP"
-cn "nSYFORMSETUP"  "Component":31
+cn "nSYFORMSETUP"  "Component":32
 cn "nSYFORMSETUP"  "data.child":"[nSYFORMPARAM, nSYFORMPOSTACTION, nSYFORMREMARK, nSYFORMROLE]"
+cn "nSYFORMSETUP"  "action.marked":"identified"
 an "nSYFORMPARAM"
 cn "nSYFORMPARAM"  "data.parent":"[nSYFORMSETUP]"
 cn "nSYFORMPARAM"  "ui.class":"leaf"
 cn "nSYFORMPARAM"  "ui.label":"SYFORMPARAM"
-cn "nSYFORMPARAM"  "Component":31
+cn "nSYFORMPARAM"  "Component":32
+cn "nSYFORMPARAM"  "action.marked":"identified"
 an "nSYFORMPOSTACTION"
 cn "nSYFORMPOSTACTION"  "data.parent":"[nSYFORMSETUP]"
 cn "nSYFORMPOSTACTION"  "ui.label":"SYFORMPOSTACTION"
-cn "nSYFORMPOSTACTION"  "Component":31
+cn "nSYFORMPOSTACTION"  "Component":32
 cn "nSYFORMPOSTACTION"  "data.child":"[nSYFORMUPDATEPLAN]"
+cn "nSYFORMPOSTACTION"  "action.marked":"identified"
 an "nSYFORMREMARK"
 cn "nSYFORMREMARK"  "data.parent":"[nSYFORMSETUP]"
 cn "nSYFORMREMARK"  "ui.class":"leaf"
 cn "nSYFORMREMARK"  "ui.label":"SYFORMREMARK"
-cn "nSYFORMREMARK"  "Component":31
+cn "nSYFORMREMARK"  "Component":32
+cn "nSYFORMREMARK"  "action.marked":"identified"
 an "nSYMENU"
 cn "nSYMENU"  "ui.class":"root"
 cn "nSYMENU"  "ui.label":"SYMENU"
-cn "nSYMENU"  "Component":31
+cn "nSYMENU"  "Component":32
 cn "nSYMENU"  "data.child":"[nSYMENURESOURCE, nSYRMENURESTRICTION]"
+cn "nSYMENU"  "action.marked":"identified"
 an "nSYMENURESOURCE"
 cn "nSYMENURESOURCE"  "data.parent":"[nSYMENU]"
 cn "nSYMENURESOURCE"  "ui.class":"leaf"
 cn "nSYMENURESOURCE"  "ui.label":"SYMENURESOURCE"
-cn "nSYMENURESOURCE"  "Component":31
+cn "nSYMENURESOURCE"  "Component":32
+cn "nSYMENURESOURCE"  "action.marked":"identified"
 an "nSYFORMUPDATEPLAN"
 cn "nSYFORMUPDATEPLAN"  "data.parent":"[nSYFORMPOSTACTION]"
 cn "nSYFORMUPDATEPLAN"  "ui.class":"leaf"
 cn "nSYFORMUPDATEPLAN"  "ui.label":"SYFORMUPDATEPLAN"
-cn "nSYFORMUPDATEPLAN"  "Component":31
+cn "nSYFORMUPDATEPLAN"  "Component":32
+cn "nSYFORMUPDATEPLAN"  "action.marked":"identified"
 ae "eSYDOCFMPARTY" "nFMPARTY" > "nSYDOC"
 ce "eSYDOCFMPARTY"  "ui.label":"[SYDOCUNID]"
 ce "eSYDOCFMPARTY"  "ui.class":"root"

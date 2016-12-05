@@ -3,10 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="9fc2e707-20c6-402b-95b8-f28819b72193" name="Default" comment="Code optimized">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/repos/mysql/DAOForDBScheme.java" afterPath="$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/repos/mysql/DAOForDBScheme.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scheme/src/main/resources/hikari.properties" afterPath="$PROJECT_DIR$/scheme/src/main/resources/hikari.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scheme/target/classes/hikari.properties" afterPath="$PROJECT_DIR$/scheme/target/classes/hikari.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/work/clear_data_script.sql" afterPath="$PROJECT_DIR$/work/clear_data_script.sql" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/skeleton/DAOFactory.java" afterPath="$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/skeleton/DAOFactory.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/skeleton/factory/IDAOFactory.java" afterPath="$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/skeleton/factory/IDAOFactory.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/work/stream_graph_CTRFHDR.dgs" afterPath="$PROJECT_DIR$/work/stream_graph_CTRFHDR.dgs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/work/stream_graph_SYDOC.dgs" afterPath="$PROJECT_DIR$/work/stream_graph_SYDOC.dgs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/work/stream_graph_SYKCTHDR.dgs" afterPath="$PROJECT_DIR$/work/stream_graph_SYKCTHDR.dgs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/work/stream_graph_VESSELVOYAGE.dgs" afterPath="$PROJECT_DIR$/work/stream_graph_VESSELVOYAGE.dgs" />
     </list>
     <ignored path="$PROJECT_DIR$/analysis/target/" />
     <ignored path="$PROJECT_DIR$/scheme/target/" />
@@ -35,7 +37,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Resolver.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Resolver.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/core/Resolver.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="166">
@@ -106,21 +108,19 @@
         <entry file="file://$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/skeleton/factory/IDAOFactory.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="272">
-              <caret line="16" column="41" lean-forward="false" selection-start-line="16" selection-start-column="33" selection-end-line="16" selection-end-column="41" />
+              <caret line="16" column="4" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DAOFactory.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="DAOFactory.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/skeleton/DAOFactory.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="35" column="0" lean-forward="false" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+            <state relative-caret-position="445">
+              <caret line="32" column="5" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#497#498#0" expanded="true" />
-                <element signature="e#547#548#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -214,10 +214,11 @@
         <option value="$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/constant/Scheme.java" />
         <option value="$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/infts/factory/ISQLFactory.java" />
         <option value="$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/infts/factory/IDAOFactory.java" />
-        <option value="$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/skeleton/DAOFactory.java" />
         <option value="$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/core/Resolver.java" />
         <option value="$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/repos/mysql/DAOForDBScheme.java" />
         <option value="$PROJECT_DIR$/scheme/src/main/resources/hikari.properties" />
+        <option value="$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/skeleton/factory/IDAOFactory.java" />
+        <option value="$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/skeleton/DAOFactory.java" />
       </list>
     </option>
   </component>
@@ -420,6 +421,40 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="skeleton" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Git" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scheme" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lab" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="skeleton" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="factory" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1145,7 +1180,7 @@
       <workItem from="1480639613837" duration="25868000" />
       <workItem from="1480668718972" duration="1472000" />
       <workItem from="1480670336287" duration="978000" />
-      <workItem from="1480899507586" duration="13095000" />
+      <workItem from="1480899507586" duration="13811000" />
     </task>
     <task id="LOCAL-00001" summary="Revise pom artifact Id">
       <created>1480317832255</created>
@@ -1238,11 +1273,18 @@
       <option name="project" value="LOCAL" />
       <updated>1480912548947</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Code optimized">
+      <created>1480913467470</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1480913467470</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="108579000" />
+    <option name="totallyTimeSpent" value="109295000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1753,14 +1795,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/skeleton/factory/IDAOFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="41" lean-forward="false" selection-start-line="16" selection-start-column="33" selection-end-line="16" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/infts/idao/IDAOForDBScheme.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
@@ -1786,18 +1820,6 @@
             <element signature="e#460#461#0" expanded="true" />
             <element signature="e#496#497#0" expanded="true" />
             <element signature="e#523#524#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/skeleton/DAOFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="35" column="0" lean-forward="false" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#497#498#0" expanded="true" />
-            <element signature="e#547#548#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1838,6 +1860,24 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="166">
           <caret line="172" column="0" lean-forward="false" selection-start-line="172" selection-start-column="0" selection-end-line="172" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/skeleton/factory/IDAOFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="4" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/skeleton/DAOFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="445">
+          <caret line="32" column="5" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

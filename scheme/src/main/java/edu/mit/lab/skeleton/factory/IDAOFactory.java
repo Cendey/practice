@@ -14,7 +14,5 @@ import edu.mit.lab.infts.idao.IDAOForDBScheme;
  */
 public abstract class IDAOFactory {
 
-    protected static IDAOFactory instance;
-
     public abstract IDAOForDBScheme createDBScheme(String dbType);
 }
