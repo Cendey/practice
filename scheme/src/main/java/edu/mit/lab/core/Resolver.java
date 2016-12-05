@@ -191,7 +191,7 @@ public class Resolver {
             String catalog = primaryKeys.getString(Scheme.TABLE_CAT);
             String schema = primaryKeys.getString(Scheme.TABLE_SCHEM);
             String name = primaryKeys.getString(Scheme._TABLE_NAME);
-            String column = primaryKeys.getString(Scheme.PK_NAME);
+            String column = primaryKeys.getString(Scheme.COLUMN_NAME);
             int sequence = primaryKeys.getShort(Scheme.KEY_SEQ);
             System.out.println(String
                 .format("Catalog:%s & schema:%s & table:%s & column:%s & key sequence:%d", catalog, schema,
