@@ -4,9 +4,11 @@ import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
 import edu.mit.lab.constant.Scheme;
 import edu.mit.lab.infts.IRelevance;
+import edu.mit.lab.infts.idao.IDAOForDBScheme;
 import edu.mit.lab.meta.Keys;
 import edu.mit.lab.meta.Tables;
-import edu.mit.lab.repos.DAOForScheme;
+import edu.mit.lab.skeleton.DAOFactory;
+import edu.mit.lab.skeleton.factory.IDAOFactory;
 import edu.mit.lab.utils.Toolkit;
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.collections4.MapUtils;
@@ -415,24 +417,45 @@ public class Resolver {
 
     private List<IRelevance<String, List<String>>> processKeysInfo(Connection connection, boolean forExportKeys) {
         List<IRelevance<String, List<String>>> lstRefKeys = new ArrayList<>();
-        try (PreparedStatement preparedStatement = connection.prepareStatement(
-            forExportKeys ? DAOForScheme.foreignKeyConstraintSQL() : DAOForScheme.primaryKeyConstraintSQL())) {
-            int times = 0;
-            boolean hasNext = true;
-            Map<String, Integer> identifiers = new WeakHashMap<>();
-            do {
-                preparedStatement.setString(1, connection.getSchema());
-                preparedStatement.setInt(2, times * FIXED_ROW_COUNT);
-                preparedStatement.setInt(3, (++times) * FIXED_ROW_COUNT);
-                try (ResultSet refKeyResult = preparedStatement.executeQuery()) {
-                    refKeyResult.setFetchDirection(ResultSet.TYPE_FORWARD_ONLY);
-                    if (hasNext = refKeyResult.isBeforeFirst()) {
-                        handleRefKeys(refKeyResult, lstRefKeys, identifiers);
+        try {
+            IDAOFactory factory = new DAOFactory();
+            String productName = connection.getMetaData().getDatabaseProductName();
+            IDAOForDBScheme daoMeta = factory.createDBScheme(productName);
+            try (PreparedStatement preparedStatement = connection.prepareStatement(
+                forExportKeys ? daoMeta.fkConstraint() : daoMeta.pkConstraint())) {
+                int times = 0;
+                boolean hasNext = true;
+                Map<String, Integer> identifiers = new WeakHashMap<>();
+                do {
+                    preparedStatement.setString(1, connection.getSchema());
+                    int start, end;
+                    switch (productName) {
+                        case Scheme.DB_TYPE_ORACLE:
+                            start = times * FIXED_ROW_COUNT;
+                            end = (++times) * FIXED_ROW_COUNT;
+                            break;
+                        case Scheme.DB_TYPE_MYSQL:
+                            start = (times++) * FIXED_ROW_COUNT + 1;
+                            end = FIXED_ROW_COUNT;
+                            break;
+                        default:
+                            start = 0;
+                            end = 0;
                     }
-                } catch (SQLException e) {
-                    System.err.println(e.getMessage());
-                }
-            } while (hasNext);
+                    preparedStatement.setInt(2, start);
+                    preparedStatement.setInt(3, end);
+                    try (ResultSet refKeyResult = preparedStatement.executeQuery()) {
+                        refKeyResult.setFetchDirection(ResultSet.TYPE_FORWARD_ONLY);
+                        if (hasNext = refKeyResult.isBeforeFirst()) {
+                            handleRefKeys(refKeyResult, lstRefKeys, identifiers);
+                        }
+                    } catch (SQLException e) {
+                        System.err.println(e.getMessage());
+                    }
+                } while (hasNext);
+            } catch (SQLException e) {
+                System.err.println(e.getMessage());
+            }
         } catch (SQLException e) {
             System.err.println(e.getMessage());
         }

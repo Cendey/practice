@@ -1,18 +1,18 @@
-package edu.mit.lab.repos;
+package edu.mit.lab.repos.oracle;
 
 /**
  * <p>Title: MIT Lib Project</p>
- * <p>Description: edu.mit.lab.repos.DAOForScheme</p>
+ * <p>Description: edu.mit.lab.repos.oracle.DAOForDBScheme</p>
  * <p>Copyright: Copyright (c) 2016</p>
  * <p>Company: MIT Lib Co., Ltd</p>
  *
  * @author <chao.deng@mit.edu>
  * @version 1.0
- * @since 12/2/2016
+ * @since 12/5/2016
  */
-public class DAOForScheme {
+public class DAOForDBScheme extends edu.mit.lab.repos.common.DAOForDBScheme {
 
-    public static String foreignKeyConstraintSQL() {
+    public String fkConstraint() {
         return "select *" +
             "  from (select null as pktable_cat," +
             "               p.owner as pktable_schem," +
@@ -58,7 +58,7 @@ public class DAOForScheme {
             " order by fktable_schem, fktable_name, key_seq";
     }
 
-    public static String primaryKeyConstraintSQL() {
+    public String pkConstraint() {
         return "select *" +
             "  from (select null as pktable_cat," +
             "               p.owner as pktable_schem," +

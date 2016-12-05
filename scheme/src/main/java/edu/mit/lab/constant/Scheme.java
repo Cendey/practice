@@ -118,4 +118,7 @@ public class Scheme {
     public static final String WORK_DIR =
         System.getProperty(Scheme.USER_DIR) + System.getProperty(Scheme.FILE_SEPARATOR) + "work" + System
             .getProperty(Scheme.FILE_SEPARATOR);
+
+    public static final String DB_TYPE_ORACLE = "Oracle";
+    public static final String DB_TYPE_MYSQL = "MySQL";
 }
