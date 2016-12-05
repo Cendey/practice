@@ -55,8 +55,8 @@ public class DAOForMeta extends edu.mit.lab.repos.common.DAOForMeta {
             "            on kcu.constraint_schema = rc.constraint_schema\n" +
             "           and kcu.constraint_name = rc.constraint_name\n" +
             "         where (kcu.referenced_table_schema = ?)\n" +
-            "         order by fktable_cat, fktable_schem, fktable_name, key_seq) as refernce\n" +
-            " limit ?, ?\n";
+            "         order by fktable_cat, fktable_schem, fktable_name, key_seq) refer\n" +
+            " limit ?, ?";
     }
 
     @Override
@@ -66,6 +66,23 @@ public class DAOForMeta extends edu.mit.lab.repos.common.DAOForMeta {
 
     @Override
     public String primaryKeys() {
-        return null;
+
+        return "select *\n" +
+            "  from (select a.table_schema table_cat,\n" +
+            "               null           table_schem,\n" +
+            "               a.table_name,\n" +
+            "               a.column_name,\n" +
+            "               b.seq_in_index key_seq,\n" +
+            "               null           pk_name\n" +
+            "          from information_schema.columns a, information_schema.statistics b\n" +
+            "         where a.column_key = 'pri'\n" +
+            "           and b.index_name = 'PRIMARY'\n" +
+            "           and (a.table_schema = ?)\n" +
+            "           and (b.table_schema = ?)\n" +
+            "           and a.table_schema = b.table_schema\n" +
+            "           and a.table_name = b.table_name\n" +
+            "           and a.column_name = b.column_name\n" +
+            "         order by a.column_name) refer\n" +
+            " limit ?, ?";
     }
 }

@@ -115,43 +115,44 @@ public class Resolver {
     public static void main(String[] args) throws InterruptedException {
         long start = System.currentTimeMillis();
         Resolver resolver = new Resolver();
-        List<IRelevance<String, List<String>>> lstFKRef = null;
+//        List<IRelevance<String, List<String>>> lstFKRef = null;
         try (Connection connection = createConnection()) {
             DatabaseMetaData metaData = connection.getMetaData();
             resolver.processEntityType(metaData);
 
             List<Tables> lstTable = resolver.processTable(connection, metaData);
-            resolver.collect(lstTable);
+            resolver.retrieve(connection,lstTable);
+//            resolver.collect(lstTable);
 //            resolver.processPKRef(connection);
-            lstFKRef = resolver.processFKRef(connection);
+//            lstFKRef = resolver.processFKRef(connection);
         } catch (SQLException e) {
             System.err.println(e.getMessage());
         }
 //        List<Tree<String>> trees = buildTableTree(lstFKRef);
-        Graph overview = resolver.overview(lstFKRef);
-        resolver.setRootNodeIds(Toolkit.resolveDisconnectedGraph(overview));
-
-        ExecutorService executor = Executors.newFixedThreadPool(10);
-        Future<Integer> status = executor.submit(resolver.genSQLScript(overview));
-        Future<List<Graph>> graphs = executor.submit(resolver.graphs(overview));
-
-        try {
-            System.out
-                .println(status.get() == 0 ? "Success to generate SQL script!" : "Failed to generate SQL script!");
-            List<Graph> lstGraph = graphs.get();
-            resolver.viewClosedCounter = lstGraph.size();
-            lstGraph.forEach(
-                graph -> {
-                    executor.execute(resolver.persist(graph));
-
-                    executor.execute(resolver.display(graph));
-                }
-            );
-        } catch (ExecutionException e) {
-            System.err.println(e.getMessage());
-        } finally {
-            executor.shutdown();
-        }
+//        Graph overview = resolver.overview(lstFKRef);
+//        resolver.setRootNodeIds(Toolkit.resolveDisconnectedGraph(overview));
+//
+//        ExecutorService executor = Executors.newFixedThreadPool(10);
+//        Future<Integer> status = executor.submit(resolver.genSQLScript(overview));
+//        Future<List<Graph>> graphs = executor.submit(resolver.graphs(overview));
+//
+//        try {
+//            System.out
+//                .println(status.get() == 0 ? "Success to generate SQL script!" : "Failed to generate SQL script!");
+//            List<Graph> lstGraph = graphs.get();
+//            resolver.viewClosedCounter = lstGraph.size();
+//            lstGraph.forEach(
+//                graph -> {
+//                    executor.execute(resolver.persist(graph));
+//
+//                    executor.execute(resolver.display(graph));
+//                }
+//            );
+//        } catch (ExecutionException e) {
+//            System.err.println(e.getMessage());
+//        } finally {
+//            executor.shutdown();
+//        }
         long end = System.currentTimeMillis();
         long duration = end - start;
         System.out.println(String
@@ -199,13 +200,13 @@ public class Resolver {
         }
     }
 
-    private void processForeignKeys(ResultSet importedKeys) throws SQLException {
-        while (importedKeys.next()) {
-            String pkTableName = importedKeys.getString(Scheme.PKTABLE_NAME);
-            String fkTableName = importedKeys.getString(Scheme.FKTABLE_NAME);
-            String fkColumnName = importedKeys.getString(Scheme.FKCOLUMN_NAME);
-            String pkColumn = importedKeys.getString(Scheme.PKCOLUMN_NAME);
-            int sequence = importedKeys.getShort(Scheme.KEY_SEQ);
+    private void processForeignKeys(ResultSet keyResultSet) throws SQLException {
+        while (keyResultSet.next()) {
+            String pkTableName = keyResultSet.getString(Scheme.PKTABLE_NAME);
+            String fkTableName = keyResultSet.getString(Scheme.FKTABLE_NAME);
+            String fkColumnName = keyResultSet.getString(Scheme.FKCOLUMN_NAME);
+            String pkColumn = keyResultSet.getString(Scheme.PKCOLUMN_NAME);
+            int sequence = keyResultSet.getShort(Scheme.KEY_SEQ);
             System.out.println(String.format(
                 "Primary table:%s & primary column:%s; foreign table:%s & foreign column:%s; key sequence:%d ",
                 pkTableName, pkColumn, fkTableName, fkColumnName, sequence));
