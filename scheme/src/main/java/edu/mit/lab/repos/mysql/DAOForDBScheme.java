@@ -58,6 +58,4 @@ public class DAOForDBScheme extends edu.mit.lab.repos.common.DAOForDBScheme {
             "         order by fktable_cat, fktable_schem, fktable_name, key_seq) as refernce\n" +
             " limit ?, ?\n";
     }
-
-
 }
