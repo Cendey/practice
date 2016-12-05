@@ -484,21 +484,19 @@ public class Resolver {
                 Map<String, Integer> identifiers = new WeakHashMap<>();
                 do {
                     preparedStatement.setString(1, connection.getSchema());
-                    int start, end;
                     switch (productName) {
                         case Scheme.DB_TYPE_ORACLE:
-                            start = times * FIXED_ROW_COUNT + 1;
-                            end = (++times) * FIXED_ROW_COUNT;
+                            preparedStatement.setString(2, connection.getSchema());
+                            preparedStatement.setInt(3, times * FIXED_ROW_COUNT + 1);
+                            preparedStatement.setInt(4, (++times) * FIXED_ROW_COUNT);
                             break;
                         case Scheme.DB_TYPE_MYSQL:
-                            start = (times++) * FIXED_ROW_COUNT + 1;
-                            end = FIXED_ROW_COUNT;
+                            preparedStatement.setInt(2, (times++) * FIXED_ROW_COUNT + 1);
+                            preparedStatement.setInt(3, FIXED_ROW_COUNT);
                             break;
                         default:
                             throw new TypeException(productName);
                     }
-                    preparedStatement.setInt(2, start);
-                    preparedStatement.setInt(3, end);
                     try (ResultSet refKeyResult = preparedStatement.executeQuery()) {
                         refKeyResult.setFetchDirection(ResultSet.TYPE_FORWARD_ONLY);
                         if (hasNext = refKeyResult.isBeforeFirst()) {
