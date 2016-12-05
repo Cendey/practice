@@ -171,7 +171,7 @@ public class Resolver {
                 pipe.pump();
                 loop = !graph.hasAttribute(Scheme.UI_VIEW_CLOSED);
                 if (viewClosedCounter == 0) {
-                    viewer.setCloseFramePolicy(Viewer.CloseFramePolicy.HIDE_ONLY);
+                    viewer.setCloseFramePolicy(Viewer.CloseFramePolicy.CLOSE_VIEWER);
                     viewer.close();
                 }
             }

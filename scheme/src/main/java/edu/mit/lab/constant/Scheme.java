@@ -72,7 +72,7 @@ public class Scheme {
     public static final String UI_VIEW_CLOSED = "ui.viewClosed";
     public static final String ROOT = "root";
     public static final String LEAF = "leaf";
-    public static final String TEXT_MODE = "text-mode";
+    public static final String TEXT_MODE = "ui.text-mode";
     public static final String SHOW_TIPS = "normal";
     public static final String HIDE_TIPS = "hidden";
 
