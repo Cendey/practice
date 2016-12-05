@@ -117,16 +117,18 @@ public class Toolkit {
         components.setCountAttribute(Scheme.COMPONENT);
         components.compute();
         for (ConnectedComponents.ConnectedComponent component : components) {
+            StringBuilder ids = new StringBuilder();
             for (Iterator<Edge> iterator = component.getEdgeIterator(); iterator.hasNext(); ) {
                 Edge edge = iterator.next();
                 CssUtility.handleStyle(edge);
                 Node target = edge.getTargetNode();
                 Node source = edge.getSourceNode();
                 CssUtility.handleStyle(target, source);
-                if (!target.hasAttribute(Scheme.DATA_PARENT) && !graphIds.contains(target.getId())) {
-                    graphIds.add(target.getId());
+                if (!target.hasAttribute(Scheme.DATA_PARENT) && ids.indexOf(target.getId()) == -1) {
+                    ids.append("|").append(target.getId());
                 }
             }
+            graphIds.add(StringUtils.removeFirst(ids.toString(), "[|]"));
         }
         return graphIds;
     }
@@ -147,7 +149,7 @@ public class Toolkit {
         return height;
     }
 
-    public static void addNodeInfo(IRelevance<String,List<String>> item, Node target, Node source) {
+    public static void addNodeInfo(IRelevance<String, List<String>> item, Node target, Node source) {
         if (!target.hasAttribute(Scheme.UI_LABEL)) {
             target.addAttribute(Scheme.UI_LABEL, item.to());
         }
@@ -165,7 +167,7 @@ public class Toolkit {
         source.<List<String>>getAttribute(Scheme.DATA_PARENT).add(target.getId());
     }
 
-    public static void addEdgeInfo(IRelevance<String,List<String>> item, Edge edge) {
+    public static void addEdgeInfo(IRelevance<String, List<String>> item, Edge edge) {
         edge.addAttribute(Scheme.UI_LABEL, item.get(Scheme.FK_COLUMN_NAME).toString().replaceAll(",", " | "));
     }
 

@@ -35,6 +35,7 @@ import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
@@ -276,13 +277,15 @@ public class Resolver {
         return () -> {
             Set<String> untouched = new TreeSet<>(tableIds);
             rootNodeIds.forEach(
-                rootId -> {
-                    Node root = graph.getNode(rootId);
-                    script.append(String.format(
-                        Scheme.STD_SQL_COMMENTS_BOILERPLATE,
-                        StringUtils.removeFirst(rootId.toLowerCase(), Scheme.NODE_PREFIX)));
-                    Toolkit.postTraverse(graph, root, untouched, script);
-                }
+                rootId -> Arrays.stream(rootId.split("[|]")).forEach(
+                    rootNodeId -> {
+                        Node root = graph.getNode(rootNodeId);
+                        script.append(String.format(
+                            Scheme.STD_SQL_COMMENTS_BOILERPLATE,
+                            StringUtils.removeFirst(rootNodeId.toLowerCase(), Scheme.NODE_PREFIX)));
+                        Toolkit.postTraverse(graph, root, untouched, script);
+                    }
+                )
             );
 
             script.append(Scheme.STD_SQL_COMMENTS_BOILERPLATE_FOR_INDEPENDENT_TABLES);
@@ -340,10 +343,9 @@ public class Resolver {
     private Callable<List<Graph>> graphs(final Graph graph) {
         final List<Graph> graphs = new ArrayList<>();
         return () -> {
-            rootNodeIds.forEach(rootId -> {
-                Node root = graph.getNode(rootId);
-                if (Toolkit.height(root) >= HEIGHT_THRESHOLD) graph(graphs, root, rootId);
-            });
+            rootNodeIds.forEach(rootId -> Arrays.stream(rootId.split("[|]")).filter(nodeId ->
+                Toolkit.height(graph.getNode(nodeId)) >= HEIGHT_THRESHOLD).findFirst()
+                .ifPresent(nodeId -> graph(graphs, graph.getNode(nodeId), nodeId)));
             return graphs;
         };
     }
@@ -483,14 +485,15 @@ public class Resolver {
                 boolean hasNext = true;
                 Map<String, Integer> identifiers = new WeakHashMap<>();
                 do {
-                    preparedStatement.setString(1, connection.getSchema());
                     switch (productName) {
                         case Scheme.DB_TYPE_ORACLE:
+                            preparedStatement.setString(1, connection.getSchema());
                             preparedStatement.setString(2, connection.getSchema());
                             preparedStatement.setInt(3, times * FIXED_ROW_COUNT + 1);
                             preparedStatement.setInt(4, (++times) * FIXED_ROW_COUNT);
                             break;
                         case Scheme.DB_TYPE_MYSQL:
+                            preparedStatement.setString(1, connection.getCatalog());
                             preparedStatement.setInt(2, (times++) * FIXED_ROW_COUNT + 1);
                             preparedStatement.setInt(3, FIXED_ROW_COUNT);
                             break;
