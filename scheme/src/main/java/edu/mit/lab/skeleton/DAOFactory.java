@@ -1,7 +1,8 @@
 package edu.mit.lab.skeleton;
 
 import edu.mit.lab.constant.Scheme;
-import edu.mit.lab.infts.idao.IDAOForDBScheme;
+import edu.mit.lab.infts.idao.IDAOForMeta;
+import edu.mit.lab.repos.oracle.DAOForMeta;
 import edu.mit.lab.skeleton.factory.IDAOFactory;
 
 /**
@@ -17,14 +18,14 @@ import edu.mit.lab.skeleton.factory.IDAOFactory;
 public class DAOFactory extends IDAOFactory {
 
     @Override
-    public IDAOForDBScheme createDBScheme(String dbType) {
-        IDAOForDBScheme instance;
+    public IDAOForMeta createDBScheme(String dbType) {
+        IDAOForMeta instance;
         switch (dbType) {
             case Scheme.DB_TYPE_ORACLE:
-                instance = new edu.mit.lab.repos.oracle.DAOForDBScheme();
+                instance = new DAOForMeta();
                 break;
             case Scheme.DB_TYPE_MYSQL:
-                instance = new edu.mit.lab.repos.mysql.DAOForDBScheme();
+                instance = new edu.mit.lab.repos.mysql.DAOForMeta();
                 break;
             default:
                 instance = null;

@@ -4,7 +4,7 @@ import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
 import edu.mit.lab.constant.Scheme;
 import edu.mit.lab.infts.IRelevance;
-import edu.mit.lab.infts.idao.IDAOForDBScheme;
+import edu.mit.lab.infts.idao.IDAOForMeta;
 import edu.mit.lab.meta.Keys;
 import edu.mit.lab.meta.Tables;
 import edu.mit.lab.skeleton.DAOFactory;
@@ -420,7 +420,7 @@ public class Resolver {
         try {
             IDAOFactory factory = new DAOFactory();
             String productName = connection.getMetaData().getDatabaseProductName();
-            IDAOForDBScheme daoMeta = factory.createDBScheme(productName);
+            IDAOForMeta daoMeta = factory.createDBScheme(productName);
             try (PreparedStatement preparedStatement = connection.prepareStatement(
                 forExportKeys ? daoMeta.fkConstraint() : daoMeta.pkConstraint())) {
                 int times = 0;

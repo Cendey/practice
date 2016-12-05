@@ -2,7 +2,7 @@ package edu.mit.lab.repos.oracle;
 
 /**
  * <p>Title: MIT Lib Project</p>
- * <p>Description: edu.mit.lab.repos.oracle.DAOForDBScheme</p>
+ * <p>Description: edu.mit.lab.repos.oracle.DAOForMeta</p>
  * <p>Copyright: Copyright (c) 2016</p>
  * <p>Company: MIT Lib Co., Ltd</p>
  *
@@ -10,7 +10,7 @@ package edu.mit.lab.repos.oracle;
  * @version 1.0
  * @since 12/5/2016
  */
-public class DAOForDBScheme extends edu.mit.lab.repos.common.DAOForDBScheme {
+public class DAOForMeta extends edu.mit.lab.repos.common.DAOForMeta {
 
     public String fkConstraint() {
         return "select *" +

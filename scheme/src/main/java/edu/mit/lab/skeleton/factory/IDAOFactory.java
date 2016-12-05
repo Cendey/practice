@@ -1,6 +1,6 @@
 package edu.mit.lab.skeleton.factory;
 
-import edu.mit.lab.infts.idao.IDAOForDBScheme;
+import edu.mit.lab.infts.idao.IDAOForMeta;
 
 /**
  * <p>Title: MIT Lib Project</p>
@@ -14,5 +14,5 @@ import edu.mit.lab.infts.idao.IDAOForDBScheme;
  */
 public abstract class IDAOFactory {
 
-    public abstract IDAOForDBScheme createDBScheme(String dbType);
+    public abstract IDAOForMeta createDBScheme(String dbType);
 }
