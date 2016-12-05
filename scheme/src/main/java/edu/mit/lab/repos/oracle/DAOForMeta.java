@@ -34,8 +34,7 @@ public class DAOForMeta extends edu.mit.lab.repos.common.DAOForMeta {
             "                      7," +
             "                      'DEFERRED'," +
             "                      6) deferrability," +
-            "               row_number() over(order by f.owner, f.table_name, fc.position) rownumber"
-            +
+            "               row_number() over(order by f.owner, f.table_name, fc.position) rownumber" +
             "          from all_cons_columns pc," +
             "               all_constraints  p," +
             "               all_cons_columns fc," +
@@ -60,7 +59,6 @@ public class DAOForMeta extends edu.mit.lab.repos.common.DAOForMeta {
     }
 
     public String importedKeys() {
-
         return "select *\n" +
             "  from (select null as pktable_cat,\n" +
             "               p.owner as pktable_schem,\n" +

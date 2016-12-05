@@ -44,10 +44,6 @@ import java.util.SortedSet;
 import java.util.TreeSet;
 import java.util.WeakHashMap;
 import java.util.concurrent.Callable;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -121,7 +117,7 @@ public class Resolver {
             resolver.processEntityType(metaData);
 
             List<Tables> lstTable = resolver.processTable(connection, metaData);
-            resolver.retrieve(connection,lstTable);
+            resolver.retrieve(connection, lstTable);
 //            resolver.collect(lstTable);
 //            resolver.processPKRef(connection);
 //            lstFKRef = resolver.processFKRef(connection);
@@ -166,14 +162,14 @@ public class Resolver {
         lstTables.forEach(table -> {
             try (ResultSet exportedKeys = connection.getMetaData()
                 .getExportedKeys(connection.getCatalog(), connection.getSchema(), table.getTableName())) {
-                processForeignKeys(exportedKeys);
+                processForeignKeys(exportedKeys, true);
             } catch (SQLException e) {
                 System.err.println(e.getMessage());
             }
 
             try (ResultSet importedKeys = connection.getMetaData()
                 .getImportedKeys(connection.getCatalog(), connection.getSchema(), table.getTableName())) {
-                processForeignKeys(importedKeys);
+                processForeignKeys(importedKeys, false);
             } catch (SQLException e) {
                 System.err.println(e.getMessage());
             }
@@ -200,7 +196,7 @@ public class Resolver {
         }
     }
 
-    private void processForeignKeys(ResultSet keyResultSet) throws SQLException {
+    private void processForeignKeys(ResultSet keyResultSet, Boolean isExported) throws SQLException {
         while (keyResultSet.next()) {
             String pkTableName = keyResultSet.getString(Scheme.PKTABLE_NAME);
             String fkTableName = keyResultSet.getString(Scheme.FKTABLE_NAME);
@@ -208,7 +204,8 @@ public class Resolver {
             String pkColumn = keyResultSet.getString(Scheme.PKCOLUMN_NAME);
             int sequence = keyResultSet.getShort(Scheme.KEY_SEQ);
             System.out.println(String.format(
-                "Primary table:%s & primary column:%s; foreign table:%s & foreign column:%s; key sequence:%d ",
+                "[Retrieve %s keys information] Primary table:%s & primary column:%s; foreign table:%s & foreign column:%s; key sequence:%d ",
+                isExported ? "export" : "import",
                 pkTableName, pkColumn, fkTableName, fkColumnName, sequence));
         }
     }
