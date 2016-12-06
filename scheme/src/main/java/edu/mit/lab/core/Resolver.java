@@ -124,7 +124,7 @@ public class Resolver {
             List<Tables> lstTable = resolver.processTable(connection, metaData);
 //            resolver.retrieve(connection, lstTable);
             resolver.collect(lstTable);
-            resolver.processPKRef(connection);
+//            resolver.processPKRef(connection);
             lstFKRef = resolver.processFKRef(connection);
         } catch (SQLException e) {
             System.err.println(e.getMessage());
@@ -490,11 +490,11 @@ public class Resolver {
                             preparedStatement.setString(1, connection.getSchema());
                             preparedStatement.setString(2, connection.getSchema());
                             preparedStatement.setInt(3, times * FIXED_ROW_COUNT + 1);
-                            preparedStatement.setInt(4, (++times) * FIXED_ROW_COUNT);
+                            preparedStatement.setInt(4, (times + 1) * FIXED_ROW_COUNT);
                             break;
                         case Scheme.DB_TYPE_MYSQL:
                             preparedStatement.setString(1, connection.getCatalog());
-                            preparedStatement.setInt(2, (times++) * FIXED_ROW_COUNT + 1);
+                            preparedStatement.setInt(2, (times + 1) * FIXED_ROW_COUNT + 1);
                             preparedStatement.setInt(3, FIXED_ROW_COUNT);
                             break;
                         default:
@@ -508,6 +508,7 @@ public class Resolver {
                     } catch (SQLException e) {
                         System.err.println(e.getMessage());
                     }
+                    ++times;
                 } while (hasNext);
             } catch (SQLException | TypeException e) {
                 System.err.println(e.getMessage());

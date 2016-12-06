@@ -53,7 +53,7 @@ public class DAOForMeta extends edu.mit.lab.repos.common.DAOForMeta {
             "           and fc.table_name = f.table_name" +
             "           and fc.position = pc.position" +
             "         order by fktable_schem, fktable_name, key_seq)" +
-            " where rownumber > ?" +
+            " where rownumber >= ?" +
             "   and rownumber <= ?" +
             " order by fktable_schem, fktable_name, key_seq";
     }

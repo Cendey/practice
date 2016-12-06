@@ -41,7 +41,7 @@ cn "nCTRFBKP"  "ui.label":"CTRFBKP"
 cn "nCTRFBKP"  "Component":11
 cn "nCTRFBKP"  "action.marked":"identified"
 ae "eCTRFHDRCTRFCBNNO" "nCTRFCBNNO" > "nCTRFHDR"
-ce "eCTRFHDRCTRFCBNNO"  "ui.label":"[CTRFNO_UNID |  CTRFHDR_UNID]"
+ce "eCTRFHDRCTRFCBNNO"  "ui.label":"[CTRFHDR_UNID |  CTRFNO_UNID]"
 ce "eCTRFHDRCTRFCBNNO"  "ui.class":"root"
 ae "eCTRFHDRCTRFJOB" "nCTRFJOB" > "nCTRFHDR"
 ce "eCTRFHDRCTRFJOB"  "ui.label":"[CTRFHDR_UNID]"
