@@ -80,6 +80,7 @@ public class Scheme {
 
     //Literal for consistent reference
     public static final String HIKARI_PROPERTIES = "hikari.properties";
+    public static final String SLASH_HIKARI_PROPERTIES = "/hikari.properties";
     public static final String DEPENDENCY = "Dependency";
     public static final String COMPONENT = "Component";
 
@@ -123,4 +124,8 @@ public class Scheme {
 
     public static final String DB_TYPE_ORACLE = "Oracle";
     public static final String DB_TYPE_MYSQL = "MySQL";
+    public static final String TABLES = "tables";
+    public static final String FOREIGN_KEYS = "foreign_keys";
+    public static final String EHCACHE_XML = "ehcache.xml";
+    public static final String SLASH_EHCACHE_XML = "/ehcache.xml";
 }

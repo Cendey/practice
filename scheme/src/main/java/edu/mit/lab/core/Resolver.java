@@ -14,6 +14,8 @@ import edu.mit.lab.utils.Toolkit;
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.collections4.MapUtils;
 import org.apache.commons.lang3.StringUtils;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.graphstream.graph.Edge;
 import org.graphstream.graph.Graph;
 import org.graphstream.graph.GraphFactory;
@@ -63,6 +65,7 @@ import java.util.concurrent.TimeUnit;
  */
 public class Resolver {
 
+    private static final Logger logger = LogManager.getLogger(Resolver.class);
     private static final int HEIGHT_THRESHOLD = 3;
     private static final String SCRIPT_FILE_NAME = "clear_data_script.sql";
     private static final String GRAPH_FILE_NAME_PREFIX = "stream_graph_";
@@ -78,7 +81,7 @@ public class Resolver {
         try {
             Class.forName("oracle.jdbc.driver.OracleDriver");
         } catch (ClassNotFoundException e) {
-            System.err.println(e.getMessage());
+           logger.error(e.getMessage());
         }
     }
 
@@ -104,10 +107,10 @@ public class Resolver {
         HikariDataSource dataSource = new HikariDataSource(config);
         try {
             connection = dataSource.getConnection();
-            System.out.println(String.format("Database connect success! %s", connection.toString()));
+            logger.info(String.format("Database connect success! %s", connection.toString()));
         } catch (SQLException e) {
-            System.err.println(String.format("Database connect failed! %s", "Ops"));
-            System.err.println(e.getMessage());
+            logger.error(String.format("Database connect failed! %s", "Ops"));
+            logger.error(e.getMessage());
         }
 
         return connection;
@@ -127,7 +130,7 @@ public class Resolver {
 //            resolver.processPKRef(connection);
             lstFKRef = resolver.processFKRef(connection);
         } catch (SQLException e) {
-            System.err.println(e.getMessage());
+            logger.error(e.getMessage());
         }
 //        List<Tree<String>> trees = buildTableTree(lstFKRef);
         Graph overview = resolver.overview(lstFKRef);
@@ -150,7 +153,7 @@ public class Resolver {
                 }
             );
         } catch (ExecutionException e) {
-            System.err.println(e.getMessage());
+            logger.error(e.getMessage());
         } finally {
             executor.shutdown();
         }
@@ -169,21 +172,21 @@ public class Resolver {
                 .getExportedKeys(connection.getCatalog(), connection.getSchema(), table.getTableName())) {
                 processForeignKeys(exportedKeys, true);
             } catch (SQLException e) {
-                System.err.println(e.getMessage());
+                logger.error(e.getMessage());
             }
 
             try (ResultSet importedKeys = connection.getMetaData()
                 .getImportedKeys(connection.getCatalog(), connection.getSchema(), table.getTableName())) {
                 processForeignKeys(importedKeys, false);
             } catch (SQLException e) {
-                System.err.println(e.getMessage());
+                logger.error(e.getMessage());
             }
 
             try (ResultSet primaryKeys = connection.getMetaData()
                 .getPrimaryKeys(connection.getCatalog(), connection.getSchema(), table.getTableName())) {
                 processPrimaryKeys(primaryKeys);
             } catch (SQLException e) {
-                System.err.println(e.getMessage());
+                logger.error(e.getMessage());
             }
         });
     }
@@ -240,7 +243,7 @@ public class Resolver {
             try {
                 graph.write(Scheme.WORK_DIR + GRAPH_FILE_NAME_PREFIX + graph.getId() + GRAPH_FILE_NAME_SUFFIX);
             } catch (IOException e) {
-                System.err.println(e.getMessage());
+                logger.error(e.getMessage());
             }
         };
     }
@@ -306,7 +309,7 @@ public class Resolver {
                 writer.write(script.toString());
                 writer.flush();
             } catch (IOException e) {
-                System.err.println(e.getMessage());
+                logger.error(e.getMessage());
             }
             return 0;
         };
@@ -416,7 +419,7 @@ public class Resolver {
                 pushTableSummaryInfo(tables, lstTable, nameSet, tableMeta);
             }
         } catch (SQLException e) {
-            System.err.println(e.getMessage());
+            logger.error(e.getMessage());
         }
         System.out.println("~~~~~~~~~~~~~~~~~~~~~~~#Tables information list#~~~~~~~~~~~~~~~~~~~~~~~");
         lstTable.forEach(System.out::println);
@@ -506,15 +509,15 @@ public class Resolver {
                             handleRefKeys(refKeyResult, lstRefKeys, identifiers);
                         }
                     } catch (SQLException e) {
-                        System.err.println(e.getMessage());
+                        logger.error(e.getMessage());
                     }
                     ++times;
                 } while (hasNext);
             } catch (SQLException | TypeException e) {
-                System.err.println(e.getMessage());
+                logger.error(e.getMessage());
             }
         } catch (SQLException | TypeException e) {
-            System.err.println(e.getMessage());
+            logger.error(e.getMessage());
         }
         return lstRefKeys;
     }

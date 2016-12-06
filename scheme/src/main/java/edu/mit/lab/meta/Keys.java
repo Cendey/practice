@@ -6,7 +6,6 @@ import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.reflections.ReflectionUtils;
 
-import java.io.Serializable;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
@@ -25,7 +24,7 @@ import java.util.Set;
  * @version 1.0
  * @since 11/14/2016
  */
-public class Keys implements IRelevance<String, List<String>>, Comparator, Serializable {
+public class Keys implements IRelevance<String, List<String>>, Comparator {
 
     private String pkTableName;
     private List<String> pkColumnName;
@@ -174,9 +173,10 @@ public class Keys implements IRelevance<String, List<String>>, Comparator, Seria
 
     /**
      * Get field value from this
-     * @link https://github.com/ronmamo/reflections
+     *
      * @param name get name
      * @return this instance value of get name
+     * @link https://github.com/ronmamo/reflections
      */
     @Override
     @SuppressWarnings(value = {"unchecked"})

@@ -2,17 +2,30 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9fc2e707-20c6-402b-95b8-f28819b72193" name="Default" comment="Process keys per table a time.">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/analysis/target/classes/config/filter.xml" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_sf_ehcache_ehcache_2_10_3.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_ehcache_ehcache_3_1_3.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scheme/src/main/resources/ehcache.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scheme/src/main/resources/log4j2.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scheme/src/main/resources/log4j2.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scheme/target/classes/log4j2.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scheme/target/lab-scheme-1.0-SNAPSHOT.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scheme/target/maven-archiver/pom.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scheme/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scheme/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scheme/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scheme/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scheme/target/classes/edu/mit/lab/constant/Scheme.class" afterPath="$PROJECT_DIR$/scheme/target/classes/edu/mit/lab/constant/Scheme.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scheme/target/classes/edu/mit/lab/core/Resolver$1.class" afterPath="$PROJECT_DIR$/scheme/target/classes/edu/mit/lab/core/Resolver$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scheme/target/classes/edu/mit/lab/core/Resolver.class" afterPath="$PROJECT_DIR$/scheme/target/classes/edu/mit/lab/core/Resolver.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scheme/target/classes/edu/mit/lab/infts/IRelevance.class" afterPath="$PROJECT_DIR$/scheme/target/classes/edu/mit/lab/infts/IRelevance.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scheme/target/classes/edu/mit/lab/meta/Keys.class" afterPath="$PROJECT_DIR$/scheme/target/classes/edu/mit/lab/meta/Keys.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scheme/target/classes/edu/mit/lab/repos/oracle/DAOForMeta.class" afterPath="$PROJECT_DIR$/scheme/target/classes/edu/mit/lab/repos/oracle/DAOForMeta.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scheme/lab-scheme.iml" afterPath="$PROJECT_DIR$/scheme/lab-scheme.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scheme/pom.xml" afterPath="$PROJECT_DIR$/scheme/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/constant/Scheme.java" afterPath="$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/constant/Scheme.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/core/Resolver.java" afterPath="$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/core/Resolver.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/repos/oracle/DAOForMeta.java" afterPath="$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/repos/oracle/DAOForMeta.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/utils/Toolkit.java" afterPath="$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/utils/Toolkit.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scheme/src/main/resources/hikari.properties" afterPath="$PROJECT_DIR$/scheme/src/main/resources/hikari.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scheme/target/classes/hikari.properties" afterPath="$PROJECT_DIR$/scheme/target/classes/hikari.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/infts/IRelevance.java" afterPath="$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/infts/IRelevance.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/meta/Keys.java" afterPath="$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/meta/Keys.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/work/clear_data_script.sql" afterPath="$PROJECT_DIR$/work/clear_data_script.sql" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/work/stream_graph_CTRFHDR.dgs" afterPath="$PROJECT_DIR$/work/stream_graph_CTRFHDR.dgs" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/work/stream_graph_SYDOC.dgs" afterPath="$PROJECT_DIR$/work/stream_graph_SYDOC.dgs" />
@@ -102,95 +115,94 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Resolver.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Resolver.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/core/Resolver.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1509">
-              <caret line="565" column="21" lean-forward="true" selection-start-line="565" selection-start-column="21" selection-end-line="565" selection-end-column="21" />
+            <state relative-caret-position="349">
+              <caret line="588" column="5" lean-forward="true" selection-start-line="588" selection-start-column="5" selection-end-line="588" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#3003#3004#0" expanded="true" />
-                <element signature="e#3049#3050#0" expanded="true" />
+                <element signature="e#3071#3072#0" expanded="true" />
+                <element signature="e#3093#3094#0" expanded="true" />
+                <element signature="e#3159#3160#0" expanded="true" />
+                <element signature="e#3205#3206#0" expanded="true" />
+                <element signature="e#6132#6169#0" expanded="true" />
+                <element signature="e#9883#9884#0" expanded="true" />
+                <element signature="e#9960#9961#0" expanded="true" />
+                <element signature="e#15153#15161#0" expanded="true" />
+                <element signature="e#15466#15474#0" expanded="true" />
+                <element signature="e#15772#15780#0" expanded="true" />
+                <element signature="e#17922#17959#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Iterable.java" pinned="false" current-in-tab="false">
-        <entry file="jar://F:/Oracle/Java/x64/JDK/jdk1.8.0_66/src.zip!/java/lang/Iterable.java">
+      <file leaf-file-name="Collection.java" pinned="false" current-in-tab="false">
+        <entry file="jar://F:/Oracle/Java/x64/JDK/jdk1.8.0_66/src.zip!/java/util/Collection.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="799">
-              <caret line="74" column="0" lean-forward="false" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
+            <state relative-caret-position="184">
+              <caret line="143" column="40" lean-forward="true" selection-start-line="143" selection-start-column="40" selection-end-line="143" selection-end-column="40" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Spliterators.java" pinned="false" current-in-tab="false">
-        <entry file="jar://F:/Oracle/Java/x64/JDK/jdk1.8.0_66/src.zip!/java/util/Spliterators.java">
+      <file leaf-file-name="Scheme.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/constant/Scheme.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15385">
-              <caret line="947" column="0" lean-forward="false" selection-start-line="947" selection-start-column="0" selection-end-line="947" selection-end-column="0" />
+            <state relative-caret-position="163">
+              <caret line="82" column="59" lean-forward="false" selection-start-line="82" selection-start-column="59" selection-end-line="82" selection-end-column="59" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ReferencePipeline.java" pinned="false" current-in-tab="false">
-        <entry file="jar://F:/Oracle/Java/x64/JDK/jdk1.8.0_66/src.zip!/java/util/stream/ReferencePipeline.java">
+      <file leaf-file-name="JAXBContextImpl.class" pinned="false" current-in-tab="false">
+        <entry file="jar://F:/Oracle/Java/x64/JDK/jdk1.8.0_66/jre/lib/rt.jar!/com/sun/xml/internal/bind/v2/runtime/JAXBContextImpl.class">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="8347">
-              <caret line="579" column="0" lean-forward="false" selection-start-line="579" selection-start-column="0" selection-end-line="579" selection-end-column="0" />
+            <state relative-caret-position="133">
+              <caret line="381" column="9" lean-forward="true" selection-start-line="381" selection-start-column="9" selection-end-line="381" selection-end-column="9" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Viewer.java" pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/org/graphstream/gs-core/1.3/gs-core-1.3-sources.jar!/org/graphstream/ui/view/Viewer.java">
+      <file leaf-file-name="ArrayList.java" pinned="false" current-in-tab="false">
+        <entry file="jar://F:/Oracle/Java/x64/JDK/jdk1.8.0_66/src.zip!/java/util/ArrayList.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="443">
-              <caret line="467" column="9" lean-forward="true" selection-start-line="467" selection-start-column="9" selection-end-line="467" selection-end-column="9" />
+            <state relative-caret-position="289">
+              <caret line="105" column="22" lean-forward="false" selection-start-line="105" selection-start-column="13" selection-end-line="105" selection-end-column="22" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DAOForMeta.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/repos/mysql/DAOForMeta.java">
+      <file leaf-file-name="IRelevance.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/infts/IRelevance.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="56" column="31" lean-forward="false" selection-start-line="56" selection-start-column="31" selection-end-line="56" selection-end-column="31" />
+            <state relative-caret-position="187">
+              <caret line="11" column="15" lean-forward="true" selection-start-line="11" selection-start-column="15" selection-end-line="11" selection-end-column="15" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DAOForMeta.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/repos/oracle/DAOForMeta.java">
+      <file leaf-file-name="Keys.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/meta/Keys.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="55" column="32" lean-forward="false" selection-start-line="55" selection-start-column="32" selection-end-line="55" selection-end-column="32" />
+            <state relative-caret-position="176">
+              <caret line="26" column="33" lean-forward="false" selection-start-line="26" selection-start-column="33" selection-end-line="26" selection-end-column="33" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="hikari.properties" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scheme/src/main/resources/hikari.properties">
+      <file leaf-file-name="ehcache.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scheme/src/main/resources/ehcache.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="28" column="29" lean-forward="false" selection-start-line="28" selection-start-column="9" selection-end-line="28" selection-end-column="29" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Toolkit.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/utils/Toolkit.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="125">
-              <caret line="32" column="35" lean-forward="true" selection-start-line="32" selection-start-column="35" selection-end-line="32" selection-end-column="35" />
+            <state relative-caret-position="153">
+              <caret line="9" column="47" lean-forward="false" selection-start-line="9" selection-start-column="38" selection-end-line="9" selection-end-column="47" />
               <folding />
             </state>
           </provider>
@@ -208,7 +220,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>lstFKRef</find>
       <find>addFkColumnName</find>
       <find>commons-collections-version</find>
       <find>commons-collections</find>
@@ -235,8 +246,14 @@
       <find>pk_name</find>
       <find>Retrieve</find>
       <find>?</find>
+      <find>ehcache-version</find>
+      <find>SERVER_NAME</find>
+      <find>slf4j-api-version</find>
       <find>processPKRef</find>
     </findStrings>
+    <replaceStrings>
+      <replace>APP_NAME</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -251,12 +268,9 @@
       <list>
         <option value="$PROJECT_DIR$/analysis/pom.xml" />
         <option value="$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/infts/IRelation.java" />
-        <option value="$PROJECT_DIR$/scheme/pom.xml" />
         <option value="$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/utils/ElemUtility.java" />
         <option value="$PROJECT_DIR$/webcart/.idea/workspace.xml" />
         <option value="$PROJECT_DIR$/.idea/workspace.xml" />
-        <option value="$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/infts/IRelevance.java" />
-        <option value="$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/meta/Keys.java" />
         <option value="$PROJECT_DIR$/scheme/src/main/resources/css/polish.css" />
         <option value="$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/infts/IDAOForCommon.java" />
         <option value="$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/repos/DAOForScheme.java" />
@@ -273,12 +287,18 @@
         <option value="$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/skeleton/DAOFactory.java" />
         <option value="$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/infts/idao/IDAOForMeta.java" />
         <option value="$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/repos/common/DAOForMeta.java" />
-        <option value="$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/constant/Scheme.java" />
         <option value="$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/repos/mysql/DAOForMeta.java" />
         <option value="$PROJECT_DIR$/scheme/src/main/resources/hikari.properties" />
         <option value="$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/repos/oracle/DAOForMeta.java" />
-        <option value="$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/core/Resolver.java" />
         <option value="$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/utils/Toolkit.java" />
+        <option value="$PROJECT_DIR$/scheme/src/main/resources/log4j2.properties" />
+        <option value="$PROJECT_DIR$/scheme/src/main/resources/log4j2.xml" />
+        <option value="$PROJECT_DIR$/scheme/pom.xml" />
+        <option value="$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/infts/IRelevance.java" />
+        <option value="$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/meta/Keys.java" />
+        <option value="$PROJECT_DIR$/scheme/src/main/resources/ehcache.xml" />
+        <option value="$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/constant/Scheme.java" />
+        <option value="$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/core/Resolver.java" />
       </list>
     </option>
   </component>
@@ -370,6 +390,38 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="target" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Git" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scheme" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="target" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="classes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Git" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scheme" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -391,34 +443,8 @@
               <option name="myItemId" value="main" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-          </PATH>
-          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Git" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="scheme" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lab" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="utils" />
+              <option name="myItemId" value="resources" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -440,45 +466,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
+              <option name="myItemId" value="log" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="lab" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="skeleton" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Git" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="scheme" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lab" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="repos" />
+              <option name="myItemId" value="trace" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -505,44 +497,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="lab" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="repos" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mysql" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Git" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="scheme" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lab" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="meta" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -601,124 +555,8 @@
               <option name="myItemId" value="lab" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Git" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="scheme" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lab" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="entry" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Git" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="scheme" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lab" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="core" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Git" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="scheme" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lab" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="constant" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Git" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="scheme" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lab" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="action" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1202,7 +1040,7 @@
       <workItem from="1480989640227" duration="105000" />
       <workItem from="1480989767479" duration="71000" />
       <workItem from="1480989861633" duration="348000" />
-      <workItem from="1480990230912" duration="6603000" />
+      <workItem from="1480990230912" duration="16927000" />
     </task>
     <task id="LOCAL-00001" summary="Revise pom artifact Id">
       <created>1480317832255</created>
@@ -1355,7 +1193,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="134520000" />
+    <option name="totallyTimeSpent" value="144844000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1428,31 +1266,31 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/core/Resolver.java</url>
-          <line>240</line>
+          <line>228</line>
           <properties />
           <option name="timeStamp" value="17" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/core/Resolver.java</url>
-          <line>302</line>
+          <line>290</line>
           <properties />
           <option name="timeStamp" value="18" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/core/Resolver.java</url>
-          <line>562</line>
+          <line>565</line>
           <properties />
           <option name="timeStamp" value="25" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/core/Resolver.java</url>
-          <line>567</line>
+          <line>570</line>
           <properties />
           <option name="timeStamp" value="26" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/core/Resolver.java</url>
-          <line>577</line>
+          <line>580</line>
           <properties />
           <option name="timeStamp" value="27" />
         </line-breakpoint>
@@ -1471,19 +1309,19 @@
         <line-breakpoint enabled="true" type="java-line">
           <condition expression="pkTableName.equalsIgnoreCase(&quot;TRIGGERS&quot;) &amp;&amp; fkTableName.equalsIgnoreCase(&quot;CRONTRIGGERS&quot;)" language="JAVA" />
           <url>file://$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/core/Resolver.java</url>
-          <line>452</line>
+          <line>440</line>
           <properties />
           <option name="timeStamp" value="51" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/core/Resolver.java</url>
-          <line>478</line>
+          <line>466</line>
           <properties />
           <option name="timeStamp" value="54" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/core/Resolver.java</url>
-          <line>230</line>
+          <line>218</line>
           <properties />
           <option name="timeStamp" value="56" />
         </line-breakpoint>
@@ -1513,7 +1351,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/core/Resolver.java</url>
-          <line>167</line>
+          <line>156</line>
           <properties />
           <option name="timeStamp" value="63" />
         </line-breakpoint>
@@ -1537,13 +1375,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/core/Resolver.java</url>
-          <line>502</line>
+          <line>490</line>
           <properties />
           <option name="timeStamp" value="72" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/core/Resolver.java</url>
-          <line>510</line>
+          <line>498</line>
           <properties />
           <option name="timeStamp" value="74" />
         </line-breakpoint>
@@ -1552,6 +1390,18 @@
           <line>118</line>
           <properties />
           <option name="timeStamp" value="75" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/core/Resolver.java</url>
+          <line>102</line>
+          <properties />
+          <option name="timeStamp" value="76" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/core/Resolver.java</url>
+          <line>122</line>
+          <properties />
+          <option name="timeStamp" value="79" />
         </line-breakpoint>
         <breakpoint enabled="true" type="java-exception">
           <properties class="org.graphstream.graph.IdAlreadyInUseException" package="org.graphstream.graph" />
@@ -1565,7 +1415,7 @@
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="76" />
+      <option name="time" value="80" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1574,104 +1424,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$MAVEN_REPOSITORY$/org/graphstream/gs-core/1.3/gs-core-1.3-sources.jar!/org/graphstream/ui/graphicGraph/GraphicGraph.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="166">
-          <caret line="224" column="23" lean-forward="false" selection-start-line="224" selection-start-column="11" selection-end-line="224" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/graphstream/gs-core/1.3/gs-core-1.3-sources.jar!/org/graphstream/ui/view/View.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2550">
-          <caret line="188" column="31" lean-forward="false" selection-start-line="188" selection-start-column="31" selection-end-line="188" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/graphstream/gs-core/1.3/gs-core-1.3-sources.jar!/org/graphstream/graph/implementations/AdjacencyListGraph.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="57" column="13" lean-forward="false" selection-start-line="57" selection-start-column="13" selection-end-line="57" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/graphstream/gs-core/1.3/gs-core-1.3-sources.jar!/org/graphstream/graph/implementations/MultiGraph.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="40" column="13" lean-forward="false" selection-start-line="40" selection-start-column="13" selection-end-line="40" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/graphstream/gs-core/1.3/gs-core-1.3-sources.jar!/org/graphstream/graph/implementations/DefaultGraph.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="37" column="17" lean-forward="true" selection-start-line="37" selection-start-column="17" selection-end-line="37" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/graphstream/gs-core/1.3/gs-core-1.3-sources.jar!/org/graphstream/graph/implementations/SingleGraph.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="39" column="38" lean-forward="false" selection-start-line="39" selection-start-column="38" selection-end-line="39" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://F:/Oracle/Java/x64/JDK/jdk1.8.0_66/src.zip!/java/util/concurrent/Executor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="139" column="9" lean-forward="false" selection-start-line="139" selection-start-column="9" selection-end-line="139" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://F:/Oracle/Java/x64/JDK/jdk1.8.0_66/src.zip!/java/util/concurrent/RunnableFuture.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="47" column="17" lean-forward="false" selection-start-line="47" selection-start-column="17" selection-end-line="47" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://F:/Oracle/Java/x64/JDK/jdk1.8.0_66/src.zip!/java/util/concurrent/AbstractExecutorService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1649">
-          <caret line="132" column="40" lean-forward="false" selection-start-line="132" selection-start-column="40" selection-end-line="132" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://F:/Oracle/Java/x64/JDK/jdk1.8.0_66/src.zip!/java/util/concurrent/ForkJoinPool.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44387">
-          <caret line="2671" column="7" lean-forward="false" selection-start-line="2671" selection-start-column="7" selection-end-line="2671" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/oracle/ojdbc7/12.1.0.2/ojdbc7-12.1.0.2.jar!/oracle/jdbc/OracleDatabaseMetaData.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17255">
-          <caret line="1041" column="14" lean-forward="false" selection-start-line="1041" selection-start-column="14" selection-end-line="1041" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/zaxxer/HikariCP/2.5.1/HikariCP-2.5.1.jar!/com/zaxxer/hikari/pool/HikariProxyPreparedStatement.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="42" column="5" lean-forward="true" selection-start-line="42" selection-start-column="5" selection-end-line="42" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/zaxxer/HikariCP/2.5.1/HikariCP-2.5.1-sources.jar!/com/zaxxer/hikari/pool/ProxyFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="74" column="20" lean-forward="false" selection-start-line="74" selection-start-column="20" selection-end-line="74" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/zaxxer/HikariCP/2.5.1/HikariCP-2.5.1-sources.jar!/com/zaxxer/hikari/pool/ProxyPreparedStatement.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
-          <caret line="52" column="35" lean-forward="true" selection-start-line="52" selection-start-column="35" selection-end-line="52" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/com/zaxxer/HikariCP/2.5.1/HikariCP-2.5.1.jar!/com/zaxxer/hikari/pool/HikariProxyCallableStatement.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -1704,13 +1456,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="261">
           <caret line="265" column="0" lean-forward="false" selection-start-line="265" selection-start-column="0" selection-end-line="265" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://F:/Oracle/Java/x64/JDK/jdk1.8.0_66/src.zip!/java/util/ArrayList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="199">
-          <caret line="456" column="19" lean-forward="false" selection-start-line="456" selection-start-column="19" selection-end-line="456" selection-end-column="19" />
         </state>
       </provider>
     </entry>
@@ -1747,20 +1492,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="494">
           <caret line="45" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="60" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/infts/IRelevance.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="18" lean-forward="false" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/meta/Keys.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="709">
-          <caret line="206" column="17" lean-forward="false" selection-start-line="206" selection-start-column="16" selection-end-line="206" selection-end-column="19" />
         </state>
       </provider>
     </entry>
@@ -1820,13 +1551,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/constant/Scheme.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="183">
-          <caret line="26" column="42" lean-forward="false" selection-start-line="26" selection-start-column="31" selection-end-line="26" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/skeleton/DAOFactory.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="419">
@@ -1870,15 +1594,60 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="8347">
           <caret line="579" column="0" lean-forward="false" selection-start-line="579" selection-start-column="0" selection-end-line="579" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://F:/Oracle/Java/x64/JDK/jdk1.8.0_66/src.zip!/java/lang/Iterable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="799">
-          <caret line="74" column="0" lean-forward="false" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#0#23722#0" expanded="false" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#2627#2628#0" expanded="false" />
+            <element signature="e#2667#2668#0" expanded="false" />
+            <element signature="e#2754#2755#0" expanded="false" />
+            <element signature="e#2798#2799#0" expanded="false" />
+            <element signature="e#4129#4130#0" expanded="false" />
+            <element signature="e#4188#4189#0" expanded="false" />
+            <element signature="e#4553#4554#0" expanded="false" />
+            <element signature="e#4596#4597#0" expanded="false" />
+            <element signature="e#5124#5125#0" expanded="false" />
+            <element signature="e#5192#5193#0" expanded="false" />
+            <element signature="e#6007#6008#0" expanded="false" />
+            <element signature="e#6089#6090#0" expanded="false" />
+            <element signature="e#6692#6693#0" expanded="false" />
+            <element signature="e#6779#6780#0" expanded="false" />
+            <element signature="e#7372#7373#0" expanded="false" />
+            <element signature="e#7460#7461#0" expanded="false" />
+            <element signature="e#8067#8068#0" expanded="false" />
+            <element signature="e#8157#8158#0" expanded="false" />
+            <element signature="e#8881#8882#0" expanded="false" />
+            <element signature="e#8949#8950#0" expanded="false" />
+            <element signature="e#10221#10222#0" expanded="false" />
+            <element signature="e#10289#10290#0" expanded="false" />
+            <element signature="e#11579#11580#0" expanded="false" />
+            <element signature="e#11647#11648#0" expanded="false" />
+            <element signature="e#12925#12926#0" expanded="false" />
+            <element signature="e#12993#12994#0" expanded="false" />
+            <element signature="e#14249#14250#0" expanded="false" />
+            <element signature="e#14297#14298#0" expanded="false" />
+            <element signature="e#14354#14355#0" expanded="false" />
+            <element signature="e#14400#14401#0" expanded="false" />
+            <element signature="e#15146#15147#0" expanded="false" />
+            <element signature="e#15205#15206#0" expanded="false" />
+            <element signature="e#15285#15286#0" expanded="false" />
+            <element signature="e#15343#15344#0" expanded="false" />
+            <element signature="e#16318#16319#0" expanded="false" />
+            <element signature="e#16363#16364#0" expanded="false" />
+            <element signature="e#16940#16941#0" expanded="false" />
+            <element signature="e#16994#16995#0" expanded="false" />
+            <element signature="e#17054#17055#0" expanded="false" />
+            <element signature="e#17109#17110#0" expanded="false" />
+            <element signature="e#19180#19181#0" expanded="false" />
+            <element signature="e#19227#19228#0" expanded="false" />
+            <element signature="e#20530#20531#0" expanded="false" />
+            <element signature="e#20595#20596#0" expanded="false" />
+            <element signature="e#20681#20682#0" expanded="false" />
+            <element signature="e#20746#20747#0" expanded="false" />
+            <element signature="e#22388#22389#0" expanded="false" />
+            <element signature="e#22424#22425#0" expanded="false" />
+            <element signature="e#23399#23400#0" expanded="false" />
+            <element signature="e#23434#23435#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1914,31 +1683,194 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/scheme/src/main/resources/log4j2.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="36" lean-forward="true" selection-start-line="5" selection-start-column="36" selection-end-line="5" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/utils/Toolkit.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="118" column="0" lean-forward="false" selection-start-line="118" selection-start-column="0" selection-end-line="118" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/graphstream/gs-core/1.3/gs-core-1.3-sources.jar!/org/graphstream/ui/view/Viewer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="443">
-          <caret line="467" column="9" lean-forward="true" selection-start-line="467" selection-start-column="9" selection-end-line="467" selection-end-column="9" />
+        <state relative-caret-position="2075">
+          <caret line="461" column="53" lean-forward="false" selection-start-line="461" selection-start-column="53" selection-end-line="461" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scheme/src/main/resources/log4j2.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="22" lean-forward="false" selection-start-line="1" selection-start-column="18" selection-end-line="1" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scheme/lab-scheme.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$MAVEN_REPOSITORY$/org/apache/camel/camel-parent/2.18.0/camel-parent-2.18.0.pom">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="166">
+          <caret line="528" column="48" lean-forward="false" selection-start-line="528" selection-start-column="31" selection-end-line="528" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scheme/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="290">
+          <caret line="74" column="53" lean-forward="false" selection-start-line="74" selection-start-column="53" selection-end-line="74" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/ehcache/ehcache/3.1.3/ehcache-3.1.3-sources.jar!/org/ehcache/config/Configuration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="29" column="17" lean-forward="false" selection-start-line="29" selection-start-column="17" selection-end-line="29" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/zaxxer/HikariCP/2.5.1/HikariCP-2.5.1-sources.jar!/com/zaxxer/hikari/HikariConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="337">
+          <caret line="139" column="10" lean-forward="false" selection-start-line="139" selection-start-column="10" selection-end-line="139" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/ehcache/ehcache/3.1.3/ehcache-3.1.3-sources.jar!/org/ehcache/xml/XmlConfiguration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="130" column="37" lean-forward="true" selection-start-line="130" selection-start-column="37" selection-end-line="130" selection-end-column="37" />
+          <folding>
+            <element signature="e#5971#5992#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://F:/Oracle/Java/x64/JDK/jdk1.8.0_66/jre/lib/rt.jar!/com/sun/xml/internal/bind/v2/model/impl/ModelBuilder.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="351">
+          <caret line="334" column="0" lean-forward="false" selection-start-line="334" selection-start-column="0" selection-end-line="334" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://F:/Oracle/Java/x64/JDK/jdk1.8.0_66/jre/lib/rt.jar!/com/sun/xml/internal/bind/v2/runtime/JAXBContextImpl.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="381" column="9" lean-forward="true" selection-start-line="381" selection-start-column="9" selection-end-line="381" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://F:/Oracle/Java/x64/JDK/jdk1.8.0_66/src.zip!/java/util/ArrayList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="105" column="22" lean-forward="false" selection-start-line="105" selection-start-column="13" selection-end-line="105" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/meta/Keys.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="26" column="33" lean-forward="false" selection-start-line="26" selection-start-column="33" selection-end-line="26" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/logging/log4j/log4j-api/2.7/log4j-api-2.7.jar!/org/apache/logging/log4j/LogManager.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="25" column="13" lean-forward="false" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/infts/IRelevance.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="15" lean-forward="true" selection-start-line="11" selection-start-column="15" selection-end-line="11" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/constant/Scheme.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="163">
+          <caret line="82" column="59" lean-forward="false" selection-start-line="82" selection-start-column="59" selection-end-line="82" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://F:/Oracle/Java/x64/JDK/jdk1.8.0_66/src.zip!/java/util/Collection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="143" column="40" lean-forward="true" selection-start-line="143" selection-start-column="40" selection-end-line="143" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scheme/src/main/resources/ehcache.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="47" lean-forward="false" selection-start-line="9" selection-start-column="38" selection-end-line="9" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://F:/Oracle/Java/x64/JDK/jdk1.8.0_66/src.zip!/java/util/List.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1479">
+          <caret line="110" column="37" lean-forward="false" selection-start-line="110" selection-start-column="37" selection-end-line="110" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://F:/Oracle/Java/x64/JDK/jdk1.8.0_66/src.zip!/java/lang/Iterable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="44" column="17" lean-forward="false" selection-start-line="44" selection-start-column="17" selection-end-line="44" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/core/Resolver.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1509">
-          <caret line="565" column="21" lean-forward="true" selection-start-line="565" selection-start-column="21" selection-end-line="565" selection-end-column="21" />
+        <state relative-caret-position="349">
+          <caret line="588" column="5" lean-forward="true" selection-start-line="588" selection-start-column="5" selection-end-line="588" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3003#3004#0" expanded="true" />
-            <element signature="e#3049#3050#0" expanded="true" />
+            <element signature="e#3071#3072#0" expanded="true" />
+            <element signature="e#3093#3094#0" expanded="true" />
+            <element signature="e#3159#3160#0" expanded="true" />
+            <element signature="e#3205#3206#0" expanded="true" />
+            <element signature="e#6132#6169#0" expanded="true" />
+            <element signature="e#9883#9884#0" expanded="true" />
+            <element signature="e#9960#9961#0" expanded="true" />
+            <element signature="e#15153#15161#0" expanded="true" />
+            <element signature="e#15466#15474#0" expanded="true" />
+            <element signature="e#15772#15780#0" expanded="true" />
+            <element signature="e#17922#17959#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/utils/Toolkit.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="32" column="35" lean-forward="true" selection-start-line="32" selection-start-column="35" selection-end-line="32" selection-end-column="35" />
-          <folding />
         </state>
       </provider>
     </entry>
