@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <ehcache:config
         xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
         xmlns:ehcache='http://www.ehcache.org/v3'
@@ -10,7 +9,7 @@
         <ehcache:value-type>java.util.ArrayList</ehcache:value-type>
         <ehcache:resources>
             <ehcache:heap unit="entries">100</ehcache:heap>
-            <ehcache:offheap unit="MB">1</ehcache:offheap>
+            <ehcache:offheap unit="MB">25</ehcache:offheap>
         </ehcache:resources>
     </ehcache:cache>
 </ehcache:config>

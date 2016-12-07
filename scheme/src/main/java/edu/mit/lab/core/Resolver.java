@@ -2,6 +2,7 @@ package edu.mit.lab.core;
 
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
+
 import edu.mit.lab.constant.Scheme;
 import edu.mit.lab.exception.TypeException;
 import edu.mit.lab.infts.IRelevance;
@@ -11,11 +12,17 @@ import edu.mit.lab.meta.Tables;
 import edu.mit.lab.skeleton.DAOFactory;
 import edu.mit.lab.skeleton.factory.IDAOFactory;
 import edu.mit.lab.utils.Toolkit;
+
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.collections4.MapUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.ehcache.Cache;
+import org.ehcache.CacheManager;
+import org.ehcache.config.Configuration;
+import org.ehcache.config.builders.CacheManagerBuilder;
+import org.ehcache.xml.XmlConfiguration;
 import org.graphstream.graph.Edge;
 import org.graphstream.graph.Graph;
 import org.graphstream.graph.GraphFactory;
@@ -81,7 +88,7 @@ public class Resolver {
         try {
             Class.forName("oracle.jdbc.driver.OracleDriver");
         } catch (ClassNotFoundException e) {
-           logger.error(e.getMessage());
+            logger.error(e.getMessage());
         }
     }
 
@@ -118,72 +125,82 @@ public class Resolver {
 
     public static void main(String[] args) throws InterruptedException {
         long start = System.currentTimeMillis();
-        Resolver resolver = new Resolver();
-        List<IRelevance<String, List<String>>> lstFKRef = null;
-        try (Connection connection = createConnection()) {
-            DatabaseMetaData metaData = connection.getMetaData();
-            resolver.processEntityType(metaData);
+        Configuration xmlConfig = new XmlConfiguration(Resolver.class.getResource(Scheme.SLASH_EHCACHE_XML));
 
-            List<Tables> lstTable = resolver.processTable(connection, metaData);
-//            resolver.retrieve(connection, lstTable);
-            resolver.collect(lstTable);
-//            resolver.processPKRef(connection);
-            lstFKRef = resolver.processFKRef(connection);
-        } catch (SQLException e) {
-            logger.error(e.getMessage());
-        }
+        try (CacheManager cacheManager = CacheManagerBuilder.newCacheManager(xmlConfig)) {
+            cacheManager.init();
+            Cache<String, ArrayList> cache = cacheManager.getCache("defaultCache", String.class, ArrayList.class);
+            Resolver resolver = new Resolver();
+            List<IRelevance<String, List<String>>> lstFKRef = null;
+            try (Connection connection = createConnection()) {
+                DatabaseMetaData metaData = connection.getMetaData();
+                resolver.processEntityType(metaData);
+
+                List<Tables> lstTable = resolver.processTable(connection, metaData);
+                cache.put(Scheme.TABLES, (ArrayList) lstTable);
+                //            resolver.retrieve(connection, lstTable);
+                resolver.collect(lstTable);
+                //            resolver.processPKRef(connection);
+                lstFKRef = resolver.processFKRef(connection);
+                cache.put(Scheme.FOREIGN_KEYS, (ArrayList) lstFKRef);
+            } catch (SQLException e) {
+                logger.error(e.getMessage());
+            }
 //        List<Tree<String>> trees = buildTableTree(lstFKRef);
-        Graph overview = resolver.overview(lstFKRef);
-        resolver.setRootNodeIds(Toolkit.resolveDisconnectedGraph(overview));
+            Graph overview = resolver.overview(lstFKRef);
+            resolver.setRootNodeIds(Toolkit.resolveDisconnectedGraph(overview));
 
-        ExecutorService executor = Executors.newFixedThreadPool(10);
-        Future<Integer> status = executor.submit(resolver.genSQLScript(overview));
-        Future<List<Graph>> graphs = executor.submit(resolver.graphs(overview));
+            ExecutorService executor = Executors.newFixedThreadPool(10);
+            Future<Integer> status = executor.submit(resolver.genSQLScript(overview));
+            Future<List<Graph>> graphs = executor.submit(resolver.graphs(overview));
 
-        try {
-            System.out
-                .println(status.get() == 0 ? "Success to generate SQL script!" : "Failed to generate SQL script!");
-            List<Graph> lstGraph = graphs.get();
-            resolver.viewClosedCounter = lstGraph.size();
-            lstGraph.forEach(
-                graph -> {
-                    executor.execute(resolver.persist(graph));
+            try {
+                System.out
+                        .println(status.get() == 0 ? "Success to generate SQL script!" : "Failed to generate SQL script!");
+                List<Graph> lstGraph = graphs.get();
+                resolver.viewClosedCounter = lstGraph.size();
+                lstGraph.forEach(
+                        graph -> {
+                            executor.execute(resolver.persist(graph));
 
-                    executor.execute(resolver.display(graph));
-                }
-            );
-        } catch (ExecutionException e) {
-            logger.error(e.getMessage());
-        } finally {
-            executor.shutdown();
+                            executor.execute(resolver.display(graph));
+                        }
+                );
+            } catch (ExecutionException e) {
+                logger.error(e.getMessage());
+            } finally {
+                executor.shutdown();
+            }
+            long end = System.currentTimeMillis();
+            long duration = end - start;
+            System.out.println(String
+                    .format(Scheme.TIME_DURATION_PROCESS, TimeUnit.MILLISECONDS.toMinutes(duration),
+                            TimeUnit.MILLISECONDS.toSeconds(duration) - TimeUnit.MINUTES
+                                    .toSeconds(TimeUnit.MILLISECONDS.toMinutes(duration))));
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         }
-        long end = System.currentTimeMillis();
-        long duration = end - start;
-        System.out.println(String
-            .format(Scheme.TIME_DURATION_PROCESS, TimeUnit.MILLISECONDS.toMinutes(duration),
-                TimeUnit.MILLISECONDS.toSeconds(duration) - TimeUnit.MINUTES
-                    .toSeconds(TimeUnit.MILLISECONDS.toMinutes(duration))));
     }
 
     @SuppressWarnings(value = {"unused"})
     private void retrieve(Connection connection, List<Tables> lstTables) {
         lstTables.forEach(table -> {
             try (ResultSet exportedKeys = connection.getMetaData()
-                .getExportedKeys(connection.getCatalog(), connection.getSchema(), table.getTableName())) {
+                    .getExportedKeys(connection.getCatalog(), connection.getSchema(), table.getTableName())) {
                 processForeignKeys(exportedKeys, true);
             } catch (SQLException e) {
                 logger.error(e.getMessage());
             }
 
             try (ResultSet importedKeys = connection.getMetaData()
-                .getImportedKeys(connection.getCatalog(), connection.getSchema(), table.getTableName())) {
+                    .getImportedKeys(connection.getCatalog(), connection.getSchema(), table.getTableName())) {
                 processForeignKeys(importedKeys, false);
             } catch (SQLException e) {
                 logger.error(e.getMessage());
             }
 
             try (ResultSet primaryKeys = connection.getMetaData()
-                .getPrimaryKeys(connection.getCatalog(), connection.getSchema(), table.getTableName())) {
+                    .getPrimaryKeys(connection.getCatalog(), connection.getSchema(), table.getTableName())) {
                 processPrimaryKeys(primaryKeys);
             } catch (SQLException e) {
                 logger.error(e.getMessage());
@@ -199,8 +216,8 @@ public class Resolver {
             String column = primaryKeys.getString(Scheme.COLUMN_NAME);
             int sequence = primaryKeys.getShort(Scheme.KEY_SEQ);
             System.out.println(String
-                .format("Catalog:%s & schema:%s & table:%s & column:%s & key sequence:%d", catalog, schema,
-                    name, column, sequence));
+                    .format("Catalog:%s & schema:%s & table:%s & column:%s & key sequence:%d", catalog, schema,
+                            name, column, sequence));
         }
     }
 
@@ -212,9 +229,9 @@ public class Resolver {
             String pkColumn = keyResultSet.getString(Scheme.PKCOLUMN_NAME);
             int sequence = keyResultSet.getShort(Scheme.KEY_SEQ);
             System.out.println(String.format(
-                "[Retrieve %s keys information] Primary table:%s & primary column:%s; foreign table:%s & foreign column:%s; key sequence:%d ",
-                isExported ? "export" : "import",
-                pkTableName, pkColumn, fkTableName, fkColumnName, sequence));
+                    "[Retrieve %s keys information] Primary table:%s & primary column:%s; foreign table:%s & foreign column:%s; key sequence:%d ",
+                    isExported ? "export" : "import",
+                    pkTableName, pkColumn, fkTableName, fkColumnName, sequence));
         }
     }
 
@@ -260,9 +277,9 @@ public class Resolver {
         tableIds.forEach(item -> {
             boolean exclusive = Toolkit.INSTANCE.matcher(item).matches();
             complement.append(String
-                .format(
-                    (exclusive ? "--" : "") + Scheme.STD_SQL_DELETE_STATEMENT,
-                    StringUtils.lowerCase(item) + Scheme.AUDIT_LOG_TABLE_POSTFIX));
+                    .format(
+                            (exclusive ? "--" : "") + Scheme.STD_SQL_DELETE_STATEMENT,
+                            StringUtils.lowerCase(item) + Scheme.AUDIT_LOG_TABLE_POSTFIX));
         });
         return complement;
     }
@@ -280,32 +297,32 @@ public class Resolver {
         return () -> {
             Set<String> untouched = new TreeSet<>(tableIds);
             rootNodeIds.forEach(
-                rootId -> Arrays.stream(rootId.split("[|]")).forEach(
-                    rootNodeId -> {
-                        Node root = graph.getNode(rootNodeId);
-                        script.append(String.format(
-                            Scheme.STD_SQL_COMMENTS_BOILERPLATE,
-                            StringUtils.removeFirst(rootNodeId.toLowerCase(), Scheme.NODE_PREFIX)));
-                        Toolkit.postTraverse(graph, root, untouched, script);
-                    }
-                )
+                    rootId -> Arrays.stream(rootId.split("[|]")).forEach(
+                            rootNodeId -> {
+                                Node root = graph.getNode(rootNodeId);
+                                script.append(String.format(
+                                        Scheme.STD_SQL_COMMENTS_BOILERPLATE,
+                                        StringUtils.removeFirst(rootNodeId.toLowerCase(), Scheme.NODE_PREFIX)));
+                                Toolkit.postTraverse(graph, root, untouched, script);
+                            }
+                    )
             );
 
             script.append(Scheme.STD_SQL_COMMENTS_BOILERPLATE_FOR_INDEPENDENT_TABLES);
             untouched.forEach(item -> {
                 boolean exclusive = Toolkit.INSTANCE.matcher(item).matches();
                 script.append(
-                    String.format(
-                        (exclusive ? "--" : "") + Scheme.STD_SQL_DELETE_STATEMENT,
-                        StringUtils.lowerCase(item)));
+                        String.format(
+                                (exclusive ? "--" : "") + Scheme.STD_SQL_DELETE_STATEMENT,
+                                StringUtils.lowerCase(item)));
             });
 
             script.append(genAuditLogScript());
 
             script.append(Scheme.STD_SQL_COMMIT);
             try (OutputStreamWriter writer = new OutputStreamWriter(
-                new FileOutputStream(Scheme.WORK_DIR + SCRIPT_FILE_NAME, false),
-                Charset.forName(Scheme.UTF_8).newEncoder())) {
+                    new FileOutputStream(Scheme.WORK_DIR + SCRIPT_FILE_NAME, false),
+                    Charset.forName(Scheme.UTF_8).newEncoder())) {
                 writer.write(script.toString());
                 writer.flush();
             } catch (IOException e) {
@@ -347,8 +364,8 @@ public class Resolver {
         final List<Graph> graphs = new ArrayList<>();
         return () -> {
             rootNodeIds.forEach(rootId -> Arrays.stream(rootId.split("[|]")).filter(nodeId ->
-                Toolkit.height(graph.getNode(nodeId)) >= HEIGHT_THRESHOLD).findFirst()
-                .ifPresent(nodeId -> graph(graphs, graph.getNode(nodeId), nodeId)));
+                    Toolkit.height(graph.getNode(nodeId)) >= HEIGHT_THRESHOLD).findFirst()
+                    .ifPresent(nodeId -> graph(graphs, graph.getNode(nodeId), nodeId)));
             return graphs;
         };
     }
@@ -358,26 +375,26 @@ public class Resolver {
         result.addAttribute(Scheme.UI_QUALITY);
         result.addAttribute(Scheme.UI_ANTIALIAS);
         root.getBreadthFirstIterator(false)
-            .forEachRemaining(currentNode -> currentNode.getEnteringEdgeSet().forEach(
-                edge -> {
-                    Node source = edge.getSourceNode();
-                    Node target = edge.getTargetNode();
-                    if (result.getNode(target.getId()) == null) {
-                        Node parent = result.addNode(target.getId());
-                        target.getAttributeKeySet()
-                            .forEach(key -> parent.addAttribute(key, target.<String>getAttribute(key)));
-                    }
-                    if (result.getNode(source.getId()) == null) {
-                        Node child = result.addNode(source.getId());
-                        source.getAttributeKeySet()
-                            .forEach(key -> child.addAttribute(key, source.<String>getAttribute(key)));
-                    }
-                    result.addEdge(edge.getId(), source.getId(), target.getId(), true);
-                    edge.getAttributeKeySet()
-                        .forEach(key -> result.getEdge(edge.getId())
-                            .addAttribute(key, edge.<String>getAttribute(key)));
-                }
-            ));
+                .forEachRemaining(currentNode -> currentNode.getEnteringEdgeSet().forEach(
+                        edge -> {
+                            Node source = edge.getSourceNode();
+                            Node target = edge.getTargetNode();
+                            if (result.getNode(target.getId()) == null) {
+                                Node parent = result.addNode(target.getId());
+                                target.getAttributeKeySet()
+                                        .forEach(key -> parent.addAttribute(key, target.<String>getAttribute(key)));
+                            }
+                            if (result.getNode(source.getId()) == null) {
+                                Node child = result.addNode(source.getId());
+                                source.getAttributeKeySet()
+                                        .forEach(key -> child.addAttribute(key, source.<String>getAttribute(key)));
+                            }
+                            result.addEdge(edge.getId(), source.getId(), target.getId(), true);
+                            edge.getAttributeKeySet()
+                                    .forEach(key -> result.getEdge(edge.getId())
+                                            .addAttribute(key, edge.<String>getAttribute(key)));
+                        }
+                ));
 
         result.addAttribute(Scheme.UI_DEFAULT_TITLE, StringUtils.remove(rootId, Scheme.NODE_PREFIX));
         result.addAttribute(Scheme.UI_STYLESHEET, "url(css/polish.css)");
@@ -405,8 +422,8 @@ public class Resolver {
     private List<Tables> processTable(Connection connection, DatabaseMetaData metaData) {
         List<Tables> lstTable = new ArrayList<>();
         try (ResultSet tables =
-                 metaData.getTables(connection.getCatalog(), connection.getSchema(), null,
-                     new String[]{Scheme.ENTITY_TABLE})) {
+                     metaData.getTables(connection.getCatalog(), connection.getSchema(), null,
+                             new String[]{Scheme.ENTITY_TABLE})) {
             ResultSetMetaData meta = tables.getMetaData();
             int columns = meta.getColumnCount();
             Set<String> nameSet = new HashSet<>(columns);
@@ -430,7 +447,7 @@ public class Resolver {
     private List<IRelevance<String, List<String>>> processPKRef(final Connection connection) {
         List<IRelevance<String, List<String>>> lstPrimaryKey = pushPrimaryKeyInfo(connection);
         System.out.println(
-            "~~~~~~~~~~~~~~~~~~~~~~~#Tables primary keys reference information list#~~~~~~~~~~~~~~~~~~~~~~~");
+                "~~~~~~~~~~~~~~~~~~~~~~~#Tables primary keys reference information list#~~~~~~~~~~~~~~~~~~~~~~~");
         lstPrimaryKey.forEach(System.out::println);
         return lstPrimaryKey;
     }
@@ -438,7 +455,7 @@ public class Resolver {
     private List<IRelevance<String, List<String>>> processFKRef(final Connection connection) {
         List<IRelevance<String, List<String>>> lstForeignKey = pushForeignKeyInfo(connection);
         System.out.println(
-            "~~~~~~~~~~~~~~~~~~~~~~~#Tables foreign keys reference information list#~~~~~~~~~~~~~~~~~~~~~~~");
+                "~~~~~~~~~~~~~~~~~~~~~~~#Tables foreign keys reference information list#~~~~~~~~~~~~~~~~~~~~~~~");
         lstForeignKey.forEach(System.out::println);
         return lstForeignKey;
     }
@@ -448,8 +465,8 @@ public class Resolver {
     }
 
     private void handleRefKeys(
-        ResultSet result, List<IRelevance<String, List<String>>> lstRefKeys, Map<String, Integer> mapIds)
-        throws SQLException {
+            ResultSet result, List<IRelevance<String, List<String>>> lstRefKeys, Map<String, Integer> mapIds)
+            throws SQLException {
         while (result.next()) {
             String pkTableName = result.getString(Scheme.PKTABLE_NAME);
             String fkTableName = result.getString(Scheme.FKTABLE_NAME);
@@ -483,7 +500,7 @@ public class Resolver {
             String productName = connection.getMetaData().getDatabaseProductName();
             IDAOForMeta daoMeta = factory.createDBScheme(productName);
             try (PreparedStatement preparedStatement = connection.prepareStatement(
-                forExportKeys ? daoMeta.exportedKeys() : daoMeta.importedKeys())) {
+                    forExportKeys ? daoMeta.exportedKeys() : daoMeta.importedKeys())) {
                 int times = 0;
                 boolean hasNext = true;
                 Map<String, Integer> identifiers = new WeakHashMap<>();
@@ -523,7 +540,7 @@ public class Resolver {
     }
 
     private static void pushTableSummaryInfo(
-        ResultSet tables, List<Tables> lstTable, Set<String> nameSet, Tables tableMeta) throws SQLException {
+            ResultSet tables, List<Tables> lstTable, Set<String> nameSet, Tables tableMeta) throws SQLException {
 
         if (nameSet.contains(Scheme.TABLE_CAT)) {
             tableMeta.setTableCatalog(tables.getString(Scheme.TABLE_CAT));

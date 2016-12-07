@@ -307,13 +307,6 @@
 --delete from  jvclocalsvrothrate;
 --delete from  jvclocalsvroth;
 
-/* deleted table group[paramdata], and those are related */
---delete from  triggers;
---delete from  paramdata;
-
-/* deleted table group[recurinfo], and those are related */
---delete from  recurinfo;
-
 /* deleted table group[pcklsthdr], and those are related */
 --delete from  pckjoblink;
 --delete from  pcklstitem;
@@ -336,6 +329,13 @@
 --delete from  psdtl;
 --delete from  psparty;
 --delete from  pshdr;
+
+/* deleted table group[recurinfo], and those are related */
+--delete from  triggers;
+--delete from  recurinfo;
+
+/* deleted table group[paramdata], and those are related */
+--delete from  paramdata;
 
 /* deleted table group[reservenumhdr], and those are related */
 --delete from  reservenumdtl;
@@ -439,16 +439,6 @@
 --delete from  symenuresource;
 --delete from  symenu;
 
-/* deleted table group[syfuncfield], and those are related */
---delete from  syfuncfielddtl;
---delete from  syfuncfield;
-
-/* deleted table group[sylogicfield], and those are related */
---delete from  sylogicfieldfunclocaldesc;
---delete from  sylogicfieldfunc;
---delete from  sylogicfieldlocaldesc;
---delete from  sylogicfield;
-
 /* deleted table group[syimexsettinglog], and those are related */
 --delete from  syimexsettinglogdtl;
 --delete from  syimexsettinglog;
@@ -479,6 +469,16 @@
 --delete from  sykctlisten;
 --delete from  sykctscen;
 --delete from  sykcthdr;
+
+/* deleted table group[sylogicfield], and those are related */
+--delete from  syfuncfielddtl;
+--delete from  sylogicfieldfunclocaldesc;
+--delete from  sylogicfieldfunc;
+--delete from  sylogicfieldlocaldesc;
+--delete from  sylogicfield;
+
+/* deleted table group[syfuncfield], and those are related */
+--delete from  syfuncfield;
 
 /* deleted table group[synumname], and those are related */
 --delete from  synummap;
