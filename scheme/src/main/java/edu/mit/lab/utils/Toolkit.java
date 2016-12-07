@@ -39,7 +39,7 @@ import java.util.regex.Pattern;
 public class Toolkit {
 
     private static final String EXCLUDED_PATTERN =
-        "^(?:FM|[CV](?=TRF)|VC|CC|SY|IFM|MSG|WORK(?=(FLOW|_EFFORT))|STRUCTURE|WF)\\w+|\\w+(?<!JOB(?:ACCESS|SET(?:UP|TING)|TEMPLATE))$";
+        "^(?:FM|[CV](?=TRF)|VC|CC|SY|IFM|MSG|WORK(?=(FLOW|_EFFORT))|STRUCTURE|WF)\\w+|\\w+(?:ACCESS|SET(?:UP|TING)|TEMPLATE)$";
     public static final Pattern INSTANCE = Pattern.compile(EXCLUDED_PATTERN);
 
     private static <T> void processNode(Graph graph, TreeNode<T> node) {
