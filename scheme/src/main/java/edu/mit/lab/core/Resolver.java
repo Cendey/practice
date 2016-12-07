@@ -202,7 +202,7 @@ public class Resolver {
         }
         if (lstFKRef == null) {
             lstFKRef = processFKRef(connection);
-            serialize(genson.serialize(lstFKRef, new GenericType<List<IRelevance<String, List<String>>>>() {
+            serialize(genson.serialize(lstFKRef, new GenericType<List<Keys>>() {
             }), FOREIGN_TO_JSON_FILE_NAME);
         }
         return lstFKRef;
