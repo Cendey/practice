@@ -33,6 +33,7 @@ import org.graphstream.ui.view.ViewerListener;
 import org.graphstream.ui.view.ViewerPipe;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -189,12 +190,15 @@ public class Resolver {
 
     private List<IRelevance<String, List<String>>> relationship(Connection connection, Genson genson, String fileName) {
         List<IRelevance<String, List<String>>> lstFKRef = null;
-        try (BufferedReader reader = new BufferedReader(new InputStreamReader(
-            new FileInputStream(Scheme.WORK_DIR + fileName), Charset.forName(Scheme.UTF_8).newDecoder()))) {
-            lstFKRef = genson.deserialize(reader, new GenericType<List<IRelevance<String, List<String>>>>() {
-            });
-        } catch (IOException e) {
-            logger.error(e.getMessage());
+        File target = new File(Scheme.WORK_DIR + fileName);
+        if (target.exists() && target.isFile() && target.canRead()) {
+            try (BufferedReader reader = new BufferedReader(new InputStreamReader(
+                new FileInputStream(Scheme.WORK_DIR + fileName), Charset.forName(Scheme.UTF_8).newDecoder()))) {
+                lstFKRef = genson.deserialize(reader, new GenericType<List<IRelevance<String, List<String>>>>() {
+                });
+            } catch (IOException e) {
+                logger.error(e.getMessage());
+            }
         }
         if (lstFKRef == null) {
             lstFKRef = processFKRef(connection);
@@ -206,12 +210,15 @@ public class Resolver {
 
     private List<Tables> entities(Connection connection, Genson genson, String fileName) {
         List<Tables> lstTable = null;
-        try (BufferedReader reader = new BufferedReader(new InputStreamReader(
-            new FileInputStream(Scheme.WORK_DIR + fileName), Charset.forName(Scheme.UTF_8).newDecoder()))) {
-            lstTable = genson.deserialize(reader, new GenericType<List<Tables>>() {
-            });
-        } catch (IOException e) {
-            logger.error(e.getMessage());
+        File target = new File(Scheme.WORK_DIR + fileName);
+        if (target.exists() && target.isFile() && target.canRead()) {
+            try (BufferedReader reader = new BufferedReader(new InputStreamReader(
+                new FileInputStream(Scheme.WORK_DIR + fileName), Charset.forName(Scheme.UTF_8).newDecoder()))) {
+                lstTable = genson.deserialize(reader, new GenericType<List<Tables>>() {
+                });
+            } catch (IOException e) {
+                logger.error(e.getMessage());
+            }
         }
 
         if (lstTable == null) {
