@@ -1,6 +1,6 @@
 package edu.mit.lab.skeleton.factory;
 
-import edu.mit.lab.exception.TypeException;
+import edu.mit.lab.exception.UnIdentifiedException;
 import edu.mit.lab.infts.idao.IDAOForMeta;
 
 /**
@@ -15,5 +15,5 @@ import edu.mit.lab.infts.idao.IDAOForMeta;
  */
 public abstract class IDAOFactory {
 
-    public abstract IDAOForMeta createDBScheme(String dbType) throws TypeException;
+    public abstract IDAOForMeta createDBScheme(String dbType) throws UnIdentifiedException;
 }

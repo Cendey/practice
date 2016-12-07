@@ -5,7 +5,7 @@ import com.owlike.genson.Genson;
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
 import edu.mit.lab.constant.Scheme;
-import edu.mit.lab.exception.TypeException;
+import edu.mit.lab.exception.UnIdentifiedException;
 import edu.mit.lab.infts.IRelevance;
 import edu.mit.lab.infts.idao.IDAOForMeta;
 import edu.mit.lab.meta.Keys;
@@ -569,7 +569,7 @@ public class Resolver {
                             preparedStatement.setInt(3, FIXED_ROW_COUNT);
                             break;
                         default:
-                            throw new TypeException(productName);
+                            throw new UnIdentifiedException(productName);
                     }
                     try (ResultSet refKeyResult = preparedStatement.executeQuery()) {
                         refKeyResult.setFetchDirection(ResultSet.TYPE_FORWARD_ONLY);
@@ -581,10 +581,10 @@ public class Resolver {
                     }
                     ++times;
                 } while (hasNext);
-            } catch (SQLException | TypeException e) {
+            } catch (SQLException | UnIdentifiedException e) {
                 logger.error(e.getMessage());
             }
-        } catch (SQLException | TypeException e) {
+        } catch (SQLException | UnIdentifiedException e) {
             logger.error(e.getMessage());
         }
         return lstRefKeys;

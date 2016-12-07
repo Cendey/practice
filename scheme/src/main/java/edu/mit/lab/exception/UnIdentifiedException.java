@@ -2,7 +2,7 @@ package edu.mit.lab.exception;
 
 /**
  * <p>Title: MIT Lib Project</p>
- * <p>Description: edu.mit.lab.exception.TypeException</p>
+ * <p>Description: edu.mit.lab.exception.UnIdentifiedException</p>
  * <p>Copyright: Copyright (c) 2016</p>
  * <p>Company: MIT Lib Co., Ltd</p>
  *
@@ -10,27 +10,27 @@ package edu.mit.lab.exception;
  * @version 1.0
  * @since 12/5/2016
  */
-public class TypeException extends Exception {
+public class UnIdentifiedException extends Exception {
 
-    public TypeException() {
+    public UnIdentifiedException() {
         super("Type unsupported exception!");
     }
 
-    public TypeException(String message) {
+    public UnIdentifiedException(String message) {
         super(String.format("Type unsupported exception! Database product name: %s cannot be instantiated!", message));
     }
 
-    public TypeException(String message, Throwable cause) {
+    public UnIdentifiedException(String message, Throwable cause) {
         super(
             String.format("Type unsupported exception! Database product name: %s cannot be instantiated!", message),
             cause);
     }
 
-    public TypeException(Throwable cause) {
+    public UnIdentifiedException(Throwable cause) {
         super(cause);
     }
 
-    public TypeException(
+    public UnIdentifiedException(
         String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace) {
         super(
             String.format("Type unsupported exception! Database product name: %s cannot be instantiated!", message),
