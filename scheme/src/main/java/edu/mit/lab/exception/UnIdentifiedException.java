@@ -17,12 +17,14 @@ public class UnIdentifiedException extends Exception {
     }
 
     public UnIdentifiedException(String message) {
-        super(String.format("Type unsupported exception! Database product name: %s cannot be instantiated!", message));
+        super(String
+            .format("System can't support this database! Database product name: %s cannot be instantiated!", message));
     }
 
     public UnIdentifiedException(String message, Throwable cause) {
         super(
-            String.format("Type unsupported exception! Database product name: %s cannot be instantiated!", message),
+            String.format("System can't support this database! Database product name: %s cannot be instantiated!",
+                message),
             cause);
     }
 
@@ -33,7 +35,8 @@ public class UnIdentifiedException extends Exception {
     public UnIdentifiedException(
         String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace) {
         super(
-            String.format("Type unsupported exception! Database product name: %s cannot be instantiated!", message),
+            String.format("System can't support this database! Database product name: %s cannot be instantiated!",
+                message),
             cause, enableSuppression, writableStackTrace);
     }
 }
