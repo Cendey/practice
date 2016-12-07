@@ -136,15 +136,14 @@ public class Resolver {
             cacheManager.init();
             Cache<String, ArrayList> cache = cacheManager.getCache("defaultCache", String.class, ArrayList.class);
             Resolver resolver = new Resolver();
-            List<IRelevance<String, List<String>>> lstFKRef = null;
+            List<Keys> lstFKRef = null;
             try (Connection connection = createConnection()) {
-                Genson genson = new Genson();
                 resolver.processEntityType(connection);
 
-                List<Tables> lstTable = resolver.entities(connection, genson, TABLES_TO_JSON_FILE_NAME);
+                List<Tables> lstTable = resolver.entities(connection, TABLES_TO_JSON_FILE_NAME);
                 cache.put(Scheme.TABLES, (ArrayList) lstTable);
                 resolver.collect(lstTable);
-                lstFKRef = resolver.relationship(connection, genson, FOREIGN_TO_JSON_FILE_NAME);
+                lstFKRef = resolver.relationship(connection, FOREIGN_TO_JSON_FILE_NAME);
                 cache.put(Scheme.FOREIGN_KEYS, (ArrayList) lstFKRef);
             } catch (SQLException e) {
                 logger.error(e.getMessage());
@@ -188,13 +187,14 @@ public class Resolver {
         }
     }
 
-    private List<IRelevance<String, List<String>>> relationship(Connection connection, Genson genson, String fileName) {
-        List<IRelevance<String, List<String>>> lstFKRef = null;
+    private List<Keys> relationship(Connection connection, String fileName) {
+        List<Keys> lstFKRef = null;
+        Genson genson = new Genson();
         File target = new File(Scheme.WORK_DIR + fileName);
         if (target.exists() && target.isFile() && target.canRead()) {
             try (BufferedReader reader = new BufferedReader(new InputStreamReader(
                 new FileInputStream(Scheme.WORK_DIR + fileName), Charset.forName(Scheme.UTF_8).newDecoder()))) {
-                lstFKRef = genson.deserialize(reader, new GenericType<List<IRelevance<String, List<String>>>>() {
+                lstFKRef = genson.deserialize(reader, new GenericType<List<Keys>>() {
                 });
             } catch (IOException e) {
                 logger.error(e.getMessage());
@@ -208,8 +208,9 @@ public class Resolver {
         return lstFKRef;
     }
 
-    private List<Tables> entities(Connection connection, Genson genson, String fileName) {
+    private List<Tables> entities(Connection connection, String fileName) {
         List<Tables> lstTable = null;
+        Genson genson = new Genson();
         File target = new File(Scheme.WORK_DIR + fileName);
         if (target.exists() && target.isFile() && target.canRead()) {
             try (BufferedReader reader = new BufferedReader(new InputStreamReader(
@@ -342,7 +343,7 @@ public class Resolver {
         return complement;
     }
 
-    private Graph overview(List<IRelevance<String, List<String>>> lstFKRef) {
+    private Graph overview(List<Keys> lstFKRef) {
         //Remember processed tables position which corresponding to position in the list of nodes
         Graph overview = new GraphFactory().newInstance(Scheme.DEPENDENCY, SingleGraph.class.getName());
         if (!CollectionUtils.isEmpty(lstFKRef)) {
@@ -495,28 +496,27 @@ public class Resolver {
     }
 
     @SuppressWarnings(value = {"unused"})
-    private List<IRelevance<String, List<String>>> processPKRef(final Connection connection) {
-        List<IRelevance<String, List<String>>> lstPrimaryKey = pushPrimaryKeyInfo(connection);
+    private List<Keys> processPKRef(final Connection connection) {
+        List<Keys> lstPrimaryKey = pushPrimaryKeyInfo(connection);
         System.out.println(
             "~~~~~~~~~~~~~~~~~~~~~~~#Tables primary keys reference information list#~~~~~~~~~~~~~~~~~~~~~~~");
         lstPrimaryKey.forEach(System.out::println);
         return lstPrimaryKey;
     }
 
-    private List<IRelevance<String, List<String>>> processFKRef(final Connection connection) {
-        List<IRelevance<String, List<String>>> lstForeignKey = pushForeignKeyInfo(connection);
+    private List<Keys> processFKRef(final Connection connection) {
+        List<Keys> lstForeignKey = pushForeignKeyInfo(connection);
         System.out.println(
             "~~~~~~~~~~~~~~~~~~~~~~~#Tables foreign keys reference information list#~~~~~~~~~~~~~~~~~~~~~~~");
         lstForeignKey.forEach(System.out::println);
         return lstForeignKey;
     }
 
-    private List<IRelevance<String, List<String>>> pushForeignKeyInfo(Connection connection) {
+    private List<Keys> pushForeignKeyInfo(Connection connection) {
         return processKeysInfo(connection, true);
     }
 
-    private void handleRefKeys(
-        ResultSet result, List<IRelevance<String, List<String>>> lstRefKeys, Map<String, Integer> mapIds)
+    private void handleRefKeys(ResultSet result, List<Keys> lstRefKeys, Map<String, Integer> mapIds)
         throws SQLException {
         while (result.next()) {
             String pkTableName = result.getString(Scheme.PKTABLE_NAME);
@@ -540,12 +540,12 @@ public class Resolver {
         }
     }
 
-    private List<IRelevance<String, List<String>>> pushPrimaryKeyInfo(Connection connection) {
+    private List<Keys> pushPrimaryKeyInfo(Connection connection) {
         return processKeysInfo(connection, false);
     }
 
-    private List<IRelevance<String, List<String>>> processKeysInfo(Connection connection, boolean forExportKeys) {
-        List<IRelevance<String, List<String>>> lstRefKeys = new ArrayList<>();
+    private List<Keys> processKeysInfo(Connection connection, boolean forExportKeys) {
+        List<Keys> lstRefKeys = new ArrayList<>();
         try {
             IDAOFactory factory = new DAOFactory();
             String productName = connection.getMetaData().getDatabaseProductName();
