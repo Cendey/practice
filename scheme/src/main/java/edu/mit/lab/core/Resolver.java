@@ -34,7 +34,6 @@ import org.graphstream.ui.view.ViewerPipe;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -141,10 +140,10 @@ public class Resolver {
                 Genson genson = new Genson();
                 resolver.processEntityType(connection);
 
-                List<Tables> lstTable = resolver.entities(connection, genson);
+                List<Tables> lstTable = resolver.entities(connection, genson, TABLES_TO_JSON_FILE_NAME);
                 cache.put(Scheme.TABLES, (ArrayList) lstTable);
                 resolver.collect(lstTable);
-                lstFKRef = resolver.relationship(connection, genson);
+                lstFKRef = resolver.relationship(connection, genson, FOREIGN_TO_JSON_FILE_NAME);
                 cache.put(Scheme.FOREIGN_KEYS, (ArrayList) lstFKRef);
             } catch (SQLException e) {
                 logger.error(e.getMessage());
@@ -188,17 +187,13 @@ public class Resolver {
         }
     }
 
-    private List<IRelevance<String, List<String>>> relationship(Connection connection, Genson genson) {
+    private List<IRelevance<String, List<String>>> relationship(Connection connection, Genson genson, String fileName) {
         List<IRelevance<String, List<String>>> lstFKRef = null;
-        try {
-            lstFKRef = genson.deserialize(
-                new BufferedReader(
-                    new InputStreamReader(
-                        new FileInputStream(Scheme.WORK_DIR + FOREIGN_TO_JSON_FILE_NAME),
-                        Charset.forName(Scheme.UTF_8).newDecoder())),
-                new GenericType<List<IRelevance<String, List<String>>>>() {
-                });
-        } catch (FileNotFoundException e) {
+        try (BufferedReader reader = new BufferedReader(new InputStreamReader(
+            new FileInputStream(Scheme.WORK_DIR + fileName), Charset.forName(Scheme.UTF_8).newDecoder()))) {
+            lstFKRef = genson.deserialize(reader, new GenericType<List<IRelevance<String, List<String>>>>() {
+            });
+        } catch (IOException e) {
             logger.error(e.getMessage());
         }
         if (lstFKRef == null) {
@@ -209,16 +204,16 @@ public class Resolver {
         return lstFKRef;
     }
 
-    private List<Tables> entities(Connection connection, Genson genson) {
+    private List<Tables> entities(Connection connection, Genson genson, String fileName) {
         List<Tables> lstTable = null;
-        try {
-            lstTable = genson.deserialize(new BufferedReader(new InputStreamReader(
-                new FileInputStream(Scheme.WORK_DIR + TABLES_TO_JSON_FILE_NAME),
-                Charset.forName(Scheme.UTF_8).newDecoder())), new GenericType<List<Tables>>() {
+        try (BufferedReader reader = new BufferedReader(new InputStreamReader(
+            new FileInputStream(Scheme.WORK_DIR + fileName), Charset.forName(Scheme.UTF_8).newDecoder()))) {
+            lstTable = genson.deserialize(reader, new GenericType<List<Tables>>() {
             });
-        } catch (FileNotFoundException e) {
+        } catch (IOException e) {
             logger.error(e.getMessage());
         }
+
         if (lstTable == null) {
             lstTable = processTable(connection);
             serialize(genson.serialize(lstTable, new GenericType<List<Tables>>() {
@@ -236,22 +231,6 @@ public class Resolver {
         } catch (IOException e) {
             logger.error(e.getMessage());
         }
-    }
-
-    private String deserialize(String fileName) {
-        StringBuilder contents = null;
-        try (BufferedReader reader = new BufferedReader(new InputStreamReader(
-            new FileInputStream(Scheme.WORK_DIR + fileName), Charset.forName(Scheme.UTF_8).newDecoder()))) {
-
-            String line;
-            contents = new StringBuilder();
-            while ((line = reader.readLine()) != null) {
-                contents.append(line);
-            }
-        } catch (IOException e) {
-            logger.error(e.getMessage());
-        }
-        return contents != null ? contents.toString() : null;
     }
 
     @SuppressWarnings(value = {"unused"})
