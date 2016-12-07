@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9fc2e707-20c6-402b-95b8-f28819b72193" name="Default" comment="Process keys per table a time.">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/core/Resolver.java" afterPath="$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/core/Resolver.java" />
     </list>
     <ignored path="$PROJECT_DIR$/analysis/target/" />
@@ -91,8 +90,8 @@
             <file leaf-file-name="GenericType.class" pinned="false" current-in-tab="true">
               <entry file="jar://$MAVEN_REPOSITORY$/com/owlike/genson/1.4/genson-1.4.jar!/com/owlike/genson/GenericType.class">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="731">
-                    <caret line="52" column="1" lean-forward="true" selection-start-line="15" selection-start-column="14" selection-end-line="52" selection-end-column="1" />
+                  <state relative-caret-position="102">
+                    <caret line="11" column="26" lean-forward="false" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="33" />
                     <folding />
                   </state>
                 </provider>
@@ -109,19 +108,39 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Resolver.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Resolver.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/core/Resolver.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="261">
-              <caret line="203" column="0" lean-forward="false" selection-start-line="203" selection-start-column="0" selection-end-line="203" selection-end-column="0" />
+            <state relative-caret-position="232">
+              <caret line="209" column="41" lean-forward="true" selection-start-line="209" selection-start-column="41" selection-end-line="209" selection-end-column="41" />
               <folding>
-                <element signature="e#13191#13192#0" expanded="true" />
-                <element signature="e#13268#13269#0" expanded="true" />
-                <element signature="e#21698#21699#0" expanded="true" />
-                <element signature="e#21754#21755#0" expanded="true" />
-                <element signature="e#23065#23066#0" expanded="true" />
-                <element signature="e#23122#23123#0" expanded="true" />
+                <element signature="e#14331#14332#0" expanded="true" />
+                <element signature="e#14408#14409#0" expanded="true" />
+                <element signature="e#22868#22869#0" expanded="true" />
+                <element signature="e#22924#22925#0" expanded="true" />
+                <element signature="e#24235#24236#0" expanded="true" />
+                <element signature="e#24292#24293#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="hikari.properties" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/scheme/src/main/resources/hikari.properties">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="408">
+              <caret line="24" column="15" lean-forward="true" selection-start-line="24" selection-start-column="15" selection-end-line="24" selection-end-column="15" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Genson.class" pinned="false" current-in-tab="false">
+        <entry file="jar://$MAVEN_REPOSITORY$/com/owlike/genson/1.4/genson-1.4.jar!/com/owlike/genson/Genson.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="301">
+              <caret line="232" column="17" lean-forward="false" selection-start-line="232" selection-start-column="17" selection-end-line="232" selection-end-column="17" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -178,7 +197,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>google-guava-version</find>
       <find>google</find>
       <find>fkColumnName</find>
       <find>pkColumnName</find>
@@ -208,6 +226,7 @@
       <find>slf4j-</find>
       <find>work</find>
       <find>abstract</find>
+      <find>persists</find>
     </findStrings>
     <replaceStrings>
       <replace>APP_NAME</replace>
@@ -1119,7 +1138,7 @@
       <workItem from="1481073240928" duration="8718000" />
       <workItem from="1481087571060" duration="759000" />
       <workItem from="1481090658719" duration="962000" />
-      <workItem from="1481092252868" duration="9787000" />
+      <workItem from="1481092252868" duration="12196000" />
     </task>
     <task id="LOCAL-00001" summary="Revise pom artifact Id">
       <created>1480317832255</created>
@@ -1272,7 +1291,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="170100000" />
+    <option name="totallyTimeSpent" value="172509000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1345,13 +1364,13 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/core/Resolver.java</url>
-          <line>366</line>
+          <line>390</line>
           <properties />
           <option name="timeStamp" value="18" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/core/Resolver.java</url>
-          <line>633</line>
+          <line>657</line>
           <properties />
           <option name="timeStamp" value="25" />
         </line-breakpoint>
@@ -1369,7 +1388,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/core/Resolver.java</url>
-          <line>294</line>
+          <line>318</line>
           <properties />
           <option name="timeStamp" value="56" />
         </line-breakpoint>
@@ -1423,43 +1442,43 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/core/Resolver.java</url>
-          <line>309</line>
+          <line>333</line>
           <properties />
           <option name="timeStamp" value="84" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/core/Resolver.java</url>
-          <line>192</line>
+          <line>202</line>
           <properties />
           <option name="timeStamp" value="87" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/core/Resolver.java</url>
-          <line>213</line>
+          <line>232</line>
           <properties />
           <option name="timeStamp" value="88" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/core/Resolver.java</url>
-          <line>142</line>
+          <line>147</line>
           <properties />
           <option name="timeStamp" value="89" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/core/Resolver.java</url>
-          <line>207</line>
+          <line>221</line>
           <properties />
           <option name="timeStamp" value="90" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/core/Resolver.java</url>
-          <line>204</line>
+          <line>215</line>
           <properties />
           <option name="timeStamp" value="92" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/core/Resolver.java</url>
-          <line>575</line>
+          <line>599</line>
           <properties />
           <option name="timeStamp" value="96" />
         </line-breakpoint>
@@ -1494,13 +1513,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
           <caret line="55" column="32" lean-forward="false" selection-start-line="55" selection-start-column="32" selection-end-line="55" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scheme/src/main/resources/hikari.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="28" column="29" lean-forward="false" selection-start-line="28" selection-start-column="9" selection-end-line="28" selection-end-column="29" />
         </state>
       </provider>
     </entry>
@@ -1825,14 +1837,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/owlike/genson/1.4/genson-1.4.jar!/com/owlike/genson/Genson.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="301">
-          <caret line="228" column="17" lean-forward="false" selection-start-line="228" selection-start-column="17" selection-end-line="228" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://F:/Oracle/Java/x64/JDK/jdk1.8.0_66/jre/lib/rt.jar!/com/sun/xml/internal/bind/v2/model/impl/ModelBuilder.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="201">
@@ -1900,26 +1904,42 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/owlike/genson/1.4/genson-1.4.jar!/com/owlike/genson/Genson.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="301">
+          <caret line="232" column="17" lean-forward="false" selection-start-line="232" selection-start-column="17" selection-end-line="232" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/com/owlike/genson/1.4/genson-1.4.jar!/com/owlike/genson/GenericType.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="731">
-          <caret line="52" column="1" lean-forward="true" selection-start-line="15" selection-start-column="14" selection-end-line="52" selection-end-column="1" />
+        <state relative-caret-position="102">
+          <caret line="11" column="26" lean-forward="false" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="33" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/scheme/src/main/java/edu/mit/lab/core/Resolver.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="203" column="0" lean-forward="false" selection-start-line="203" selection-start-column="0" selection-end-line="203" selection-end-column="0" />
+        <state relative-caret-position="232">
+          <caret line="209" column="41" lean-forward="true" selection-start-line="209" selection-start-column="41" selection-end-line="209" selection-end-column="41" />
           <folding>
-            <element signature="e#13191#13192#0" expanded="true" />
-            <element signature="e#13268#13269#0" expanded="true" />
-            <element signature="e#21698#21699#0" expanded="true" />
-            <element signature="e#21754#21755#0" expanded="true" />
-            <element signature="e#23065#23066#0" expanded="true" />
-            <element signature="e#23122#23123#0" expanded="true" />
+            <element signature="e#14331#14332#0" expanded="true" />
+            <element signature="e#14408#14409#0" expanded="true" />
+            <element signature="e#22868#22869#0" expanded="true" />
+            <element signature="e#22924#22925#0" expanded="true" />
+            <element signature="e#24235#24236#0" expanded="true" />
+            <element signature="e#24292#24293#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scheme/src/main/resources/hikari.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" column="15" lean-forward="true" selection-start-line="24" selection-start-column="15" selection-end-line="24" selection-end-column="15" />
+          <folding />
         </state>
       </provider>
     </entry>

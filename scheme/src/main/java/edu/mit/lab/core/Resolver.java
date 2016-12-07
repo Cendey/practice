@@ -136,8 +136,13 @@ public class Resolver {
             cacheManager.init();
             Cache<String, ArrayList> cache = cacheManager.getCache("defaultCache", String.class, ArrayList.class);
             Resolver resolver = new Resolver();
+            String schemaName = null;
             List<Keys> lstFKRef = null;
             try (Connection connection = createConnection()) {
+                schemaName = connection.getSchema();
+                if (StringUtils.isEmpty(schemaName)) {
+                    schemaName = connection.getCatalog();
+                }
                 resolver.processEntityType(connection);
 
                 List<Tables> lstTable = resolver.entities(connection, TABLES_TO_JSON_FILE_NAME);
@@ -150,7 +155,7 @@ public class Resolver {
             }
             Graph overview = resolver.overview(lstFKRef);
             resolver.setRootNodeIds(Toolkit.resolveDisconnectedGraph(overview));
-            resolver.result(overview);
+            resolver.result(overview, schemaName);
 
             long end = System.currentTimeMillis();
             long duration = end - start;
@@ -163,10 +168,10 @@ public class Resolver {
         }
     }
 
-    private void result(Graph overview)
+    private void result(Graph overview, String schemaName)
         throws InterruptedException {
         ExecutorService executor = Executors.newFixedThreadPool(10);
-        Future<Integer> status = executor.submit(genSQLScript(overview));
+        Future<Integer> status = executor.submit(genSQLScript(overview, schemaName));
         Future<List<Graph>> graphs = executor.submit(graphs(overview));
         try {
             System.out
@@ -190,20 +195,29 @@ public class Resolver {
     private List<Keys> relationship(Connection connection, String fileName) {
         List<Keys> lstFKRef = null;
         Genson genson = new Genson();
-        File target = new File(Scheme.WORK_DIR + fileName);
-        if (target.exists() && target.isFile() && target.canRead()) {
-            try (BufferedReader reader = new BufferedReader(new InputStreamReader(
-                new FileInputStream(Scheme.WORK_DIR + fileName), Charset.forName(Scheme.UTF_8).newDecoder()))) {
-                lstFKRef = genson.deserialize(reader, new GenericType<List<Keys>>() {
-                });
-            } catch (IOException e) {
-                logger.error(e.getMessage());
+        try {
+            String schemaName = connection.getSchema();
+            if (StringUtils.isEmpty(schemaName)) {
+                schemaName = connection.getCatalog();
             }
-        }
-        if (lstFKRef == null) {
-            lstFKRef = processFKRef(connection);
-            serialize(genson.serialize(lstFKRef, new GenericType<List<Keys>>() {
-            }), FOREIGN_TO_JSON_FILE_NAME);
+            File target = new File(Scheme.WORK_DIR + fileName);
+            if (target.exists() && target.isFile() && target.canRead()) {
+                try (BufferedReader reader = new BufferedReader(new InputStreamReader(
+                    new FileInputStream(Scheme.WORK_DIR + schemaName.toLowerCase() + "_" + fileName),
+                    Charset.forName(Scheme.UTF_8).newDecoder()))) {
+                    lstFKRef = genson.deserialize(reader, new GenericType<List<Keys>>() {
+                    });
+                } catch (IOException e) {
+                    logger.error(e.getMessage());
+                }
+            }
+            if (lstFKRef == null) {
+                lstFKRef = processFKRef(connection);
+                persists(genson.serialize(lstFKRef, new GenericType<List<Keys>>() {
+                }), FOREIGN_TO_JSON_FILE_NAME, schemaName);
+            }
+        } catch (SQLException e) {
+            logger.error(e.getMessage());
         }
         return lstFKRef;
     }
@@ -211,28 +225,38 @@ public class Resolver {
     private List<Tables> entities(Connection connection, String fileName) {
         List<Tables> lstTable = null;
         Genson genson = new Genson();
-        File target = new File(Scheme.WORK_DIR + fileName);
-        if (target.exists() && target.isFile() && target.canRead()) {
-            try (BufferedReader reader = new BufferedReader(new InputStreamReader(
-                new FileInputStream(Scheme.WORK_DIR + fileName), Charset.forName(Scheme.UTF_8).newDecoder()))) {
-                lstTable = genson.deserialize(reader, new GenericType<List<Tables>>() {
-                });
-            } catch (IOException e) {
-                logger.error(e.getMessage());
+        try {
+            String schemaName = connection.getSchema();
+            if (StringUtils.isEmpty(schemaName)) {
+                schemaName = connection.getCatalog();
             }
-        }
+            File target = new File(Scheme.WORK_DIR + fileName);
+            if (target.exists() && target.isFile() && target.canRead()) {
+                try (BufferedReader reader = new BufferedReader(new InputStreamReader(
+                    new FileInputStream(Scheme.WORK_DIR + schemaName.toLowerCase() + "_" + fileName),
+                    Charset.forName(Scheme.UTF_8).newDecoder()))) {
+                    lstTable = genson.deserialize(reader, new GenericType<List<Tables>>() {
+                    });
+                } catch (IOException e) {
+                    logger.error(e.getMessage());
+                }
+            }
 
-        if (lstTable == null) {
-            lstTable = processTable(connection);
-            serialize(genson.serialize(lstTable, new GenericType<List<Tables>>() {
-            }), TABLES_TO_JSON_FILE_NAME);
+            if (lstTable == null) {
+                lstTable = processTable(connection);
+                persists(genson.serialize(lstTable, new GenericType<List<Tables>>() {
+                }), TABLES_TO_JSON_FILE_NAME, schemaName);
+            }
+        } catch (SQLException e) {
+            logger.error(e.getMessage());
         }
         return lstTable;
     }
 
-    private void serialize(String contents, String fileName) {
+    private void persists(String contents, String fileName, String prefix) {
+        String schema = prefix.toLowerCase() + "_";
         try (OutputStreamWriter writer = new OutputStreamWriter(
-            new FileOutputStream(Scheme.WORK_DIR + fileName, false),
+            new FileOutputStream(Scheme.WORK_DIR + schema + fileName, false),
             Charset.forName(Scheme.UTF_8).newEncoder())) {
             writer.write(contents);
             writer.flush();
@@ -352,7 +376,7 @@ public class Resolver {
         return overview;
     }
 
-    private Callable<Integer> genSQLScript(final Graph graph) {
+    private Callable<Integer> genSQLScript(final Graph graph, String schemaName) {
         return () -> {
             Set<String> untouched = new TreeSet<>(tableIds);
             rootNodeIds.forEach(
@@ -379,7 +403,7 @@ public class Resolver {
             script.append(genAuditLogScript());
 
             script.append(Scheme.STD_SQL_COMMIT);
-            serialize(script.toString(), SCRIPT_FILE_NAME);
+            persists(script.toString(), SCRIPT_FILE_NAME, schemaName);
             return 0;
         };
     }
