@@ -200,11 +200,12 @@ public class Resolver {
             if (StringUtils.isEmpty(schemaName)) {
                 schemaName = connection.getCatalog();
             }
-            File target = new File(Scheme.WORK_DIR + fileName);
+            String destFileName = schemaName.toLowerCase() + "_" + fileName;
+            File target = new File(Scheme.WORK_DIR + destFileName);
             if (target.exists() && target.isFile() && target.canRead()) {
-                try (BufferedReader reader = new BufferedReader(new InputStreamReader(
-                    new FileInputStream(Scheme.WORK_DIR + schemaName.toLowerCase() + "_" + fileName),
-                    Charset.forName(Scheme.UTF_8).newDecoder()))) {
+                try (BufferedReader reader = new BufferedReader(
+                    new InputStreamReader(new FileInputStream(Scheme.WORK_DIR + destFileName),
+                        Charset.forName(Scheme.UTF_8).newDecoder()))) {
                     lstFKRef = genson.deserialize(reader, new GenericType<List<Keys>>() {
                     });
                 } catch (IOException e) {
@@ -230,10 +231,11 @@ public class Resolver {
             if (StringUtils.isEmpty(schemaName)) {
                 schemaName = connection.getCatalog();
             }
-            File target = new File(Scheme.WORK_DIR + fileName);
+            String destFileName = schemaName.toLowerCase() + "_" + fileName;
+            File target = new File(Scheme.WORK_DIR + destFileName);
             if (target.exists() && target.isFile() && target.canRead()) {
                 try (BufferedReader reader = new BufferedReader(new InputStreamReader(
-                    new FileInputStream(Scheme.WORK_DIR + schemaName.toLowerCase() + "_" + fileName),
+                    new FileInputStream(Scheme.WORK_DIR + destFileName),
                     Charset.forName(Scheme.UTF_8).newDecoder()))) {
                     lstTable = genson.deserialize(reader, new GenericType<List<Tables>>() {
                     });

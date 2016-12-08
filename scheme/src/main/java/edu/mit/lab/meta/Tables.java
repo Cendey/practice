@@ -29,7 +29,7 @@ public class Tables implements Serializable {
     private String tableRefGeneration;
 
     @SuppressWarnings(value = {"unused"})
-    public String getTableCatalog() {
+    private String getTableCatalog() {
         return tableCatalog;
     }
 
@@ -38,7 +38,7 @@ public class Tables implements Serializable {
     }
 
     @SuppressWarnings(value = {"unused"})
-    public String getTableSchema() {
+    private String getTableSchema() {
         return tableSchema;
     }
 
@@ -55,7 +55,7 @@ public class Tables implements Serializable {
     }
 
     @SuppressWarnings(value = {"unused"})
-    public String getTableType() {
+    private String getTableType() {
         return tableType;
     }
 
@@ -64,7 +64,7 @@ public class Tables implements Serializable {
     }
 
     @SuppressWarnings(value = {"unused"})
-    public String getTableRemark() {
+    private String getTableRemark() {
         return tableRemark;
     }
 
@@ -73,7 +73,7 @@ public class Tables implements Serializable {
     }
 
     @SuppressWarnings(value = {"unused"})
-    public String getTypeCatalog() {
+    private String getTypeCatalog() {
         return typeCatalog;
     }
 
@@ -82,7 +82,7 @@ public class Tables implements Serializable {
     }
 
     @SuppressWarnings(value = {"unused"})
-    public String getTypeSchema() {
+    private String getTypeSchema() {
         return typeSchema;
     }
 
@@ -91,7 +91,7 @@ public class Tables implements Serializable {
     }
 
     @SuppressWarnings(value = {"unused"})
-    public String getTypeName() {
+    private String getTypeName() {
         return typeName;
     }
 
@@ -100,7 +100,7 @@ public class Tables implements Serializable {
     }
 
     @SuppressWarnings(value = {"unused"})
-    public String getTableSelfRefColName() {
+    private String getTableSelfRefColName() {
         return tableSelfRefColName;
     }
 
@@ -109,7 +109,7 @@ public class Tables implements Serializable {
     }
 
     @SuppressWarnings(value = {"unused"})
-    public String getTableRefGeneration() {
+    private String getTableRefGeneration() {
         return tableRefGeneration;
     }
 

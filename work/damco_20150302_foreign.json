@@ -1,0 +1,4443 @@
+[
+    {
+        "fkColumnName": [
+            "JOB_UNID"
+        ],
+        "fkTableName": "ACCRUEDJOB",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "JOB"
+    },
+    {
+        "fkColumnName": [
+            "JOB_UNID"
+        ],
+        "fkTableName": "ACIINFO",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "JOB"
+    },
+    {
+        "fkColumnName": [
+            "ACLHDR_UNID"
+        ],
+        "fkTableName": "ACLCTN",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "ACLHDR"
+    },
+    {
+        "fkColumnName": [
+            "ACLHDR_UNID"
+        ],
+        "fkTableName": "ACLJOBLINK",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "ACLHDR"
+    },
+    {
+        "fkColumnName": [
+            "JOB_UNID"
+        ],
+        "fkTableName": "ACRAIRITEM",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "JOB"
+    },
+    {
+        "fkColumnName": [
+            "CUSTOMDECL_UNID"
+        ],
+        "fkTableName": "AESACTIONHISTORY",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "CUSTOMDECL"
+    },
+    {
+        "fkColumnName": [
+            "JOBUNID"
+        ],
+        "fkTableName": "AFRINFO",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "JOB"
+    },
+    {
+        "fkColumnName": [
+            "JOB_UNID"
+        ],
+        "fkTableName": "AIR",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "JOB"
+    },
+    {
+        "fkColumnName": [
+            "JOB_UNID"
+        ],
+        "fkTableName": "AIRITEM",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "JOB"
+    },
+    {
+        "fkColumnName": [
+            "JOB_UNID"
+        ],
+        "fkTableName": "AIRMDTEXT",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "JOB"
+    },
+    {
+        "fkColumnName": [
+            "JOB_UNID"
+        ],
+        "fkTableName": "AIRROUTE",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "JOB"
+    },
+    {
+        "fkColumnName": [
+            "JOB_UNID"
+        ],
+        "fkTableName": "AIRROUTEOTHER",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "JOB"
+    },
+    {
+        "fkColumnName": [
+            "ULD_UNID"
+        ],
+        "fkTableName": "AIRULDITEM",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "ULD"
+    },
+    {
+        "fkColumnName": [
+            "AUDITSETUP_UNID"
+        ],
+        "fkTableName": "AUDITFUNCTION",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "AUDITSETUP"
+    },
+    {
+        "fkColumnName": [
+            "JOB_UNID"
+        ],
+        "fkTableName": "CARGOITEM",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "JOB"
+    },
+    {
+        "fkColumnName": [
+            "CASSHDR_UNID"
+        ],
+        "fkTableName": "CASSDTL",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "CASSHDR"
+    },
+    {
+        "fkColumnName": [
+            "CASSHDR_UNID",
+            "CASSDTL_SNO"
+        ],
+        "fkTableName": "CASSRECON",
+        "pkColumnName": [
+            "CASSHDR_UNID"
+        ],
+        "pkTableName": "CASSDTL"
+    },
+    {
+        "fkColumnName": [
+            "CCHDRUNID"
+        ],
+        "fkTableName": "CCAMENDMENT",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "CCHDR"
+    },
+    {
+        "fkColumnName": [
+            "CCHDRUNID"
+        ],
+        "fkTableName": "CCARBITRARY",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "CCHDR"
+    },
+    {
+        "fkColumnName": [
+            "CCHDRUNID",
+            "CCARBITRARYSNO"
+        ],
+        "fkTableName": "CCARBITRARYRATE",
+        "pkColumnName": [
+            "CCHDRUNID"
+        ],
+        "pkTableName": "CCARBITRARY"
+    },
+    {
+        "fkColumnName": [
+            "CCHDRUNID"
+        ],
+        "fkTableName": "CCARBSURCHARGE",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "CCHDR"
+    },
+    {
+        "fkColumnName": [
+            "CCHDRUNID",
+            "CCARBSURCHARGESNO"
+        ],
+        "fkTableName": "CCARBSURCHARGERATE",
+        "pkColumnName": [
+            "CCHDRUNID"
+        ],
+        "pkTableName": "CCARBSURCHARGE"
+    },
+    {
+        "fkColumnName": [
+            "CCHDRUNID"
+        ],
+        "fkTableName": "CCCOMM",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "CCHDR"
+    },
+    {
+        "fkColumnName": [
+            "CCHDRUNID",
+            "CCCOMMSNO"
+        ],
+        "fkTableName": "CCCOMMDTL",
+        "pkColumnName": [
+            "CCHDRUNID"
+        ],
+        "pkTableName": "CCCOMM"
+    },
+    {
+        "fkColumnName": [
+            "CCHDRUNID"
+        ],
+        "fkTableName": "CCCUSTOMER",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "CCHDR"
+    },
+    {
+        "fkColumnName": [
+            "CCHDRUNID"
+        ],
+        "fkTableName": "CCLOCALCHG",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "CCHDR"
+    },
+    {
+        "fkColumnName": [
+            "CCHDRUNID",
+            "CCLOCALCHGSNO"
+        ],
+        "fkTableName": "CCLOCALCHGRATE",
+        "pkColumnName": [
+            "CCHDRUNID"
+        ],
+        "pkTableName": "CCLOCALCHG"
+    },
+    {
+        "fkColumnName": [
+            "CCHDRUNID",
+            "CCLOCALCHGSNO"
+        ],
+        "fkTableName": "CCLOCALCHGTSP",
+        "pkColumnName": [
+            "CCHDRUNID"
+        ],
+        "pkTableName": "CCLOCALCHG"
+    },
+    {
+        "fkColumnName": [
+            "CCHDRUNID",
+            "CCLOCALCHGSNO"
+        ],
+        "fkTableName": "CCLOCALCHGVIA",
+        "pkColumnName": [
+            "CCHDRUNID"
+        ],
+        "pkTableName": "CCLOCALCHG"
+    },
+    {
+        "fkColumnName": [
+            "CCHDRUNID"
+        ],
+        "fkTableName": "CCLOCALSVROTH",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "CCHDR"
+    },
+    {
+        "fkColumnName": [
+            "CCHDRUNID",
+            "CCLOCALSVROTHSNO"
+        ],
+        "fkTableName": "CCLOCALSVROTHRATE",
+        "pkColumnName": [
+            "CCHDRUNID"
+        ],
+        "pkTableName": "CCLOCALSVROTH"
+    },
+    {
+        "fkColumnName": [
+            "CCHDRUNID"
+        ],
+        "fkTableName": "CCLOCALSVRTPT",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "CCHDR"
+    },
+    {
+        "fkColumnName": [
+            "CCHDRUNID",
+            "CCLOCALSVRTPTSNO"
+        ],
+        "fkTableName": "CCLOCALSVRTPTRATE",
+        "pkColumnName": [
+            "CCHDRUNID"
+        ],
+        "pkTableName": "CCLOCALSVRTPT"
+    },
+    {
+        "fkColumnName": [
+            "CCHDRUNID"
+        ],
+        "fkTableName": "CCLOCALSVRTPTSUR",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "CCHDR"
+    },
+    {
+        "fkColumnName": [
+            "CCHDRUNID",
+            "CCLOCALSVRTPTSURSNO"
+        ],
+        "fkTableName": "CCLOCALSVRTPTSURRATE",
+        "pkColumnName": [
+            "CCHDRUNID"
+        ],
+        "pkTableName": "CCLOCALSVRTPTSUR"
+    },
+    {
+        "fkColumnName": [
+            "CCHDRUNID"
+        ],
+        "fkTableName": "CCOFT",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "CCHDR"
+    },
+    {
+        "fkColumnName": [
+            "CCHDRUNID",
+            "CCOFTSNO"
+        ],
+        "fkTableName": "CCOFTRATE",
+        "pkColumnName": [
+            "CCHDRUNID"
+        ],
+        "pkTableName": "CCOFT"
+    },
+    {
+        "fkColumnName": [
+            "CCHDRUNID",
+            "CCOFTSNO"
+        ],
+        "fkTableName": "CCOFTTSP",
+        "pkColumnName": [
+            "CCHDRUNID"
+        ],
+        "pkTableName": "CCOFT"
+    },
+    {
+        "fkColumnName": [
+            "CCHDRUNID",
+            "CCOFTSNO"
+        ],
+        "fkTableName": "CCOFTVIA",
+        "pkColumnName": [
+            "CCHDRUNID"
+        ],
+        "pkTableName": "CCOFT"
+    },
+    {
+        "fkColumnName": [
+            "CCHDRUNID"
+        ],
+        "fkTableName": "CCREMARK",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "CCHDR"
+    },
+    {
+        "fkColumnName": [
+            "CCHDRUNID"
+        ],
+        "fkTableName": "CCREVISION",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "CCHDR"
+    },
+    {
+        "fkColumnName": [
+            "CCHDRUNID"
+        ],
+        "fkTableName": "CCRIGHT",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "CCHDR"
+    },
+    {
+        "fkColumnName": [
+            "CCHDRUNID"
+        ],
+        "fkTableName": "CCSUR",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "CCHDR"
+    },
+    {
+        "fkColumnName": [
+            "CCHDRUNID",
+            "CCSURSNO"
+        ],
+        "fkTableName": "CCSURRATE",
+        "pkColumnName": [
+            "CCHDRUNID"
+        ],
+        "pkTableName": "CCSUR"
+    },
+    {
+        "fkColumnName": [
+            "CCHDRUNID",
+            "CCSURSNO"
+        ],
+        "fkTableName": "CCSURTSP",
+        "pkColumnName": [
+            "CCHDRUNID"
+        ],
+        "pkTableName": "CCSUR"
+    },
+    {
+        "fkColumnName": [
+            "CCHDRUNID",
+            "CCSURSNO"
+        ],
+        "fkTableName": "CCSURVIA",
+        "pkColumnName": [
+            "CCHDRUNID"
+        ],
+        "pkTableName": "CCSUR"
+    },
+    {
+        "fkColumnName": [
+            "CCHDRUNID"
+        ],
+        "fkTableName": "CCWH",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "CCHDR"
+    },
+    {
+        "fkColumnName": [
+            "CCHDRUNID",
+            "CCWHSNO"
+        ],
+        "fkTableName": "CCWHRATE",
+        "pkColumnName": [
+            "CCHDRUNID"
+        ],
+        "pkTableName": "CCWH"
+    },
+    {
+        "fkColumnName": [
+            "CCHDRUNID",
+            "CCWHSNO"
+        ],
+        "fkTableName": "CCWHVIA",
+        "pkColumnName": [
+            "CCHDRUNID"
+        ],
+        "pkTableName": "CCWH"
+    },
+    {
+        "fkColumnName": [
+            "JOB_UNID"
+        ],
+        "fkTableName": "CFSJOB",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "JOB"
+    },
+    {
+        "fkColumnName": [
+            "CHANGELOGHDR_UNID"
+        ],
+        "fkTableName": "CHANGELOGDTL",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "CHANGELOGHDR"
+    },
+    {
+        "fkColumnName": [
+            "JOB_UNID"
+        ],
+        "fkTableName": "CHANGELOGHDR",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "JOB"
+    },
+    {
+        "fkColumnName": [
+            "JOB_UNID"
+        ],
+        "fkTableName": "CHARGEREMIND",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "JOB"
+    },
+    {
+        "fkColumnName": [
+            "JOB_UNID"
+        ],
+        "fkTableName": "CLAIM",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "JOB"
+    },
+    {
+        "fkColumnName": [
+            "CLAIMHDR_UNID"
+        ],
+        "fkTableName": "CLAIMREMARK",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "CLAIMHDR"
+    },
+    {
+        "fkColumnName": [
+            "COMINVHDR_UNID"
+        ],
+        "fkTableName": "COMINVITEM",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "COMINVHDR"
+    },
+    {
+        "fkColumnName": [
+            "COMINVHDR_UNID"
+        ],
+        "fkTableName": "COMINVJOBLINK",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "COMINVHDR"
+    },
+    {
+        "fkColumnName": [
+            "JOB_UNID"
+        ],
+        "fkTableName": "CONSOLEJOB",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "JOB"
+    },
+    {
+        "fkColumnName": [
+            "CONSOLPLAN_UNID"
+        ],
+        "fkTableName": "CONSOLPLANDTL",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "CONSOLPLAN"
+    },
+    {
+        "fkColumnName": [
+            "CONSOLPLANTASKHDR_UNID"
+        ],
+        "fkTableName": "CONSOLPLANTASKDTL",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "CONSOLPLANTASKHDR"
+    },
+    {
+        "fkColumnName": [
+            "JOB_UNID"
+        ],
+        "fkTableName": "CONTAINER",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "JOB"
+    },
+    {
+        "fkColumnName": [
+            "VV_UNID"
+        ],
+        "fkTableName": "CONTAINER",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "VESSELVOYAGE"
+    },
+    {
+        "fkColumnName": [
+            "CONTAINER_UNID"
+        ],
+        "fkTableName": "CONTJCCOST",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "CONTAINER"
+    },
+    {
+        "fkColumnName": [
+            "CONTAINER_UNID"
+        ],
+        "fkTableName": "CONTJCREVENUE",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "CONTAINER"
+    },
+    {
+        "fkColumnName": [
+            "CPVHDR_UNID",
+            "CPVJOB_SNO"
+        ],
+        "fkTableName": "CPVDTL",
+        "pkColumnName": [
+            "CPVHDR_UNID"
+        ],
+        "pkTableName": "CPVJOB"
+    },
+    {
+        "fkColumnName": [
+            "CPVHDRUNID"
+        ],
+        "fkTableName": "CPVFLEXIINFO",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "CPVHDR"
+    },
+    {
+        "fkColumnName": [
+            "CPVHDR_UNID"
+        ],
+        "fkTableName": "CPVJOB",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "CPVHDR"
+    },
+    {
+        "fkColumnName": [
+            "TRIGGERS_UNID"
+        ],
+        "fkTableName": "CRONTRIGGERS",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "TRIGGERS"
+    },
+    {
+        "fkColumnName": [
+            "JOB_UNID"
+        ],
+        "fkTableName": "CSIINFO",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "JOB"
+    },
+    {
+        "fkColumnName": [
+            "VV_UNID"
+        ],
+        "fkTableName": "CSIPORT",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "VESSELVOYAGE"
+    },
+    {
+        "fkColumnName": [
+            "JOB_UNID"
+        ],
+        "fkTableName": "CSIUPLOADLOG",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "JOB"
+    },
+    {
+        "fkColumnName": [
+            "CSRHDR_UNID"
+        ],
+        "fkTableName": "CSRJOB",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "CSRHDR"
+    },
+    {
+        "fkColumnName": [
+            "CONTAINER_UNID"
+        ],
+        "fkTableName": "CTNSTATUS",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "CONTAINER"
+    },
+    {
+        "fkColumnName": [
+            "CTRFJOB_UNID",
+            "CTRFCHG_SNO"
+        ],
+        "fkTableName": "CTRFBKP",
+        "pkColumnName": [
+            "CTRFJOB_UNID"
+        ],
+        "pkTableName": "CTRFCHG"
+    },
+    {
+        "fkColumnName": [
+            "CTRFNO_UNID",
+            "CTRFHDR_UNID"
+        ],
+        "fkTableName": "CTRFCBNNO",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "CTRFHDR"
+    },
+    {
+        "fkColumnName": [
+            "CTRFJOB_UNID"
+        ],
+        "fkTableName": "CTRFCHG",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "CTRFJOB"
+    },
+    {
+        "fkColumnName": [
+            "CTRFHDR_UNID"
+        ],
+        "fkTableName": "CTRFJOB",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "CTRFHDR"
+    },
+    {
+        "fkColumnName": [
+            "CTRFHDRUNID"
+        ],
+        "fkTableName": "CTRFRIGHTS",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "CTRFHDR"
+    },
+    {
+        "fkColumnName": [
+            "CUSTOMDECL_UNID"
+        ],
+        "fkTableName": "CUSTOMCONTAINER",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "CUSTOMDECL"
+    },
+    {
+        "fkColumnName": [
+            "JOB_UNID"
+        ],
+        "fkTableName": "CUSTOMDECL",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "JOB"
+    },
+    {
+        "fkColumnName": [
+            "CUSTOMDECL_UNID"
+        ],
+        "fkTableName": "CUSTOMITEM",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "CUSTOMDECL"
+    },
+    {
+        "fkColumnName": [
+            "CUSTOMDECL_UNID"
+        ],
+        "fkTableName": "CUSTOMPARTY",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "CUSTOMDECL"
+    },
+    {
+        "fkColumnName": [
+            "CUSTOMDECLUNID"
+        ],
+        "fkTableName": "CUSTOMREFNO",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "CUSTOMDECL"
+    },
+    {
+        "fkColumnName": [
+            "CUSTOMDECLUNID"
+        ],
+        "fkTableName": "CUSTOMREMARK",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "CUSTOMDECL"
+    },
+    {
+        "fkColumnName": [
+            "CUSTOMDECLUNID"
+        ],
+        "fkTableName": "CUSTOMRESPONSE",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "CUSTOMDECL"
+    },
+    {
+        "fkColumnName": [
+            "CUSTOMDECL_UNID",
+            "CUSTOMITEM_SNO"
+        ],
+        "fkTableName": "CUSTOMVEHICLE",
+        "pkColumnName": [
+            "CUSTOMDECL_UNID"
+        ],
+        "pkTableName": "CUSTOMITEM"
+    },
+    {
+        "fkColumnName": [
+            "JOB_UNID"
+        ],
+        "fkTableName": "DGITEM",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "JOB"
+    },
+    {
+        "fkColumnName": [
+            "JOB_UNID"
+        ],
+        "fkTableName": "DIM",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "JOB"
+    },
+    {
+        "fkColumnName": [
+            "JOB_UNID"
+        ],
+        "fkTableName": "DOCPRTLOG",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "JOB"
+    },
+    {
+        "fkColumnName": [
+            "JOB_UNID"
+        ],
+        "fkTableName": "DOCREQ",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "JOB"
+    },
+    {
+        "fkColumnName": [
+            "DOHDRUNID"
+        ],
+        "fkTableName": "DOFLEXIINFO",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "DOHDR"
+    },
+    {
+        "fkColumnName": [
+            "JOB_UNID"
+        ],
+        "fkTableName": "DOHDR",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "JOB"
+    },
+    {
+        "fkColumnName": [
+            "DOHDR_UNID"
+        ],
+        "fkTableName": "DOITEM",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "DOHDR"
+    },
+    {
+        "fkColumnName": [
+            "ECR_UNID"
+        ],
+        "fkTableName": "ECRLOCATION",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "ECRHDR"
+    },
+    {
+        "fkColumnName": [
+            "CPVHDR_UNID"
+        ],
+        "fkTableName": "EXCONTRACTCPV",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "CPVHDR"
+    },
+    {
+        "fkColumnName": [
+            "FMEXRATECONTRACT_UNID"
+        ],
+        "fkTableName": "EXCONTRACTCPV",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "FMEXRATECONTRACT"
+    },
+    {
+        "fkColumnName": [
+            "EXPDECLHDR_UNID"
+        ],
+        "fkTableName": "EXPDECLITEM",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "EXPDECLHDR"
+    },
+    {
+        "fkColumnName": [
+            "EXPDECLHDR_UNID"
+        ],
+        "fkTableName": "EXPDECLORGITEM",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "EXPDECLHDR"
+    },
+    {
+        "fkColumnName": [
+            "JOB_UNID"
+        ],
+        "fkTableName": "EXPIMPQRTN",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "JOB"
+    },
+    {
+        "fkColumnName": [
+            "FINCOMMPAIDHDR_UNID"
+        ],
+        "fkTableName": "FINCOMMPAIDDTL",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "FINCOMMPAIDHDR"
+    },
+    {
+        "fkColumnName": [
+            "FMAGTCON_UNID"
+        ],
+        "fkTableName": "FMAGTFRTCST",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "FMAGTCON"
+    },
+    {
+        "fkColumnName": [
+            "FMAGTCON_UNID"
+        ],
+        "fkTableName": "FMAGTOTHCST",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "FMAGTCON"
+    },
+    {
+        "fkColumnName": [
+            "FMCHARGECODEUNID"
+        ],
+        "fkTableName": "FMCHRGCODEDESC",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "FMCHARGECODE"
+    },
+    {
+        "fkColumnName": [
+            "FMCHARGECODE_UNID"
+        ],
+        "fkTableName": "FMCHRGCODEMAP",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "FMCHARGECODE"
+    },
+    {
+        "fkColumnName": [
+            "CTRYCODE",
+            "CITYCODE"
+        ],
+        "fkTableName": "FMCITYAREA",
+        "pkColumnName": [
+            "CTRYCODE"
+        ],
+        "pkTableName": "FMCITY"
+    },
+    {
+        "fkColumnName": [
+            "CTRYCODE",
+            "CITYCODE"
+        ],
+        "fkTableName": "FMCITYCARRIER",
+        "pkColumnName": [
+            "CTRYCODE"
+        ],
+        "pkTableName": "FMCITY"
+    },
+    {
+        "fkColumnName": [
+            "CTRYCODE",
+            "CITYCODE"
+        ],
+        "fkTableName": "FMCITYCUSTCODE",
+        "pkColumnName": [
+            "CTRYCODE"
+        ],
+        "pkTableName": "FMCITY"
+    },
+    {
+        "fkColumnName": [
+            "CTRYCODE",
+            "CITYCODE"
+        ],
+        "fkTableName": "FMCITYLANE",
+        "pkColumnName": [
+            "CTRYCODE"
+        ],
+        "pkTableName": "FMCITY"
+    },
+    {
+        "fkColumnName": [
+            "CTRYCODE",
+            "CITYCODE"
+        ],
+        "fkTableName": "FMCITYLOCALDESC",
+        "pkColumnName": [
+            "CTRYCODE"
+        ],
+        "pkTableName": "FMCITY"
+    },
+    {
+        "fkColumnName": [
+            "CTRYCODE",
+            "CITYCODE"
+        ],
+        "fkTableName": "FMCITYPORTAREA",
+        "pkColumnName": [
+            "CTRYCODE"
+        ],
+        "pkTableName": "FMCITY"
+    },
+    {
+        "fkColumnName": [
+            "CTRYCODE",
+            "CITYCODE"
+        ],
+        "fkTableName": "FMCITYREGION",
+        "pkColumnName": [
+            "CTRYCODE"
+        ],
+        "pkTableName": "FMCITY"
+    },
+    {
+        "fkColumnName": [
+            "FMCODE_UNID"
+        ],
+        "fkTableName": "FMCODECOND",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "FMCODE"
+    },
+    {
+        "fkColumnName": [
+            "FMCODE_UNID"
+        ],
+        "fkTableName": "FMCODEMAP",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "FMCODE"
+    },
+    {
+        "fkColumnName": [
+            "FMCONDITION_UNID"
+        ],
+        "fkTableName": "FMCONDITIONDTL",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "FMCONDITION"
+    },
+    {
+        "fkColumnName": [
+            "FMCONSOLRATEUNID"
+        ],
+        "fkTableName": "FMCONSOLRATEDTL",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "FMCONSOLRATE"
+    },
+    {
+        "fkColumnName": [
+            "SCHEMECODE",
+            "CONTTYPE"
+        ],
+        "fkTableName": "FMCTNCUSTCODE",
+        "pkColumnName": [
+            "SCHEMECODE"
+        ],
+        "pkTableName": "FMCTNTYPE"
+    },
+    {
+        "fkColumnName": [
+            "SCHEMECODE",
+            "CONTTYPE"
+        ],
+        "fkTableName": "FMCTNTYPEMAP",
+        "pkColumnName": [
+            "SCHEMECODE"
+        ],
+        "pkTableName": "FMCTNTYPE"
+    },
+    {
+        "fkColumnName": [
+            "CTRYCODE"
+        ],
+        "fkTableName": "FMCTRYCUSTOM",
+        "pkColumnName": [
+            "CTRYCODE"
+        ],
+        "pkTableName": "FMCOUNTRY"
+    },
+    {
+        "fkColumnName": [
+            "CTRYCODE"
+        ],
+        "fkTableName": "FMCTRYLOCALDESC",
+        "pkColumnName": [
+            "CTRYCODE"
+        ],
+        "pkTableName": "FMCOUNTRY"
+    },
+    {
+        "fkColumnName": [
+            "CTRYCODE"
+        ],
+        "fkTableName": "FMCTRYREGION",
+        "pkColumnName": [
+            "CTRYCODE"
+        ],
+        "pkTableName": "FMCOUNTRY"
+    },
+    {
+        "fkColumnName": [
+            "CTRYCODE"
+        ],
+        "fkTableName": "FMCTRYSTATE",
+        "pkColumnName": [
+            "CTRYCODE"
+        ],
+        "pkTableName": "FMCOUNTRY"
+    },
+    {
+        "fkColumnName": [
+            "CURRCODE"
+        ],
+        "fkTableName": "FMCURRLOCALDESC",
+        "pkColumnName": [
+            "CURRCODE"
+        ],
+        "pkTableName": "FMCURRENCY"
+    },
+    {
+        "fkColumnName": [
+            "CURRCODE"
+        ],
+        "fkTableName": "FMCURRRULE",
+        "pkColumnName": [
+            "CURRCODE"
+        ],
+        "pkTableName": "FMCURRENCY"
+    },
+    {
+        "fkColumnName": [
+            "TEMPLATEUNID"
+        ],
+        "fkTableName": "FMCUSTTEMPDECLDETAIL",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "FMCUSTTEMPDECL"
+    },
+    {
+        "fkColumnName": [
+            "FMDRIVER_UNID"
+        ],
+        "fkTableName": "FMDRIVERLIC",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "FMDRIVER"
+    },
+    {
+        "fkColumnName": [
+            "FMHANDBOOKHDR_UNID"
+        ],
+        "fkTableName": "FMHANDBOOKDTL",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "FMHANDBOOKHDR"
+    },
+    {
+        "fkColumnName": [
+            "FMIATARATE_UNID"
+        ],
+        "fkTableName": "FMIATADTL",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "FMIATARATE"
+    },
+    {
+        "fkColumnName": [
+            "FMDRIVER_UNID"
+        ],
+        "fkTableName": "FMLEAVE",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "FMDRIVER"
+    },
+    {
+        "fkColumnName": [
+            "FMMESSAGE_UNID"
+        ],
+        "fkTableName": "FMMESSAGELOCAL",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "FMMESSAGE"
+    },
+    {
+        "fkColumnName": [
+            "FMOTHCOST_UNID"
+        ],
+        "fkTableName": "FMOTHCOSTDTL",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "FMOTHCOST"
+    },
+    {
+        "fkColumnName": [
+            "SYDOCUNID"
+        ],
+        "fkTableName": "FMPARTY",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "SYDOC"
+    },
+    {
+        "fkColumnName": [
+            "FMPARTY_UNID"
+        ],
+        "fkTableName": "FMPARTYACC",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "FMPARTY"
+    },
+    {
+        "fkColumnName": [
+            "FMPARTY_UNID"
+        ],
+        "fkTableName": "FMPARTYADDR",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "FMPARTY"
+    },
+    {
+        "fkColumnName": [
+            "FMPARTY_UNID",
+            "ADDRTYPE",
+            "FMPARTYADDR_SNO"
+        ],
+        "fkTableName": "FMPARTYADDRZONE",
+        "pkColumnName": [
+            "FMPARTY_UNID"
+        ],
+        "pkTableName": "FMPARTYADDR"
+    },
+    {
+        "fkColumnName": [
+            "FMPARTY_UNID"
+        ],
+        "fkTableName": "FMPARTYATTN",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "FMPARTY"
+    },
+    {
+        "fkColumnName": [
+            "FMPARTY_UNID"
+        ],
+        "fkTableName": "FMPARTYCONSTANT",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "FMPARTY"
+    },
+    {
+        "fkColumnName": [
+            "FMPARTY_UNID"
+        ],
+        "fkTableName": "FMPARTYCONTRACT",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "FMPARTY"
+    },
+    {
+        "fkColumnName": [
+            "FMPARTY_UNID"
+        ],
+        "fkTableName": "FMPARTYCONTRACT2",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "FMPARTY"
+    },
+    {
+        "fkColumnName": [
+            "FMPARTY_UNID"
+        ],
+        "fkTableName": "FMPARTYCREDITTERM",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "FMPARTY"
+    },
+    {
+        "fkColumnName": [
+            "FMPARTY_UNID"
+        ],
+        "fkTableName": "FMPARTYDOCRULE",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "FMPARTY"
+    },
+    {
+        "fkColumnName": [
+            "FMPARTY_UNID"
+        ],
+        "fkTableName": "FMPARTYFLEXIINFO",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "FMPARTY"
+    },
+    {
+        "fkColumnName": [
+            "FMPARTY_UNID"
+        ],
+        "fkTableName": "FMPARTYOTHINFO",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "FMPARTY"
+    },
+    {
+        "fkColumnName": [
+            "FMPARTY_UNID"
+        ],
+        "fkTableName": "FMPARTYOTHINFOEXT",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "FMPARTY"
+    },
+    {
+        "fkColumnName": [
+            "FMPARTY_UNID"
+        ],
+        "fkTableName": "FMPARTYPART",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "FMPARTY"
+    },
+    {
+        "fkColumnName": [
+            "FMPARTY_UNID"
+        ],
+        "fkTableName": "FMPARTYPRSTL",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "FMPARTY"
+    },
+    {
+        "fkColumnName": [
+            "FMPARTY_UNID"
+        ],
+        "fkTableName": "FMPARTYREL",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "FMPARTY"
+    },
+    {
+        "fkColumnName": [
+            "FMPARTY_UNID"
+        ],
+        "fkTableName": "FMPARTYRIGHTS",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "FMPARTY"
+    },
+    {
+        "fkColumnName": [
+            "FMPARTY_UNID"
+        ],
+        "fkTableName": "FMPARTYROLE",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "FMPARTY"
+    },
+    {
+        "fkColumnName": [
+            "FMPARTY_UNID"
+        ],
+        "fkTableName": "FMPARTYSALES",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "FMPARTY"
+    },
+    {
+        "fkColumnName": [
+            "FMPARTY_UNID"
+        ],
+        "fkTableName": "FMPARTYSERVICEPLAN",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "FMPARTY"
+    },
+    {
+        "fkColumnName": [
+            "OWNERID",
+            "PROJECTNO"
+        ],
+        "fkTableName": "FMPROJECTRIGHTS",
+        "pkColumnName": [
+            "OWNERID"
+        ],
+        "pkTableName": "FMPROJECT"
+    },
+    {
+        "fkColumnName": [
+            "FMCHARGECODE_UNID"
+        ],
+        "fkTableName": "FMREV_COST",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "FMCHARGECODE"
+    },
+    {
+        "fkColumnName": [
+            "FMRMRATETHRESHOLDUNID"
+        ],
+        "fkTableName": "FMRMRATETHRESHOLDDTL",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "FMRMRATETHRESHOLD"
+    },
+    {
+        "fkColumnName": [
+            "SYCOSTRUC_UNID"
+        ],
+        "fkTableName": "FMROUTE",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "SYCOSTRUC"
+    },
+    {
+        "fkColumnName": [
+            "FMROUTE_UNID"
+        ],
+        "fkTableName": "FMROUTEDTL",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "FMROUTE"
+    },
+    {
+        "fkColumnName": [
+            "FMROUTE_UNID"
+        ],
+        "fkTableName": "FMROUTERESTRICTION",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "FMROUTE"
+    },
+    {
+        "fkColumnName": [
+            "FMSERVICELEVEL_UNID"
+        ],
+        "fkTableName": "FMSLMAP",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "FMSERVICELEVEL"
+    },
+    {
+        "fkColumnName": [
+            "FMSERVICELEVEL_UNID"
+        ],
+        "fkTableName": "FMSLNOTIFY",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "FMSERVICELEVEL"
+    },
+    {
+        "fkColumnName": [
+            "CTRYCODE",
+            "STATEPROV"
+        ],
+        "fkTableName": "FMSTATEMAPCODE",
+        "pkColumnName": [
+            "CTRYCODE"
+        ],
+        "pkTableName": "FMCTRYSTATE"
+    },
+    {
+        "fkColumnName": [
+            "FMSTLDATERULE_UNID"
+        ],
+        "fkTableName": "FMSTLDATERULEDTL",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "FMSTLDATERULE"
+    },
+    {
+        "fkColumnName": [
+            "FMVEHTYPE_UNID"
+        ],
+        "fkTableName": "FMVEHCOMPARTMENT",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "FMVEHTYPE"
+    },
+    {
+        "fkColumnName": [
+            "FMVEH_UNID"
+        ],
+        "fkTableName": "FMVEHDOC",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "FMVEH"
+    },
+    {
+        "fkColumnName": [
+            "FMVEHTYPE_UNID"
+        ],
+        "fkTableName": "FMVEHEQUIP",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "FMVEHTYPE"
+    },
+    {
+        "fkColumnName": [
+            "FMVEH_UNID"
+        ],
+        "fkTableName": "FMVEHMAINT",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "FMVEH"
+    },
+    {
+        "fkColumnName": [
+            "FMVESSELMASTER_UNID"
+        ],
+        "fkTableName": "FMVESSELLOCALNAME",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "FMVESSELMASTER"
+    },
+    {
+        "fkColumnName": [
+            "JOB_UNID",
+            "FOBROUTE_SNO"
+        ],
+        "fkTableName": "FOBCONTAINER",
+        "pkColumnName": [
+            "JOB_UNID"
+        ],
+        "pkTableName": "FOBROUTE"
+    },
+    {
+        "fkColumnName": [
+            "JOB_UNID"
+        ],
+        "fkTableName": "FOBMAIN",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "JOB"
+    },
+    {
+        "fkColumnName": [
+            "JOB_UNID"
+        ],
+        "fkTableName": "FOBOPSTATUS",
+        "pkColumnName": [
+            "JOB_UNID"
+        ],
+        "pkTableName": "FOBMAIN"
+    },
+    {
+        "fkColumnName": [
+            "JOB_UNID"
+        ],
+        "fkTableName": "FOBROUTE",
+        "pkColumnName": [
+            "JOB_UNID"
+        ],
+        "pkTableName": "FOBMAIN"
+    },
+    {
+        "fkColumnName": [
+            "JOB_UNID",
+            "FOBROUTE_SNO"
+        ],
+        "fkTableName": "FOBROUTEHOUSE",
+        "pkColumnName": [
+            "JOB_UNID"
+        ],
+        "pkTableName": "FOBROUTE"
+    },
+    {
+        "fkColumnName": [
+            "FSOFFSHDR_UNID"
+        ],
+        "fkTableName": "FSOFFSDTL",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "FSOFFSHDR"
+    },
+    {
+        "fkColumnName": [
+            "SENDERNAME",
+            "MSGREFNO"
+        ],
+        "fkTableName": "IAIRMDTEXT",
+        "pkColumnName": [
+            "SENDERNAME"
+        ],
+        "pkTableName": "IJOB"
+    },
+    {
+        "fkColumnName": [
+            "SENDERNAME",
+            "MSGREFNO"
+        ],
+        "fkTableName": "IAIRROUTE",
+        "pkColumnName": [
+            "SENDERNAME"
+        ],
+        "pkTableName": "IJOB"
+    },
+    {
+        "fkColumnName": [
+            "SENDERNAME",
+            "MSGREFNO"
+        ],
+        "fkTableName": "ICARGOITEM",
+        "pkColumnName": [
+            "SENDERNAME"
+        ],
+        "pkTableName": "IJOB"
+    },
+    {
+        "fkColumnName": [
+            "SENDERNAME",
+            "MSGREFNO"
+        ],
+        "fkTableName": "IDIM",
+        "pkColumnName": [
+            "SENDERNAME"
+        ],
+        "pkTableName": "IJOB"
+    },
+    {
+        "fkColumnName": [
+            "SENDERNAME",
+            "MSGREFNO"
+        ],
+        "fkTableName": "IDOCREQ",
+        "pkColumnName": [
+            "SENDERNAME"
+        ],
+        "pkTableName": "IJOB"
+    },
+    {
+        "fkColumnName": [
+            "PARTYID"
+        ],
+        "fkTableName": "IFMPARTYACC",
+        "pkColumnName": [
+            "PARTYID"
+        ],
+        "pkTableName": "IFMPARTY"
+    },
+    {
+        "fkColumnName": [
+            "PARTYID"
+        ],
+        "fkTableName": "IFMPARTYACCDB",
+        "pkColumnName": [
+            "PARTYID"
+        ],
+        "pkTableName": "IFMPARTY"
+    },
+    {
+        "fkColumnName": [
+            "PARTYID"
+        ],
+        "fkTableName": "IFMPARTYADDR",
+        "pkColumnName": [
+            "PARTYID"
+        ],
+        "pkTableName": "IFMPARTY"
+    },
+    {
+        "fkColumnName": [
+            "PARTYID",
+            "ADDRTYPE",
+            "FMPARTYADDR_SNO"
+        ],
+        "fkTableName": "IFMPARTYADDRAREA",
+        "pkColumnName": [
+            "PARTYID"
+        ],
+        "pkTableName": "IFMPARTYADDR"
+    },
+    {
+        "fkColumnName": [
+            "PARTYID",
+            "ADDRTYPE",
+            "FMPARTYADDR_SNO"
+        ],
+        "fkTableName": "IFMPARTYADDRSITE",
+        "pkColumnName": [
+            "PARTYID"
+        ],
+        "pkTableName": "IFMPARTYADDR"
+    },
+    {
+        "fkColumnName": [
+            "PARTYID",
+            "ADDRTYPE",
+            "FMPARTYADDR_SNO"
+        ],
+        "fkTableName": "IFMPARTYADDRZONE",
+        "pkColumnName": [
+            "PARTYID"
+        ],
+        "pkTableName": "IFMPARTYADDR"
+    },
+    {
+        "fkColumnName": [
+            "PARTYID"
+        ],
+        "fkTableName": "IFMPARTYATTN",
+        "pkColumnName": [
+            "PARTYID"
+        ],
+        "pkTableName": "IFMPARTY"
+    },
+    {
+        "fkColumnName": [
+            "PARTYID"
+        ],
+        "fkTableName": "IFMPARTYCONSTANT",
+        "pkColumnName": [
+            "PARTYID"
+        ],
+        "pkTableName": "IFMPARTY"
+    },
+    {
+        "fkColumnName": [
+            "PARTYID"
+        ],
+        "fkTableName": "IFMPARTYCONTRACT",
+        "pkColumnName": [
+            "PARTYID"
+        ],
+        "pkTableName": "IFMPARTY"
+    },
+    {
+        "fkColumnName": [
+            "PARTYID"
+        ],
+        "fkTableName": "IFMPARTYCONTRACT2",
+        "pkColumnName": [
+            "PARTYID"
+        ],
+        "pkTableName": "IFMPARTY"
+    },
+    {
+        "fkColumnName": [
+            "PARTYID"
+        ],
+        "fkTableName": "IFMPARTYCREDITTERM",
+        "pkColumnName": [
+            "PARTYID"
+        ],
+        "pkTableName": "IFMPARTY"
+    },
+    {
+        "fkColumnName": [
+            "PARTYID"
+        ],
+        "fkTableName": "IFMPARTYDOCRULE",
+        "pkColumnName": [
+            "PARTYID"
+        ],
+        "pkTableName": "IFMPARTY"
+    },
+    {
+        "fkColumnName": [
+            "PARTYID"
+        ],
+        "fkTableName": "IFMPARTYFLEXIINFO",
+        "pkColumnName": [
+            "PARTYID"
+        ],
+        "pkTableName": "IFMPARTY"
+    },
+    {
+        "fkColumnName": [
+            "PARTYID"
+        ],
+        "fkTableName": "IFMPARTYOTHINFO",
+        "pkColumnName": [
+            "PARTYID"
+        ],
+        "pkTableName": "IFMPARTY"
+    },
+    {
+        "fkColumnName": [
+            "PARTYID"
+        ],
+        "fkTableName": "IFMPARTYOTHINFOEXT",
+        "pkColumnName": [
+            "PARTYID"
+        ],
+        "pkTableName": "IFMPARTY"
+    },
+    {
+        "fkColumnName": [
+            "PARTYID"
+        ],
+        "fkTableName": "IFMPARTYPART",
+        "pkColumnName": [
+            "PARTYID"
+        ],
+        "pkTableName": "IFMPARTY"
+    },
+    {
+        "fkColumnName": [
+            "PARTYID",
+            "HDRSNO"
+        ],
+        "fkTableName": "IFMPARTYPREFERREDCARRDTL",
+        "pkColumnName": [
+            "PARTYID"
+        ],
+        "pkTableName": "IFMPARTYPREFERREDCARRHDR"
+    },
+    {
+        "fkColumnName": [
+            "PARTYID"
+        ],
+        "fkTableName": "IFMPARTYPREFERREDCARRHDR",
+        "pkColumnName": [
+            "PARTYID"
+        ],
+        "pkTableName": "IFMPARTY"
+    },
+    {
+        "fkColumnName": [
+            "PARTYID"
+        ],
+        "fkTableName": "IFMPARTYPRSTL",
+        "pkColumnName": [
+            "PARTYID"
+        ],
+        "pkTableName": "IFMPARTY"
+    },
+    {
+        "fkColumnName": [
+            "PARTYID"
+        ],
+        "fkTableName": "IFMPARTYREL",
+        "pkColumnName": [
+            "PARTYID"
+        ],
+        "pkTableName": "IFMPARTY"
+    },
+    {
+        "fkColumnName": [
+            "PARTYID"
+        ],
+        "fkTableName": "IFMPARTYRIGHTS",
+        "pkColumnName": [
+            "PARTYID"
+        ],
+        "pkTableName": "IFMPARTY"
+    },
+    {
+        "fkColumnName": [
+            "PARTYID"
+        ],
+        "fkTableName": "IFMPARTYROLE",
+        "pkColumnName": [
+            "PARTYID"
+        ],
+        "pkTableName": "IFMPARTY"
+    },
+    {
+        "fkColumnName": [
+            "PARTYID"
+        ],
+        "fkTableName": "IFMPARTYSALES",
+        "pkColumnName": [
+            "PARTYID"
+        ],
+        "pkTableName": "IFMPARTY"
+    },
+    {
+        "fkColumnName": [
+            "PARTYID"
+        ],
+        "fkTableName": "IFMPARTYSERVICEPLAN",
+        "pkColumnName": [
+            "PARTYID"
+        ],
+        "pkTableName": "IFMPARTY"
+    },
+    {
+        "fkColumnName": [
+            "IFSOFFSHDR_UNID"
+        ],
+        "fkTableName": "IFSOFFSDTL",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "IFSOFFSHDR"
+    },
+    {
+        "fkColumnName": [
+            "SENDERNAME",
+            "MSGREFNO"
+        ],
+        "fkTableName": "IIMPORTLOG",
+        "pkColumnName": [
+            "SENDERNAME"
+        ],
+        "pkTableName": "IJOB"
+    },
+    {
+        "fkColumnName": [
+            "SENDERNAME",
+            "MSGREFNO"
+        ],
+        "fkTableName": "IJOBEXT",
+        "pkColumnName": [
+            "SENDERNAME"
+        ],
+        "pkTableName": "IJOB"
+    },
+    {
+        "fkColumnName": [
+            "INLANDSCHEDULERHDR_UNID"
+        ],
+        "fkTableName": "INLANDSCHEDULERDTL",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "INLANDSCHEDULERHDR"
+    },
+    {
+        "fkColumnName": [
+            "INTF_ALS_REFUID"
+        ],
+        "fkTableName": "INTFARAPJOBDTL",
+        "pkColumnName": [
+            "INTF_ALS_REFUID"
+        ],
+        "pkTableName": "INTFARAPINVHDR"
+    },
+    {
+        "fkColumnName": [
+            "INTF_ALS_REFUID"
+        ],
+        "fkTableName": "INTFARAPJOBDTLLOG",
+        "pkColumnName": [
+            "INTF_ALS_REFUID"
+        ],
+        "pkTableName": "INTFARAPINVHDRLOG"
+    },
+    {
+        "fkColumnName": [
+            "INTF_ALS_REFUID"
+        ],
+        "fkTableName": "INTFARAPJOBHDR",
+        "pkColumnName": [
+            "INTF_ALS_REFUID"
+        ],
+        "pkTableName": "INTFARAPINVHDR"
+    },
+    {
+        "fkColumnName": [
+            "INTF_ALS_REFUID"
+        ],
+        "fkTableName": "INTFARAPJOBHDRLOG",
+        "pkColumnName": [
+            "INTF_ALS_REFUID"
+        ],
+        "pkTableName": "INTFARAPINVHDRLOG"
+    },
+    {
+        "fkColumnName": [
+            "INTFEXP_UNID"
+        ],
+        "fkTableName": "INTFEXPDTL",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "INTFEXP"
+    },
+    {
+        "fkColumnName": [
+            "INTF_ALS_REFUID"
+        ],
+        "fkTableName": "INTFJCGLDTL",
+        "pkColumnName": [
+            "INTF_ALS_REFUID"
+        ],
+        "pkTableName": "INTFJCGLHDR"
+    },
+    {
+        "fkColumnName": [
+            "INTF_ALS_REFUID"
+        ],
+        "fkTableName": "INTF_FMPARTYACC",
+        "pkColumnName": [
+            "INTF_ALS_REFUID"
+        ],
+        "pkTableName": "INTF_FMPARTY"
+    },
+    {
+        "fkColumnName": [
+            "INTF_ALS_REFUID"
+        ],
+        "fkTableName": "INTF_FMPARTYADR",
+        "pkColumnName": [
+            "INTF_ALS_REFUID"
+        ],
+        "pkTableName": "INTF_FMPARTY"
+    },
+    {
+        "fkColumnName": [
+            "INTF_ALS_REFUID"
+        ],
+        "fkTableName": "INTF_FMPARTYISA",
+        "pkColumnName": [
+            "INTF_ALS_REFUID"
+        ],
+        "pkTableName": "INTF_FMPARTY"
+    },
+    {
+        "fkColumnName": [
+            "INTF_ALS_REFUID"
+        ],
+        "fkTableName": "INTF_FMPARTYMAP",
+        "pkColumnName": [
+            "INTF_ALS_REFUID"
+        ],
+        "pkTableName": "INTF_FMPARTY"
+    },
+    {
+        "fkColumnName": [
+            "INTF_ALS_REFUID"
+        ],
+        "fkTableName": "INTF_FMPARTYSAL",
+        "pkColumnName": [
+            "INTF_ALS_REFUID"
+        ],
+        "pkTableName": "INTF_FMPARTY"
+    },
+    {
+        "fkColumnName": [
+            "INVPCKLSTHDR_UNID"
+        ],
+        "fkTableName": "INVPCKJOBLINK",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "INVPCKLSTHDR"
+    },
+    {
+        "fkColumnName": [
+            "INVPCKLSTHDR_UNID"
+        ],
+        "fkTableName": "INVPCKLSTITEM",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "INVPCKLSTHDR"
+    },
+    {
+        "fkColumnName": [
+            "SENDERNAME",
+            "MSGREFNO"
+        ],
+        "fkTableName": "IQUOTEPORTS",
+        "pkColumnName": [
+            "SENDERNAME"
+        ],
+        "pkTableName": "IJOB"
+    },
+    {
+        "fkColumnName": [
+            "SENDERNAME",
+            "MSGREFNO"
+        ],
+        "fkTableName": "IREFNO",
+        "pkColumnName": [
+            "SENDERNAME"
+        ],
+        "pkTableName": "IJOB"
+    },
+    {
+        "fkColumnName": [
+            "SENDERNAME",
+            "MSGREFNO"
+        ],
+        "fkTableName": "IREMARK",
+        "pkColumnName": [
+            "SENDERNAME"
+        ],
+        "pkTableName": "IJOB"
+    },
+    {
+        "fkColumnName": [
+            "SENDERNAME",
+            "MSGREFNO"
+        ],
+        "fkTableName": "ISUPPLIER",
+        "pkColumnName": [
+            "SENDERNAME"
+        ],
+        "pkTableName": "IJOB"
+    },
+    {
+        "fkColumnName": [
+            "JOB_UNID"
+        ],
+        "fkTableName": "ITEMPCS",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "JOB"
+    },
+    {
+        "fkColumnName": [
+            "JOB_UNID",
+            "STATUS_SNO"
+        ],
+        "fkTableName": "ITEMSTATUS",
+        "pkColumnName": [
+            "JOB_UNID"
+        ],
+        "pkTableName": "STATUS"
+    },
+    {
+        "fkColumnName": [
+            "IVHDRUNID"
+        ],
+        "fkTableName": "IVFLEXIINFO",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "IVHDR"
+    },
+    {
+        "fkColumnName": [
+            "IVHDR_UNID"
+        ],
+        "fkTableName": "IVJOB",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "IVHDR"
+    },
+    {
+        "fkColumnName": [
+            "IVHDR_UNID"
+        ],
+        "fkTableName": "IVPRINTDESC",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "IVHDR"
+    },
+    {
+        "fkColumnName": [
+            "IVHDR_UNID"
+        ],
+        "fkTableName": "IVPRINTLOG",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "IVHDR"
+    },
+    {
+        "fkColumnName": [
+            "SENDERNAME",
+            "MSGREFNO"
+        ],
+        "fkTableName": "IWORKORDERPARTY",
+        "pkColumnName": [
+            "SENDERNAME"
+        ],
+        "pkTableName": "IJOB"
+    },
+    {
+        "fkColumnName": [
+            "JOB_UNID"
+        ],
+        "fkTableName": "JCCOST",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "JOB"
+    },
+    {
+        "fkColumnName": [
+            "JOB_UNID"
+        ],
+        "fkTableName": "JCREVENUE",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "JOB"
+    },
+    {
+        "fkColumnName": [
+            "VVSECOND_UNID",
+            "VV_UNID"
+        ],
+        "fkTableName": "JOB",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "VESSELVOYAGE"
+    },
+    {
+        "fkColumnName": [
+            "JOBUNID"
+        ],
+        "fkTableName": "JOBACCESS",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "JOB"
+    },
+    {
+        "fkColumnName": [
+            "CLAIMHDR_UNID"
+        ],
+        "fkTableName": "JOBCLAIMLINK",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "CLAIMHDR"
+    },
+    {
+        "fkColumnName": [
+            "JOB_UNID"
+        ],
+        "fkTableName": "JOBCUSTOMDECL",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "JOB"
+    },
+    {
+        "fkColumnName": [
+            "JOB_UNID"
+        ],
+        "fkTableName": "JOBCUSTOMPERMIT",
+        "pkColumnName": [
+            "JOB_UNID"
+        ],
+        "pkTableName": "JOBCUSTOMDECL"
+    },
+    {
+        "fkColumnName": [
+            "JOB_UNID"
+        ],
+        "fkTableName": "JOBFLEXIINFO",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "JOB"
+    },
+    {
+        "fkColumnName": [
+            "JOB_UNID"
+        ],
+        "fkTableName": "JOBINTFEXP",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "JOB"
+    },
+    {
+        "fkColumnName": [
+            "INTFFILE_UNID"
+        ],
+        "fkTableName": "JOBINTFEXP",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "INTFFILE"
+    },
+    {
+        "fkColumnName": [
+            "INTFFILE_UNID"
+        ],
+        "fkTableName": "JOBINTFEXPDTL",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "INTFFILE"
+    },
+    {
+        "fkColumnName": [
+            "JOB_UNID",
+            "INTFCODE"
+        ],
+        "fkTableName": "JOBINTFEXPDTL",
+        "pkColumnName": [
+            "JOB_UNID"
+        ],
+        "pkTableName": "JOBINTFEXP"
+    },
+    {
+        "fkColumnName": [
+            "JOB_UNID"
+        ],
+        "fkTableName": "JOBINTFIMP",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "JOB"
+    },
+    {
+        "fkColumnName": [
+            "JOB_UNID"
+        ],
+        "fkTableName": "JOBINTOWH",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "JOB"
+    },
+    {
+        "fkColumnName": [
+            "JOB_UNID"
+        ],
+        "fkTableName": "JOBKCXCUSTOMDECL",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "JOB"
+    },
+    {
+        "fkColumnName": [
+            "JOB_UNID"
+        ],
+        "fkTableName": "JOBOTHER",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "JOB"
+    },
+    {
+        "fkColumnName": [
+            "JOB_UNID"
+        ],
+        "fkTableName": "JOBOTHEREXT",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "JOB"
+    },
+    {
+        "fkColumnName": [
+            "JOB_UNID"
+        ],
+        "fkTableName": "JOBOUTWH",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "JOB"
+    },
+    {
+        "fkColumnName": [
+            "JOB_UNID"
+        ],
+        "fkTableName": "JOBPARTY",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "JOB"
+    },
+    {
+        "fkColumnName": [
+            "JOB_EXPORT_UNID"
+        ],
+        "fkTableName": "JOBPOSTSTATUS",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "JOB"
+    },
+    {
+        "fkColumnName": [
+            "JOB_UNID"
+        ],
+        "fkTableName": "JOBQRTN",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "JOB"
+    },
+    {
+        "fkColumnName": [
+            "JOB_UNID"
+        ],
+        "fkTableName": "JOBQRTNCHECK",
+        "pkColumnName": [
+            "JOB_UNID"
+        ],
+        "pkTableName": "JOBQRTN"
+    },
+    {
+        "fkColumnName": [
+            "JOB_UNID"
+        ],
+        "fkTableName": "JOBROUTE",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "JOB"
+    },
+    {
+        "fkColumnName": [
+            "JOB_UNID"
+        ],
+        "fkTableName": "JOBSERVICEREQDTL",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "JOB"
+    },
+    {
+        "fkColumnName": [
+            "JOBUNID"
+        ],
+        "fkTableName": "JOBWAREHOUSE",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "JOB"
+    },
+    {
+        "fkColumnName": [
+            "JOBUNID",
+            "CHGSNO",
+            "VCHDRUNID",
+            "VCLOCALSVROTHSNO",
+            "ISINTERNAL"
+        ],
+        "fkTableName": "JVCLOCALSVROTHRATE",
+        "pkColumnName": [
+            "JOBUNID"
+        ],
+        "pkTableName": "JVCLOCALSVROTH"
+    },
+    {
+        "fkColumnName": [
+            "JOB_UNID"
+        ],
+        "fkTableName": "LOADUNIT",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "JOB"
+    },
+    {
+        "fkColumnName": [
+            "UNITUNID"
+        ],
+        "fkTableName": "LOADUNITITEM",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "LOADUNIT"
+    },
+    {
+        "fkColumnName": [
+            "PCKLSTHDR_UNID"
+        ],
+        "fkTableName": "PCKJOBLINK",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "PCKLSTHDR"
+    },
+    {
+        "fkColumnName": [
+            "PCKLSTHDR_UNID"
+        ],
+        "fkTableName": "PCKLSTITEM",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "PCKLSTHDR"
+    },
+    {
+        "fkColumnName": [
+            "PDALLHDR_UNID"
+        ],
+        "fkTableName": "PDALLDTL",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "PDALLHDR"
+    },
+    {
+        "fkColumnName": [
+            "PDALLHDR_UNID"
+        ],
+        "fkTableName": "PDALLJOB",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "PDALLHDR"
+    },
+    {
+        "fkColumnName": [
+            "POHDR_UNID",
+            "POITEM_SNO"
+        ],
+        "fkTableName": "POCARGOITEMLINK",
+        "pkColumnName": [
+            "POHDR_UNID"
+        ],
+        "pkTableName": "POITEM"
+    },
+    {
+        "fkColumnName": [
+            "POHDR_UNID"
+        ],
+        "fkTableName": "PODOCREQ",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "POHDR"
+    },
+    {
+        "fkColumnName": [
+            "POHDR_UNID"
+        ],
+        "fkTableName": "POFLEXI",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "POHDR"
+    },
+    {
+        "fkColumnName": [
+            "POHDR_UNID"
+        ],
+        "fkTableName": "POITEM",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "POHDR"
+    },
+    {
+        "fkColumnName": [
+            "POHDR_UNID"
+        ],
+        "fkTableName": "POREFNO",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "POHDR"
+    },
+    {
+        "fkColumnName": [
+            "PSHDR_UNID"
+        ],
+        "fkTableName": "PSDTL",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "PSHDR"
+    },
+    {
+        "fkColumnName": [
+            "PSHDR_UNID"
+        ],
+        "fkTableName": "PSPARTY",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "PSHDR"
+    },
+    {
+        "fkColumnName": [
+            "EXPIMPQRTN_UNID"
+        ],
+        "fkTableName": "QRTNCHECK",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "EXPIMPQRTN"
+    },
+    {
+        "fkColumnName": [
+            "EXPIMPQRTN_UNID"
+        ],
+        "fkTableName": "QRTNCONTAINER",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "EXPIMPQRTN"
+    },
+    {
+        "fkColumnName": [
+            "EXPIMPQRTN_UNID"
+        ],
+        "fkTableName": "QRTNITEM",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "EXPIMPQRTN"
+    },
+    {
+        "fkColumnName": [
+            "JOB_UNID"
+        ],
+        "fkTableName": "QUOTEPORTS",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "JOB"
+    },
+    {
+        "fkColumnName": [
+            "JOB_UNID",
+            "CHRGTYPE",
+            "QUOTETRFCHG_SNO"
+        ],
+        "fkTableName": "QUOTETRFBKP",
+        "pkColumnName": [
+            "JOB_UNID"
+        ],
+        "pkTableName": "QUOTETRFCHG"
+    },
+    {
+        "fkColumnName": [
+            "JOB_UNID"
+        ],
+        "fkTableName": "QUOTETRFCHG",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "JOB"
+    },
+    {
+        "fkColumnName": [
+            "JOB_UNID"
+        ],
+        "fkTableName": "REFNO",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "JOB"
+    },
+    {
+        "fkColumnName": [
+            "JOB_UNID"
+        ],
+        "fkTableName": "REMARK",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "JOB"
+    },
+    {
+        "fkColumnName": [
+            "RESERVENUMHDR_UNID"
+        ],
+        "fkTableName": "RESERVENUMDTL",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "RESERVENUMHDR"
+    },
+    {
+        "fkColumnName": [
+            "JOB_UNID"
+        ],
+        "fkTableName": "ROAD",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "JOB"
+    },
+    {
+        "fkColumnName": [
+            "STRIGGERS_UNID"
+        ],
+        "fkTableName": "SCRONTRIGGERS",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "STRIGGERS"
+    },
+    {
+        "fkColumnName": [
+            "JOB_UNID"
+        ],
+        "fkTableName": "SEA",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "JOB"
+    },
+    {
+        "fkColumnName": [
+            "CONTAINER_UNID"
+        ],
+        "fkTableName": "SEACONTITEM",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "CONTAINER"
+    },
+    {
+        "fkColumnName": [
+            "JOB_UNID"
+        ],
+        "fkTableName": "SOPARTY",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "JOB"
+    },
+    {
+        "fkColumnName": [
+            "UNID"
+        ],
+        "fkTableName": "SORTINFO",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "JOB"
+    },
+    {
+        "fkColumnName": [
+            "SRVREQHDRUNID"
+        ],
+        "fkTableName": "SRVREQFLEXIINFO",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "SRVREQHDR"
+    },
+    {
+        "fkColumnName": [
+            "JOB_UNID"
+        ],
+        "fkTableName": "SRVREQHDR",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "JOB"
+    },
+    {
+        "fkColumnName": [
+            "JOB_UNID"
+        ],
+        "fkTableName": "STATUS",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "JOB"
+    },
+    {
+        "fkColumnName": [
+            "STKMOVHDR_UNID"
+        ],
+        "fkTableName": "STKMOVITEM",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "STKMOVHDR"
+    },
+    {
+        "fkColumnName": [
+            "ICNAME"
+        ],
+        "fkTableName": "STRIGGERS",
+        "pkColumnName": [
+            "ICNAME"
+        ],
+        "pkTableName": "SYINITCONTEXT"
+    },
+    {
+        "fkColumnName": [
+            "JOB_UNID",
+            "STATUS_SNO"
+        ],
+        "fkTableName": "STSNOTIFY",
+        "pkColumnName": [
+            "JOB_UNID"
+        ],
+        "pkTableName": "STATUS"
+    },
+    {
+        "fkColumnName": [
+            "JOB_UNID"
+        ],
+        "fkTableName": "SUPPLIER",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "JOB"
+    },
+    {
+        "fkColumnName": [
+            "JOB_UNID"
+        ],
+        "fkTableName": "SWITCHBL",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "JOB"
+    },
+    {
+        "fkColumnName": [
+            "SYCOSTRUC_UNID"
+        ],
+        "fkTableName": "SYACCOUNTAGINGPERIOD",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "SYCOSTRUC"
+    },
+    {
+        "fkColumnName": [
+            "SYCOCONDITIONHDR_UNID"
+        ],
+        "fkTableName": "SYCOCONDITIONDTL",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "SYCOCONDITIONHDR"
+    },
+    {
+        "fkColumnName": [
+            "SYCOSTRUC_UNID"
+        ],
+        "fkTableName": "SYCOCONDITIONHDR",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "SYCOSTRUC"
+    },
+    {
+        "fkColumnName": [
+            "SYCOSTRUC_UNID"
+        ],
+        "fkTableName": "SYCODEPARTMENT",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "SYCOSTRUC"
+    },
+    {
+        "fkColumnName": [
+            "SYCOSTRUC_UNID"
+        ],
+        "fkTableName": "SYCOFINPERIOD",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "SYCOSTRUC"
+    },
+    {
+        "fkColumnName": [
+            "SYCOSTRUC_UNID"
+        ],
+        "fkTableName": "SYCOFORMID",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "SYCOSTRUC"
+    },
+    {
+        "fkColumnName": [
+            "SYCOSTRUC_UNID"
+        ],
+        "fkTableName": "SYCOGRID",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "SYCOSTRUC"
+    },
+    {
+        "fkColumnName": [
+            "SYCOGRID_UNID"
+        ],
+        "fkTableName": "SYCOGRIDCOLOR",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "SYCOGRID"
+    },
+    {
+        "fkColumnName": [
+            "SYCOSTRUC_UNID"
+        ],
+        "fkTableName": "SYCOINTFSETUPRULES",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "SYCOSTRUC"
+    },
+    {
+        "fkColumnName": [
+            "SYCOSTRUC_UNID"
+        ],
+        "fkTableName": "SYCOLORCONDITION",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "SYCOSTRUC"
+    },
+    {
+        "fkColumnName": [
+            "SYCOLORCONDITION_UNID"
+        ],
+        "fkTableName": "SYCOLORCONDITIONPARAM",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "SYCOLORCONDITION"
+    },
+    {
+        "fkColumnName": [
+            "SYCOSTRUC_UNID"
+        ],
+        "fkTableName": "SYCOMPANY",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "SYCOSTRUC"
+    },
+    {
+        "fkColumnName": [
+            "SYORGCHART_UNID"
+        ],
+        "fkTableName": "SYCOMPANY",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "SYORGCHART"
+    },
+    {
+        "fkColumnName": [
+            "SYCONDITIONUNID"
+        ],
+        "fkTableName": "SYCONDITIONCASE",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "SYCONDITION"
+    },
+    {
+        "fkColumnName": [
+            "SYCONDITIONUNID",
+            "SYCONDITIONCASESNO"
+        ],
+        "fkTableName": "SYCONDITIONDTL",
+        "pkColumnName": [
+            "SYCONDITIONUNID"
+        ],
+        "pkTableName": "SYCONDITIONCASE"
+    },
+    {
+        "fkColumnName": [
+            "SYCOSTRUC_UNID"
+        ],
+        "fkTableName": "SYCOPREFERENCE",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "SYCOSTRUC"
+    },
+    {
+        "fkColumnName": [
+            "SYCOSTRUC_UNID"
+        ],
+        "fkTableName": "SYCOPREFERENCEEXT",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "SYCOSTRUC"
+    },
+    {
+        "fkColumnName": [
+            "SYCOSTRUC_UNID"
+        ],
+        "fkTableName": "SYCOPRINTER",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "SYCOSTRUC"
+    },
+    {
+        "fkColumnName": [
+            "SYCOSTRUC_UNID"
+        ],
+        "fkTableName": "SYCOPRIVILEGE",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "SYCOSTRUC"
+    },
+    {
+        "fkColumnName": [
+            "OBJECTID"
+        ],
+        "fkTableName": "SYDATAOBJECTATTR",
+        "pkColumnName": [
+            "OBJECTID"
+        ],
+        "pkTableName": "SYDATAOBJECT"
+    },
+    {
+        "fkColumnName": [
+            "FROMOBJECTID"
+        ],
+        "fkTableName": "SYDATARELATION",
+        "pkColumnName": [
+            "OBJECTID"
+        ],
+        "pkTableName": "SYDATAOBJECT"
+    },
+    {
+        "fkColumnName": [
+            "SYDBUPDATEAUDIT_UNID"
+        ],
+        "fkTableName": "SYDBUPDATEDTL",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "SYDBUPDATEAUDIT"
+    },
+    {
+        "fkColumnName": [
+            "SYORGCHART_UNID"
+        ],
+        "fkTableName": "SYDEPARTMENT",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "SYORGCHART"
+    },
+    {
+        "fkColumnName": [
+            "SYDOCUNID"
+        ],
+        "fkTableName": "SYDOCDTL",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "SYDOC"
+    },
+    {
+        "fkColumnName": [
+            "SOURCEID"
+        ],
+        "fkTableName": "SYDOCPACKETITEM",
+        "pkColumnName": [
+            "OBJECTID"
+        ],
+        "pkTableName": "SYDATAOBJECT"
+    },
+    {
+        "fkColumnName": [
+            "SYDOCPACKETUNID"
+        ],
+        "fkTableName": "SYDOCPACKETITEM",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "SYDOCPACKET"
+    },
+    {
+        "fkColumnName": [
+            "SYDOCPACKETUNID",
+            "SYDOCPACKETITEMSNO"
+        ],
+        "fkTableName": "SYDOCPACKETITEMOPTION",
+        "pkColumnName": [
+            "SYDOCPACKETUNID"
+        ],
+        "pkTableName": "SYDOCPACKETITEM"
+    },
+    {
+        "fkColumnName": [
+            "INTFCODE"
+        ],
+        "fkTableName": "SYFILETRANSINFO",
+        "pkColumnName": [
+            "INTFCODE"
+        ],
+        "pkTableName": "SYINTFSETUP"
+    },
+    {
+        "fkColumnName": [
+            "SCHEMECODE",
+            "BIZTYPE",
+            "FORMCODE",
+            "FORMSNO"
+        ],
+        "fkTableName": "SYFORMPARAM",
+        "pkColumnName": [
+            "SCHEMECODE"
+        ],
+        "pkTableName": "SYFORMSETUP"
+    },
+    {
+        "fkColumnName": [
+            "SCHEMECODE",
+            "BIZTYPE",
+            "FORMCODE",
+            "FORMSNO"
+        ],
+        "fkTableName": "SYFORMPOSTACTION",
+        "pkColumnName": [
+            "SCHEMECODE"
+        ],
+        "pkTableName": "SYFORMSETUP"
+    },
+    {
+        "fkColumnName": [
+            "SCHEMECODE",
+            "BIZTYPE",
+            "FORMCODE",
+            "FORMSNO"
+        ],
+        "fkTableName": "SYFORMREMARK",
+        "pkColumnName": [
+            "SCHEMECODE"
+        ],
+        "pkTableName": "SYFORMSETUP"
+    },
+    {
+        "fkColumnName": [
+            "SCHEMECODE",
+            "BIZTYPE",
+            "FORMCODE",
+            "FORMSNO"
+        ],
+        "fkTableName": "SYFORMROLE",
+        "pkColumnName": [
+            "SCHEMECODE"
+        ],
+        "pkTableName": "SYFORMSETUP"
+    },
+    {
+        "fkColumnName": [
+            "SYROLE_UNID"
+        ],
+        "fkTableName": "SYFORMROLE",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "SYROLE"
+    },
+    {
+        "fkColumnName": [
+            "SCHEMECODE",
+            "BIZTYPE",
+            "FORMCODE",
+            "FORMSNO",
+            "POSTACTIONSNO"
+        ],
+        "fkTableName": "SYFORMUPDATEPLAN",
+        "pkColumnName": [
+            "SCHEMECODE"
+        ],
+        "pkTableName": "SYFORMPOSTACTION"
+    },
+    {
+        "fkColumnName": [
+            "SYFUNCFIELD_UNID"
+        ],
+        "fkTableName": "SYFUNCFIELDDTL",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "SYFUNCFIELD"
+    },
+    {
+        "fkColumnName": [
+            "SYLOGICFIELD_UNID"
+        ],
+        "fkTableName": "SYFUNCFIELDDTL",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "SYLOGICFIELD"
+    },
+    {
+        "fkColumnName": [
+            "SYCOLORCONDITION_UNID"
+        ],
+        "fkTableName": "SYGRIDCOLORNODE",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "SYCOLORCONDITION"
+    },
+    {
+        "fkColumnName": [
+            "LOG_UUID"
+        ],
+        "fkTableName": "SYIMEXSETTINGLOGDTL",
+        "pkColumnName": [
+            "UUID"
+        ],
+        "pkTableName": "SYIMEXSETTINGLOG"
+    },
+    {
+        "fkColumnName": [
+            "SYCOSTRUC_UNID"
+        ],
+        "fkTableName": "SYINTFCFG",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "SYCOSTRUC"
+    },
+    {
+        "fkColumnName": [
+            "INTFPRGID"
+        ],
+        "fkTableName": "SYINTFPRGRULES",
+        "pkColumnName": [
+            "INTFPRGID"
+        ],
+        "pkTableName": "SYINTFPRGS"
+    },
+    {
+        "fkColumnName": [
+            "INTFPRGID"
+        ],
+        "fkTableName": "SYINTFSETUP",
+        "pkColumnName": [
+            "INTFPRGID"
+        ],
+        "pkTableName": "SYINTFPRGS"
+    },
+    {
+        "fkColumnName": [
+            "SYKCTHDRUNID",
+            "SCENSNO",
+            "LISTENSNO"
+        ],
+        "fkTableName": "SYKCTAPPLYCASE",
+        "pkColumnName": [
+            "SYKCTHDRUNID"
+        ],
+        "pkTableName": "SYKCTLISTEN"
+    },
+    {
+        "fkColumnName": [
+            "SYKCTHDRUNID"
+        ],
+        "fkTableName": "SYKCTCASE",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "SYKCTHDR"
+    },
+    {
+        "fkColumnName": [
+            "SYKCTHDRUNID",
+            "SCENSNO"
+        ],
+        "fkTableName": "SYKCTLISTEN",
+        "pkColumnName": [
+            "SYKCTHDRUNID"
+        ],
+        "pkTableName": "SYKCTSCEN"
+    },
+    {
+        "fkColumnName": [
+            "SYKCTHDRUNID"
+        ],
+        "fkTableName": "SYKCTSCEN",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "SYKCTHDR"
+    },
+    {
+        "fkColumnName": [
+            "SYLOGICFIELD_UNID"
+        ],
+        "fkTableName": "SYLOGICFIELDFUNC",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "SYLOGICFIELD"
+    },
+    {
+        "fkColumnName": [
+            "SYLOGICFIELD_UNID",
+            "FUNCTYPE"
+        ],
+        "fkTableName": "SYLOGICFIELDFUNCLOCALDESC",
+        "pkColumnName": [
+            "SYLOGICFIELD_UNID"
+        ],
+        "pkTableName": "SYLOGICFIELDFUNC"
+    },
+    {
+        "fkColumnName": [
+            "SYLOGICFIELD_UNID"
+        ],
+        "fkTableName": "SYLOGICFIELDLOCALDESC",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "SYLOGICFIELD"
+    },
+    {
+        "fkColumnName": [
+            "SYMENU_UNID"
+        ],
+        "fkTableName": "SYMENURESOURCE",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "SYMENU"
+    },
+    {
+        "fkColumnName": [
+            "MODULECODE"
+        ],
+        "fkTableName": "SYMODULEFUNC",
+        "pkColumnName": [
+            "MODULECODE"
+        ],
+        "pkTableName": "SYMODULE"
+    },
+    {
+        "fkColumnName": [
+            "ICNAME"
+        ],
+        "fkTableName": "SYMODULEIC",
+        "pkColumnName": [
+            "ICNAME"
+        ],
+        "pkTableName": "SYINITCONTEXT"
+    },
+    {
+        "fkColumnName": [
+            "MODULECODE"
+        ],
+        "fkTableName": "SYMODULEIC",
+        "pkColumnName": [
+            "MODULECODE"
+        ],
+        "pkTableName": "SYMODULE"
+    },
+    {
+        "fkColumnName": [
+            "MODULECODE"
+        ],
+        "fkTableName": "SYMODULEPRT",
+        "pkColumnName": [
+            "MODULECODE"
+        ],
+        "pkTableName": "SYMODULE"
+    },
+    {
+        "fkColumnName": [
+            "MASTERMODULE",
+            "MODULECODE"
+        ],
+        "fkTableName": "SYMODULERELATION",
+        "pkColumnName": [
+            "MODULECODE"
+        ],
+        "pkTableName": "SYMODULE"
+    },
+    {
+        "fkColumnName": [
+            "MODULECODE"
+        ],
+        "fkTableName": "SYMODULESERVICE",
+        "pkColumnName": [
+            "MODULECODE"
+        ],
+        "pkTableName": "SYMODULE"
+    },
+    {
+        "fkColumnName": [
+            "ICNAME"
+        ],
+        "fkTableName": "SYMODULETYPEIC",
+        "pkColumnName": [
+            "ICNAME"
+        ],
+        "pkTableName": "SYINITCONTEXT"
+    },
+    {
+        "fkColumnName": [
+            "SCHEMECODE",
+            "POOLGROUP"
+        ],
+        "fkTableName": "SYNUMMAP",
+        "pkColumnName": [
+            "SCHEMECODE"
+        ],
+        "pkTableName": "SYNUMNAME"
+    },
+    {
+        "fkColumnName": [
+            "SYORGCHART_UNID"
+        ],
+        "fkTableName": "SYOACCESSAUTH",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "SYORGCHART"
+    },
+    {
+        "fkColumnName": [
+            "SYORGCHART_UNID"
+        ],
+        "fkTableName": "SYOCONSTANT",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "SYORGCHART"
+    },
+    {
+        "fkColumnName": [
+            "FMPARTY_UNID"
+        ],
+        "fkTableName": "SYOCUSTOMER",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "FMPARTY"
+    },
+    {
+        "fkColumnName": [
+            "SYORGCHART_UNID"
+        ],
+        "fkTableName": "SYOCUSTOMER",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "SYORGCHART"
+    },
+    {
+        "fkColumnName": [
+            "SYORGCHART_UNID"
+        ],
+        "fkTableName": "SYODATAAUTH",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "SYORGCHART"
+    },
+    {
+        "fkColumnName": [
+            "SYORGCHART_UNID"
+        ],
+        "fkTableName": "SYOFORMPRINTER",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "SYORGCHART"
+    },
+    {
+        "fkColumnName": [
+            "SYORGCHART_UNID"
+        ],
+        "fkTableName": "SYOMENURESTRICTION",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "SYORGCHART"
+    },
+    {
+        "fkColumnName": [
+            "SYORGCHART_UNID"
+        ],
+        "fkTableName": "SYOMODULERESTRICTION",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "SYORGCHART"
+    },
+    {
+        "fkColumnName": [
+            "SYORGCHART_UNID"
+        ],
+        "fkTableName": "SYOPARTYCTRL",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "SYORGCHART"
+    },
+    {
+        "fkColumnName": [
+            "SYORGCHART_UNID"
+        ],
+        "fkTableName": "SYOPREFERENCE",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "SYORGCHART"
+    },
+    {
+        "fkColumnName": [
+            "SYORGCHART_UNID"
+        ],
+        "fkTableName": "SYOPRIVILEGE",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "SYORGCHART"
+    },
+    {
+        "fkColumnName": [
+            "PARENT_UNID"
+        ],
+        "fkTableName": "SYORGCHART",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "SYORGCHART"
+    },
+    {
+        "fkColumnName": [
+            "SYORGCHART_UNID"
+        ],
+        "fkTableName": "SYOTYPEOWNERAUTH",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "SYORGCHART"
+    },
+    {
+        "fkColumnName": [
+            "SYORGCHART_UNID"
+        ],
+        "fkTableName": "SYOWORKFLOW",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "SYORGCHART"
+    },
+    {
+        "fkColumnName": [
+            "SYMENU_UNID"
+        ],
+        "fkTableName": "SYRMENURESTRICTION",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "SYMENU"
+    },
+    {
+        "fkColumnName": [
+            "SYROLE_UNID"
+        ],
+        "fkTableName": "SYRMENURESTRICTION",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "SYROLE"
+    },
+    {
+        "fkColumnName": [
+            "SYROLE_UNID"
+        ],
+        "fkTableName": "SYRMODULERESTRICTION",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "SYROLE"
+    },
+    {
+        "fkColumnName": [
+            "SYROLE_UNID"
+        ],
+        "fkTableName": "SYRPREFERENCE",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "SYROLE"
+    },
+    {
+        "fkColumnName": [
+            "SYROLE_UNID"
+        ],
+        "fkTableName": "SYRPRIVILEGE",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "SYROLE"
+    },
+    {
+        "fkColumnName": [
+            "SYCOSTRUC_UNID"
+        ],
+        "fkTableName": "SYRULE",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "SYCOSTRUC"
+    },
+    {
+        "fkColumnName": [
+            "SYROLE_UNID"
+        ],
+        "fkTableName": "SYRWORKFLOW",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "SYROLE"
+    },
+    {
+        "fkColumnName": [
+            "UNID"
+        ],
+        "fkTableName": "SYSARCCUSTOMIZEDCONDITION",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "SYSARCHIVING"
+    },
+    {
+        "fkColumnName": [
+            "UNID"
+        ],
+        "fkTableName": "SYSARCPREDEFINEDCONDITION",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "SYSARCHIVING"
+    },
+    {
+        "fkColumnName": [
+            "SYORGCHART_UNID"
+        ],
+        "fkTableName": "SYUROLE",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "SYORGCHART"
+    },
+    {
+        "fkColumnName": [
+            "SYROLE_UNID"
+        ],
+        "fkTableName": "SYUROLE",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "SYROLE"
+    },
+    {
+        "fkColumnName": [
+            "SYORGCHART_UNID"
+        ],
+        "fkTableName": "SYUSER",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "SYORGCHART"
+    },
+    {
+        "fkColumnName": [
+            "TEAHDR_UNID"
+        ],
+        "fkTableName": "TEAITEM",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "TEAHDR"
+    },
+    {
+        "fkColumnName": [
+            "TEAHDR_UNID"
+        ],
+        "fkTableName": "TEAORGITEM",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "TEAHDR"
+    },
+    {
+        "fkColumnName": [
+            "RECURINFO_UNID"
+        ],
+        "fkTableName": "TRIGGERS",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "RECURINFO"
+    },
+    {
+        "fkColumnName": [
+            "PARAMDATA_UNID"
+        ],
+        "fkTableName": "TRIGGERS",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "PARAMDATA"
+    },
+    {
+        "fkColumnName": [
+            "JOB_UNID"
+        ],
+        "fkTableName": "ULD",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "JOB"
+    },
+    {
+        "fkColumnName": [
+            "JOB_UNID"
+        ],
+        "fkTableName": "ULDCONSOL",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "JOB"
+    },
+    {
+        "fkColumnName": [
+            "ULD_UNID"
+        ],
+        "fkTableName": "ULDCONSOL",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "ULD"
+    },
+    {
+        "fkColumnName": [
+            "VANHDR_UNID"
+        ],
+        "fkTableName": "VANITEM",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "VANHDR"
+    },
+    {
+        "fkColumnName": [
+            "VCHDRUNID"
+        ],
+        "fkTableName": "VCAMENDMENT",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "VCHDR"
+    },
+    {
+        "fkColumnName": [
+            "VCHDRUNID"
+        ],
+        "fkTableName": "VCARBITRARY",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "VCHDR"
+    },
+    {
+        "fkColumnName": [
+            "VCHDRUNID",
+            "VCARBITRARYSNO"
+        ],
+        "fkTableName": "VCARBITRARYRATE",
+        "pkColumnName": [
+            "VCHDRUNID"
+        ],
+        "pkTableName": "VCARBITRARY"
+    },
+    {
+        "fkColumnName": [
+            "VCHDRUNID"
+        ],
+        "fkTableName": "VCARBSURCHARGE",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "VCHDR"
+    },
+    {
+        "fkColumnName": [
+            "VCHDRUNID",
+            "VCARBSURCHARGESNO"
+        ],
+        "fkTableName": "VCARBSURCHARGERATE",
+        "pkColumnName": [
+            "VCHDRUNID"
+        ],
+        "pkTableName": "VCARBSURCHARGE"
+    },
+    {
+        "fkColumnName": [
+            "VCHDRUNID"
+        ],
+        "fkTableName": "VCCOMM",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "VCHDR"
+    },
+    {
+        "fkColumnName": [
+            "VCHDRUNID",
+            "VCCOMMSNO"
+        ],
+        "fkTableName": "VCCOMMDTL",
+        "pkColumnName": [
+            "VCHDRUNID"
+        ],
+        "pkTableName": "VCCOMM"
+    },
+    {
+        "fkColumnName": [
+            "VCHDRUNID"
+        ],
+        "fkTableName": "VCLOCALCHG",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "VCHDR"
+    },
+    {
+        "fkColumnName": [
+            "VCHDRUNID",
+            "VCLOCALCHGSNO"
+        ],
+        "fkTableName": "VCLOCALCHGRATE",
+        "pkColumnName": [
+            "VCHDRUNID"
+        ],
+        "pkTableName": "VCLOCALCHG"
+    },
+    {
+        "fkColumnName": [
+            "VCHDRUNID",
+            "VCLOCALCHGSNO"
+        ],
+        "fkTableName": "VCLOCALCHGTSP",
+        "pkColumnName": [
+            "VCHDRUNID"
+        ],
+        "pkTableName": "VCLOCALCHG"
+    },
+    {
+        "fkColumnName": [
+            "VCHDRUNID",
+            "VCLOCALCHGSNO"
+        ],
+        "fkTableName": "VCLOCALCHGVIA",
+        "pkColumnName": [
+            "VCHDRUNID"
+        ],
+        "pkTableName": "VCLOCALCHG"
+    },
+    {
+        "fkColumnName": [
+            "VCHDRUNID"
+        ],
+        "fkTableName": "VCLOCALSVROTH",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "VCHDR"
+    },
+    {
+        "fkColumnName": [
+            "VCHDRUNID",
+            "VCLOCALSVROTHSNO"
+        ],
+        "fkTableName": "VCLOCALSVROTHRATE",
+        "pkColumnName": [
+            "VCHDRUNID"
+        ],
+        "pkTableName": "VCLOCALSVROTH"
+    },
+    {
+        "fkColumnName": [
+            "VCHDRUNID"
+        ],
+        "fkTableName": "VCLOCALSVRTPT",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "VCHDR"
+    },
+    {
+        "fkColumnName": [
+            "VCHDRUNID",
+            "VCLOCALSVRTPTSNO"
+        ],
+        "fkTableName": "VCLOCALSVRTPTRATE",
+        "pkColumnName": [
+            "VCHDRUNID"
+        ],
+        "pkTableName": "VCLOCALSVRTPT"
+    },
+    {
+        "fkColumnName": [
+            "VCHDRUNID"
+        ],
+        "fkTableName": "VCLOCALSVRTPTSUR",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "VCHDR"
+    },
+    {
+        "fkColumnName": [
+            "VCHDRUNID",
+            "VCLOCALSVRTPTSURSNO"
+        ],
+        "fkTableName": "VCLOCALSVRTPTSURRATE",
+        "pkColumnName": [
+            "VCHDRUNID"
+        ],
+        "pkTableName": "VCLOCALSVRTPTSUR"
+    },
+    {
+        "fkColumnName": [
+            "VCHDRUNID"
+        ],
+        "fkTableName": "VCOFT",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "VCHDR"
+    },
+    {
+        "fkColumnName": [
+            "VCHDRUNID",
+            "VCOFTSNO"
+        ],
+        "fkTableName": "VCOFTRATE",
+        "pkColumnName": [
+            "VCHDRUNID"
+        ],
+        "pkTableName": "VCOFT"
+    },
+    {
+        "fkColumnName": [
+            "VCHDRUNID",
+            "VCOFTSNO"
+        ],
+        "fkTableName": "VCOFTTSP",
+        "pkColumnName": [
+            "VCHDRUNID"
+        ],
+        "pkTableName": "VCOFT"
+    },
+    {
+        "fkColumnName": [
+            "VCHDRUNID",
+            "VCOFTSNO"
+        ],
+        "fkTableName": "VCOFTVIA",
+        "pkColumnName": [
+            "VCHDRUNID"
+        ],
+        "pkTableName": "VCOFT"
+    },
+    {
+        "fkColumnName": [
+            "VCHDRUNID"
+        ],
+        "fkTableName": "VCREMARK",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "VCHDR"
+    },
+    {
+        "fkColumnName": [
+            "VCHDRUNID"
+        ],
+        "fkTableName": "VCREVISION",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "VCHDR"
+    },
+    {
+        "fkColumnName": [
+            "VCHDRUNID"
+        ],
+        "fkTableName": "VCRIGHT",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "VCHDR"
+    },
+    {
+        "fkColumnName": [
+            "VCHDRUNID"
+        ],
+        "fkTableName": "VCSUR",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "VCHDR"
+    },
+    {
+        "fkColumnName": [
+            "VCHDRUNID",
+            "VCSURSNO"
+        ],
+        "fkTableName": "VCSURRATE",
+        "pkColumnName": [
+            "VCHDRUNID"
+        ],
+        "pkTableName": "VCSUR"
+    },
+    {
+        "fkColumnName": [
+            "VCHDRUNID",
+            "VCSURSNO"
+        ],
+        "fkTableName": "VCSURTSP",
+        "pkColumnName": [
+            "VCHDRUNID"
+        ],
+        "pkTableName": "VCSUR"
+    },
+    {
+        "fkColumnName": [
+            "VCHDRUNID",
+            "VCSURSNO"
+        ],
+        "fkTableName": "VCSURVIA",
+        "pkColumnName": [
+            "VCHDRUNID"
+        ],
+        "pkTableName": "VCSUR"
+    },
+    {
+        "fkColumnName": [
+            "VCHDRUNID"
+        ],
+        "fkTableName": "VCWH",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "VCHDR"
+    },
+    {
+        "fkColumnName": [
+            "VCHDRUNID",
+            "VCWHSNO"
+        ],
+        "fkTableName": "VCWHRATE",
+        "pkColumnName": [
+            "VCHDRUNID"
+        ],
+        "pkTableName": "VCWH"
+    },
+    {
+        "fkColumnName": [
+            "VCHDRUNID",
+            "VCWHSNO"
+        ],
+        "fkTableName": "VCWHVIA",
+        "pkColumnName": [
+            "VCHDRUNID"
+        ],
+        "pkTableName": "VCWH"
+    },
+    {
+        "fkColumnName": [
+            "VV_UNID"
+        ],
+        "fkTableName": "VESSELPORT",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "VESSELVOYAGE"
+    },
+    {
+        "fkColumnName": [
+            "VV_UNID",
+            "VP_SNO"
+        ],
+        "fkTableName": "VESSELPORTRATE",
+        "pkColumnName": [
+            "VV_UNID"
+        ],
+        "pkTableName": "VESSELPORT"
+    },
+    {
+        "fkColumnName": [
+            "VTRFNO_UNID",
+            "VTRFHDR_UNID"
+        ],
+        "fkTableName": "VTRFCBNNO",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "VTRFHDR"
+    },
+    {
+        "fkColumnName": [
+            "SYCOSTRUC_UNID"
+        ],
+        "fkTableName": "VTRFHDR",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "SYCOSTRUC"
+    },
+    {
+        "fkColumnName": [
+            "VTRFHDR_UNID"
+        ],
+        "fkTableName": "VTRFJOB",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "VTRFHDR"
+    },
+    {
+        "fkColumnName": [
+            "VTRFHDRUNID"
+        ],
+        "fkTableName": "VTRFRIGHTS",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "VTRFHDR"
+    },
+    {
+        "fkColumnName": [
+            "VVUNID",
+            "VVPORTSNO"
+        ],
+        "fkTableName": "VVPORTRAMP",
+        "pkColumnName": [
+            "VV_UNID"
+        ],
+        "pkTableName": "VESSELPORT"
+    },
+    {
+        "fkColumnName": [
+            "SERVICENAME"
+        ],
+        "fkTableName": "WFMODULEMAPPING",
+        "pkColumnName": [
+            "NAME"
+        ],
+        "pkTableName": "WFSERVICE"
+    },
+    {
+        "fkColumnName": [
+            "SERVICENAME"
+        ],
+        "fkTableName": "WFSERVICEPARAM",
+        "pkColumnName": [
+            "NAME"
+        ],
+        "pkTableName": "WFSERVICE"
+    },
+    {
+        "fkColumnName": [
+            "WFTASK_UNID"
+        ],
+        "fkTableName": "WFTASKFIELD",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "WFTASK"
+    },
+    {
+        "fkColumnName": [
+            "WFTASKQUERY_UNID"
+        ],
+        "fkTableName": "WFTASKPOPUP",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "WFTASKQUERY"
+    },
+    {
+        "fkColumnName": [
+            "WFTASK_UNID"
+        ],
+        "fkTableName": "WFTASKQUERY",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "WFTASK"
+    },
+    {
+        "fkColumnName": [
+            "WFTASKQUERY_UNID"
+        ],
+        "fkTableName": "WFTASKQUERYCRITERIA",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "WFTASKQUERY"
+    },
+    {
+        "fkColumnName": [
+            "WFTASKQUERY_UNID"
+        ],
+        "fkTableName": "WFTASKQUERYFIELD",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "WFTASKQUERY"
+    },
+    {
+        "fkColumnName": [
+            "WFTASKFIELD_UNID"
+        ],
+        "fkTableName": "WFTASKQUERYFIELD",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "WFTASKFIELD"
+    },
+    {
+        "fkColumnName": [
+            "WFTASKQUERY_UNID"
+        ],
+        "fkTableName": "WFTASKQUERYTEMP",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "WFTASKQUERY"
+    },
+    {
+        "fkColumnName": [
+            "WFTASKQUERYTEMP_UNID"
+        ],
+        "fkTableName": "WFTASKQUERYTEMPFIELD",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "WFTASKQUERYTEMP"
+    },
+    {
+        "fkColumnName": [
+            "WFTASKFIELD_UNID"
+        ],
+        "fkTableName": "WFTASKQUERYTEMPFIELD",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "WFTASKFIELD"
+    },
+    {
+        "fkColumnName": [
+            "PACKAGEID"
+        ],
+        "fkTableName": "WFXPDLVERSION",
+        "pkColumnName": [
+            "PACKAGEID"
+        ],
+        "pkTableName": "WFXPDLS"
+    },
+    {
+        "fkColumnName": [
+            "JOB_UNID"
+        ],
+        "fkTableName": "WORKORDERPARTY",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "JOB"
+    },
+    {
+        "fkColumnName": [
+            "JOB_UNID"
+        ],
+        "fkTableName": "YIELD",
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "JOB"
+    }
+]
