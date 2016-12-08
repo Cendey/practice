@@ -64,6 +64,8 @@ public class Scheme {
     public static final String DATA_PARENT = "data.parent";
     public static final String DATA_CHILD = "data.child";
 
+    public static final int MINIMUM_SIZE = 20;
+    public static final int MAXIMUM_SIZE = 35;
     //UI CSS Attribute
     public static final String UI_DEFAULT_TITLE = "ui.default.title";
     public static final String UI_LABEL = "ui.label";

@@ -8,6 +8,7 @@
     </JAVADOC>
     <SOURCES>
       <root url="jar://$MAVEN_REPOSITORY$/com/hynnet/oracle-driver-ojdbc/12.1.0.2/oracle-driver-ojdbc-12.1.0.2-sources.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/com/hynnet/oracle-driver-ojdbc/12.1.0.2/oracle-driver-ojdbc-12.1.0.2-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

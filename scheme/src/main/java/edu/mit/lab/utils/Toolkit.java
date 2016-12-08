@@ -111,6 +111,34 @@ public class Toolkit {
         return trees;
     }
 
+    /**
+     * <summary>This is the method which adjust the sizes of the nodes.</summary>
+     *
+     * @param graph   <p>Refer the graph</p>
+     * @param minSize <p>Minimum size of noe</p>
+     * @param maxSize <p>Maximum size of node</p>
+     */
+    public static void nodeSize(Graph graph, int minSize, int maxSize) {
+        int smaller = -1;
+        int greater = -1;
+        for (Node n : graph.getEachNode()) {
+            if (n.getDegree() > greater || smaller == -1)
+                greater = n.getDegree();
+            if (n.getDegree() < smaller || greater == -1)
+                smaller = n.getDegree();
+        }
+        for (Node n : graph.getEachNode()) {
+            double scale = (double) (n.getDegree() - smaller) / (double) (greater - smaller);
+            if (null != n.getAttribute("ui.style")) {
+                n.setAttribute(
+                    "ui.style",
+                    n.getAttribute("ui.style") + " size:" + Math.round((scale * maxSize) + minSize) + "px;");
+            } else {
+                n.addAttribute("ui.style", " size:" + Math.round((scale * maxSize) + minSize) + "px;");
+            }
+        }
+    }
+
     public static SortedSet<String> resolveDisconnectedGraph(Graph graph) {
         SortedSet<String> graphIds = new TreeSet<>(Comparator.naturalOrder());
         ConnectedComponents components = new ConnectedComponents(graph);

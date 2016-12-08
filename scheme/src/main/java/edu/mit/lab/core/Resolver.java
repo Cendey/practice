@@ -473,7 +473,7 @@ public class Resolver {
                             .addAttribute(key, edge.<String>getAttribute(key)));
                 }
             ));
-
+        Toolkit.nodeSize(result,1,5);
         result.addAttribute(Scheme.UI_DEFAULT_TITLE, StringUtils.remove(rootId, Scheme.NODE_PREFIX));
         result.addAttribute(Scheme.UI_STYLESHEET, "url(css/polish.css)");
         graphs.add(result);
