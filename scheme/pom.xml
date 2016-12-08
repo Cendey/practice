@@ -81,9 +81,16 @@
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/com.oracle/oracle -->
+        <!--<dependency>-->
+            <!--<groupId>com.oracle</groupId>-->
+            <!--<artifactId>ojdbc7</artifactId>-->
+            <!--<version>12.1.0.2</version>-->
+        <!--</dependency>-->
+
+        <!-- https://mvnrepository.com/artifact/com.hynnet/oracle-driver-ojdbc -->
         <dependency>
-            <groupId>com.oracle</groupId>
-            <artifactId>ojdbc7</artifactId>
+            <groupId>com.hynnet</groupId>
+            <artifactId>oracle-driver-ojdbc</artifactId>
             <version>12.1.0.2</version>
         </dependency>
 

@@ -4,6 +4,7 @@
             "JOB_UNID"
         ],
         "fkTableName": "ACCRUEDJOB",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -14,6 +15,7 @@
             "JOB_UNID"
         ],
         "fkTableName": "ACIINFO",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -24,6 +26,7 @@
             "ACLHDR_UNID"
         ],
         "fkTableName": "ACLCTN",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -34,6 +37,7 @@
             "ACLHDR_UNID"
         ],
         "fkTableName": "ACLJOBLINK",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -44,6 +48,7 @@
             "JOB_UNID"
         ],
         "fkTableName": "ACRAIRITEM",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -54,6 +59,7 @@
             "CUSTOMDECL_UNID"
         ],
         "fkTableName": "AESACTIONHISTORY",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -64,6 +70,7 @@
             "JOBUNID"
         ],
         "fkTableName": "AFRINFO",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -74,6 +81,7 @@
             "JOB_UNID"
         ],
         "fkTableName": "AIR",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -84,6 +92,7 @@
             "JOB_UNID"
         ],
         "fkTableName": "AIRITEM",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -94,6 +103,7 @@
             "JOB_UNID"
         ],
         "fkTableName": "AIRMDTEXT",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -104,6 +114,7 @@
             "JOB_UNID"
         ],
         "fkTableName": "AIRROUTE",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -114,6 +125,7 @@
             "JOB_UNID"
         ],
         "fkTableName": "AIRROUTEOTHER",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -124,6 +136,7 @@
             "ULD_UNID"
         ],
         "fkTableName": "AIRULDITEM",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -134,6 +147,7 @@
             "AUDITSETUP_UNID"
         ],
         "fkTableName": "AUDITFUNCTION",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -144,6 +158,7 @@
             "JOB_UNID"
         ],
         "fkTableName": "CARGOITEM",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -154,6 +169,7 @@
             "CASSHDR_UNID"
         ],
         "fkTableName": "CASSDTL",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -165,6 +181,7 @@
             "CASSDTL_SNO"
         ],
         "fkTableName": "CASSRECON",
+        "keySequence": 1,
         "pkColumnName": [
             "CASSHDR_UNID"
         ],
@@ -175,6 +192,7 @@
             "CCHDRUNID"
         ],
         "fkTableName": "CCAMENDMENT",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -185,6 +203,7 @@
             "CCHDRUNID"
         ],
         "fkTableName": "CCARBITRARY",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -196,6 +215,7 @@
             "CCARBITRARYSNO"
         ],
         "fkTableName": "CCARBITRARYRATE",
+        "keySequence": 1,
         "pkColumnName": [
             "CCHDRUNID"
         ],
@@ -206,6 +226,7 @@
             "CCHDRUNID"
         ],
         "fkTableName": "CCARBSURCHARGE",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -217,6 +238,7 @@
             "CCARBSURCHARGESNO"
         ],
         "fkTableName": "CCARBSURCHARGERATE",
+        "keySequence": 1,
         "pkColumnName": [
             "CCHDRUNID"
         ],
@@ -227,6 +249,7 @@
             "CCHDRUNID"
         ],
         "fkTableName": "CCCOMM",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -238,6 +261,7 @@
             "CCCOMMSNO"
         ],
         "fkTableName": "CCCOMMDTL",
+        "keySequence": 1,
         "pkColumnName": [
             "CCHDRUNID"
         ],
@@ -248,6 +272,7 @@
             "CCHDRUNID"
         ],
         "fkTableName": "CCCUSTOMER",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -258,6 +283,7 @@
             "CCHDRUNID"
         ],
         "fkTableName": "CCLOCALCHG",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -269,6 +295,7 @@
             "CCLOCALCHGSNO"
         ],
         "fkTableName": "CCLOCALCHGRATE",
+        "keySequence": 1,
         "pkColumnName": [
             "CCHDRUNID"
         ],
@@ -280,6 +307,7 @@
             "CCLOCALCHGSNO"
         ],
         "fkTableName": "CCLOCALCHGTSP",
+        "keySequence": 1,
         "pkColumnName": [
             "CCHDRUNID"
         ],
@@ -291,6 +319,7 @@
             "CCLOCALCHGSNO"
         ],
         "fkTableName": "CCLOCALCHGVIA",
+        "keySequence": 1,
         "pkColumnName": [
             "CCHDRUNID"
         ],
@@ -301,6 +330,7 @@
             "CCHDRUNID"
         ],
         "fkTableName": "CCLOCALSVROTH",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -312,6 +342,7 @@
             "CCLOCALSVROTHSNO"
         ],
         "fkTableName": "CCLOCALSVROTHRATE",
+        "keySequence": 1,
         "pkColumnName": [
             "CCHDRUNID"
         ],
@@ -322,6 +353,7 @@
             "CCHDRUNID"
         ],
         "fkTableName": "CCLOCALSVRTPT",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -333,6 +365,7 @@
             "CCLOCALSVRTPTSNO"
         ],
         "fkTableName": "CCLOCALSVRTPTRATE",
+        "keySequence": 1,
         "pkColumnName": [
             "CCHDRUNID"
         ],
@@ -343,6 +376,7 @@
             "CCHDRUNID"
         ],
         "fkTableName": "CCLOCALSVRTPTSUR",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -354,6 +388,7 @@
             "CCLOCALSVRTPTSURSNO"
         ],
         "fkTableName": "CCLOCALSVRTPTSURRATE",
+        "keySequence": 1,
         "pkColumnName": [
             "CCHDRUNID"
         ],
@@ -364,6 +399,7 @@
             "CCHDRUNID"
         ],
         "fkTableName": "CCOFT",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -375,6 +411,7 @@
             "CCOFTSNO"
         ],
         "fkTableName": "CCOFTRATE",
+        "keySequence": 1,
         "pkColumnName": [
             "CCHDRUNID"
         ],
@@ -386,6 +423,7 @@
             "CCOFTSNO"
         ],
         "fkTableName": "CCOFTTSP",
+        "keySequence": 1,
         "pkColumnName": [
             "CCHDRUNID"
         ],
@@ -397,6 +435,7 @@
             "CCOFTSNO"
         ],
         "fkTableName": "CCOFTVIA",
+        "keySequence": 1,
         "pkColumnName": [
             "CCHDRUNID"
         ],
@@ -407,6 +446,7 @@
             "CCHDRUNID"
         ],
         "fkTableName": "CCREMARK",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -417,6 +457,7 @@
             "CCHDRUNID"
         ],
         "fkTableName": "CCREVISION",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -427,6 +468,7 @@
             "CCHDRUNID"
         ],
         "fkTableName": "CCRIGHT",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -437,6 +479,7 @@
             "CCHDRUNID"
         ],
         "fkTableName": "CCSUR",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -448,6 +491,7 @@
             "CCSURSNO"
         ],
         "fkTableName": "CCSURRATE",
+        "keySequence": 1,
         "pkColumnName": [
             "CCHDRUNID"
         ],
@@ -459,6 +503,7 @@
             "CCSURSNO"
         ],
         "fkTableName": "CCSURTSP",
+        "keySequence": 1,
         "pkColumnName": [
             "CCHDRUNID"
         ],
@@ -470,6 +515,7 @@
             "CCSURSNO"
         ],
         "fkTableName": "CCSURVIA",
+        "keySequence": 1,
         "pkColumnName": [
             "CCHDRUNID"
         ],
@@ -480,6 +526,7 @@
             "CCHDRUNID"
         ],
         "fkTableName": "CCWH",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -491,6 +538,7 @@
             "CCWHSNO"
         ],
         "fkTableName": "CCWHRATE",
+        "keySequence": 1,
         "pkColumnName": [
             "CCHDRUNID"
         ],
@@ -502,6 +550,7 @@
             "CCWHSNO"
         ],
         "fkTableName": "CCWHVIA",
+        "keySequence": 1,
         "pkColumnName": [
             "CCHDRUNID"
         ],
@@ -512,6 +561,7 @@
             "JOB_UNID"
         ],
         "fkTableName": "CFSJOB",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -522,6 +572,7 @@
             "CHANGELOGHDR_UNID"
         ],
         "fkTableName": "CHANGELOGDTL",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -532,6 +583,7 @@
             "JOB_UNID"
         ],
         "fkTableName": "CHANGELOGHDR",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -542,6 +594,7 @@
             "JOB_UNID"
         ],
         "fkTableName": "CHARGEREMIND",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -552,6 +605,7 @@
             "JOB_UNID"
         ],
         "fkTableName": "CLAIM",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -562,6 +616,7 @@
             "CLAIMHDR_UNID"
         ],
         "fkTableName": "CLAIMREMARK",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -572,6 +627,7 @@
             "COMINVHDR_UNID"
         ],
         "fkTableName": "COMINVITEM",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -582,6 +638,7 @@
             "COMINVHDR_UNID"
         ],
         "fkTableName": "COMINVJOBLINK",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -592,6 +649,7 @@
             "JOB_UNID"
         ],
         "fkTableName": "CONSOLEJOB",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -602,6 +660,7 @@
             "CONSOLPLAN_UNID"
         ],
         "fkTableName": "CONSOLPLANDTL",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -612,6 +671,7 @@
             "CONSOLPLANTASKHDR_UNID"
         ],
         "fkTableName": "CONSOLPLANTASKDTL",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -619,19 +679,10 @@
     },
     {
         "fkColumnName": [
-            "JOB_UNID"
-        ],
-        "fkTableName": "CONTAINER",
-        "pkColumnName": [
-            "UNID"
-        ],
-        "pkTableName": "JOB"
-    },
-    {
-        "fkColumnName": [
             "VV_UNID"
         ],
         "fkTableName": "CONTAINER",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -639,9 +690,21 @@
     },
     {
         "fkColumnName": [
+            "JOB_UNID"
+        ],
+        "fkTableName": "CONTAINER",
+        "keySequence": 1,
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "JOB"
+    },
+    {
+        "fkColumnName": [
             "CONTAINER_UNID"
         ],
         "fkTableName": "CONTJCCOST",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -652,6 +715,7 @@
             "CONTAINER_UNID"
         ],
         "fkTableName": "CONTJCREVENUE",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -663,6 +727,7 @@
             "CPVJOB_SNO"
         ],
         "fkTableName": "CPVDTL",
+        "keySequence": 1,
         "pkColumnName": [
             "CPVHDR_UNID"
         ],
@@ -673,6 +738,7 @@
             "CPVHDRUNID"
         ],
         "fkTableName": "CPVFLEXIINFO",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -683,6 +749,7 @@
             "CPVHDR_UNID"
         ],
         "fkTableName": "CPVJOB",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -693,6 +760,7 @@
             "TRIGGERS_UNID"
         ],
         "fkTableName": "CRONTRIGGERS",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -703,6 +771,7 @@
             "JOB_UNID"
         ],
         "fkTableName": "CSIINFO",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -713,6 +782,7 @@
             "VV_UNID"
         ],
         "fkTableName": "CSIPORT",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -723,6 +793,7 @@
             "JOB_UNID"
         ],
         "fkTableName": "CSIUPLOADLOG",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -733,6 +804,7 @@
             "CSRHDR_UNID"
         ],
         "fkTableName": "CSRJOB",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -743,6 +815,7 @@
             "CONTAINER_UNID"
         ],
         "fkTableName": "CTNSTATUS",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -754,6 +827,7 @@
             "CTRFCHG_SNO"
         ],
         "fkTableName": "CTRFBKP",
+        "keySequence": 1,
         "pkColumnName": [
             "CTRFJOB_UNID"
         ],
@@ -761,10 +835,11 @@
     },
     {
         "fkColumnName": [
-            "CTRFNO_UNID",
-            "CTRFHDR_UNID"
+            "CTRFHDR_UNID",
+            "CTRFNO_UNID"
         ],
         "fkTableName": "CTRFCBNNO",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -775,6 +850,7 @@
             "CTRFJOB_UNID"
         ],
         "fkTableName": "CTRFCHG",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -785,6 +861,7 @@
             "CTRFHDR_UNID"
         ],
         "fkTableName": "CTRFJOB",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -795,6 +872,7 @@
             "CTRFHDRUNID"
         ],
         "fkTableName": "CTRFRIGHTS",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -805,6 +883,7 @@
             "CUSTOMDECL_UNID"
         ],
         "fkTableName": "CUSTOMCONTAINER",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -815,6 +894,7 @@
             "JOB_UNID"
         ],
         "fkTableName": "CUSTOMDECL",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -825,6 +905,7 @@
             "CUSTOMDECL_UNID"
         ],
         "fkTableName": "CUSTOMITEM",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -835,6 +916,7 @@
             "CUSTOMDECL_UNID"
         ],
         "fkTableName": "CUSTOMPARTY",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -845,6 +927,7 @@
             "CUSTOMDECLUNID"
         ],
         "fkTableName": "CUSTOMREFNO",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -855,6 +938,7 @@
             "CUSTOMDECLUNID"
         ],
         "fkTableName": "CUSTOMREMARK",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -865,6 +949,7 @@
             "CUSTOMDECLUNID"
         ],
         "fkTableName": "CUSTOMRESPONSE",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -876,6 +961,7 @@
             "CUSTOMITEM_SNO"
         ],
         "fkTableName": "CUSTOMVEHICLE",
+        "keySequence": 1,
         "pkColumnName": [
             "CUSTOMDECL_UNID"
         ],
@@ -886,6 +972,7 @@
             "JOB_UNID"
         ],
         "fkTableName": "DGITEM",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -896,6 +983,7 @@
             "JOB_UNID"
         ],
         "fkTableName": "DIM",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -906,6 +994,7 @@
             "JOB_UNID"
         ],
         "fkTableName": "DOCPRTLOG",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -916,6 +1005,7 @@
             "JOB_UNID"
         ],
         "fkTableName": "DOCREQ",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -926,6 +1016,7 @@
             "DOHDRUNID"
         ],
         "fkTableName": "DOFLEXIINFO",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -936,6 +1027,7 @@
             "JOB_UNID"
         ],
         "fkTableName": "DOHDR",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -946,6 +1038,7 @@
             "DOHDR_UNID"
         ],
         "fkTableName": "DOITEM",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -956,6 +1049,7 @@
             "ECR_UNID"
         ],
         "fkTableName": "ECRLOCATION",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -963,19 +1057,10 @@
     },
     {
         "fkColumnName": [
-            "CPVHDR_UNID"
-        ],
-        "fkTableName": "EXCONTRACTCPV",
-        "pkColumnName": [
-            "UNID"
-        ],
-        "pkTableName": "CPVHDR"
-    },
-    {
-        "fkColumnName": [
             "FMEXRATECONTRACT_UNID"
         ],
         "fkTableName": "EXCONTRACTCPV",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -983,9 +1068,21 @@
     },
     {
         "fkColumnName": [
+            "CPVHDR_UNID"
+        ],
+        "fkTableName": "EXCONTRACTCPV",
+        "keySequence": 1,
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "CPVHDR"
+    },
+    {
+        "fkColumnName": [
             "EXPDECLHDR_UNID"
         ],
         "fkTableName": "EXPDECLITEM",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -996,6 +1093,7 @@
             "EXPDECLHDR_UNID"
         ],
         "fkTableName": "EXPDECLORGITEM",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -1006,6 +1104,7 @@
             "JOB_UNID"
         ],
         "fkTableName": "EXPIMPQRTN",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -1016,6 +1115,7 @@
             "FINCOMMPAIDHDR_UNID"
         ],
         "fkTableName": "FINCOMMPAIDDTL",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -1026,6 +1126,7 @@
             "FMAGTCON_UNID"
         ],
         "fkTableName": "FMAGTFRTCST",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -1036,6 +1137,7 @@
             "FMAGTCON_UNID"
         ],
         "fkTableName": "FMAGTOTHCST",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -1046,6 +1148,7 @@
             "FMCHARGECODEUNID"
         ],
         "fkTableName": "FMCHRGCODEDESC",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -1056,6 +1159,7 @@
             "FMCHARGECODE_UNID"
         ],
         "fkTableName": "FMCHRGCODEMAP",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -1067,6 +1171,7 @@
             "CITYCODE"
         ],
         "fkTableName": "FMCITYAREA",
+        "keySequence": 1,
         "pkColumnName": [
             "CTRYCODE"
         ],
@@ -1078,6 +1183,7 @@
             "CITYCODE"
         ],
         "fkTableName": "FMCITYCARRIER",
+        "keySequence": 1,
         "pkColumnName": [
             "CTRYCODE"
         ],
@@ -1089,6 +1195,7 @@
             "CITYCODE"
         ],
         "fkTableName": "FMCITYCUSTCODE",
+        "keySequence": 1,
         "pkColumnName": [
             "CTRYCODE"
         ],
@@ -1100,6 +1207,7 @@
             "CITYCODE"
         ],
         "fkTableName": "FMCITYLANE",
+        "keySequence": 1,
         "pkColumnName": [
             "CTRYCODE"
         ],
@@ -1111,6 +1219,7 @@
             "CITYCODE"
         ],
         "fkTableName": "FMCITYLOCALDESC",
+        "keySequence": 1,
         "pkColumnName": [
             "CTRYCODE"
         ],
@@ -1122,6 +1231,7 @@
             "CITYCODE"
         ],
         "fkTableName": "FMCITYPORTAREA",
+        "keySequence": 1,
         "pkColumnName": [
             "CTRYCODE"
         ],
@@ -1133,6 +1243,7 @@
             "CITYCODE"
         ],
         "fkTableName": "FMCITYREGION",
+        "keySequence": 1,
         "pkColumnName": [
             "CTRYCODE"
         ],
@@ -1143,6 +1254,7 @@
             "FMCODE_UNID"
         ],
         "fkTableName": "FMCODECOND",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -1153,6 +1265,7 @@
             "FMCODE_UNID"
         ],
         "fkTableName": "FMCODEMAP",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -1163,6 +1276,7 @@
             "FMCONDITION_UNID"
         ],
         "fkTableName": "FMCONDITIONDTL",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -1173,6 +1287,7 @@
             "FMCONSOLRATEUNID"
         ],
         "fkTableName": "FMCONSOLRATEDTL",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -1184,6 +1299,7 @@
             "CONTTYPE"
         ],
         "fkTableName": "FMCTNCUSTCODE",
+        "keySequence": 1,
         "pkColumnName": [
             "SCHEMECODE"
         ],
@@ -1195,6 +1311,7 @@
             "CONTTYPE"
         ],
         "fkTableName": "FMCTNTYPEMAP",
+        "keySequence": 1,
         "pkColumnName": [
             "SCHEMECODE"
         ],
@@ -1205,6 +1322,7 @@
             "CTRYCODE"
         ],
         "fkTableName": "FMCTRYCUSTOM",
+        "keySequence": 1,
         "pkColumnName": [
             "CTRYCODE"
         ],
@@ -1215,6 +1333,7 @@
             "CTRYCODE"
         ],
         "fkTableName": "FMCTRYLOCALDESC",
+        "keySequence": 1,
         "pkColumnName": [
             "CTRYCODE"
         ],
@@ -1225,6 +1344,7 @@
             "CTRYCODE"
         ],
         "fkTableName": "FMCTRYREGION",
+        "keySequence": 1,
         "pkColumnName": [
             "CTRYCODE"
         ],
@@ -1235,6 +1355,7 @@
             "CTRYCODE"
         ],
         "fkTableName": "FMCTRYSTATE",
+        "keySequence": 1,
         "pkColumnName": [
             "CTRYCODE"
         ],
@@ -1245,6 +1366,7 @@
             "CURRCODE"
         ],
         "fkTableName": "FMCURRLOCALDESC",
+        "keySequence": 1,
         "pkColumnName": [
             "CURRCODE"
         ],
@@ -1255,6 +1377,7 @@
             "CURRCODE"
         ],
         "fkTableName": "FMCURRRULE",
+        "keySequence": 1,
         "pkColumnName": [
             "CURRCODE"
         ],
@@ -1265,6 +1388,7 @@
             "TEMPLATEUNID"
         ],
         "fkTableName": "FMCUSTTEMPDECLDETAIL",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -1275,6 +1399,7 @@
             "FMDRIVER_UNID"
         ],
         "fkTableName": "FMDRIVERLIC",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -1285,6 +1410,7 @@
             "FMHANDBOOKHDR_UNID"
         ],
         "fkTableName": "FMHANDBOOKDTL",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -1295,6 +1421,7 @@
             "FMIATARATE_UNID"
         ],
         "fkTableName": "FMIATADTL",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -1305,6 +1432,7 @@
             "FMDRIVER_UNID"
         ],
         "fkTableName": "FMLEAVE",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -1315,6 +1443,7 @@
             "FMMESSAGE_UNID"
         ],
         "fkTableName": "FMMESSAGELOCAL",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -1325,6 +1454,7 @@
             "FMOTHCOST_UNID"
         ],
         "fkTableName": "FMOTHCOSTDTL",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -1335,6 +1465,7 @@
             "SYDOCUNID"
         ],
         "fkTableName": "FMPARTY",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -1345,6 +1476,7 @@
             "FMPARTY_UNID"
         ],
         "fkTableName": "FMPARTYACC",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -1355,6 +1487,7 @@
             "FMPARTY_UNID"
         ],
         "fkTableName": "FMPARTYADDR",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -1367,6 +1500,7 @@
             "FMPARTYADDR_SNO"
         ],
         "fkTableName": "FMPARTYADDRZONE",
+        "keySequence": 1,
         "pkColumnName": [
             "FMPARTY_UNID"
         ],
@@ -1377,6 +1511,7 @@
             "FMPARTY_UNID"
         ],
         "fkTableName": "FMPARTYATTN",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -1387,6 +1522,7 @@
             "FMPARTY_UNID"
         ],
         "fkTableName": "FMPARTYCONSTANT",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -1397,6 +1533,7 @@
             "FMPARTY_UNID"
         ],
         "fkTableName": "FMPARTYCONTRACT",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -1407,6 +1544,7 @@
             "FMPARTY_UNID"
         ],
         "fkTableName": "FMPARTYCONTRACT2",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -1417,6 +1555,7 @@
             "FMPARTY_UNID"
         ],
         "fkTableName": "FMPARTYCREDITTERM",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -1427,6 +1566,7 @@
             "FMPARTY_UNID"
         ],
         "fkTableName": "FMPARTYDOCRULE",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -1437,6 +1577,7 @@
             "FMPARTY_UNID"
         ],
         "fkTableName": "FMPARTYFLEXIINFO",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -1447,6 +1588,7 @@
             "FMPARTY_UNID"
         ],
         "fkTableName": "FMPARTYOTHINFO",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -1457,6 +1599,7 @@
             "FMPARTY_UNID"
         ],
         "fkTableName": "FMPARTYOTHINFOEXT",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -1467,6 +1610,7 @@
             "FMPARTY_UNID"
         ],
         "fkTableName": "FMPARTYPART",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -1477,6 +1621,7 @@
             "FMPARTY_UNID"
         ],
         "fkTableName": "FMPARTYPRSTL",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -1487,6 +1632,7 @@
             "FMPARTY_UNID"
         ],
         "fkTableName": "FMPARTYREL",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -1497,6 +1643,7 @@
             "FMPARTY_UNID"
         ],
         "fkTableName": "FMPARTYRIGHTS",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -1507,6 +1654,7 @@
             "FMPARTY_UNID"
         ],
         "fkTableName": "FMPARTYROLE",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -1517,6 +1665,7 @@
             "FMPARTY_UNID"
         ],
         "fkTableName": "FMPARTYSALES",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -1527,6 +1676,7 @@
             "FMPARTY_UNID"
         ],
         "fkTableName": "FMPARTYSERVICEPLAN",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -1538,6 +1688,7 @@
             "PROJECTNO"
         ],
         "fkTableName": "FMPROJECTRIGHTS",
+        "keySequence": 1,
         "pkColumnName": [
             "OWNERID"
         ],
@@ -1548,6 +1699,7 @@
             "FMCHARGECODE_UNID"
         ],
         "fkTableName": "FMREV_COST",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -1558,6 +1710,7 @@
             "FMRMRATETHRESHOLDUNID"
         ],
         "fkTableName": "FMRMRATETHRESHOLDDTL",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -1568,6 +1721,7 @@
             "SYCOSTRUC_UNID"
         ],
         "fkTableName": "FMROUTE",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -1578,6 +1732,7 @@
             "FMROUTE_UNID"
         ],
         "fkTableName": "FMROUTEDTL",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -1588,6 +1743,7 @@
             "FMROUTE_UNID"
         ],
         "fkTableName": "FMROUTERESTRICTION",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -1598,6 +1754,7 @@
             "FMSERVICELEVEL_UNID"
         ],
         "fkTableName": "FMSLMAP",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -1608,6 +1765,7 @@
             "FMSERVICELEVEL_UNID"
         ],
         "fkTableName": "FMSLNOTIFY",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -1619,6 +1777,7 @@
             "STATEPROV"
         ],
         "fkTableName": "FMSTATEMAPCODE",
+        "keySequence": 1,
         "pkColumnName": [
             "CTRYCODE"
         ],
@@ -1629,6 +1788,7 @@
             "FMSTLDATERULE_UNID"
         ],
         "fkTableName": "FMSTLDATERULEDTL",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -1639,6 +1799,7 @@
             "FMVEHTYPE_UNID"
         ],
         "fkTableName": "FMVEHCOMPARTMENT",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -1649,6 +1810,7 @@
             "FMVEH_UNID"
         ],
         "fkTableName": "FMVEHDOC",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -1659,6 +1821,7 @@
             "FMVEHTYPE_UNID"
         ],
         "fkTableName": "FMVEHEQUIP",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -1669,6 +1832,7 @@
             "FMVEH_UNID"
         ],
         "fkTableName": "FMVEHMAINT",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -1679,6 +1843,7 @@
             "FMVESSELMASTER_UNID"
         ],
         "fkTableName": "FMVESSELLOCALNAME",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -1690,6 +1855,7 @@
             "FOBROUTE_SNO"
         ],
         "fkTableName": "FOBCONTAINER",
+        "keySequence": 1,
         "pkColumnName": [
             "JOB_UNID"
         ],
@@ -1700,6 +1866,7 @@
             "JOB_UNID"
         ],
         "fkTableName": "FOBMAIN",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -1710,6 +1877,7 @@
             "JOB_UNID"
         ],
         "fkTableName": "FOBOPSTATUS",
+        "keySequence": 1,
         "pkColumnName": [
             "JOB_UNID"
         ],
@@ -1720,6 +1888,7 @@
             "JOB_UNID"
         ],
         "fkTableName": "FOBROUTE",
+        "keySequence": 1,
         "pkColumnName": [
             "JOB_UNID"
         ],
@@ -1731,6 +1900,7 @@
             "FOBROUTE_SNO"
         ],
         "fkTableName": "FOBROUTEHOUSE",
+        "keySequence": 1,
         "pkColumnName": [
             "JOB_UNID"
         ],
@@ -1741,6 +1911,7 @@
             "FSOFFSHDR_UNID"
         ],
         "fkTableName": "FSOFFSDTL",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -1752,6 +1923,7 @@
             "MSGREFNO"
         ],
         "fkTableName": "IAIRMDTEXT",
+        "keySequence": 1,
         "pkColumnName": [
             "SENDERNAME"
         ],
@@ -1763,6 +1935,7 @@
             "MSGREFNO"
         ],
         "fkTableName": "IAIRROUTE",
+        "keySequence": 1,
         "pkColumnName": [
             "SENDERNAME"
         ],
@@ -1774,6 +1947,7 @@
             "MSGREFNO"
         ],
         "fkTableName": "ICARGOITEM",
+        "keySequence": 1,
         "pkColumnName": [
             "SENDERNAME"
         ],
@@ -1785,6 +1959,7 @@
             "MSGREFNO"
         ],
         "fkTableName": "IDIM",
+        "keySequence": 1,
         "pkColumnName": [
             "SENDERNAME"
         ],
@@ -1796,6 +1971,7 @@
             "MSGREFNO"
         ],
         "fkTableName": "IDOCREQ",
+        "keySequence": 1,
         "pkColumnName": [
             "SENDERNAME"
         ],
@@ -1806,6 +1982,7 @@
             "PARTYID"
         ],
         "fkTableName": "IFMPARTYACC",
+        "keySequence": 1,
         "pkColumnName": [
             "PARTYID"
         ],
@@ -1816,6 +1993,7 @@
             "PARTYID"
         ],
         "fkTableName": "IFMPARTYACCDB",
+        "keySequence": 1,
         "pkColumnName": [
             "PARTYID"
         ],
@@ -1826,6 +2004,7 @@
             "PARTYID"
         ],
         "fkTableName": "IFMPARTYADDR",
+        "keySequence": 1,
         "pkColumnName": [
             "PARTYID"
         ],
@@ -1838,6 +2017,7 @@
             "FMPARTYADDR_SNO"
         ],
         "fkTableName": "IFMPARTYADDRAREA",
+        "keySequence": 1,
         "pkColumnName": [
             "PARTYID"
         ],
@@ -1850,6 +2030,7 @@
             "FMPARTYADDR_SNO"
         ],
         "fkTableName": "IFMPARTYADDRSITE",
+        "keySequence": 1,
         "pkColumnName": [
             "PARTYID"
         ],
@@ -1862,6 +2043,7 @@
             "FMPARTYADDR_SNO"
         ],
         "fkTableName": "IFMPARTYADDRZONE",
+        "keySequence": 1,
         "pkColumnName": [
             "PARTYID"
         ],
@@ -1872,6 +2054,7 @@
             "PARTYID"
         ],
         "fkTableName": "IFMPARTYATTN",
+        "keySequence": 1,
         "pkColumnName": [
             "PARTYID"
         ],
@@ -1882,6 +2065,7 @@
             "PARTYID"
         ],
         "fkTableName": "IFMPARTYCONSTANT",
+        "keySequence": 1,
         "pkColumnName": [
             "PARTYID"
         ],
@@ -1892,6 +2076,7 @@
             "PARTYID"
         ],
         "fkTableName": "IFMPARTYCONTRACT",
+        "keySequence": 1,
         "pkColumnName": [
             "PARTYID"
         ],
@@ -1902,6 +2087,7 @@
             "PARTYID"
         ],
         "fkTableName": "IFMPARTYCONTRACT2",
+        "keySequence": 1,
         "pkColumnName": [
             "PARTYID"
         ],
@@ -1912,6 +2098,7 @@
             "PARTYID"
         ],
         "fkTableName": "IFMPARTYCREDITTERM",
+        "keySequence": 1,
         "pkColumnName": [
             "PARTYID"
         ],
@@ -1922,6 +2109,7 @@
             "PARTYID"
         ],
         "fkTableName": "IFMPARTYDOCRULE",
+        "keySequence": 1,
         "pkColumnName": [
             "PARTYID"
         ],
@@ -1932,6 +2120,7 @@
             "PARTYID"
         ],
         "fkTableName": "IFMPARTYFLEXIINFO",
+        "keySequence": 1,
         "pkColumnName": [
             "PARTYID"
         ],
@@ -1942,6 +2131,7 @@
             "PARTYID"
         ],
         "fkTableName": "IFMPARTYOTHINFO",
+        "keySequence": 1,
         "pkColumnName": [
             "PARTYID"
         ],
@@ -1952,6 +2142,7 @@
             "PARTYID"
         ],
         "fkTableName": "IFMPARTYOTHINFOEXT",
+        "keySequence": 1,
         "pkColumnName": [
             "PARTYID"
         ],
@@ -1962,6 +2153,7 @@
             "PARTYID"
         ],
         "fkTableName": "IFMPARTYPART",
+        "keySequence": 1,
         "pkColumnName": [
             "PARTYID"
         ],
@@ -1973,6 +2165,7 @@
             "HDRSNO"
         ],
         "fkTableName": "IFMPARTYPREFERREDCARRDTL",
+        "keySequence": 1,
         "pkColumnName": [
             "PARTYID"
         ],
@@ -1983,6 +2176,7 @@
             "PARTYID"
         ],
         "fkTableName": "IFMPARTYPREFERREDCARRHDR",
+        "keySequence": 1,
         "pkColumnName": [
             "PARTYID"
         ],
@@ -1993,6 +2187,7 @@
             "PARTYID"
         ],
         "fkTableName": "IFMPARTYPRSTL",
+        "keySequence": 1,
         "pkColumnName": [
             "PARTYID"
         ],
@@ -2003,6 +2198,7 @@
             "PARTYID"
         ],
         "fkTableName": "IFMPARTYREL",
+        "keySequence": 1,
         "pkColumnName": [
             "PARTYID"
         ],
@@ -2013,6 +2209,7 @@
             "PARTYID"
         ],
         "fkTableName": "IFMPARTYRIGHTS",
+        "keySequence": 1,
         "pkColumnName": [
             "PARTYID"
         ],
@@ -2023,6 +2220,7 @@
             "PARTYID"
         ],
         "fkTableName": "IFMPARTYROLE",
+        "keySequence": 1,
         "pkColumnName": [
             "PARTYID"
         ],
@@ -2033,6 +2231,7 @@
             "PARTYID"
         ],
         "fkTableName": "IFMPARTYSALES",
+        "keySequence": 1,
         "pkColumnName": [
             "PARTYID"
         ],
@@ -2043,6 +2242,7 @@
             "PARTYID"
         ],
         "fkTableName": "IFMPARTYSERVICEPLAN",
+        "keySequence": 1,
         "pkColumnName": [
             "PARTYID"
         ],
@@ -2053,6 +2253,7 @@
             "IFSOFFSHDR_UNID"
         ],
         "fkTableName": "IFSOFFSDTL",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -2064,6 +2265,7 @@
             "MSGREFNO"
         ],
         "fkTableName": "IIMPORTLOG",
+        "keySequence": 1,
         "pkColumnName": [
             "SENDERNAME"
         ],
@@ -2075,6 +2277,7 @@
             "MSGREFNO"
         ],
         "fkTableName": "IJOBEXT",
+        "keySequence": 1,
         "pkColumnName": [
             "SENDERNAME"
         ],
@@ -2085,6 +2288,7 @@
             "INLANDSCHEDULERHDR_UNID"
         ],
         "fkTableName": "INLANDSCHEDULERDTL",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -2095,6 +2299,7 @@
             "INTF_ALS_REFUID"
         ],
         "fkTableName": "INTFARAPJOBDTL",
+        "keySequence": 1,
         "pkColumnName": [
             "INTF_ALS_REFUID"
         ],
@@ -2105,6 +2310,7 @@
             "INTF_ALS_REFUID"
         ],
         "fkTableName": "INTFARAPJOBDTLLOG",
+        "keySequence": 1,
         "pkColumnName": [
             "INTF_ALS_REFUID"
         ],
@@ -2115,6 +2321,7 @@
             "INTF_ALS_REFUID"
         ],
         "fkTableName": "INTFARAPJOBHDR",
+        "keySequence": 1,
         "pkColumnName": [
             "INTF_ALS_REFUID"
         ],
@@ -2125,6 +2332,7 @@
             "INTF_ALS_REFUID"
         ],
         "fkTableName": "INTFARAPJOBHDRLOG",
+        "keySequence": 1,
         "pkColumnName": [
             "INTF_ALS_REFUID"
         ],
@@ -2135,6 +2343,7 @@
             "INTFEXP_UNID"
         ],
         "fkTableName": "INTFEXPDTL",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -2145,6 +2354,7 @@
             "INTF_ALS_REFUID"
         ],
         "fkTableName": "INTFJCGLDTL",
+        "keySequence": 1,
         "pkColumnName": [
             "INTF_ALS_REFUID"
         ],
@@ -2155,6 +2365,7 @@
             "INTF_ALS_REFUID"
         ],
         "fkTableName": "INTF_FMPARTYACC",
+        "keySequence": 1,
         "pkColumnName": [
             "INTF_ALS_REFUID"
         ],
@@ -2165,6 +2376,7 @@
             "INTF_ALS_REFUID"
         ],
         "fkTableName": "INTF_FMPARTYADR",
+        "keySequence": 1,
         "pkColumnName": [
             "INTF_ALS_REFUID"
         ],
@@ -2175,6 +2387,7 @@
             "INTF_ALS_REFUID"
         ],
         "fkTableName": "INTF_FMPARTYISA",
+        "keySequence": 1,
         "pkColumnName": [
             "INTF_ALS_REFUID"
         ],
@@ -2185,6 +2398,7 @@
             "INTF_ALS_REFUID"
         ],
         "fkTableName": "INTF_FMPARTYMAP",
+        "keySequence": 1,
         "pkColumnName": [
             "INTF_ALS_REFUID"
         ],
@@ -2195,6 +2409,7 @@
             "INTF_ALS_REFUID"
         ],
         "fkTableName": "INTF_FMPARTYSAL",
+        "keySequence": 1,
         "pkColumnName": [
             "INTF_ALS_REFUID"
         ],
@@ -2205,6 +2420,7 @@
             "INVPCKLSTHDR_UNID"
         ],
         "fkTableName": "INVPCKJOBLINK",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -2215,6 +2431,7 @@
             "INVPCKLSTHDR_UNID"
         ],
         "fkTableName": "INVPCKLSTITEM",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -2226,6 +2443,7 @@
             "MSGREFNO"
         ],
         "fkTableName": "IQUOTEPORTS",
+        "keySequence": 1,
         "pkColumnName": [
             "SENDERNAME"
         ],
@@ -2237,6 +2455,7 @@
             "MSGREFNO"
         ],
         "fkTableName": "IREFNO",
+        "keySequence": 1,
         "pkColumnName": [
             "SENDERNAME"
         ],
@@ -2248,6 +2467,7 @@
             "MSGREFNO"
         ],
         "fkTableName": "IREMARK",
+        "keySequence": 1,
         "pkColumnName": [
             "SENDERNAME"
         ],
@@ -2259,6 +2479,7 @@
             "MSGREFNO"
         ],
         "fkTableName": "ISUPPLIER",
+        "keySequence": 1,
         "pkColumnName": [
             "SENDERNAME"
         ],
@@ -2269,6 +2490,7 @@
             "JOB_UNID"
         ],
         "fkTableName": "ITEMPCS",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -2280,6 +2502,7 @@
             "STATUS_SNO"
         ],
         "fkTableName": "ITEMSTATUS",
+        "keySequence": 1,
         "pkColumnName": [
             "JOB_UNID"
         ],
@@ -2290,6 +2513,7 @@
             "IVHDRUNID"
         ],
         "fkTableName": "IVFLEXIINFO",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -2300,6 +2524,7 @@
             "IVHDR_UNID"
         ],
         "fkTableName": "IVJOB",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -2310,6 +2535,7 @@
             "IVHDR_UNID"
         ],
         "fkTableName": "IVPRINTDESC",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -2320,6 +2546,7 @@
             "IVHDR_UNID"
         ],
         "fkTableName": "IVPRINTLOG",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -2331,6 +2558,7 @@
             "MSGREFNO"
         ],
         "fkTableName": "IWORKORDERPARTY",
+        "keySequence": 1,
         "pkColumnName": [
             "SENDERNAME"
         ],
@@ -2341,6 +2569,7 @@
             "JOB_UNID"
         ],
         "fkTableName": "JCCOST",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -2351,6 +2580,7 @@
             "JOB_UNID"
         ],
         "fkTableName": "JCREVENUE",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -2358,10 +2588,11 @@
     },
     {
         "fkColumnName": [
-            "VVSECOND_UNID",
-            "VV_UNID"
+            "VV_UNID",
+            "VVSECOND_UNID"
         ],
         "fkTableName": "JOB",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -2372,6 +2603,7 @@
             "JOBUNID"
         ],
         "fkTableName": "JOBACCESS",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -2382,6 +2614,7 @@
             "CLAIMHDR_UNID"
         ],
         "fkTableName": "JOBCLAIMLINK",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -2392,6 +2625,7 @@
             "JOB_UNID"
         ],
         "fkTableName": "JOBCUSTOMDECL",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -2402,6 +2636,7 @@
             "JOB_UNID"
         ],
         "fkTableName": "JOBCUSTOMPERMIT",
+        "keySequence": 1,
         "pkColumnName": [
             "JOB_UNID"
         ],
@@ -2412,40 +2647,33 @@
             "JOB_UNID"
         ],
         "fkTableName": "JOBFLEXIINFO",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
         "pkTableName": "JOB"
+    },
+    {
+        "fkColumnName": [
+            "INTFFILE_UNID"
+        ],
+        "fkTableName": "JOBINTFEXP",
+        "keySequence": 1,
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "INTFFILE"
     },
     {
         "fkColumnName": [
             "JOB_UNID"
         ],
         "fkTableName": "JOBINTFEXP",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
         "pkTableName": "JOB"
-    },
-    {
-        "fkColumnName": [
-            "INTFFILE_UNID"
-        ],
-        "fkTableName": "JOBINTFEXP",
-        "pkColumnName": [
-            "UNID"
-        ],
-        "pkTableName": "INTFFILE"
-    },
-    {
-        "fkColumnName": [
-            "INTFFILE_UNID"
-        ],
-        "fkTableName": "JOBINTFEXPDTL",
-        "pkColumnName": [
-            "UNID"
-        ],
-        "pkTableName": "INTFFILE"
     },
     {
         "fkColumnName": [
@@ -2453,6 +2681,7 @@
             "INTFCODE"
         ],
         "fkTableName": "JOBINTFEXPDTL",
+        "keySequence": 1,
         "pkColumnName": [
             "JOB_UNID"
         ],
@@ -2460,9 +2689,21 @@
     },
     {
         "fkColumnName": [
+            "INTFFILE_UNID"
+        ],
+        "fkTableName": "JOBINTFEXPDTL",
+        "keySequence": 1,
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "INTFFILE"
+    },
+    {
+        "fkColumnName": [
             "JOB_UNID"
         ],
         "fkTableName": "JOBINTFIMP",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -2473,6 +2714,7 @@
             "JOB_UNID"
         ],
         "fkTableName": "JOBINTOWH",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -2483,6 +2725,7 @@
             "JOB_UNID"
         ],
         "fkTableName": "JOBKCXCUSTOMDECL",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -2493,6 +2736,7 @@
             "JOB_UNID"
         ],
         "fkTableName": "JOBOTHER",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -2503,6 +2747,7 @@
             "JOB_UNID"
         ],
         "fkTableName": "JOBOTHEREXT",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -2513,6 +2758,7 @@
             "JOB_UNID"
         ],
         "fkTableName": "JOBOUTWH",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -2523,6 +2769,7 @@
             "JOB_UNID"
         ],
         "fkTableName": "JOBPARTY",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -2533,6 +2780,7 @@
             "JOB_EXPORT_UNID"
         ],
         "fkTableName": "JOBPOSTSTATUS",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -2543,6 +2791,7 @@
             "JOB_UNID"
         ],
         "fkTableName": "JOBQRTN",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -2553,6 +2802,7 @@
             "JOB_UNID"
         ],
         "fkTableName": "JOBQRTNCHECK",
+        "keySequence": 1,
         "pkColumnName": [
             "JOB_UNID"
         ],
@@ -2563,6 +2813,7 @@
             "JOB_UNID"
         ],
         "fkTableName": "JOBROUTE",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -2573,6 +2824,7 @@
             "JOB_UNID"
         ],
         "fkTableName": "JOBSERVICEREQDTL",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -2583,6 +2835,7 @@
             "JOBUNID"
         ],
         "fkTableName": "JOBWAREHOUSE",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -2597,6 +2850,7 @@
             "ISINTERNAL"
         ],
         "fkTableName": "JVCLOCALSVROTHRATE",
+        "keySequence": 1,
         "pkColumnName": [
             "JOBUNID"
         ],
@@ -2607,6 +2861,7 @@
             "JOB_UNID"
         ],
         "fkTableName": "LOADUNIT",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -2617,6 +2872,7 @@
             "UNITUNID"
         ],
         "fkTableName": "LOADUNITITEM",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -2627,6 +2883,7 @@
             "PCKLSTHDR_UNID"
         ],
         "fkTableName": "PCKJOBLINK",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -2637,6 +2894,7 @@
             "PCKLSTHDR_UNID"
         ],
         "fkTableName": "PCKLSTITEM",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -2647,6 +2905,7 @@
             "PDALLHDR_UNID"
         ],
         "fkTableName": "PDALLDTL",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -2657,6 +2916,7 @@
             "PDALLHDR_UNID"
         ],
         "fkTableName": "PDALLJOB",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -2668,6 +2928,7 @@
             "POITEM_SNO"
         ],
         "fkTableName": "POCARGOITEMLINK",
+        "keySequence": 1,
         "pkColumnName": [
             "POHDR_UNID"
         ],
@@ -2678,6 +2939,7 @@
             "POHDR_UNID"
         ],
         "fkTableName": "PODOCREQ",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -2688,6 +2950,7 @@
             "POHDR_UNID"
         ],
         "fkTableName": "POFLEXI",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -2698,6 +2961,7 @@
             "POHDR_UNID"
         ],
         "fkTableName": "POITEM",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -2708,6 +2972,7 @@
             "POHDR_UNID"
         ],
         "fkTableName": "POREFNO",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -2718,6 +2983,7 @@
             "PSHDR_UNID"
         ],
         "fkTableName": "PSDTL",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -2728,6 +2994,7 @@
             "PSHDR_UNID"
         ],
         "fkTableName": "PSPARTY",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -2738,6 +3005,7 @@
             "EXPIMPQRTN_UNID"
         ],
         "fkTableName": "QRTNCHECK",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -2748,6 +3016,7 @@
             "EXPIMPQRTN_UNID"
         ],
         "fkTableName": "QRTNCONTAINER",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -2758,6 +3027,7 @@
             "EXPIMPQRTN_UNID"
         ],
         "fkTableName": "QRTNITEM",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -2768,6 +3038,7 @@
             "JOB_UNID"
         ],
         "fkTableName": "QUOTEPORTS",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -2780,6 +3051,7 @@
             "QUOTETRFCHG_SNO"
         ],
         "fkTableName": "QUOTETRFBKP",
+        "keySequence": 1,
         "pkColumnName": [
             "JOB_UNID"
         ],
@@ -2790,6 +3062,7 @@
             "JOB_UNID"
         ],
         "fkTableName": "QUOTETRFCHG",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -2800,6 +3073,7 @@
             "JOB_UNID"
         ],
         "fkTableName": "REFNO",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -2810,6 +3084,7 @@
             "JOB_UNID"
         ],
         "fkTableName": "REMARK",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -2820,6 +3095,7 @@
             "RESERVENUMHDR_UNID"
         ],
         "fkTableName": "RESERVENUMDTL",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -2830,6 +3106,7 @@
             "JOB_UNID"
         ],
         "fkTableName": "ROAD",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -2840,6 +3117,7 @@
             "STRIGGERS_UNID"
         ],
         "fkTableName": "SCRONTRIGGERS",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -2850,6 +3128,7 @@
             "JOB_UNID"
         ],
         "fkTableName": "SEA",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -2860,6 +3139,7 @@
             "CONTAINER_UNID"
         ],
         "fkTableName": "SEACONTITEM",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -2870,6 +3150,7 @@
             "JOB_UNID"
         ],
         "fkTableName": "SOPARTY",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -2880,6 +3161,7 @@
             "UNID"
         ],
         "fkTableName": "SORTINFO",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -2890,6 +3172,7 @@
             "SRVREQHDRUNID"
         ],
         "fkTableName": "SRVREQFLEXIINFO",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -2900,6 +3183,7 @@
             "JOB_UNID"
         ],
         "fkTableName": "SRVREQHDR",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -2910,6 +3194,7 @@
             "JOB_UNID"
         ],
         "fkTableName": "STATUS",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -2920,6 +3205,7 @@
             "STKMOVHDR_UNID"
         ],
         "fkTableName": "STKMOVITEM",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -2930,6 +3216,7 @@
             "ICNAME"
         ],
         "fkTableName": "STRIGGERS",
+        "keySequence": 1,
         "pkColumnName": [
             "ICNAME"
         ],
@@ -2941,6 +3228,7 @@
             "STATUS_SNO"
         ],
         "fkTableName": "STSNOTIFY",
+        "keySequence": 1,
         "pkColumnName": [
             "JOB_UNID"
         ],
@@ -2951,6 +3239,7 @@
             "JOB_UNID"
         ],
         "fkTableName": "SUPPLIER",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -2961,6 +3250,7 @@
             "JOB_UNID"
         ],
         "fkTableName": "SWITCHBL",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -2971,6 +3261,7 @@
             "SYCOSTRUC_UNID"
         ],
         "fkTableName": "SYACCOUNTAGINGPERIOD",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -2981,6 +3272,7 @@
             "SYCOCONDITIONHDR_UNID"
         ],
         "fkTableName": "SYCOCONDITIONDTL",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -2991,6 +3283,7 @@
             "SYCOSTRUC_UNID"
         ],
         "fkTableName": "SYCOCONDITIONHDR",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -3001,6 +3294,7 @@
             "SYCOSTRUC_UNID"
         ],
         "fkTableName": "SYCODEPARTMENT",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -3011,6 +3305,7 @@
             "SYCOSTRUC_UNID"
         ],
         "fkTableName": "SYCOFINPERIOD",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -3021,6 +3316,7 @@
             "SYCOSTRUC_UNID"
         ],
         "fkTableName": "SYCOFORMID",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -3031,6 +3327,7 @@
             "SYCOSTRUC_UNID"
         ],
         "fkTableName": "SYCOGRID",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -3041,6 +3338,7 @@
             "SYCOGRID_UNID"
         ],
         "fkTableName": "SYCOGRIDCOLOR",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -3051,6 +3349,7 @@
             "SYCOSTRUC_UNID"
         ],
         "fkTableName": "SYCOINTFSETUPRULES",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -3061,6 +3360,7 @@
             "SYCOSTRUC_UNID"
         ],
         "fkTableName": "SYCOLORCONDITION",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -3071,6 +3371,7 @@
             "SYCOLORCONDITION_UNID"
         ],
         "fkTableName": "SYCOLORCONDITIONPARAM",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -3078,19 +3379,10 @@
     },
     {
         "fkColumnName": [
-            "SYCOSTRUC_UNID"
-        ],
-        "fkTableName": "SYCOMPANY",
-        "pkColumnName": [
-            "UNID"
-        ],
-        "pkTableName": "SYCOSTRUC"
-    },
-    {
-        "fkColumnName": [
             "SYORGCHART_UNID"
         ],
         "fkTableName": "SYCOMPANY",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -3098,9 +3390,21 @@
     },
     {
         "fkColumnName": [
+            "SYCOSTRUC_UNID"
+        ],
+        "fkTableName": "SYCOMPANY",
+        "keySequence": 1,
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "SYCOSTRUC"
+    },
+    {
+        "fkColumnName": [
             "SYCONDITIONUNID"
         ],
         "fkTableName": "SYCONDITIONCASE",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -3112,6 +3416,7 @@
             "SYCONDITIONCASESNO"
         ],
         "fkTableName": "SYCONDITIONDTL",
+        "keySequence": 1,
         "pkColumnName": [
             "SYCONDITIONUNID"
         ],
@@ -3122,6 +3427,7 @@
             "SYCOSTRUC_UNID"
         ],
         "fkTableName": "SYCOPREFERENCE",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -3132,6 +3438,7 @@
             "SYCOSTRUC_UNID"
         ],
         "fkTableName": "SYCOPREFERENCEEXT",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -3142,6 +3449,7 @@
             "SYCOSTRUC_UNID"
         ],
         "fkTableName": "SYCOPRINTER",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -3152,6 +3460,7 @@
             "SYCOSTRUC_UNID"
         ],
         "fkTableName": "SYCOPRIVILEGE",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -3162,6 +3471,7 @@
             "OBJECTID"
         ],
         "fkTableName": "SYDATAOBJECTATTR",
+        "keySequence": 1,
         "pkColumnName": [
             "OBJECTID"
         ],
@@ -3172,6 +3482,7 @@
             "FROMOBJECTID"
         ],
         "fkTableName": "SYDATARELATION",
+        "keySequence": 1,
         "pkColumnName": [
             "OBJECTID"
         ],
@@ -3182,6 +3493,7 @@
             "SYDBUPDATEAUDIT_UNID"
         ],
         "fkTableName": "SYDBUPDATEDTL",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -3192,6 +3504,7 @@
             "SYORGCHART_UNID"
         ],
         "fkTableName": "SYDEPARTMENT",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -3202,6 +3515,7 @@
             "SYDOCUNID"
         ],
         "fkTableName": "SYDOCDTL",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -3209,19 +3523,10 @@
     },
     {
         "fkColumnName": [
-            "SOURCEID"
-        ],
-        "fkTableName": "SYDOCPACKETITEM",
-        "pkColumnName": [
-            "OBJECTID"
-        ],
-        "pkTableName": "SYDATAOBJECT"
-    },
-    {
-        "fkColumnName": [
             "SYDOCPACKETUNID"
         ],
         "fkTableName": "SYDOCPACKETITEM",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -3229,10 +3534,22 @@
     },
     {
         "fkColumnName": [
+            "SOURCEID"
+        ],
+        "fkTableName": "SYDOCPACKETITEM",
+        "keySequence": 1,
+        "pkColumnName": [
+            "OBJECTID"
+        ],
+        "pkTableName": "SYDATAOBJECT"
+    },
+    {
+        "fkColumnName": [
             "SYDOCPACKETUNID",
             "SYDOCPACKETITEMSNO"
         ],
         "fkTableName": "SYDOCPACKETITEMOPTION",
+        "keySequence": 1,
         "pkColumnName": [
             "SYDOCPACKETUNID"
         ],
@@ -3243,6 +3560,7 @@
             "INTFCODE"
         ],
         "fkTableName": "SYFILETRANSINFO",
+        "keySequence": 1,
         "pkColumnName": [
             "INTFCODE"
         ],
@@ -3256,6 +3574,7 @@
             "FORMSNO"
         ],
         "fkTableName": "SYFORMPARAM",
+        "keySequence": 1,
         "pkColumnName": [
             "SCHEMECODE"
         ],
@@ -3269,6 +3588,7 @@
             "FORMSNO"
         ],
         "fkTableName": "SYFORMPOSTACTION",
+        "keySequence": 1,
         "pkColumnName": [
             "SCHEMECODE"
         ],
@@ -3282,19 +3602,7 @@
             "FORMSNO"
         ],
         "fkTableName": "SYFORMREMARK",
-        "pkColumnName": [
-            "SCHEMECODE"
-        ],
-        "pkTableName": "SYFORMSETUP"
-    },
-    {
-        "fkColumnName": [
-            "SCHEMECODE",
-            "BIZTYPE",
-            "FORMCODE",
-            "FORMSNO"
-        ],
-        "fkTableName": "SYFORMROLE",
+        "keySequence": 1,
         "pkColumnName": [
             "SCHEMECODE"
         ],
@@ -3305,6 +3613,7 @@
             "SYROLE_UNID"
         ],
         "fkTableName": "SYFORMROLE",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -3315,10 +3624,25 @@
             "SCHEMECODE",
             "BIZTYPE",
             "FORMCODE",
+            "FORMSNO"
+        ],
+        "fkTableName": "SYFORMROLE",
+        "keySequence": 1,
+        "pkColumnName": [
+            "SCHEMECODE"
+        ],
+        "pkTableName": "SYFORMSETUP"
+    },
+    {
+        "fkColumnName": [
+            "SCHEMECODE",
+            "BIZTYPE",
+            "FORMCODE",
             "FORMSNO",
             "POSTACTIONSNO"
         ],
         "fkTableName": "SYFORMUPDATEPLAN",
+        "keySequence": 1,
         "pkColumnName": [
             "SCHEMECODE"
         ],
@@ -3326,19 +3650,10 @@
     },
     {
         "fkColumnName": [
-            "SYFUNCFIELD_UNID"
-        ],
-        "fkTableName": "SYFUNCFIELDDTL",
-        "pkColumnName": [
-            "UNID"
-        ],
-        "pkTableName": "SYFUNCFIELD"
-    },
-    {
-        "fkColumnName": [
             "SYLOGICFIELD_UNID"
         ],
         "fkTableName": "SYFUNCFIELDDTL",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -3346,9 +3661,21 @@
     },
     {
         "fkColumnName": [
+            "SYFUNCFIELD_UNID"
+        ],
+        "fkTableName": "SYFUNCFIELDDTL",
+        "keySequence": 1,
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "SYFUNCFIELD"
+    },
+    {
+        "fkColumnName": [
             "SYCOLORCONDITION_UNID"
         ],
         "fkTableName": "SYGRIDCOLORNODE",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -3359,6 +3686,7 @@
             "LOG_UUID"
         ],
         "fkTableName": "SYIMEXSETTINGLOGDTL",
+        "keySequence": 1,
         "pkColumnName": [
             "UUID"
         ],
@@ -3369,6 +3697,7 @@
             "SYCOSTRUC_UNID"
         ],
         "fkTableName": "SYINTFCFG",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -3379,6 +3708,7 @@
             "INTFPRGID"
         ],
         "fkTableName": "SYINTFPRGRULES",
+        "keySequence": 1,
         "pkColumnName": [
             "INTFPRGID"
         ],
@@ -3389,6 +3719,7 @@
             "INTFPRGID"
         ],
         "fkTableName": "SYINTFSETUP",
+        "keySequence": 1,
         "pkColumnName": [
             "INTFPRGID"
         ],
@@ -3401,6 +3732,7 @@
             "LISTENSNO"
         ],
         "fkTableName": "SYKCTAPPLYCASE",
+        "keySequence": 1,
         "pkColumnName": [
             "SYKCTHDRUNID"
         ],
@@ -3411,6 +3743,7 @@
             "SYKCTHDRUNID"
         ],
         "fkTableName": "SYKCTCASE",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -3422,6 +3755,7 @@
             "SCENSNO"
         ],
         "fkTableName": "SYKCTLISTEN",
+        "keySequence": 1,
         "pkColumnName": [
             "SYKCTHDRUNID"
         ],
@@ -3432,6 +3766,7 @@
             "SYKCTHDRUNID"
         ],
         "fkTableName": "SYKCTSCEN",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -3442,6 +3777,7 @@
             "SYLOGICFIELD_UNID"
         ],
         "fkTableName": "SYLOGICFIELDFUNC",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -3453,6 +3789,7 @@
             "FUNCTYPE"
         ],
         "fkTableName": "SYLOGICFIELDFUNCLOCALDESC",
+        "keySequence": 1,
         "pkColumnName": [
             "SYLOGICFIELD_UNID"
         ],
@@ -3463,6 +3800,7 @@
             "SYLOGICFIELD_UNID"
         ],
         "fkTableName": "SYLOGICFIELDLOCALDESC",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -3473,6 +3811,7 @@
             "SYMENU_UNID"
         ],
         "fkTableName": "SYMENURESOURCE",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -3483,6 +3822,18 @@
             "MODULECODE"
         ],
         "fkTableName": "SYMODULEFUNC",
+        "keySequence": 1,
+        "pkColumnName": [
+            "MODULECODE"
+        ],
+        "pkTableName": "SYMODULE"
+    },
+    {
+        "fkColumnName": [
+            "MODULECODE"
+        ],
+        "fkTableName": "SYMODULEIC",
+        "keySequence": 1,
         "pkColumnName": [
             "MODULECODE"
         ],
@@ -3493,6 +3844,7 @@
             "ICNAME"
         ],
         "fkTableName": "SYMODULEIC",
+        "keySequence": 1,
         "pkColumnName": [
             "ICNAME"
         ],
@@ -3502,17 +3854,8 @@
         "fkColumnName": [
             "MODULECODE"
         ],
-        "fkTableName": "SYMODULEIC",
-        "pkColumnName": [
-            "MODULECODE"
-        ],
-        "pkTableName": "SYMODULE"
-    },
-    {
-        "fkColumnName": [
-            "MODULECODE"
-        ],
         "fkTableName": "SYMODULEPRT",
+        "keySequence": 1,
         "pkColumnName": [
             "MODULECODE"
         ],
@@ -3520,10 +3863,11 @@
     },
     {
         "fkColumnName": [
-            "MASTERMODULE",
-            "MODULECODE"
+            "MODULECODE",
+            "MASTERMODULE"
         ],
         "fkTableName": "SYMODULERELATION",
+        "keySequence": 1,
         "pkColumnName": [
             "MODULECODE"
         ],
@@ -3534,6 +3878,7 @@
             "MODULECODE"
         ],
         "fkTableName": "SYMODULESERVICE",
+        "keySequence": 1,
         "pkColumnName": [
             "MODULECODE"
         ],
@@ -3544,6 +3889,7 @@
             "ICNAME"
         ],
         "fkTableName": "SYMODULETYPEIC",
+        "keySequence": 1,
         "pkColumnName": [
             "ICNAME"
         ],
@@ -3555,6 +3901,7 @@
             "POOLGROUP"
         ],
         "fkTableName": "SYNUMMAP",
+        "keySequence": 1,
         "pkColumnName": [
             "SCHEMECODE"
         ],
@@ -3565,6 +3912,7 @@
             "SYORGCHART_UNID"
         ],
         "fkTableName": "SYOACCESSAUTH",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -3575,6 +3923,18 @@
             "SYORGCHART_UNID"
         ],
         "fkTableName": "SYOCONSTANT",
+        "keySequence": 1,
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "SYORGCHART"
+    },
+    {
+        "fkColumnName": [
+            "SYORGCHART_UNID"
+        ],
+        "fkTableName": "SYOCUSTOMER",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -3585,6 +3945,7 @@
             "FMPARTY_UNID"
         ],
         "fkTableName": "SYOCUSTOMER",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -3594,17 +3955,8 @@
         "fkColumnName": [
             "SYORGCHART_UNID"
         ],
-        "fkTableName": "SYOCUSTOMER",
-        "pkColumnName": [
-            "UNID"
-        ],
-        "pkTableName": "SYORGCHART"
-    },
-    {
-        "fkColumnName": [
-            "SYORGCHART_UNID"
-        ],
         "fkTableName": "SYODATAAUTH",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -3615,6 +3967,7 @@
             "SYORGCHART_UNID"
         ],
         "fkTableName": "SYOFORMPRINTER",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -3625,6 +3978,7 @@
             "SYORGCHART_UNID"
         ],
         "fkTableName": "SYOMENURESTRICTION",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -3635,6 +3989,7 @@
             "SYORGCHART_UNID"
         ],
         "fkTableName": "SYOMODULERESTRICTION",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -3645,6 +4000,7 @@
             "SYORGCHART_UNID"
         ],
         "fkTableName": "SYOPARTYCTRL",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -3655,6 +4011,7 @@
             "SYORGCHART_UNID"
         ],
         "fkTableName": "SYOPREFERENCE",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -3665,6 +4022,7 @@
             "SYORGCHART_UNID"
         ],
         "fkTableName": "SYOPRIVILEGE",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -3675,6 +4033,7 @@
             "PARENT_UNID"
         ],
         "fkTableName": "SYORGCHART",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -3685,6 +4044,7 @@
             "SYORGCHART_UNID"
         ],
         "fkTableName": "SYOTYPEOWNERAUTH",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -3695,6 +4055,7 @@
             "SYORGCHART_UNID"
         ],
         "fkTableName": "SYOWORKFLOW",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -3702,9 +4063,21 @@
     },
     {
         "fkColumnName": [
+            "SYROLE_UNID"
+        ],
+        "fkTableName": "SYRMENURESTRICTION",
+        "keySequence": 1,
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "SYROLE"
+    },
+    {
+        "fkColumnName": [
             "SYMENU_UNID"
         ],
         "fkTableName": "SYRMENURESTRICTION",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -3714,17 +4087,8 @@
         "fkColumnName": [
             "SYROLE_UNID"
         ],
-        "fkTableName": "SYRMENURESTRICTION",
-        "pkColumnName": [
-            "UNID"
-        ],
-        "pkTableName": "SYROLE"
-    },
-    {
-        "fkColumnName": [
-            "SYROLE_UNID"
-        ],
         "fkTableName": "SYRMODULERESTRICTION",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -3735,6 +4099,7 @@
             "SYROLE_UNID"
         ],
         "fkTableName": "SYRPREFERENCE",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -3745,6 +4110,7 @@
             "SYROLE_UNID"
         ],
         "fkTableName": "SYRPRIVILEGE",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -3755,6 +4121,7 @@
             "SYCOSTRUC_UNID"
         ],
         "fkTableName": "SYRULE",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -3765,6 +4132,7 @@
             "SYROLE_UNID"
         ],
         "fkTableName": "SYRWORKFLOW",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -3775,6 +4143,7 @@
             "UNID"
         ],
         "fkTableName": "SYSARCCUSTOMIZEDCONDITION",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -3785,6 +4154,7 @@
             "UNID"
         ],
         "fkTableName": "SYSARCPREDEFINEDCONDITION",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -3792,19 +4162,10 @@
     },
     {
         "fkColumnName": [
-            "SYORGCHART_UNID"
-        ],
-        "fkTableName": "SYUROLE",
-        "pkColumnName": [
-            "UNID"
-        ],
-        "pkTableName": "SYORGCHART"
-    },
-    {
-        "fkColumnName": [
             "SYROLE_UNID"
         ],
         "fkTableName": "SYUROLE",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -3814,7 +4175,19 @@
         "fkColumnName": [
             "SYORGCHART_UNID"
         ],
+        "fkTableName": "SYUROLE",
+        "keySequence": 1,
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "SYORGCHART"
+    },
+    {
+        "fkColumnName": [
+            "SYORGCHART_UNID"
+        ],
         "fkTableName": "SYUSER",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -3825,6 +4198,7 @@
             "TEAHDR_UNID"
         ],
         "fkTableName": "TEAITEM",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -3835,6 +4209,7 @@
             "TEAHDR_UNID"
         ],
         "fkTableName": "TEAORGITEM",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -3842,19 +4217,10 @@
     },
     {
         "fkColumnName": [
-            "RECURINFO_UNID"
-        ],
-        "fkTableName": "TRIGGERS",
-        "pkColumnName": [
-            "UNID"
-        ],
-        "pkTableName": "RECURINFO"
-    },
-    {
-        "fkColumnName": [
             "PARAMDATA_UNID"
         ],
         "fkTableName": "TRIGGERS",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -3862,19 +4228,21 @@
     },
     {
         "fkColumnName": [
-            "JOB_UNID"
+            "RECURINFO_UNID"
         ],
-        "fkTableName": "ULD",
+        "fkTableName": "TRIGGERS",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
-        "pkTableName": "JOB"
+        "pkTableName": "RECURINFO"
     },
     {
         "fkColumnName": [
             "JOB_UNID"
         ],
-        "fkTableName": "ULDCONSOL",
+        "fkTableName": "ULD",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -3885,6 +4253,7 @@
             "ULD_UNID"
         ],
         "fkTableName": "ULDCONSOL",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -3892,9 +4261,21 @@
     },
     {
         "fkColumnName": [
+            "JOB_UNID"
+        ],
+        "fkTableName": "ULDCONSOL",
+        "keySequence": 1,
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "JOB"
+    },
+    {
+        "fkColumnName": [
             "VANHDR_UNID"
         ],
         "fkTableName": "VANITEM",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -3905,6 +4286,7 @@
             "VCHDRUNID"
         ],
         "fkTableName": "VCAMENDMENT",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -3915,6 +4297,7 @@
             "VCHDRUNID"
         ],
         "fkTableName": "VCARBITRARY",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -3926,6 +4309,7 @@
             "VCARBITRARYSNO"
         ],
         "fkTableName": "VCARBITRARYRATE",
+        "keySequence": 1,
         "pkColumnName": [
             "VCHDRUNID"
         ],
@@ -3936,6 +4320,7 @@
             "VCHDRUNID"
         ],
         "fkTableName": "VCARBSURCHARGE",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -3947,6 +4332,7 @@
             "VCARBSURCHARGESNO"
         ],
         "fkTableName": "VCARBSURCHARGERATE",
+        "keySequence": 1,
         "pkColumnName": [
             "VCHDRUNID"
         ],
@@ -3957,6 +4343,7 @@
             "VCHDRUNID"
         ],
         "fkTableName": "VCCOMM",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -3968,6 +4355,7 @@
             "VCCOMMSNO"
         ],
         "fkTableName": "VCCOMMDTL",
+        "keySequence": 1,
         "pkColumnName": [
             "VCHDRUNID"
         ],
@@ -3978,6 +4366,7 @@
             "VCHDRUNID"
         ],
         "fkTableName": "VCLOCALCHG",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -3989,6 +4378,7 @@
             "VCLOCALCHGSNO"
         ],
         "fkTableName": "VCLOCALCHGRATE",
+        "keySequence": 1,
         "pkColumnName": [
             "VCHDRUNID"
         ],
@@ -4000,6 +4390,7 @@
             "VCLOCALCHGSNO"
         ],
         "fkTableName": "VCLOCALCHGTSP",
+        "keySequence": 1,
         "pkColumnName": [
             "VCHDRUNID"
         ],
@@ -4011,6 +4402,7 @@
             "VCLOCALCHGSNO"
         ],
         "fkTableName": "VCLOCALCHGVIA",
+        "keySequence": 1,
         "pkColumnName": [
             "VCHDRUNID"
         ],
@@ -4021,6 +4413,7 @@
             "VCHDRUNID"
         ],
         "fkTableName": "VCLOCALSVROTH",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -4032,6 +4425,7 @@
             "VCLOCALSVROTHSNO"
         ],
         "fkTableName": "VCLOCALSVROTHRATE",
+        "keySequence": 1,
         "pkColumnName": [
             "VCHDRUNID"
         ],
@@ -4042,6 +4436,7 @@
             "VCHDRUNID"
         ],
         "fkTableName": "VCLOCALSVRTPT",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -4053,6 +4448,7 @@
             "VCLOCALSVRTPTSNO"
         ],
         "fkTableName": "VCLOCALSVRTPTRATE",
+        "keySequence": 1,
         "pkColumnName": [
             "VCHDRUNID"
         ],
@@ -4063,6 +4459,7 @@
             "VCHDRUNID"
         ],
         "fkTableName": "VCLOCALSVRTPTSUR",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -4074,6 +4471,7 @@
             "VCLOCALSVRTPTSURSNO"
         ],
         "fkTableName": "VCLOCALSVRTPTSURRATE",
+        "keySequence": 1,
         "pkColumnName": [
             "VCHDRUNID"
         ],
@@ -4084,6 +4482,7 @@
             "VCHDRUNID"
         ],
         "fkTableName": "VCOFT",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -4095,6 +4494,7 @@
             "VCOFTSNO"
         ],
         "fkTableName": "VCOFTRATE",
+        "keySequence": 1,
         "pkColumnName": [
             "VCHDRUNID"
         ],
@@ -4106,6 +4506,7 @@
             "VCOFTSNO"
         ],
         "fkTableName": "VCOFTTSP",
+        "keySequence": 1,
         "pkColumnName": [
             "VCHDRUNID"
         ],
@@ -4117,6 +4518,7 @@
             "VCOFTSNO"
         ],
         "fkTableName": "VCOFTVIA",
+        "keySequence": 1,
         "pkColumnName": [
             "VCHDRUNID"
         ],
@@ -4127,6 +4529,7 @@
             "VCHDRUNID"
         ],
         "fkTableName": "VCREMARK",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -4137,6 +4540,7 @@
             "VCHDRUNID"
         ],
         "fkTableName": "VCREVISION",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -4147,6 +4551,7 @@
             "VCHDRUNID"
         ],
         "fkTableName": "VCRIGHT",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -4157,6 +4562,7 @@
             "VCHDRUNID"
         ],
         "fkTableName": "VCSUR",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -4168,6 +4574,7 @@
             "VCSURSNO"
         ],
         "fkTableName": "VCSURRATE",
+        "keySequence": 1,
         "pkColumnName": [
             "VCHDRUNID"
         ],
@@ -4179,6 +4586,7 @@
             "VCSURSNO"
         ],
         "fkTableName": "VCSURTSP",
+        "keySequence": 1,
         "pkColumnName": [
             "VCHDRUNID"
         ],
@@ -4190,6 +4598,7 @@
             "VCSURSNO"
         ],
         "fkTableName": "VCSURVIA",
+        "keySequence": 1,
         "pkColumnName": [
             "VCHDRUNID"
         ],
@@ -4200,6 +4609,7 @@
             "VCHDRUNID"
         ],
         "fkTableName": "VCWH",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -4211,6 +4621,7 @@
             "VCWHSNO"
         ],
         "fkTableName": "VCWHRATE",
+        "keySequence": 1,
         "pkColumnName": [
             "VCHDRUNID"
         ],
@@ -4222,6 +4633,7 @@
             "VCWHSNO"
         ],
         "fkTableName": "VCWHVIA",
+        "keySequence": 1,
         "pkColumnName": [
             "VCHDRUNID"
         ],
@@ -4232,6 +4644,7 @@
             "VV_UNID"
         ],
         "fkTableName": "VESSELPORT",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -4243,6 +4656,7 @@
             "VP_SNO"
         ],
         "fkTableName": "VESSELPORTRATE",
+        "keySequence": 1,
         "pkColumnName": [
             "VV_UNID"
         ],
@@ -4250,10 +4664,11 @@
     },
     {
         "fkColumnName": [
-            "VTRFNO_UNID",
-            "VTRFHDR_UNID"
+            "VTRFHDR_UNID",
+            "VTRFNO_UNID"
         ],
         "fkTableName": "VTRFCBNNO",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -4264,6 +4679,7 @@
             "SYCOSTRUC_UNID"
         ],
         "fkTableName": "VTRFHDR",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -4274,6 +4690,7 @@
             "VTRFHDR_UNID"
         ],
         "fkTableName": "VTRFJOB",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -4284,6 +4701,7 @@
             "VTRFHDRUNID"
         ],
         "fkTableName": "VTRFRIGHTS",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -4295,6 +4713,7 @@
             "VVPORTSNO"
         ],
         "fkTableName": "VVPORTRAMP",
+        "keySequence": 1,
         "pkColumnName": [
             "VV_UNID"
         ],
@@ -4305,6 +4724,7 @@
             "SERVICENAME"
         ],
         "fkTableName": "WFMODULEMAPPING",
+        "keySequence": 1,
         "pkColumnName": [
             "NAME"
         ],
@@ -4315,6 +4735,7 @@
             "SERVICENAME"
         ],
         "fkTableName": "WFSERVICEPARAM",
+        "keySequence": 1,
         "pkColumnName": [
             "NAME"
         ],
@@ -4325,6 +4746,7 @@
             "WFTASK_UNID"
         ],
         "fkTableName": "WFTASKFIELD",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -4335,6 +4757,7 @@
             "WFTASKQUERY_UNID"
         ],
         "fkTableName": "WFTASKPOPUP",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -4345,6 +4768,7 @@
             "WFTASK_UNID"
         ],
         "fkTableName": "WFTASKQUERY",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -4355,16 +4779,7 @@
             "WFTASKQUERY_UNID"
         ],
         "fkTableName": "WFTASKQUERYCRITERIA",
-        "pkColumnName": [
-            "UNID"
-        ],
-        "pkTableName": "WFTASKQUERY"
-    },
-    {
-        "fkColumnName": [
-            "WFTASKQUERY_UNID"
-        ],
-        "fkTableName": "WFTASKQUERYFIELD",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -4375,6 +4790,7 @@
             "WFTASKFIELD_UNID"
         ],
         "fkTableName": "WFTASKQUERYFIELD",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -4384,7 +4800,8 @@
         "fkColumnName": [
             "WFTASKQUERY_UNID"
         ],
-        "fkTableName": "WFTASKQUERYTEMP",
+        "fkTableName": "WFTASKQUERYFIELD",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -4392,9 +4809,32 @@
     },
     {
         "fkColumnName": [
+            "WFTASKQUERY_UNID"
+        ],
+        "fkTableName": "WFTASKQUERYTEMP",
+        "keySequence": 1,
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "WFTASKQUERY"
+    },
+    {
+        "fkColumnName": [
+            "WFTASKFIELD_UNID"
+        ],
+        "fkTableName": "WFTASKQUERYTEMPFIELD",
+        "keySequence": 1,
+        "pkColumnName": [
+            "UNID"
+        ],
+        "pkTableName": "WFTASKFIELD"
+    },
+    {
+        "fkColumnName": [
             "WFTASKQUERYTEMP_UNID"
         ],
         "fkTableName": "WFTASKQUERYTEMPFIELD",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -4402,19 +4842,10 @@
     },
     {
         "fkColumnName": [
-            "WFTASKFIELD_UNID"
-        ],
-        "fkTableName": "WFTASKQUERYTEMPFIELD",
-        "pkColumnName": [
-            "UNID"
-        ],
-        "pkTableName": "WFTASKFIELD"
-    },
-    {
-        "fkColumnName": [
             "PACKAGEID"
         ],
         "fkTableName": "WFXPDLVERSION",
+        "keySequence": 1,
         "pkColumnName": [
             "PACKAGEID"
         ],
@@ -4425,6 +4856,7 @@
             "JOB_UNID"
         ],
         "fkTableName": "WORKORDERPARTY",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
@@ -4435,6 +4867,7 @@
             "JOB_UNID"
         ],
         "fkTableName": "YIELD",
+        "keySequence": 1,
         "pkColumnName": [
             "UNID"
         ],
