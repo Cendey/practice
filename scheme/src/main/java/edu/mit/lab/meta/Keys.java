@@ -45,6 +45,14 @@ public class Keys implements IRelevance<String, List<String>>, Comparator {
         return pkColumnName;
     }
 
+    public void setPkColumnName(List<String> pkColumnName) {
+        this.pkColumnName = pkColumnName;
+    }
+
+    public void setFkColumnName(List<String> fkColumnName) {
+        this.fkColumnName = fkColumnName;
+    }
+
     public void addPkColumnName(String pkColumnName) {
         if (this.pkColumnName == null) {
             this.pkColumnName = new ArrayList<>();
@@ -72,7 +80,7 @@ public class Keys implements IRelevance<String, List<String>>, Comparator {
         this.fkColumnName.add(fkColumnName);
     }
 
-    private Short getKeySequence() {
+    public Short getKeySequence() {
         return keySequence;
     }
 
