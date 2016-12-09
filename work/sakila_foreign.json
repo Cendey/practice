@@ -1,0 +1,223 @@
+[
+    {
+        "fkColumnName": [
+            "country_id"
+        ],
+        "fkTableName": "city",
+        "keySequence": 1,
+        "pkColumnName": [
+            "country_id"
+        ],
+        "pkTableName": "country"
+    },
+    {
+        "fkColumnName": [
+            "address_id"
+        ],
+        "fkTableName": "customer",
+        "keySequence": 1,
+        "pkColumnName": [
+            "address_id"
+        ],
+        "pkTableName": "address"
+    },
+    {
+        "fkColumnName": [
+            "store_id"
+        ],
+        "fkTableName": "customer",
+        "keySequence": 1,
+        "pkColumnName": [
+            "store_id"
+        ],
+        "pkTableName": "store"
+    },
+    {
+        "fkColumnName": [
+            "language_id",
+            "original_language_id"
+        ],
+        "fkTableName": "film",
+        "keySequence": 1,
+        "pkColumnName": [
+            "language_id"
+        ],
+        "pkTableName": "language"
+    },
+    {
+        "fkColumnName": [
+            "film_id"
+        ],
+        "fkTableName": "film_actor",
+        "keySequence": 1,
+        "pkColumnName": [
+            "film_id"
+        ],
+        "pkTableName": "film"
+    },
+    {
+        "fkColumnName": [
+            "actor_id"
+        ],
+        "fkTableName": "film_actor",
+        "keySequence": 1,
+        "pkColumnName": [
+            "actor_id"
+        ],
+        "pkTableName": "actor"
+    },
+    {
+        "fkColumnName": [
+            "category_id"
+        ],
+        "fkTableName": "film_category",
+        "keySequence": 1,
+        "pkColumnName": [
+            "category_id"
+        ],
+        "pkTableName": "category"
+    },
+    {
+        "fkColumnName": [
+            "film_id"
+        ],
+        "fkTableName": "film_category",
+        "keySequence": 1,
+        "pkColumnName": [
+            "film_id"
+        ],
+        "pkTableName": "film"
+    },
+    {
+        "fkColumnName": [
+            "film_id"
+        ],
+        "fkTableName": "inventory",
+        "keySequence": 1,
+        "pkColumnName": [
+            "film_id"
+        ],
+        "pkTableName": "film"
+    },
+    {
+        "fkColumnName": [
+            "store_id"
+        ],
+        "fkTableName": "inventory",
+        "keySequence": 1,
+        "pkColumnName": [
+            "store_id"
+        ],
+        "pkTableName": "store"
+    },
+    {
+        "fkColumnName": [
+            "customer_id"
+        ],
+        "fkTableName": "payment",
+        "keySequence": 1,
+        "pkColumnName": [
+            "customer_id"
+        ],
+        "pkTableName": "customer"
+    },
+    {
+        "fkColumnName": [
+            "rental_id"
+        ],
+        "fkTableName": "payment",
+        "keySequence": 1,
+        "pkColumnName": [
+            "rental_id"
+        ],
+        "pkTableName": "rental"
+    },
+    {
+        "fkColumnName": [
+            "staff_id"
+        ],
+        "fkTableName": "payment",
+        "keySequence": 1,
+        "pkColumnName": [
+            "staff_id"
+        ],
+        "pkTableName": "staff"
+    },
+    {
+        "fkColumnName": [
+            "customer_id"
+        ],
+        "fkTableName": "rental",
+        "keySequence": 1,
+        "pkColumnName": [
+            "customer_id"
+        ],
+        "pkTableName": "customer"
+    },
+    {
+        "fkColumnName": [
+            "inventory_id"
+        ],
+        "fkTableName": "rental",
+        "keySequence": 1,
+        "pkColumnName": [
+            "inventory_id"
+        ],
+        "pkTableName": "inventory"
+    },
+    {
+        "fkColumnName": [
+            "staff_id"
+        ],
+        "fkTableName": "rental",
+        "keySequence": 1,
+        "pkColumnName": [
+            "staff_id"
+        ],
+        "pkTableName": "staff"
+    },
+    {
+        "fkColumnName": [
+            "address_id"
+        ],
+        "fkTableName": "staff",
+        "keySequence": 1,
+        "pkColumnName": [
+            "address_id"
+        ],
+        "pkTableName": "address"
+    },
+    {
+        "fkColumnName": [
+            "store_id"
+        ],
+        "fkTableName": "staff",
+        "keySequence": 1,
+        "pkColumnName": [
+            "store_id"
+        ],
+        "pkTableName": "store"
+    },
+    {
+        "fkColumnName": [
+            "address_id"
+        ],
+        "fkTableName": "store",
+        "keySequence": 1,
+        "pkColumnName": [
+            "address_id"
+        ],
+        "pkTableName": "address"
+    },
+    {
+        "fkColumnName": [
+            "manager_staff_id"
+        ],
+        "fkTableName": "store",
+        "keySequence": 1,
+        "pkColumnName": [
+            "staff_id"
+        ],
+        "pkTableName": "staff"
+    }
+]

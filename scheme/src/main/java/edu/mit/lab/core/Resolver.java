@@ -180,7 +180,7 @@ public class Resolver {
             viewClosedCounter = lstGraph.size();
             lstGraph.forEach(
                 graph -> {
-                    executor.execute(persist(graph));
+                    executor.execute(persists(graph, schemaName, GRAPH_FILE_NAME_PREFIX));
 
                     executor.execute(display(graph));
                 }
@@ -204,7 +204,8 @@ public class Resolver {
             File target = new File(Scheme.WORK_DIR + destFileName);
             if (target.exists() && target.isFile() && target.canRead()) {
                 try (BufferedReader reader = new BufferedReader(
-                    new InputStreamReader(new FileInputStream(Scheme.WORK_DIR + destFileName),
+                    new InputStreamReader(
+                        new FileInputStream(Scheme.WORK_DIR + destFileName),
                         Charset.forName(Scheme.UTF_8).newDecoder()))) {
                     lstFKRef = genson.deserialize(reader, new GenericType<List<Keys>>() {
                     });
@@ -257,13 +258,16 @@ public class Resolver {
 
     private void persists(String contents, String fileName, String prefix) {
         String schema = prefix.toLowerCase() + "_";
-        try (OutputStreamWriter writer = new OutputStreamWriter(
-            new FileOutputStream(Scheme.WORK_DIR + schema + fileName, false),
-            Charset.forName(Scheme.UTF_8).newEncoder())) {
-            writer.write(contents);
-            writer.flush();
-        } catch (IOException e) {
-            logger.error(e.getMessage());
+        File script = new File(Scheme.WORK_DIR + schema + fileName);
+        if (!script.exists() || !script.isFile()) {
+            try (OutputStreamWriter writer = new OutputStreamWriter(
+                new FileOutputStream(Scheme.WORK_DIR + schema + fileName, false),
+                Charset.forName(Scheme.UTF_8).newEncoder())) {
+                writer.write(contents);
+                writer.flush();
+            } catch (IOException e) {
+                logger.error(e.getMessage());
+            }
         }
     }
 
@@ -340,12 +344,17 @@ public class Resolver {
         };
     }
 
-    private Runnable persist(Graph graph) {
+    private Runnable persists(Graph graph, String schemaName, String prefix) {
         return () -> {
-            try {
-                graph.write(Scheme.WORK_DIR + GRAPH_FILE_NAME_PREFIX + graph.getId() + GRAPH_FILE_NAME_SUFFIX);
-            } catch (IOException e) {
-                logger.error(e.getMessage());
+            String fileName =
+                schemaName.toLowerCase() + "_" + prefix + graph.getId() + GRAPH_FILE_NAME_SUFFIX;
+            File target = new File(Scheme.WORK_DIR + fileName);
+            if (!target.exists() || !target.isFile()) {
+                try {
+                    graph.write(Scheme.WORK_DIR + fileName);
+                } catch (IOException e) {
+                    logger.error(e.getMessage());
+                }
             }
         };
     }
@@ -380,32 +389,36 @@ public class Resolver {
 
     private Callable<Integer> genSQLScript(final Graph graph, String schemaName) {
         return () -> {
-            Set<String> untouched = new TreeSet<>(tableIds);
-            rootNodeIds.forEach(
-                rootId -> Arrays.stream(rootId.split("[|]")).forEach(
-                    rootNodeId -> {
-                        Node root = graph.getNode(rootNodeId);
-                        script.append(String.format(
-                            Scheme.STD_SQL_COMMENTS_BOILERPLATE,
-                            StringUtils.removeFirst(rootNodeId.toLowerCase(), Scheme.NODE_PREFIX)));
-                        Toolkit.postTraverse(graph, root, untouched, script);
-                    }
-                )
-            );
+            String schema = schemaName.toLowerCase() + "_";
+            File sql = new File(Scheme.WORK_DIR + schema + SCRIPT_FILE_NAME);
+            if (!sql.exists() || !sql.isFile()) {
+                Set<String> untouched = new TreeSet<>(tableIds);
+                rootNodeIds.forEach(
+                    rootId -> Arrays.stream(rootId.split("[|]")).forEach(
+                        rootNodeId -> {
+                            Node root = graph.getNode(rootNodeId);
+                            script.append(String.format(
+                                Scheme.STD_SQL_COMMENTS_BOILERPLATE,
+                                StringUtils.removeFirst(rootNodeId.toLowerCase(), Scheme.NODE_PREFIX)));
+                            Toolkit.postTraverse(graph, root, untouched, script);
+                        }
+                    )
+                );
 
-            script.append(Scheme.STD_SQL_COMMENTS_BOILERPLATE_FOR_INDEPENDENT_TABLES);
-            untouched.forEach(item -> {
-                boolean exclusive = Toolkit.INSTANCE.matcher(item).matches();
-                script.append(
-                    String.format(
-                        (exclusive ? "--" : "") + Scheme.STD_SQL_DELETE_STATEMENT,
-                        StringUtils.lowerCase(item)));
-            });
+                script.append(Scheme.STD_SQL_COMMENTS_BOILERPLATE_FOR_INDEPENDENT_TABLES);
+                untouched.forEach(item -> {
+                    boolean exclusive = Toolkit.INSTANCE.matcher(item).matches();
+                    script.append(
+                        String.format(
+                            (exclusive ? "--" : "") + Scheme.STD_SQL_DELETE_STATEMENT,
+                            StringUtils.lowerCase(item)));
+                });
 
-            script.append(genAuditLogScript());
+                script.append(genAuditLogScript());
 
-            script.append(Scheme.STD_SQL_COMMIT);
-            persists(script.toString(), SCRIPT_FILE_NAME, schemaName);
+                script.append(Scheme.STD_SQL_COMMIT);
+                persists(script.toString(), SCRIPT_FILE_NAME, schemaName);
+            }
             return 0;
         };
     }
@@ -473,7 +486,7 @@ public class Resolver {
                             .addAttribute(key, edge.<String>getAttribute(key)));
                 }
             ));
-        Toolkit.nodeSize(result,1,5);
+        Toolkit.nodeSize(result, 1, 5);
         result.addAttribute(Scheme.UI_DEFAULT_TITLE, StringUtils.remove(rootId, Scheme.NODE_PREFIX));
         result.addAttribute(Scheme.UI_STYLESHEET, "url(css/polish.css)");
         graphs.add(result);
@@ -591,7 +604,7 @@ public class Resolver {
                             break;
                         case Scheme.DB_TYPE_MYSQL:
                             preparedStatement.setString(1, connection.getCatalog());
-                            preparedStatement.setInt(2, (times + 1) * FIXED_ROW_COUNT + 1);
+                            preparedStatement.setInt(2, times * FIXED_ROW_COUNT + 1);
                             preparedStatement.setInt(3, FIXED_ROW_COUNT);
                             break;
                         default:
